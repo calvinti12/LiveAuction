@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D87B5E7E-FCC1-4647-B6B6-0F113C603B53}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiveAuction</RootNamespace>
+    <AssemblyName>LiveAuction</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ExportToExcel, Version=1.0.2959.21952, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ExportToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Admin\Auction.aspx" />
+    <Content Include="Admin\css\animate.min.css" />
+    <Content Include="Admin\css\bootstrap.min.css" />
+    <Content Include="Admin\css\calendar\fullcalendar.css" />
+    <Content Include="Admin\css\calendar\fullcalendar.min.css" />
+    <Content Include="Admin\css\calendar\fullcalendar.print.css" />
+    <Content Include="Admin\css\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Admin\css\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Admin\css\colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Admin\css\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Admin\css\colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Admin\css\colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Admin\css\custom.css" />
+    <Content Include="Admin\css\datatables\css\demo_page.css" />
+    <Content Include="Admin\css\datatables\css\demo_table.css" />
+    <Content Include="Admin\css\datatables\css\demo_table_jui.css" />
+    <Content Include="Admin\css\datatables\css\jquery.dataTables.css" />
+    <Content Include="Admin\css\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Admin\css\datatables\images\back_disabled.png" />
+    <Content Include="Admin\css\datatables\images\back_enabled.png" />
+    <Content Include="Admin\css\datatables\images\back_enabled_hover.png" />
+    <Content Include="Admin\css\datatables\images\favicon.ico" />
+    <Content Include="Admin\css\datatables\images\forward_disabled.png" />
+    <Content Include="Admin\css\datatables\images\forward_enabled.png" />
+    <Content Include="Admin\css\datatables\images\forward_enabled_hover.png" />
+    <Content Include="Admin\css\datatables\images\sort_asc.png" />
+    <Content Include="Admin\css\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Admin\css\datatables\images\sort_both.png" />
+    <Content Include="Admin\css\datatables\images\sort_desc.png" />
+    <Content Include="Admin\css\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Admin\css\datatables\tools\css\dataTables.tableTools.css" />
+    <Content Include="Admin\css\editor\external\google-code-prettify\prettify.css" />
+    <Content Include="Admin\css\editor\index.css" />
+    <Content Include="Admin\css\floatexamples.css" />
+    <Content Include="Admin\css\icheck\flat\aero%402x.png" />
+    <Content Include="Admin\css\icheck\flat\aero.css" />
+    <Content Include="Admin\css\icheck\flat\aero.png" />
+    <Content Include="Admin\css\icheck\flat\blue%402x.png" />
+    <Content Include="Admin\css\icheck\flat\blue.css" />
+    <Content Include="Admin\css\icheck\flat\blue.png" />
+    <Content Include="Admin\css\icheck\flat\flat%402x.png" />
+    <Content Include="Admin\css\icheck\flat\flat.css" />
+    <Content Include="Admin\css\icheck\flat\flat.png" />
+    <Content Include="Admin\css\icheck\flat\green%402x.png" />
+    <Content Include="Admin\css\icheck\flat\green.css" />
+    <Content Include="Admin\css\icheck\flat\green.png" />
+    <Content Include="Admin\css\icheck\flat\grey%402x.png" />
+    <Content Include="Admin\css\icheck\flat\grey.css" />
+    <Content Include="Admin\css\icheck\flat\grey.png" />
+    <Content Include="Admin\css\icheck\flat\orange%402x.png" />
+    <Content Include="Admin\css\icheck\flat\orange.css" />
+    <Content Include="Admin\css\icheck\flat\orange.png" />
+    <Content Include="Admin\css\icheck\flat\pink%402x.png" />
+    <Content Include="Admin\css\icheck\flat\pink.css" />
+    <Content Include="Admin\css\icheck\flat\pink.png" />
+    <Content Include="Admin\css\icheck\flat\purple%402x.png" />
+    <Content Include="Admin\css\icheck\flat\purple.css" />
+    <Content Include="Admin\css\icheck\flat\purple.png" />
+    <Content Include="Admin\css\icheck\flat\red%402x.png" />
+    <Content Include="Admin\css\icheck\flat\red.css" />
+    <Content Include="Admin\css\icheck\flat\red.png" />
+    <Content Include="Admin\css\icheck\flat\yellow%402x.png" />
+    <Content Include="Admin\css\icheck\flat\yellow.css" />
+    <Content Include="Admin\css\icheck\flat\yellow.png" />
+    <Content Include="Admin\css\icheck\flat\_all.css" />
+    <Content Include="Admin\css\ion.rangeSlider.css" />
+    <Content Include="Admin\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Admin\css\maps\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Admin\css\normalize.css" />
+    <Content Include="Admin\css\nprogress.css" />
+    <Content Include="Admin\css\progressbar\bootstrap-progressbar-3.3.0.css" />
+    <Content Include="Admin\css\select\select2.min.css" />
+    <Content Include="Admin\css\switchery\switchery.min.css" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\fonts\css\font-awesome.css" />
+    <Content Include="Admin\fonts\css\font-awesome.min.css" />
+    <Content Include="Admin\fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\images\1.png" />
+    <Content Include="Admin\images\4.jpg" />
+    <Content Include="Admin\images\american-express.png" />
+    <Content Include="Admin\images\back_disabled.png" />
+    <Content Include="Admin\images\back_enabled.png" />
+    <Content Include="Admin\images\back_enabled_hover.png" />
+    <Content Include="Admin\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Admin\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Admin\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Admin\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Admin\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Admin\images\data.png" />
+    <Content Include="Admin\images\favicon.ico" />
+    <Content Include="Admin\images\forward_disabled.png" />
+    <Content Include="Admin\images\forward_enabled.png" />
+    <Content Include="Admin\images\forward_enabled_hover.png" />
+    <Content Include="Admin\images\icons.png" />
+    <Content Include="Admin\images\img.jpg" />
+    <Content Include="Admin\images\loading.gif" />
+    <Content Include="Admin\images\mastercard.png" />
+    <Content Include="Admin\images\paypal2.png" />
+    <Content Include="Admin\images\picture-2.jpg" />
+    <Content Include="Admin\images\picture.jpg" />
+    <Content Include="Admin\images\picture2.jpg" />
+    <Content Include="Admin\images\prod1.jpg" />
+    <Content Include="Admin\images\prod2.jpg" />
+    <Content Include="Admin\images\prod3.jpg" />
+    <Content Include="Admin\images\prod4.jpg" />
+    <Content Include="Admin\images\prod5.jpg" />
+    <Content Include="Admin\images\sort_asc.png" />
+    <Content Include="Admin\images\sort_asc_disabled.png" />
+    <Content Include="Admin\images\sort_both.png" />
+    <Content Include="Admin\images\sort_desc.png" />
+    <Content Include="Admin\images\sort_desc_disabled.png" />
+    <Content Include="Admin\images\sprite-skin-flat.png" />
+    <Content Include="Admin\images\sprite-skin-modern.png" />
+    <Content Include="Admin\images\sprite-skin-nice.png" />
+    <Content Include="Admin\images\sprite-skin-simple.png" />
+    <Content Include="Admin\images\user.png" />
+    <Content Include="Admin\images\visa.png" />
+    <Content Include="Admin\js\autocomplete\countries.js" />
+    <Content Include="Admin\js\autocomplete\jquery.autocomplete.js" />
+    <Content Include="Admin\js\bootstrap-timepicker.js" />
+    <Content Include="Admin\js\bootstrap.min.js" />
+    <Content Include="Admin\js\calendar\fullcalendar.min.js" />
+    <Content Include="Admin\js\chartjs\chart.min.js" />
+    <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Admin\js\colorpicker\docs.js" />
+    <Content Include="Admin\js\cropping\cropper.min.js" />
+    <Content Include="Admin\js\cropping\main.js" />
+    <Content Include="Admin\js\cropping\main2.js" />
+    <Content Include="Admin\js\custom.js" />
+    <Content Include="Admin\js\datatables\css\dataTables.bootstrap.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.bootstrap4.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.foundation.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.foundation.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.jqueryui.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.material.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.material.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.semanticui.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.semanticui.min.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.uikit.css" />
+    <Content Include="Admin\js\datatables\css\dataTables.uikit.min.css" />
+    <Content Include="Admin\js\datatables\css\jquery.dataTables.css" />
+    <Content Include="Admin\js\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Admin\js\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Admin\js\datatables\images\favicon.ico" />
+    <Content Include="Admin\js\datatables\images\sort_asc.png" />
+    <Content Include="Admin\js\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Admin\js\datatables\images\sort_both.png" />
+    <Content Include="Admin\js\datatables\images\sort_desc.png" />
+    <Content Include="Admin\js\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Admin\js\datatables\js\dataTables.bootstrap.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.bootstrap4.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.foundation.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.foundation.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.jqueryui.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.material.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.material.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.semanticui.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.semanticui.min.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.uikit.js" />
+    <Content Include="Admin\js\datatables\js\dataTables.uikit.min.js" />
+    <Content Include="Admin\js\datatables\js\jquery.dataTables.js" />
+    <Content Include="Admin\js\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Admin\js\datatables\js\jquery.js" />
+    <Content Include="Admin\js\datatables\tools\css\dataTables.tableTools.css" />
+    <Content Include="Admin\js\datatables\tools\examples\ajax.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\alter_buttons.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\bootstrap.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\button_text.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\collection.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\defaults.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\index.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\jqueryui.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\multiple_tables.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\multi_instance.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\new_init.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\pdf_message.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\plug-in.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\select_column.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\select_multi.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\select_os.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\select_single.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\simple.xml" />
+    <Content Include="Admin\js\datatables\tools\examples\swf_path.xml" />
+    <Content Include="Admin\js\datatables\tools\images\collection.png" />
+    <Content Include="Admin\js\datatables\tools\images\collection_hover.png" />
+    <Content Include="Admin\js\datatables\tools\images\copy.png" />
+    <Content Include="Admin\js\datatables\tools\images\copy_hover.png" />
+    <Content Include="Admin\js\datatables\tools\images\csv.png" />
+    <Content Include="Admin\js\datatables\tools\images\csv_hover.png" />
+    <Content Include="Admin\js\datatables\tools\images\pdf.png" />
+    <Content Include="Admin\js\datatables\tools\images\pdf_hover.png" />
+    <Content Include="Admin\js\datatables\tools\images\print.png" />
+    <Content Include="Admin\js\datatables\tools\images\print_hover.png" />
+    <Content Include="Admin\js\datatables\tools\images\xls.png" />
+    <Content Include="Admin\js\datatables\tools\images\xls_hover.png" />
+    <Content Include="Admin\js\datatables\tools\js\dataTables.tableTools.js" />
+    <Content Include="Admin\js\datatables\tools\License.txt" />
+    <Content Include="Admin\js\datatables\tools\src\dataTables.tableTools.js" />
+    <Content Include="Admin\js\datatables\tools\src\TableTools.js" />
+    <Content Include="Admin\js\datatables\tools\src\ZeroClipboard.js" />
+    <Content Include="Admin\js\datatables\tools\swf\copy_csv_xls.swf" />
+    <Content Include="Admin\js\datatables\tools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Admin\js\datepicker\daterangepicker.js" />
+    <Content Include="Admin\js\dropzone\dropzone.js" />
+    <Content Include="Admin\js\easypie\jquery.easypiechart.min.js" />
+    <Content Include="Admin\js\echart\echarts-all.js" />
+    <Content Include="Admin\js\echart\green.js" />
+    <Content Include="Admin\js\editor\bootstrap-wysiwyg.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-apollo.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-basic.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-clj.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-css.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-dart.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-erlang.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-go.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-hs.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-lisp.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-llvm.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-lua.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-matlab.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-ml.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-mumps.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-n.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-pascal.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-proto.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-r.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-rd.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-scala.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-sql.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-tcl.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-tex.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-vb.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-vhdl.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-wiki.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-xq.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\lang-yaml.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\prettify.js" />
+    <Content Include="Admin\js\editor\external\google-code-prettify\run_prettify.js" />
+    <Content Include="Admin\js\editor\external\jquery.hotkeys.js" />
+    <Content Include="Admin\js\flot\curvedLines.js" />
+    <Content Include="Admin\js\flot\date.js" />
+    <Content Include="Admin\js\flot\jquery.flot.js" />
+    <Content Include="Admin\js\flot\jquery.flot.orderBars.js" />
+    <Content Include="Admin\js\flot\jquery.flot.pie.js" />
+    <Content Include="Admin\js\flot\jquery.flot.resize.js" />
+    <Content Include="Admin\js\flot\jquery.flot.spline.js" />
+    <Content Include="Admin\js\flot\jquery.flot.stack.js" />
+    <Content Include="Admin\js\flot\jquery.flot.time.min.js" />
+    <Content Include="Admin\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Admin\js\gauge\gauge.min.js" />
+    <Content Include="Admin\js\gauge\gauge_demo.js" />
+    <Content Include="Admin\js\icheck\icheck.min.js" />
+    <Content Include="Admin\js\input_mask\jquery.inputmask.js" />
+    <Content Include="Admin\js\ion_range\ion.rangeSlider.min.js" />
+    <Content Include="Admin\js\jquery.min.js" />
+    <Content Include="Admin\js\knob\jquery.knob.min.js" />
+    <Content Include="Admin\js\maps\gdp-data.js" />
+    <Content Include="Admin\js\maps\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="Admin\js\maps\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Admin\js\maps\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Admin\js\moment\moment.min.js" />
+    <Content Include="Admin\js\moris\example.js" />
+    <Content Include="Admin\js\moris\morris.min.js" />
+    <Content Include="Admin\js\moris\raphael-min.js" />
+    <Content Include="Admin\js\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="Admin\js\notify\pnotify.buttons.js" />
+    <Content Include="Admin\js\notify\pnotify.core.js" />
+    <Content Include="Admin\js\notify\pnotify.nonblock.js" />
+    <Content Include="Admin\js\nprogress.js" />
+    <Content Include="Admin\js\pace\pace.min.js" />
+    <Content Include="Admin\js\parsley\parsley.min.js" />
+    <Content Include="Admin\js\progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Admin\js\select\select2.full.js" />
+    <Content Include="Admin\js\sidebar\classie.js" />
+    <Content Include="Admin\js\sidebar\component.css" />
+    <Content Include="Admin\js\sidebar\modernizr.custom.js" />
+    <Content Include="Admin\js\sidebar\sidebarEffects.js" />
+    <Content Include="Admin\js\skycons\skycons.min.js" />
+    <Content Include="Admin\js\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Admin\js\switchery\switchery.min.js" />
+    <Content Include="Admin\js\tags\jquery.tagsinput.min.js" />
+    <Content Include="Admin\js\textarea\autosize.min.js" />
+    <Content Include="Admin\js\validator\validator.js" />
+    <Content Include="Admin\js\wizard\jquery.smartWizard.js" />
+    <Content Include="Admin\ListAuction.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="auctions.aspx" />
+    <Content Include="bid-detail.aspx" />
+    <Content Include="bid-detail.html" />
+    <Content Include="bin\ExcelLibrary.dll" />
+    <Content Include="bin\ExportToExcel.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="bin\Microsoft.Vbe.Interop.dll" />
+    <Content Include="calender.aspx" />
+    <Content Include="calender.html" />
+    <Content Include="catalogue.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\jquery.alerts.css" />
+    <Content Include="css\messages.css" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="images\accept-card.png" />
+    <Content Include="images\action-item-logo.png" />
+    <Content Include="images\ball-fl.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bid-bought.png" />
+    <Content Include="images\bid-social-fid.png" />
+    <Content Include="images\bidpp1.png" />
+    <Content Include="images\blowin.png" />
+    <Content Include="images\calender-bishop.png" />
+    <Content Include="images\calender-item-pic.png" />
+    <Content Include="images\calender-product.png" />
+    <Content Include="images\car.png" />
+    <Content Include="images\christan-cap.png" />
+    <Content Include="images\coke.png" />
+    <Content Include="images\cr-card.png" />
+    <Content Include="images\cr-card2.png" />
+    <Content Include="images\cutter.png" />
+    <Content Include="images\deal-bag.png" />
+    <Content Include="images\deal-laptop.png" />
+    <Content Include="images\deal-mouse.png" />
+    <Content Include="images\deal-nekless.png" />
+    <Content Include="images\deal-shoe.png" />
+    <Content Include="images\drink.png" />
+    <Content Include="images\duck-pot.jpg" />
+    <Content Include="images\duck-pot2.jpg" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\flwer.png" />
+    <Content Include="images\frize.jpg" />
+    <Content Include="images\frize2.jpg" />
+    <Content Include="images\hamer.png" />
+    <Content Include="images\help.gif" />
+    <Content Include="images\IMG_0328_thumb.jpg" />
+    <Content Include="images\important.gif" />
+    <Content Include="images\info.gif" />
+    <Content Include="images\item-car-lt-ctrl.png" />
+    <Content Include="images\item-car-rt-ctrl.png" />
+    <Content Include="images\item-slider1.jpg" />
+    <Content Include="images\item-slider2.jpg" />
+    <Content Include="images\item-slider3.jpg" />
+    <Content Include="images\item-time-live.png" />
+    <Content Include="images\lady-bag.png" />
+    <Content Include="images\lady-shoe.png" />
+    <Content Include="images\laptop.png" />
+    <Content Include="images\leaf.png" />
+    <Content Include="images\lk-cake.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\man-with-cow.png" />
+    <Content Include="images\msg_arrow.gif" />
+    <Content Include="images\plane.png" />
+    <Content Include="images\reldivider.jpg" />
+    <Content Include="images\slider1.jpg" />
+    <Content Include="images\sun.png" />
+    <Content Include="images\title.gif" />
+    <Content Include="images\trust-card.png" />
+    <Content Include="index.aspx" />
+    <Content Include="index.html" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\InputValidation.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery.alerts.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.quick.pagination.min.js" />
+    <Content Include="js\jquery.ui.draggable.js" />
+    <Content Include="list-item.aspx" />
+    <Content Include="list-item.html" />
+    <Content Include="logout.aspx" />
+    <Content Include="my-account.aspx" />
+    <Content Include="my-account.html" />
+    <Content Include="Scripts\DropzoneJs_scripts\basic.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\basic.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\dropzone-amd-module.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\dropzone.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\dropzone.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\min\basic.min.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\min\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\min\dropzone.min.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\min\dropzone.min.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\index.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\test\test.html" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\test\test.js" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone.css" />
+    <Content Include="Scripts\DropzoneJs_scripts\dropzone.js" />
+    <Content Include="seller-track\account-info.aspx" />
+    <Content Include="seller-track\account-info.html" />
+    <Content Include="seller-track\advertise.aspx" />
+    <Content Include="seller-track\advertise.html" />
+    <Content Include="seller-track\connecting.aspx" />
+    <Content Include="seller-track\connecting.html" />
+    <Content Include="seller-track\css\bootstrap.min.css" />
+    <Content Include="seller-track\css\custom.css" />
+    <Content Include="seller-track\dashboard.aspx" />
+    <Content Include="seller-track\dashboard.html" />
+    <Content Include="seller-track\feedback.aspx" />
+    <Content Include="seller-track\feedback.html" />
+    <Content Include="seller-track\font-awesome\css\font-awesome.css" />
+    <Content Include="seller-track\font-awesome\css\font-awesome.min.css" />
+    <Content Include="seller-track\images\accept-card.png" />
+    <Content Include="seller-track\images\action-item-logo.png" />
+    <Content Include="seller-track\images\ball-fl.jpg" />
+    <Content Include="seller-track\images\better-other.png" />
+    <Content Include="seller-track\images\bg.jpg" />
+    <Content Include="seller-track\images\bid-bought.png" />
+    <Content Include="seller-track\images\bid-social-fid.png" />
+    <Content Include="seller-track\images\bidpp1.png" />
+    <Content Include="seller-track\images\blowin.png" />
+    <Content Include="seller-track\images\calender-bishop.png" />
+    <Content Include="seller-track\images\calender-item-pic.png" />
+    <Content Include="seller-track\images\calender-product.png" />
+    <Content Include="seller-track\images\car.png" />
+    <Content Include="seller-track\images\christan-cap.png" />
+    <Content Include="seller-track\images\coke.png" />
+    <Content Include="seller-track\images\cr-card.png" />
+    <Content Include="seller-track\images\cr-card2.png" />
+    <Content Include="seller-track\images\cutter.png" />
+    <Content Include="seller-track\images\deal-bag.png" />
+    <Content Include="seller-track\images\deal-laptop.png" />
+    <Content Include="seller-track\images\deal-mouse.png" />
+    <Content Include="seller-track\images\deal-nekless.png" />
+    <Content Include="seller-track\images\deal-shoe.png" />
+    <Content Include="seller-track\images\drink.png" />
+    <Content Include="seller-track\images\duck-pot.jpg" />
+    <Content Include="seller-track\images\duck-pot2.jpg" />
+    <Content Include="seller-track\images\enjoy-shopping-girl.jpg" />
+    <Content Include="seller-track\images\favicon.png" />
+    <Content Include="seller-track\images\flwer.png" />
+    <Content Include="seller-track\images\frize.jpg" />
+    <Content Include="seller-track\images\frize2.jpg" />
+    <Content Include="seller-track\images\hamer.png" />
+    <Content Include="seller-track\images\IMG_0328_thumb.jpg" />
+    <Content Include="seller-track\images\item-car-lt-ctrl.png" />
+    <Content Include="seller-track\images\item-car-rt-ctrl.png" />
+    <Content Include="seller-track\images\item-slider1.jpg" />
+    <Content Include="seller-track\images\item-slider2.jpg" />
+    <Content Include="seller-track\images\item-slider3.jpg" />
+    <Content Include="seller-track\images\item-time-live.png" />
+    <Content Include="seller-track\images\lady-bag.png" />
+    <Content Include="seller-track\images\lady-shoe.png" />
+    <Content Include="seller-track\images\laptop.png" />
+    <Content Include="seller-track\images\leaf.png" />
+    <Content Include="seller-track\images\lk-cake.png" />
+    <Content Include="seller-track\images\logo.png" />
+    <Content Include="seller-track\images\man-with-cow.png" />
+    <Content Include="seller-track\images\plane.png" />
+    <Content Include="seller-track\images\sell-item.png" />
+    <Content Include="seller-track\images\selling1-mpTowr.png" />
+    <Content Include="seller-track\images\slider1.jpg" />
+    <Content Include="seller-track\images\sun.png" />
+    <Content Include="seller-track\images\trust-card.png" />
+    <Content Include="seller-track\inbox.aspx" />
+    <Content Include="seller-track\inbox.html" />
+    <Content Include="seller-track\item-auction.aspx" />
+    <Content Include="seller-track\item-auction.html" />
+    <Content Include="seller-track\item-bulkaction.aspx" />
+    <Content Include="seller-track\item-bulkaction.html" />
+    <Content Include="seller-track\item-csv.aspx" />
+    <Content Include="seller-track\item-csv.html" />
+    <Content Include="seller-track\js\bootstrap.min.js" />
+    <Content Include="seller-track\js\custom.js" />
+    <Content Include="seller-track\js\jquery-1.11.3.min.js" />
+    <Content Include="seller-track\list-item.aspx" />
+    <Content Include="seller-track\list-item.html" />
+    <Content Include="seller-track\money.aspx" />
+    <Content Include="seller-track\money.html" />
+    <Content Include="seller-track\sell-item-Copy.html" />
+    <Content Include="seller-track\sell-item.aspx" />
+    <Content Include="seller-track\sell-item.html" />
+    <Content Include="seller-track\seller1.aspx" />
+    <Content Include="seller-track\seller1.html" />
+    <Content Include="seller-track\seller2.aspx" />
+    <Content Include="seller-track\seller2.html" />
+    <Content Include="seller-track\stats.aspx" />
+    <Content Include="seller-track\stats.html" />
+    <Content Include="Selling.aspx" />
+    <Content Include="SendTestMail.aspx" />
+    <Content Include="signup.aspx" />
+    <Content Include="signup.html" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="UserControl\LoginControl.ascx" />
+    <Content Include="UserControl\SellerLeftPanel.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="wishlist.aspx" />
+    <Content Include="wishlist.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Auction.aspx.cs">
+      <DependentUpon>Auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Auction.aspx.designer.cs">
+      <DependentUpon>Auction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListAuction.aspx.cs">
+      <DependentUpon>ListAuction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListAuction.aspx.designer.cs">
+      <DependentUpon>ListAuction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="auctions.aspx.cs">
+      <DependentUpon>auctions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="auctions.aspx.designer.cs">
+      <DependentUpon>auctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bid-detail.aspx.cs">
+      <DependentUpon>bid-detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bid-detail.aspx.designer.cs">
+      <DependentUpon>bid-detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bidder.Master.cs">
+      <DependentUpon>Bidder.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bidder.Master.designer.cs">
+      <DependentUpon>Bidder.Master</DependentUpon>
+    </Compile>
+    <Compile Include="calender.aspx.cs">
+      <DependentUpon>calender.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="calender.aspx.designer.cs">
+      <DependentUpon>calender.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalogue.aspx.cs">
+      <DependentUpon>catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalogue.aspx.designer.cs">
+      <DependentUpon>catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fileupload\ajax_fileupload.ashx.cs">
+      <DependentUpon>ajax_fileupload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="fileupload\Handler.ashx.cs">
+      <DependentUpon>Handler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="list-item.aspx.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="list-item.aspx.designer.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="my-account.aspx.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="my-account.aspx.designer.cs">
+      <DependentUpon>my-account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seller-track\account-info.aspx.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\account-info.aspx.designer.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\advertise.aspx.cs">
+      <DependentUpon>advertise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\advertise.aspx.designer.cs">
+      <DependentUpon>advertise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\connecting.aspx.cs">
+      <DependentUpon>connecting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\connecting.aspx.designer.cs">
+      <DependentUpon>connecting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\inbox.aspx.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\inbox.aspx.designer.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\item-auction.aspx.cs">
+      <DependentUpon>item-auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\item-auction.aspx.designer.cs">
+      <DependentUpon>item-auction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\item-bulkaction.aspx.cs">
+      <DependentUpon>item-bulkaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\item-bulkaction.aspx.designer.cs">
+      <DependentUpon>item-bulkaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\item-csv.aspx.cs">
+      <DependentUpon>item-csv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\item-csv.aspx.designer.cs">
+      <DependentUpon>item-csv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\list-item.aspx.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\list-item.aspx.designer.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\money.aspx.cs">
+      <DependentUpon>money.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\money.aspx.designer.cs">
+      <DependentUpon>money.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\sell-item.aspx.cs">
+      <DependentUpon>sell-item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\sell-item.aspx.designer.cs">
+      <DependentUpon>sell-item.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\Seller.Master.cs">
+      <DependentUpon>Seller.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\Seller.Master.designer.cs">
+      <DependentUpon>Seller.Master</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\seller1.aspx.cs">
+      <DependentUpon>seller1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\seller1.aspx.designer.cs">
+      <DependentUpon>seller1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\seller2.aspx.cs">
+      <DependentUpon>seller2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\seller2.aspx.designer.cs">
+      <DependentUpon>seller2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\stats.aspx.cs">
+      <DependentUpon>stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\stats.aspx.designer.cs">
+      <DependentUpon>stats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Selling.aspx.cs">
+      <DependentUpon>Selling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Selling.aspx.designer.cs">
+      <DependentUpon>Selling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SellerLeftPanel.ascx.cs">
+      <DependentUpon>SellerLeftPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\SellerLeftPanel.ascx.designer.cs">
+      <DependentUpon>SellerLeftPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wishlist.aspx.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wishlist.aspx.designer.cs">
+      <DependentUpon>wishlist.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\FileUpload\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Excel\" />
+    <Folder Include="fileupload\upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bidder.Master" />
+    <Content Include="Admin\Admin.Master" />
+    <None Include="Admin\css\datatables\images\Sorting icons.psd" />
+    <None Include="Admin\css\timepicker.less" />
+    <None Include="Admin\fonts\fonts\fontawesome-webfont.eot" />
+    <None Include="Admin\fonts\fonts\fontawesome-webfont.ttf" />
+    <None Include="Admin\fonts\fonts\fontawesome-webfont.woff" />
+    <None Include="Admin\fonts\fonts\fontawesome-webfont.woff2" />
+    <None Include="Admin\fonts\fonts\FontAwesome.otf" />
+    <None Include="Admin\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Admin\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Admin\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Admin\fonts\less\animated.less" />
+    <None Include="Admin\fonts\less\bordered-pulled.less" />
+    <None Include="Admin\fonts\less\core.less" />
+    <None Include="Admin\fonts\less\fixed-width.less" />
+    <None Include="Admin\fonts\less\font-awesome.less" />
+    <None Include="Admin\fonts\less\icons.less" />
+    <None Include="Admin\fonts\less\larger.less" />
+    <None Include="Admin\fonts\less\list.less" />
+    <None Include="Admin\fonts\less\mixins.less" />
+    <None Include="Admin\fonts\less\path.less" />
+    <None Include="Admin\fonts\less\rotated-flipped.less" />
+    <None Include="Admin\fonts\less\spinning.less" />
+    <None Include="Admin\fonts\less\stacked.less" />
+    <None Include="Admin\fonts\less\variables.less" />
+    <None Include="Admin\fonts\scss\font-awesome.scss" />
+    <None Include="Admin\fonts\scss\_animated.scss" />
+    <None Include="Admin\fonts\scss\_bordered-pulled.scss" />
+    <None Include="Admin\fonts\scss\_core.scss" />
+    <None Include="Admin\fonts\scss\_fixed-width.scss" />
+    <None Include="Admin\fonts\scss\_icons.scss" />
+    <None Include="Admin\fonts\scss\_larger.scss" />
+    <None Include="Admin\fonts\scss\_list.scss" />
+    <None Include="Admin\fonts\scss\_mixins.scss" />
+    <None Include="Admin\fonts\scss\_path.scss" />
+    <None Include="Admin\fonts\scss\_rotated-flipped.scss" />
+    <None Include="Admin\fonts\scss\_spinning.scss" />
+    <None Include="Admin\fonts\scss\_stacked.scss" />
+    <None Include="Admin\fonts\scss\_variables.scss" />
+    <None Include="Admin\images\Sorting icons.psd" />
+    <None Include="Admin\js\datatables\images\Sorting icons.psd" />
+    <None Include="Admin\js\datatables\tools\as3\lib\AlivePDF.swc" />
+    <None Include="Admin\js\datatables\tools\as3\ZeroClipboard.as" />
+    <None Include="Admin\js\datatables\tools\as3\ZeroClipboardPdf.as" />
+    <None Include="Admin\js\datatables\tools\bower.json" />
+    <None Include="Admin\js\datatables\tools\images\psd\collection.psd" />
+    <None Include="Admin\js\datatables\tools\images\psd\copy document.psd" />
+    <None Include="Admin\js\datatables\tools\images\psd\file_types.psd" />
+    <None Include="Admin\js\datatables\tools\images\psd\printer.psd" />
+    <None Include="Admin\js\datatables\tools\make.sh" />
+    <None Include="Admin\js\datatables\tools\Readme.md" />
+    <None Include="Admin\js\maps\us-unemployment.json" />
+    <None Include="debug.log" />
+    <Content Include="fileupload\ajax_fileupload.ashx" />
+    <Content Include="fileupload\Handler.ashx" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="font-awesome\fonts\FontAwesome.otf" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="images\Thumbs.db" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.gitignore" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.tagconfig" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.travis.yml" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\AMD_footer" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\AMD_header" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\bower.json" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\component.json" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\composer.json" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\CONTRIBUTING.md" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\readme.md" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\Gruntfile.coffee" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\LICENSE" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\package.json" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\README.md" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\src\basic.scss" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\src\dropzone.coffee" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\src\dropzone.scss" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\test.sh" />
+    <None Include="Scripts\DropzoneJs_scripts\dropzone-master\test\test.coffee" />
+    <None Include="seller-track\debug.log" />
+    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <None Include="seller-track\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="seller-track\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="seller-track\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="seller-track\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="seller-track\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="seller-track\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="seller-track\images\Thumbs.db" />
+    <Content Include="seller-track\Seller.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{394685E4-27E6-43F8-986D-84080FF9F90A}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{694922E5-6604-468E-9EBB-B4856D250892}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityLayer\UtilityLayer.csproj">
+      <Project>{74D3A4A8-9F91-4FED-A46F-6A42576828BC}</Project>
+      <Name>UtilityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2520</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/LiveAuction</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

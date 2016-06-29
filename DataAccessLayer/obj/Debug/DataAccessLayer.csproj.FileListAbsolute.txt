@@ -1,0 +1,36 @@
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

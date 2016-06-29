@@ -1,0 +1,72 @@
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\STS Project\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+G:\Freelance\AuctionBidPlatform\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\Projects\LiveAuction\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\Amitabha\Desktop\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+G:\Freelance\code & DB script\Anjan\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\STS Project\AuctionBidPlatform\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
