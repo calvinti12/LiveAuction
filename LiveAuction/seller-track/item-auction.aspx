@@ -8,6 +8,26 @@
             $('#liAuctions').addClass('sdmnu-active');
         });
     </script>
+    <script type="text/javascript">
+    function requestScedule(int id){
+    alert(id);
+    }
+        function ShowCurrentTime() {
+            $.ajax({
+                type: "POST",
+                url: "item-auction.aspx/RequestSchedule",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        function OnSuccess(response) {
+            alert(response.d);
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- this is the breadcumbs area -->
@@ -59,147 +79,6 @@
                     
                         <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
                        <%--<asp:Literal ID="literalText" runat="server"></asp:Literal>--%>
-                  		<%--<table class="table table-condensed">
-                  			<thead>
-                  				<tr>
-                  					<td>Date</td>
-                  					<td>Auction Name</td>
-                  					<td>Scheduling Fee <i class="fa fa-info-circle" aria-hidden="true"></i></td>
-                  					<td>Commission <i class="fa fa-info-circle" aria-hidden="true"></i></td>
-                  					<td></td>
-                  				</tr>
-                  			</thead>
-                  			<tbody>
-                  				<tr class="active">
-                  					<td colspan="5">Live Auction</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td>closed</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr class="active">
-                  					<td colspan="5">Upcoming Auction</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr class="active">
-                  					<td colspan="5">Schudled Auction</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td>closed</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  				<tr>
-                  					<td>6pm sun mar 06</td>
-                  					<td>Free Shipping bazar</td>
-                  					<td>$0.50</td>
-                  					<td>10%</td>
-                  					<td><i class="fa fa-calendar-o" aria-hidden="true"></i> Requested to schedule</td>
-                  				</tr>
-                  			</tbody>
-                  		</table>--%>
                   	</div>
                   </div>
               </div>

@@ -35,7 +35,8 @@ namespace LiveAuction.Admin
                     try
                     {
                         string filename = Path.GetFileName(FileUpload1.FileName);
-                        filePath = Server.MapPath("~/FileUpload/") + filename;
+                        filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
+                        Path.GetFullPath(filePath).Replace(@"\", @"\\");
                         FileUpload1.SaveAs(filePath);
                         string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                         SqlConnection con = new SqlConnection(connectionString);
