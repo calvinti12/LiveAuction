@@ -9,9 +9,9 @@
         });
     </script>
     <script type="text/javascript">
-    function requestScedule(int id){
-    alert(id);
-    }
+        $(".reqBtn").click(function () {
+            alert("clicked");
+        });
         function ShowCurrentTime() {
             $.ajax({
                 type: "POST",

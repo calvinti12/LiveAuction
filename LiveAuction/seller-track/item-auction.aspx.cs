@@ -27,7 +27,7 @@ namespace LiveAuction.seller_track
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 con.Close();
-                string lit = @"<table class='table table-condensed'>
+                string lit = @"<table class='table table-condensed '>
                         <thead>
                             <tr class='headings'>
                                 <th>Date </th>
@@ -43,7 +43,8 @@ namespace LiveAuction.seller_track
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     lit = lit + @"<tr>
-                                <td class=''>" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
+                                <input type='hidden' class='idField' value='"+dt.Rows[i]["AuctionId"]+"'/>"+
+                                "<td class=''  >" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
                                 "<td class=''>" + dt.Rows[i]["AuctionName"] + "</td>" +
                                 "<td class=''></td>" +
                                 "<td class=''>" + dt.Rows[i]["Commission"] + " %" + "</td>" +
