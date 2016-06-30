@@ -8,26 +8,6 @@
             $('#liAuctions').addClass('sdmnu-active');
         });
     </script>
-    <script type="text/javascript">
-        $(".reqBtn").click(function () {
-            alert("clicked");
-        });
-        function ShowCurrentTime() {
-            $.ajax({
-                type: "POST",
-                url: "item-auction.aspx/RequestSchedule",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: OnSuccess,
-                failure: function (response) {
-                    alert(response.d);
-                }
-            });
-        }
-        function OnSuccess(response) {
-            alert(response.d);
-        }
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- this is the breadcumbs area -->

@@ -36,6 +36,7 @@ namespace LiveAuction.Admin
                     {
                         string filename = Path.GetFileName(FileUpload1.FileName);
                         filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
+                        //filePath = Server.MapPath(@"~/Admin/FileUpload/") + filename;
                         Path.GetFullPath(filePath).Replace(@"\", @"\\");
                         FileUpload1.SaveAs(filePath);
                         string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
@@ -50,7 +51,7 @@ namespace LiveAuction.Admin
                             auctiontime.Text = "";
                             auctiondate.Text = "";
                             number.Text = "";
-                            lblMessage.Text = "Auction saved successfully";
+                            lblMessage.Text = "<span color=\"green\">Auction saved successfully</span>";
                         }
                     }
                     catch (Exception ex)
