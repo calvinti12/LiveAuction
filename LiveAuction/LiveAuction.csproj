@@ -199,6 +199,7 @@
     <Content Include="Admin\images\sprite-skin-simple.png" />
     <Content Include="Admin\images\user.png" />
     <Content Include="Admin\images\visa.png" />
+    <Content Include="Admin\js\angular.js" />
     <Content Include="Admin\js\autocomplete\countries.js" />
     <Content Include="Admin\js\autocomplete\jquery.autocomplete.js" />
     <Content Include="Admin\js\bootstrap-timepicker.js" />
@@ -447,6 +448,7 @@
     <Content Include="images\trust-card.png" />
     <Content Include="index.aspx" />
     <Content Include="index.html" />
+    <Content Include="js\angular.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\InputValidation.js" />

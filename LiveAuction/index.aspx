@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<script src="js/custom.js" type="text/javascript"></script>
     <section class="slider-section">
         <div class="container">
             <div class="row">
@@ -385,4 +386,6 @@
       </section>
     <!-- end of bid popup -->
     <!---------------- END OF MODAL WINDOW --------------------->
+    
+    <script type="text/javascript"> console.log(todayDeal);</script>
 </asp:Content>

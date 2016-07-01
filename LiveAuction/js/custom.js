@@ -32,7 +32,11 @@ $(document).ready(function(){
 		var x = $(this).children("a");
 		console.log(x);
 	});
-	
+
+
+//    This area for getting the today's aution in the main page 
+
 
 
 });
+var todayDeal=new Array();
