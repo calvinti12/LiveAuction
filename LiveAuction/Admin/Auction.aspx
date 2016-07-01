@@ -73,7 +73,7 @@
                                     Auction Date <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" runat="server" class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox>
+                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD/MM/YYYY" runat="server" class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ErrorMessage="Auction date Required" ControlToValidate="auctiondate"
                                         ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <%-- <input id="auctiondate" class="date-picker form-control col-md-7 col-xs-12" required="required"
@@ -94,6 +94,32 @@
                                 </div>
                             </div>
                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                    Address <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <asp:TextBox ID="address" runat="server" class="time form-control col-md-7 col-xs-12"
+                                        placeholder="Office 33, 27 Colmore Row, Birmingham,England B3 2EW" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Address Required"
+                                        ControlToValidate="auctiontime" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
+                                    <%--  <input type="url" id="auctiontime" name="time" required="required" class="time form-control col-md-7 col-xs-12"
+                                        placeholder="17:00">--%>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
+                                    Scheduling Fee <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <asp:TextBox ID="schedulingfee" runat="server" data-validate-minmax="10,100" type="number"
+                                        class="form-control col-md-7 col-xs-12"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Scheduling Fee Required"
+                                        ControlToValidate="number" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
+                                    <%-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
+                                        class="form-control col-md-7 col-xs-12">--%>
+                                </div>
+                            </div>
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
                                     Commission(%) <span class="required">*</span>
                                 </label>
@@ -110,8 +136,9 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
                                     Upload Image <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12"><%--class="form-control col-md-7 col-xs-12"--%>
-                                    <asp:FileUpload ID="FileUpload1" runat="server"  />
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <%--class="form-control col-md-7 col-xs-12"--%>
+                                    <asp:FileUpload ID="FileUpload1" runat="server" />
                                     <br />
                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Image Required"
                                         ControlToValidate="FileUpload1" runat="server" Display="Dynamic" ForeColor="Red" />--%>

@@ -22,7 +22,7 @@ namespace LiveAuction.seller_track
                 string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
-                string query = "select * from Auction where IsSchedule='0'";
+                string query = "select * from Auction";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -42,16 +42,33 @@ namespace LiveAuction.seller_track
                         <tbody><tr class='active'><td colspan='5'>Live Auction</td></tr>";
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    lit = lit + @"<tr>
+
+                    if ((int)dt.Rows[i]["IsSchedule"] == 1)
+                    {
+                        lit = lit + @"<tr>
                                 <input type='hidden' class='idField' value='" + dt.Rows[i]["AuctionId"] + "'/>" +
-                                "<td class=''  >" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
-                                "<td class=''>" + dt.Rows[i]["AuctionName"] + "</td>" +
-                                "<td class=''></td>" +
-                                "<td class=''>" + dt.Rows[i]["Commission"] + " %" + "</td>" +
-                                "<td class='last'><i class=\"fa fa-calendar-o\"></i>&nbsp" +
-                                    "<a href='item-auction.aspx?id=" + dt.Rows[i]["AuctionId"] + "" + "'>Requested to schedule</a>" +
-                                "</td>" +
-                            "</tr>";
+                                    "<td class=''  >" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["AuctionName"] + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["SchedulingFee"] + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["Commission"] + " %" + "</td>" +
+                                    "<td class='last'><i class=\"fa fa-calendar-o\"></i>&nbsp" +
+                                        "<label >Requested to schedule</label>" +
+                                    "</td>" +
+                                "</tr>";
+                    }
+                    else
+                    {
+                        lit = lit + @"<tr>
+                                <input type='hidden' class='idField' value='" + dt.Rows[i]["AuctionId"] + "'/>" +
+                                    "<td class=''  >" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["AuctionName"] + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["SchedulingFee"] + "</td>" +
+                                    "<td class=''>" + dt.Rows[i]["Commission"] + " %" + "</td>" +
+                                    "<td class='last'><i class=\"fa fa-calendar-o\"></i>&nbsp" +
+                                        "<a href='item-auction.aspx?id=" + dt.Rows[i]["AuctionId"] + "" + "'>Request to schedule</a>" +
+                                    "</td>" +
+                                "</tr>";
+                    }
                 }
                 html.Append(lit);
                 html.Append("</table>");

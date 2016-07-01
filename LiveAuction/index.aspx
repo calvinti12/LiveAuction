@@ -331,7 +331,7 @@
                       <div class="cr-accnt pop-cr-accnt">
                         <div class="bid-popup-pic-sec">
                           <div class="bid-popup-title">
-                            <h3>Lot 693</h3>
+                            <%--<h3>Lot 693</h3>--%>
                           </div>
                           <div class="bid-popup-pic">
                             <img src="images/bidpp1.png" alt="this is for bid popup" >
@@ -339,14 +339,14 @@
                           <div class="bid-p-dis">
                             <p class="bid-alate">A late 19th century zulu axe asymmetrical blade 13.5 darkwood haft with flared end (cracked).GC plate 6</p>
                           </div>
-                          <div class="bid-p-dis text-center">
+                          <%--<div class="bid-p-dis text-center">
                             <h4>Estimates 250 275 GBP</h4>
                           </div>
                           <div class="bid-p-dis text-center">
                             <h4>Room Bid 240 GBP</h4>
-                          </div>
+                          </div>--%>
                           <div class="bid-p-dis">
-                            <button type="button" class="btn btn-danger btn-block">Bid 150 GBP</button>
+                            <button type="button" class="btn btn-danger btn-block">Time left </button>
                           </div>
                         </div>
                       </div>
@@ -393,11 +393,11 @@
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>692</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class="pop-ico"><i class="fa fa-camera"></i></td>
+                                  <td colspan="3">No data avaiable</td>
+                                  <%--<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
+                                  <td class="pop-ico"><i class="fa fa-camera"></i></td>--%>
                                 </tr>
-                                <tr>
+                                <%--<tr>
                                   <td>693</td>
                                   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
                                   <td class="pop-ico"><i class="fa fa-camera"></i></td>
@@ -416,7 +416,7 @@
                                   <td>696</td>
                                   <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
                                   <td class="pop-ico"><i class="fa fa-camera"></i></td>
-                                </tr>
+                                </tr>--%>
                               </tbody>
                             </table>
                           </div>
@@ -437,7 +437,7 @@
                   <div class="row">
                     <div class="col-md-12">
                         <div class="cr-accnt">
-                          <div class="log-audio">
+                          <%--<div class="log-audio">
                             <div class="log-lft">
                               <div class="pop-footer-lft pull-left">
                                 <H3><STRONG>WALLIS & WALLIS</STRONG></H3>
@@ -457,7 +457,7 @@
                                 <li><span>Auctioneer: </span><a href="#">http://wallisandwallis.co.uk</a></li>
                               </ul>
                             </div>
-                          </div>
+                          </div>--%>
                       </div>
                     </div>
                   </div>

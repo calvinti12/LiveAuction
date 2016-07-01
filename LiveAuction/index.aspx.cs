@@ -23,6 +23,8 @@ namespace LiveAuction
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
+            DateTime today = new DateTime();
+
             string lit = "";
             //            string lit = @"<div class='col-md-3 col-sm-6 col-xs-12'>
             //                            <div class='action-item-sec text-center'>
@@ -36,10 +38,11 @@ namespace LiveAuction
             //                </div>";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                Response.Write(dt.Rows[i]["ImagePath"]);
+               
+                //DateTime actionDate = new DateTime(dt.Rows[i]["AuctionDate"].ToString());<img src='./Admin/FileUpload/superbox-full-15.jpg' width='200px'/>
                 lit = lit + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'>
-                                <img width='300px'" + dt.Rows[i]["ImagePath"] + "' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
+                                <img src='./Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
                                         "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn' data-toggle='modal' data-target='#bidpopup'>View Details</a><div class='action-timing-sec'><p>";
                 lit = lit + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d");
                 lit = lit + @"</p></div></div></div>";

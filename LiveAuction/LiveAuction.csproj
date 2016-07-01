@@ -153,6 +153,8 @@
     <Content Include="Admin\css\switchery\switchery.min.css" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\FileUpload\dragon-age-3-game-1920x1080.jpg" />
+    <Content Include="Admin\FileUpload\superbox-full-10.jpg" />
+    <Content Include="Admin\FileUpload\upload.png" />
     <Content Include="Admin\fonts\css\font-awesome.css" />
     <Content Include="Admin\fonts\css\font-awesome.min.css" />
     <Content Include="Admin\fonts\fonts\fontawesome-webfont.svg" />

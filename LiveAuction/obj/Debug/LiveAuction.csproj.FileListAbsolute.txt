@@ -102,3 +102,16 @@ E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\LiveAuction
 E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\LiveAuction\obj\Debug\LiveAuction.csprojResolveAssemblyReference.cache
 E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\LiveAuction\obj\Debug\LiveAuction.dll
 E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\LiveAuction\obj\Debug\LiveAuction.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\LiveAuction.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\LiveAuction.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\BusinessLogicLayer.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\EntityLayer.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\UtilityLayer.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\DataAccessLayer.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\BusinessLogicLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\EntityLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\UtilityLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\DataAccessLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.csprojResolveAssemblyReference.cache
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.dll
+E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.pdb
