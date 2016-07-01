@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <section class="slider-section">
+    <section class="slider-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-    </section> <!-- end of slider seciton -->
-
+    </section>
+    <!-- end of slider seciton -->
     <section class="today-item-section">
         <div class="container">
             <div class="row">
@@ -52,92 +52,10 @@
             </div>
             <div class="row">
             <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
-                <%--<div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59 </p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">View Details</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->--%>
             </div>
         </div>
-    </section> <!-- end of action item section -->
-
+    </section>
+    <!-- end of action item section -->
     <section class="item-carousel-sec">
         <div class="container">
             <div class="row">
@@ -196,8 +114,8 @@
                 </div> 
             </div>
         </div>
-    </section> <!-- end of item carousel  section -->
-
+    </section>
+    <!-- end of item carousel  section -->
     <section class="today-item-section">
         <div class="container">
             <div class="row">
@@ -311,12 +229,11 @@
                 </div> <!-- end of the turning col -->
             </div>
         </div>
-    </section> <!-- end of action item section -->
-
+    </section>
+    <!-- end of action item section -->
     <!---------------  MODAL WINDOW ---------------------------->
-    
     <!-- start of bid popup -->
-      <section class="bid-popup-sector">
+    <section class="bid-popup-sector">
         <!-- Modal -->
         <div class="modal fade" id="bidpopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog bid-model-dialog" role="document">
@@ -466,8 +383,6 @@
           </div>
         </div>
       </section>
-     <!-- end of bid popup -->
-
+    <!-- end of bid popup -->
     <!---------------- END OF MODAL WINDOW --------------------->
-
 </asp:Content>
