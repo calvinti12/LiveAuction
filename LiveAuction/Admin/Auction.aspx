@@ -145,6 +145,7 @@
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpeg|.png|.JPEG|.jpg|.JPG)$"
                                         ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image File file."
                                         Display="Dynamic" />
+                                        <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
                                 </div>
                             </div>
                             <div class="item form-group">

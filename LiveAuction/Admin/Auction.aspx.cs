@@ -32,33 +32,40 @@ namespace LiveAuction.Admin
                 string filePath;
                 if (FileUpload1.HasFile)
                 {
-                    try
+                    if (FileUpload1.PostedFile.ContentLength < 102400)
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName);
-                        filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
-                        //filePath = Server.MapPath(@"~/Admin/FileUpload/") + filename;<img src='./Admin/FileUpload/superbox-full-15.jpg' width='200px'/>
-                        //filePath = "./Admin/FileUpload/" + filename;
-                        //Path.GetFullPath(filePath).Replace(@"/", @"//");
-                        FileUpload1.SaveAs(filePath);
-                        string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-                        SqlConnection con = new SqlConnection(connectionString);
-                        con.Open();
-                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName)values('3','" + txtAuctionName.Text + "','" + auctiondate.Text + "','" + auctiontime.Text + "','" + address.Text + "','" + number.Text + "',0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + "," + "'" + schedulingfee.Text + "'" + "," + "'" + filename + "'" + ")";
-                        SqlCommand cmd = new SqlCommand(query, con);
-                        int i = cmd.ExecuteNonQuery();
-                        if (i > 0)
+                        try
                         {
-                            txtAuctionName.Text = "";
-                            auctiontime.Text = "";
-                            auctiondate.Text = "";
-                            number.Text = "";
-                            lblMessage.Text = "<span style=\"color: #54a75c\">Auction saved successfully</span>";
+                            string filename = Path.GetFileName(FileUpload1.FileName);
+                            filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
+                            //filePath = Server.MapPath(@"~/Admin/FileUpload/") + filename;<img src='./Admin/FileUpload/superbox-full-15.jpg' width='200px'/>
+                            //filePath = "./Admin/FileUpload/" + filename;
+                            //Path.GetFullPath(filePath).Replace(@"/", @"//");
+                            FileUpload1.SaveAs(filePath);
+                            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                            SqlConnection con = new SqlConnection(connectionString);
+                            con.Open();
+                            string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName)values('3','" + txtAuctionName.Text + "','" + auctiondate.Text + "','" + auctiontime.Text + "','" + address.Text + "','" + number.Text + "',0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + "," + "'" + schedulingfee.Text + "'" + "," + "'" + filename + "'" + ")";
+                            SqlCommand cmd = new SqlCommand(query, con);
+                            int i = cmd.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                txtAuctionName.Text = "";
+                                auctiontime.Text = "";
+                                auctiondate.Text = "";
+                                number.Text = "";
+                                fileUploadLabel.Text = "";
+                                address.Text = "";
+                                schedulingfee.Text = "";
+                                lblMessage.Text = "<span style=\"color: #54a75c\">Auction saved successfully</span>";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            fileUploadLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        // StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
-                    }
+                    else { fileUploadLabel.Text = "File size has to be less than 100kb"; }
                 }
 
 
