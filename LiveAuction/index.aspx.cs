@@ -55,6 +55,13 @@ namespace LiveAuction
                               "'id':'" + i + "'," +
                               "'auctionImageName':'" + dt.Rows[i]["ImageName"] + "'};todayDeal.push(data);</script>";
 
+                string subquery = "select LotId,LotDesc,LotImageName from [AuctionBidPlatform].[dbo].[View_list_item]   where AuctionId=" + dt.Rows[i]["AuctionId"] + " and IsScheduled=1";
+                SqlDataAdapter adapter1 = new SqlDataAdapter(subquery, con);
+                DataTable dt1 = new DataTable();
+                adapter1.Fill(dt1);
+                con.Close();
+                
+                
                 modalHtml += "<section class='bid-popup-sector'><!-- Modal --><div class='modal fade' id='bidpopup" + dt.Rows[i]["AuctionId"] + "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>" +
                                       "<div class='modal-dialog bid-model-dialog' role='document'>" +
                                         "<div class='modal-content bid-model-content'>" +
@@ -129,13 +136,17 @@ namespace LiveAuction
                                                               "<th>Image</th>" +
                                                             "</tr>" +
                                                           "</thead>" +
-                                                          "<tbody>" +
-                                                            "<tr>" +
-                                                              "<td colspan='3'>No data avaiable</td>" +
-                                                              "<!--<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>" +
-                                                              "<td class='pop-ico'><i class='fa fa-camera'></i></td>-->" +
-                                                            "</tr>" +
-                                                            "<!--<tr>" +
+                                                          "<tbody>" ;
+                                                            for (int j = 0; j < dt1.Rows.Count; j++)
+                                                            {
+                                                                Response.Write(dt1.Rows[j]["LotId"]);
+
+                                                                modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
+                                                                "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
+                                                                "<td class='pop-ico'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></td>" +
+                                                              "</tr>";
+                                                            }
+                                                            modalHtml += "<!--<tr>" +
                                                               "<td>693</td>" +
                                                               "<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>" +
                                                               "<td class='pop-ico'><i class='fa fa-camera'></i></td>" +
@@ -204,6 +215,7 @@ namespace LiveAuction
                                   "</section>-->" +
                                 "<!-- end of bid popup -->" +
                                 "<!---------------- END OF MODAL WINDOW --------------------->";
+                
             }
             html.Append(lit );
             modalWindowHtml.Append(modalHtml);

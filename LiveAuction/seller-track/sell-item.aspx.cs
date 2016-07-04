@@ -31,12 +31,15 @@ namespace LiveAuction.seller_track
                     lit = lit + @"<div class='sell-item-con'>
                           <div class='sell-item-prt'>
                             <div class='sell-left-pic'>
-                              <img src='images/sell-item.png' alt='ttt' class='img-responsive'>
-                            </div>
-                            <div class='sell-pic-des'>
+                              <!--<img src='sell-item.png' alt='ttt' class='img-responsive'>-->
+                                  <img src='../fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='ttt' class='img-responsive'></div>";
+
+                    lit = lit + @"<div class='sell-pic-des'>
                               <ul class='list-unstyled'>
                                 <li>Item: <span>#13484292</span></li>
                                 <li>SKU: <span>" + dt.Rows[i]["SKU"] + "";
+                    var scheduleItem = ((int)dt.Rows[i]["IsSchedule"] == 1) ? "<span>SCHEDULED</span>" : "";
+
                     lit = lit + @"<li>Views: <span>0</span></li>
                               </ul>
                             </div>
@@ -46,10 +49,10 @@ namespace LiveAuction.seller_track
                               <div class='pull-left'>
                                 <div class='pull-left-st'>
                                   <div class='checkbox'>
-                                    <label>
-                                      <input type='checkbox' value=''>
-                                      <span>SCHEDULED</span>"+ dt.Rows[i]["Title"] + "";
+                                      <input id='lotId"+ dt.Rows[i]["AuctionId"] + "' type='hidden' value= '" + dt.Rows[i]["LotId"] + "'/>" +
+                                     "<label><input name='selector[]'  type='checkbox' value='" + dt.Rows[i]["LotId"] + "'>" + scheduleItem + "&nbsp" + dt.Rows[i]["Title"] + "";
                     lit = lit + @"</label>
+                                      
                                   </div>
                                 </div>
                               </div>
@@ -87,5 +90,20 @@ namespace LiveAuction.seller_track
                 PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
             }
         }
+
+
+        [System.Web.Services.WebMethod]
+        public static void  ActionSchedule(int id)
+        {
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string query = "UPDATE [AuctionBidPlatform].[dbo].[ProductLot] SET IsScheduled='1' WHERE LotId='" + id + "' ";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            con.Close();
+        }
+
     }
 }

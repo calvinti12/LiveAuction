@@ -91,7 +91,7 @@ namespace LiveAuction.seller_track
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
-            Response.Redirect("item-auction.aspx");
+            Response.Redirect("sell-item.aspx");
         }
     }
 }

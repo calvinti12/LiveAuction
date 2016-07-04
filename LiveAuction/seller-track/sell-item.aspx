@@ -6,6 +6,23 @@
     <script language="javascript" type="text/javascript">
         $(document).ready(function () {
             $('#liItems').addClass('sdmnu-active');
+
+            $('#apply').click(function () {
+                var val = [];
+                $(':checkbox:checked').each(function (i) {
+                    val[i] = $(this).val(); alert($(this).val() + "Lot id" + $("#lotId" + $(this).val()).val());
+                    $.ajax({
+                        type: "POST",
+                        url: "sell-item.aspx/ActionSchedule",
+                        data: '{id: "' + $(this).val() + '" }',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {alert(response.d);},
+                        failure: function (response) { alert(response.d);}
+                    });
+                });
+
+            });
         });
     </script>
 </asp:Content>
@@ -38,7 +55,7 @@
                       <p>Apply for a <strong>partner Condition</strong>, and exclusive auction event, to sell <strong>50 or more items in a day.</strong>  </p>
                     </div>
                     <div class="sell-apply">
-                      <button type="button" class="btn btn-primary">Apply Now</button>
+                      <button type="button" class="btn btn-primary" id="apply">Apply Now</button>
                     </div>
                   </div>
                   <div class="tt">
@@ -139,7 +156,7 @@
                                   <div class="checkbox">
                                     <label>
                                       <input type="checkbox" value="">
-                                      <span>SCHEDULED</span> Test title
+                                      <span>SCHEDULED</span>&nbsp Test title
                                     </label>
                                   </div>
                                 </div>

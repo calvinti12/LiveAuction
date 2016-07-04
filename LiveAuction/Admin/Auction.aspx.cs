@@ -39,8 +39,8 @@ namespace LiveAuction.Admin
                             string filename = Path.GetFileName(FileUpload1.FileName);
                             filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
                             System.Drawing.Image imgFile = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
-                            if (imgFile.PhysicalDimension.Width < 400 || imgFile.PhysicalDimension.Height < 400)
-                            {
+                            //if (imgFile.PhysicalDimension.Width > 600 || imgFile.PhysicalDimension.Height > 400)
+                            //{
 
 
                                 //filePath = Server.MapPath(@"~/Admin/FileUpload/") + filename;<img src='./Admin/FileUpload/superbox-full-15.jpg' width='200px'/>
@@ -64,8 +64,8 @@ namespace LiveAuction.Admin
                                     schedulingfee.Text = "";
                                     lblMessage.Text = "<span style=\"color: #54a75c\">Auction saved successfully</span>";
                                 }
-                            }
-                            else { fileUploadLabel.Text = "Maximum resolution of a image has to be in 600X400 (Width X Height) "; }
+                            //}
+                            //else { fileUploadLabel.Text = "Maximum resolution of a image has to be in 600X400 (Width X Height) "; }
                         }
                         catch (Exception ex)
                         {
