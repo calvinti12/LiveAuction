@@ -24,10 +24,7 @@ namespace LiveAuction
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
-            string modalWindowHtml1 = "";
-
-            string modalHtml1 = "";
-            string modalHtm = "";
+            string modalHtml = "";
             string autionData = "";
             string lit = "";
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -58,7 +55,7 @@ namespace LiveAuction
                               "'id':'" + i + "'," +
                               "'auctionImageName':'" + dt.Rows[i]["ImageName"] + "'};todayDeal.push(data);</script>";
 
-                modalHtml1 += "<section class='bid-popup-sector'><!-- Modal --><div class='modal fade' id='bidpopup" + dt.Rows[i]["AuctionId"] + "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>" +
+                modalHtml += "<section class='bid-popup-sector'><!-- Modal --><div class='modal fade' id='bidpopup" + dt.Rows[i]["AuctionId"] + "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>" +
                                       "<div class='modal-dialog bid-model-dialog' role='document'>" +
                                         "<div class='modal-content bid-model-content'>" +
                                           "<div class='modal-header bid-model-header'>" +
@@ -207,10 +204,9 @@ namespace LiveAuction
                                   "</section>-->" +
                                 "<!-- end of bid popup -->" +
                                 "<!---------------- END OF MODAL WINDOW --------------------->";
-                modalHtm = "loading are of modal window";
             }
             html.Append(lit );
-            modalWindowHtml.Append(modalHtml1);
+            modalWindowHtml.Append(modalHtml);
             //html.Append(autionData);
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
             PlaceHolder2.Controls.Add(new Literal { Text = modalWindowHtml.ToString() });
