@@ -36,7 +36,9 @@ $(document).ready(function(){
 
 //    This area for getting the today's aution in the main page 
 
-
+//$(".getTodaysActionDetails").click(function () {
+//    alert("view all clicked");
+//});
 
 });
-var todayDeal=new Array();
+var todayDeal = new Array();
