@@ -49,7 +49,7 @@ namespace LiveAuction.seller_track
                               <div class='pull-left'>
                                 <div class='pull-left-st'>
                                   <div class='checkbox'>
-                                      <input id='lotId"+ dt.Rows[i]["AuctionId"] + "' type='hidden' value= '" + dt.Rows[i]["LotId"] + "'/>" +
+                                      <input  class='checkbox1' id='lotId" + dt.Rows[i]["AuctionId"] + "' type='hidden' value= '" + dt.Rows[i]["LotId"] + "'/>" +
                                      "<label><input name='selector[]'  type='checkbox' value='" + dt.Rows[i]["LotId"] + "'>" + scheduleItem + "&nbsp" + dt.Rows[i]["Title"] + "";
                     lit = lit + @"</label>
                                       
@@ -91,9 +91,8 @@ namespace LiveAuction.seller_track
             }
         }
 
-
         [System.Web.Services.WebMethod]
-        public static void  ActionSchedule(int id)
+        public static void ActionSchedule(int id)
         {
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);

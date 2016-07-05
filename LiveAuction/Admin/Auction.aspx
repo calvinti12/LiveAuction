@@ -73,7 +73,8 @@
                                     Auction Date <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD/MM/YYYY" runat="server" class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox>
+                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD/MM/YYYY" runat="server"
+                                        class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ErrorMessage="Auction date Required" ControlToValidate="auctiondate"
                                         ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <%-- <input id="auctiondate" class="date-picker form-control col-md-7 col-xs-12" required="required"
@@ -108,11 +109,11 @@
                             </div>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
-                                    Scheduling Fee <span class="required">*</span>
+                                    Scheduling Fee&nbsp(£) <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <asp:TextBox ID="schedulingfee" runat="server" data-validate-minmax="10,100" type="number"
-                                        class="form-control col-md-7 col-xs-12"></asp:TextBox>
+                                        class="form-control col-md-7 col-xs-12 schedFee" placeholder="£"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Scheduling Fee Required"
                                         ControlToValidate="number" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <%-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
@@ -125,7 +126,7 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <asp:TextBox ID="number" runat="server" data-validate-minmax="10,100" type="number"
-                                        class="form-control col-md-7 col-xs-12"></asp:TextBox>
+                                        class="form-control col-md-7 col-xs-12 commFee"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ErrorMessage="Commission Required" ControlToValidate="number"
                                         ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <%-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
@@ -138,14 +139,14 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <%--class="form-control col-md-7 col-xs-12"--%>
-                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                    <asp:FileUpload ID="FileUpload1" runat="server" class="fileImage"/>
                                     <br />
                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Image Required"
                                         ControlToValidate="FileUpload1" runat="server" Display="Dynamic" ForeColor="Red" />--%>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpeg|.png|.JPEG|.jpg|.JPG)$"
                                         ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image File file."
                                         Display="Dynamic" />
-                                        <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
+                                    <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -158,7 +159,7 @@
                                     <asp:Button ID="btnCancel" runat="server" class="btn btn-primary" Text="Cancel" OnClick="btnCancel_Click" />
                                     <%--<button type="submit" class="btn btn-primary">
                                         Cancel</button>--%>
-                                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-success" Text="Submit" ValidationGroup="Auction"
+                                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-success saveData" Text="Submit" ValidationGroup="Auction"
                                         OnClick="btnSubmit_Click" />
                                     <%-- <button id="send" type="submit" class="btn btn-success">
                                         Submit</button>--%>
@@ -173,6 +174,23 @@
                                 calender_style: "picker_4"
                             }, function (start, end, label) {
                                 console.log(start.toISOString(), end.toISOString(), label);
+                            });
+
+                            $('.saveData').click(function () {
+                                if ($(".schedFee").val() < 0) {
+                                    alert("Scheduling fee must be in posetive value")
+                                    return false
+                                }
+                                if ($(".commFee").val() < 0) {
+                                    alert("Commission fee must be in posetive value")
+                                    return false
+                                }
+                                alert($(".fileImage").val())
+                                if ($(".fileImage").val() = "") {
+                                    alert("Image is required");
+                                    return false
+                                }
+                                return true
                             });
                         });
                     </script>

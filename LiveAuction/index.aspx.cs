@@ -139,8 +139,6 @@ namespace LiveAuction
                                                           "<tbody>" ;
                                                             for (int j = 0; j < dt1.Rows.Count; j++)
                                                             {
-                                                                Response.Write(dt1.Rows[j]["LotId"]);
-
                                                                 modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
                                                                 "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
                                                                 "<td class='pop-ico'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></td>" +
