@@ -150,7 +150,9 @@
     <Content Include="Admin\css\nprogress.css" />
     <Content Include="Admin\css\progressbar\bootstrap-progressbar-3.3.0.css" />
     <Content Include="Admin\css\select\select2.min.css" />
+    <Content Include="Admin\css\style.css" />
     <Content Include="Admin\css\switchery\switchery.min.css" />
+    <Content Include="Admin\css\timepicki.css" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\FileUpload\dragon-age-3-game-1920x1080.jpg" />
     <Content Include="Admin\FileUpload\superbox-full-10.jpg" />
@@ -197,6 +199,8 @@
     <Content Include="Admin\images\sprite-skin-modern.png" />
     <Content Include="Admin\images\sprite-skin-nice.png" />
     <Content Include="Admin\images\sprite-skin-simple.png" />
+    <Content Include="Admin\images\timepicky\arrow.png" />
+    <Content Include="Admin\images\timepicky\top_arr.png" />
     <Content Include="Admin\images\user.png" />
     <Content Include="Admin\images\visa.png" />
     <Content Include="Admin\js\angular.js" />
@@ -371,6 +375,7 @@
     <Content Include="Admin\js\switchery\switchery.min.js" />
     <Content Include="Admin\js\tags\jquery.tagsinput.min.js" />
     <Content Include="Admin\js\textarea\autosize.min.js" />
+    <Content Include="Admin\js\timepicki.js" />
     <Content Include="Admin\js\validator\validator.js" />
     <Content Include="Admin\js\wizard\jquery.smartWizard.js" />
     <Content Include="Admin\ListAuction.aspx" />

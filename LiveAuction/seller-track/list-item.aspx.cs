@@ -68,7 +68,6 @@ namespace LiveAuction.seller_track
         {
             PopulateCategoryLevel2(Convert.ToInt32(categotyLevel1.SelectedValue));
         }
-
         protected void categotyLevel2_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateCategoryLevel3(Convert.ToInt32(categotyLevel2.SelectedValue));
@@ -82,7 +81,6 @@ namespace LiveAuction.seller_track
             auction.DataValueField = "AuctionId";
             auction.DataBind();
         }
-
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)

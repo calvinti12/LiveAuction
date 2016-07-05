@@ -56,7 +56,6 @@
                   </div>
                   <div class="tt">
                   	<div class="aution-table table-responsive">
-                    
                         <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
                        <%--<asp:Literal ID="literalText" runat="server"></asp:Literal>--%>
                   	</div>

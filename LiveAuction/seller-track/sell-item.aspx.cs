@@ -90,7 +90,7 @@ namespace LiveAuction.seller_track
                 PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
             }
         }
-
+        #region ActionSchedule
         [System.Web.Services.WebMethod]
         public static void ActionSchedule(int id)
         {
@@ -103,6 +103,6 @@ namespace LiveAuction.seller_track
             adapter.Fill(dt);
             con.Close();
         }
-
+        #endregion
     }
 }
