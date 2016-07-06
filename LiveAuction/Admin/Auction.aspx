@@ -8,7 +8,7 @@
     <script src="js/timepicker/DateTimePicker.js" type="text/javascript"></script>
     <style type="text/css">
 		
-			p
+			/*p
 			{
 				margin-left: 20px;
 			}
@@ -19,7 +19,7 @@
 				padding: 10px;
 				margin-left: 20px;
 				margin-bottom: 20px;
-			}
+			}*/
 		
 		</style>
     <div class="">
