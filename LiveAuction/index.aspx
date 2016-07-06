@@ -68,7 +68,9 @@
         </div>
     </section>
     <!-- end of action item section -->
-    <section class="item-carousel-sec">
+   
+
+   <section class="item-carousel-sec">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -77,7 +79,7 @@
                     </div>
                     <div class="item-carousel-item-sec">
                         <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner sp-cr-inn">
                     <div class="item active"> 
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="#"><img src="images/item-slider1.jpg" class="img-responsive"></a>
@@ -126,8 +128,10 @@
                 </div> 
             </div>
         </div>
-    </section>
-    <!-- end of item carousel  section -->
+    </section> <!-- end of item carousel  section -->
+
+
+
     <section class="today-item-section">
         <div class="container">
             <div class="row">
