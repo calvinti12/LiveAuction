@@ -4,6 +4,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="css/timepicker/DateTimePicker.css" rel="stylesheet" type="text/css" />
+    <script src="js/timepicker/DateTimePicker.js" type="text/javascript"></script>
+    <style type="text/css">
+		
+			p
+			{
+				margin-left: 20px;
+			}
+		
+			input
+			{
+				width: 200px;
+				padding: 10px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+		
+		</style>
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -73,7 +91,7 @@
                                     Auction Date <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD/MM/YYYY" runat="server"
+                                    <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD-MM-YYYY" runat="server"
                                         data-field="date" class="form-control col-md-7 col-xs-12"></asp:TextBox><div id="Div2">
                                         </div>
                                     <%--class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox><div id="Div1" ></div>--%>
@@ -178,7 +196,7 @@
 		
                     </script>
                     <script type="text/javascript">
-                        $(document).ready(function () {
+//                        $(document).ready(function () {
 //                            $('#auctiondate').daterangepicker({
 //                                singleDatePicker: true,
 //                                calender_style: "picker_4"
