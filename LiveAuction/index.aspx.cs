@@ -42,12 +42,12 @@ namespace LiveAuction
                                         "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv"+i+"'>";
                 var auctionDate = Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("yyyy-MM-dd");
                 var auctionTime = Convert.ToDateTime(dt.Rows[i]["AuctionTime"]).TimeOfDay;
-                Response.Write(auctionDate +" ");
+               // Response.Write(auctionDate +" ");
                 lit = lit + @"<script type='text/javascript'>
                             $(function () {
 
                                 var austDay = new Date();
-                                austDay = new Date('" + auctionDate + "T" + auctionTime + "');$('#counterDiv"+i+"').countdown({ until: austDay, compact: true,format: 'DHMS', description: ''});}); </script>";
+                                austDay = new Date('" + auctionDate + "T" + auctionTime + "');$('#counterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'HMS', description: ''});$('#modalCounterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'HMS', description: ''});}); </script>";
                 //lit = lit + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d");
                 lit = lit + @"</p></div></div></div>";
 
@@ -93,8 +93,8 @@ namespace LiveAuction
                                                         "<h4>Room Bid 240 GBP</h4>" +
                                                       "</div>-->" +
                                                       "<div class='bid-p-dis'>" +
-                                                        "<button type='button' class='btn btn-danger btn-block'>Time left </button>" +
-                                                      "</div>" +
+                                                        "<p  id='modalCounterDiv" + i + "' type='button' class='btn btn-danger btn-block'></p>" +
+                                                        "</div>" +
                                                     "</div>" +
                                                   "</div>" +
                                                   "<div class='cr-accnt pop-cr-accnt'>" +
