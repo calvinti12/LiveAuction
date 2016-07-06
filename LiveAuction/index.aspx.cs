@@ -26,14 +26,29 @@ namespace LiveAuction
             con.Close();
             string modalHtml = "";
             string autionData = "";
-            string lit = "";
+            string lit = "<script type='text/javascript'>$(function () {"+
+                                "var austDay = new Date();"+
+                                "austDay = new Date('2016-07-07T12:00:00');"+
+                                "$('#counterDiv').countdown({ until: austDay, compact: true,"+
+                                    "format: 'DHMS', description: ''"+
+                                "});"+
+                            "});"+
+                        "</script>";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 lit = lit + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'><input type='hidden' class='auctionId' value=" + i +
                                 "><img src='./Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
-                                        "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p>";
-                lit = lit + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d");
+                                        "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv"+i+"'>";
+                var auctionDate = Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("yyyy-MM-dd");
+                var auctionTime = Convert.ToDateTime(dt.Rows[i]["AuctionTime"]).TimeOfDay;
+                Response.Write(auctionDate +" ");
+                lit = lit + @"<script type='text/javascript'>
+                            $(function () {
+
+                                var austDay = new Date();
+                                austDay = new Date('" + auctionDate + "T" + auctionTime + "');$('#counterDiv"+i+"').countdown({ until: austDay, compact: true,format: 'DHMS', description: ''});}); </script>";
+                //lit = lit + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d");
                 lit = lit + @"</p></div></div></div>";
 
                 autionData += "<script type='text/javascript'>var data = { 'auctionName':'" + dt.Rows[i]["AuctionName"] + "'," +

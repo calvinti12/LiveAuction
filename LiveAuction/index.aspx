@@ -43,6 +43,17 @@
                 <div class="col-md-12">
                     <div class="item-sector">
                         <div class="item-sec-title pull-left">
+                        <%--<script type="text/javascript">
+                            $(function () {
+                                var austDay = new Date();
+                                austDay = new Date("2016-07-07T12:00:00");
+                                console.log(austDay);
+                                $('#counterDiv').countdown({ until: austDay, compact: true,
+                                    format: 'DHMS', description: ''
+                                });
+                            });
+                        </script>
+                        <div id="counterDiv">ghhh</div>--%>
                             <h1>TODAY'S AUCTION</h1>
                         </div>
                         <div class="item-sec-view pull-right">
@@ -232,8 +243,7 @@
         </div>
     </section>
     <!-- end of action item section -->
-    
-            <asp:PlaceHolder ID = "PlaceHolder2" runat="server"/>
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server" />
     <script type="text/javascript">
         //console.log(todayDeal);
         var deal = todayDeal
@@ -249,4 +259,5 @@
             console.log(pic);
         });
     </script>
+
 </asp:Content>

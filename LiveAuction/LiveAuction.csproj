@@ -211,6 +211,9 @@
     <Content Include="Admin\js\chartjs\chart.min.js" />
     <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
     <Content Include="Admin\js\colorpicker\docs.js" />
+    <Content Include="css\countdown\jquery.countdown.css" />
+    <Content Include="js\countdown\jquery.countdown.js" />
+    <Content Include="js\countdown\jquery.plugin.js" />
     <Content Include="Admin\js\cropping\cropper.min.js" />
     <Content Include="Admin\js\cropping\main.js" />
     <Content Include="Admin\js\cropping\main2.js" />
