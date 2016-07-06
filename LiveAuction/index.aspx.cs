@@ -197,7 +197,7 @@ namespace LiveAuction
 "</div>" +
 "</div>" +
 "</div>" +
-"</section>-->" +
+"</section>" +
 "<!-- end of bid popup -->" +
 "<!---------------- END OF MODAL WINDOW --------------------->";
             }

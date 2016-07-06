@@ -32,8 +32,8 @@ namespace LiveAuction.Admin
                 string filePath;
                 if (FileUpload1.HasFile)
                 {
-                    if (FileUpload1.PostedFile.ContentLength < 102400)
-                    {
+                    //if (FileUpload1.PostedFile.ContentLength < 102400)
+                    //{
                         try
                         {
                             string filename = Path.GetFileName(FileUpload1.FileName);
@@ -71,8 +71,8 @@ namespace LiveAuction.Admin
                         {
                             fileUploadLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                         }
-                    }
-                    else { fileUploadLabel.Text = "File size has to be less than 100kb"; }
+                    //}
+                    //else { fileUploadLabel.Text = "File size has to be less than 100kb"; }
                 }
 
 

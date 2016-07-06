@@ -152,6 +152,7 @@
     <Content Include="Admin\css\select\select2.min.css" />
     <Content Include="Admin\css\style.css" />
     <Content Include="Admin\css\switchery\switchery.min.css" />
+    <Content Include="Admin\css\timepicker\DateTimePicker.css" />
     <Content Include="Admin\css\timepicki.css" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\FileUpload\dragon-age-3-game-1920x1080.jpg" />
@@ -375,6 +376,7 @@
     <Content Include="Admin\js\switchery\switchery.min.js" />
     <Content Include="Admin\js\tags\jquery.tagsinput.min.js" />
     <Content Include="Admin\js\textarea\autosize.min.js" />
+    <Content Include="Admin\js\timepicker\DateTimePicker.js" />
     <Content Include="Admin\js\timepicki.js" />
     <Content Include="Admin\js\validator\validator.js" />
     <Content Include="Admin\js\wizard\jquery.smartWizard.js" />
@@ -394,6 +396,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom.css" />
     <Content Include="css\jquery.alerts.css" />
+    <Content Include="css\jquery.countdownTimer.css" />
     <Content Include="css\messages.css" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
@@ -461,9 +464,11 @@
     <Content Include="js\jquery-1.4.4.min.js" />
     <Content Include="js\jquery-1.7.2.min.js" />
     <Content Include="js\jquery.alerts.js" />
+    <Content Include="js\jquery.countdownTimer.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.quick.pagination.min.js" />
     <Content Include="js\jquery.ui.draggable.js" />
+    <Content Include="js\LIB\jquery-2.0.3.js" />
     <Content Include="list-item.aspx" />
     <Content Include="list-item.html" />
     <Content Include="logout.aspx" />
