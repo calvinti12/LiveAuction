@@ -53,7 +53,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .action-item-sec img{max-height: 150px;padding-bottom: 20px;width: 100%;}
 .action-item-sec p{color: #000;height: 80px;overflow: hidden;padding-bottom: 20px;}
 .action-item-sec a{text-transform: uppercase;}
-.action-timing-sec{position: absolute;background: url(../images/item-time-live.png) no-repeat;top: 15px;left: 0;min-width: 115px;}
+.action-timing-sec{position: absolute;background: url(../images/item-time-live.png) no-repeat;top: 15px;left: 0;min-width: 145px;background-size:125px 30px;}
 .action-timing-sec p{text-align: left;padding:3px 0px 0px 10px;text-transform: uppercase;color: #fff;font-size: 16px;}
 
 .action-item-del-sec{position: relative;border: 1px solid #ebebeb;padding: 17px;margin-bottom: 20px;min-height: 380px;background-color: #fff;}
