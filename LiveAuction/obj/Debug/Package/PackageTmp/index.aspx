@@ -4,7 +4,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <section class="slider-section">
+    <script src="js/custom.js" type="text/javascript"></script>
+    <section class="slider-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -34,15 +35,26 @@
                 </div>
             </div>
         </div>
-    </section> <!-- end of slider seciton -->
-
+    </section>
+    <!-- end of slider seciton -->
     <section class="today-item-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="item-sector">
                         <div class="item-sec-title pull-left">
-                            <h1>TODAY'S ACTION</h1>
+                        <%--<script type="text/javascript">
+                            $(function () {
+                                var austDay = new Date();
+                                austDay = new Date("2016-07-07T12:00:00");
+                                console.log(austDay);
+                                $('#counterDiv').countdown({ until: austDay, compact: true,
+                                    format: 'DHMS', description: ''
+                                });
+                            });
+                        </script>
+                        <div id="counterDiv">ghhh</div>--%>
+                            <h1>TODAY'S AUCTION</h1>
                         </div>
                         <div class="item-sec-view pull-right">
                             <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>
@@ -51,91 +63,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59 </p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>20: 36: 59</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="action-item-sec text-center">
-                        <img src="images/action-item-logo.png" alt="action-item-logo.png">
-                        <p>2011 Chevy, Building Materials,<br> Tools, Etc</p>
-                        <a href="#" class="btn btn-danger btn-block">Enter Live Aution</a>
-                        <div class="action-timing-sec">
-                            <p>live</p>
-                        </div>
-                    </div>
-                </div> <!-- end of the turning col -->
+            <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
             </div>
         </div>
-    </section> <!-- end of action item section -->
+    </section>
+    <!-- end of action item section -->
+   
 
-    <section class="item-carousel-sec">
+   <section class="item-carousel-sec">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -144,7 +79,7 @@
                     </div>
                     <div class="item-carousel-item-sec">
                         <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner sp-cr-inn">
                     <div class="item active"> 
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <a href="#"><img src="images/item-slider1.jpg" class="img-responsive"></a>
@@ -194,6 +129,8 @@
             </div>
         </div>
     </section> <!-- end of item carousel  section -->
+
+
 
     <section class="today-item-section">
         <div class="container">
@@ -308,5 +245,23 @@
                 </div> <!-- end of the turning col -->
             </div>
         </div>
-    </section> <!-- end of action item section -->
+    </section>
+    <!-- end of action item section -->
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server" />
+    <script type="text/javascript">
+        //console.log(todayDeal);
+        var deal = todayDeal
+        $(".todaysAction").click(function () {
+            var id = $(".auctionId").val();
+            // console.log(id + " clicked");
+            //var AuctionName = todayDeal[0].auctionName;
+            console.log(deal[1]);
+            // $("#myModalLabel").html(AuctionName);
+            var path = "./Admin/FileUpload/" + deal[1].auctionImageName;
+            console.log(path);
+            $(".bid-popup-pic").attr("src", path);
+            console.log(pic);
+        });
+    </script>
+
 </asp:Content>

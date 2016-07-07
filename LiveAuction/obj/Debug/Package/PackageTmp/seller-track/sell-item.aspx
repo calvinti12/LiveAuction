@@ -6,6 +6,36 @@
     <script language="javascript" type="text/javascript">
         $(document).ready(function () {
             $('#liItems').addClass('sdmnu-active');
+
+            $('#apply').click(function () {
+                var val = [];
+                $(':checkbox:checked').each(function (i) {
+                    val[i] = $(this).val();
+                    //alert($(this).val() + "Lot id" + $("#lotId" + $(this).val()).val());
+                    $.ajax({
+                        type: "POST",
+                        url: "sell-item.aspx/ActionSchedule",
+                        data: '{id: "' + $(this).val() + '" }',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) { console.log(response.d); },
+                        failure: function (response) { console.log(response.d); }
+                    });
+                });
+            });
+
+            $("#selectAll").click(function (e) {
+                e.preventDefault();
+                if (this.checked) { // check select status
+                    $('.checkbox1').each(function () { //loop through each checkbox
+                        this.checked = true;  //select all checkboxes with class "checkbox1"              
+                    });
+                } else {
+                    $('.checkbox1').each(function () { //loop through each checkbox
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"                      
+                    });
+                }
+            });
         });
     </script>
 </asp:Content>
@@ -38,7 +68,7 @@
                       <p>Apply for a <strong>partner Condition</strong>, and exclusive auction event, to sell <strong>50 or more items in a day.</strong>  </p>
                     </div>
                     <div class="sell-apply">
-                      <button type="button" class="btn btn-primary">Apply Now</button>
+                      <button type="button" class="btn btn-primary" id="apply">Apply Now</button>
                     </div>
                   </div>
                   <div class="tt">
@@ -115,58 +145,9 @@
                   <div class="tt">
                     <div class="sell-item-sector">
                       <div class="sell-itm-set-title">
-                        Displaying 1
+                        Displaying | Select All <input id="selectAll" type="checkbox" />
                       </div>
-                      <div class="sell-item-con">
-                          <div class="sell-item-prt">
-                            <div class="sell-left-pic">
-                              <img src="images/sell-item.png" alt="ttt" class="img-responsive">
-                            </div>
-                            <div class="sell-pic-des">
-                              <ul class="list-unstyled">
-                                <li>Item: <span>#13484292</span></li>
-                                <li>SKU: <span>N/A</span></li>
-                                <li>Views: <span>0</span></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="sell-item-prt sell-item-prt-2">
-                            <div class="sell-item-pt-part clearfix">
-                              <div class="pull-left">
-                                <div class="pull-left-st">
-                                  <div class="checkbox">
-                                    <label>
-                                      <input type="checkbox" value="">
-                                      <span>SCHEDULED</span> Test title
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pull-right">
-                                <ul class="list-inline">
-                                  <li>selling: <span>5pm &nbsp; march7</span></li>
-                                  <li>
-                                    <div class="dropdown">
-                                      <button class="btn btn-default dropdown-toggle" type="button" id="selldrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <i class="fa fa-bars" aria-hidden="true"></i>
-                                        <span class="caret"></span>
-                                      </button>
-                                      <ul class="dropdown-menu sellDrop" aria-labelledby="selldrop">
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                      </ul>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class="sell-item-pt-part">
-                              <div class="sell-pic-prt-dv">
-                                <p>schudule in the <strong>daily bazar</strong> Auction.</p>
-                              </div>
-                            </div>
-                          </div>
-                      </div>
+                      <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
                     </div>
                   </div>
                 </div>

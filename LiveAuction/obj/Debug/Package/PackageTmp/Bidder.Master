@@ -31,7 +31,6 @@
     <%--<script src="js/jquery-1.11.3.min.js"></script>--%>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/jquery.ui.draggable.js" type="text/javascript"></script>
-    <%-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">--%>
     <!-- Core files -->
     <script src="js/jquery.alerts.js" type="text/javascript"></script>
     <link href="css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
@@ -276,11 +275,13 @@
         <%-- <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>--%>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/countdown/jquery.plugin.js" type="text/javascript"></script>
+        <script src="js/countdown/jquery.countdown.js" type="text/javascript"></script>
+        <%--<link href="css/countdown/jquery.countdown.css" rel="stylesheet" type="text/css" />--%>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <!-- custom js -->
         <script src="js/custom.js"></script>
-        
     </div>
     </form>
 </body>
