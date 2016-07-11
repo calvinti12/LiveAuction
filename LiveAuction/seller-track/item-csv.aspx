@@ -35,7 +35,8 @@
                   </div>
                   <div class="tt">
                     <div class="bulk-item-butn">
-                      <button type="button" class="btn btn-primary btn-blkitem">Upload Bulk Items</button>
+                      <a class="btn btn-primary btn-blkitem" data-toggle="modal" data-target="#bidpopup">Upload Bulk Items</a>
+                      <asp:FileUpload ID="FileUpload1" runat="server" /><asp:Button ID="Button1" Text="Upload" OnClick = "Upload" runat="server" />
                     </div>
                   </div>
                   <div class="tt">
@@ -72,4 +73,52 @@
             </div>
         </div>
     </section>
+        <!-- this is for login modal section -->
+    <section class="login-form-sec">
+        <!-- Modal -->
+        <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog citius-modal-dialog" role="document">
+            <div class="modal-content citius-modal-content">
+              <div class="modal-header citius-modal-header">
+                <button type="button" class="close citius-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title citius-modal-title text-center" id="myModalLabel">login form</h4>
+              </div>
+              <div class="modal-body citius-modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="citius-email">Email address</label>
+                    <input type="email" class="form-control" id="citius-email" placeholder="Email">
+                  </div>
+                  <div class="form-group citis-form-password">
+                    <label for="citius-password">Password</label>
+                    <input type="password" class="form-control" id="citius-password" placeholder="Password">
+                    <i class="fa fa-eye"></i>
+                  </div>
+                  <div class="checkbox text-center">
+                    <label>
+                      <input type="checkbox"> Remember me?
+                    </label>
+                  </div>
+                  <div class="citius-submit-button text-center">
+                    <button type="submit" class="btn btn-default btn-custom-login">Login</button>
+                  </div>
+                  <div class="form-group">
+                    <div class="dont-account text-center">
+                        <ul class="list-inline">
+                            <li>Don't Have an account?</li>
+                            <li><a href="signup.html"><i class="fa fa-long-arrow-left"></i> &nbsp;Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="forget-password text-center">
+                        <a href="#">Forgotten Password?</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- this is for end of login modal section -->
 </asp:Content>

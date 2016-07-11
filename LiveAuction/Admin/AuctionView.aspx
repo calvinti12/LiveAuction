@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master"
-    CodeBehind="AuctionView.aspx.cs" Inherits="LiveAuction.Admin.AuctionView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AuctionView.aspx.cs" MasterPageFile="~/Admin/Admin.Master"
+    Inherits="LiveAuction.Admin.AuctionView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,8 +7,7 @@
     <link href="css/timepicker/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script src="js/timepicker/DateTimePicker.js" type="text/javascript"></script>
     <style type="text/css">
-		
-			/*p
+        /*p
 			{
 				margin-left: 20px;
 			}
@@ -20,8 +19,7 @@
 				margin-left: 20px;
 				margin-bottom: 20px;
 			}*/
-		
-		</style>
+    </style>
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -48,7 +46,7 @@
                 <div class="x_panel">
                     <div class="x_title">
                         <h2>
-                            Auction Form <small>Add</small></h2>
+                            Auction Form <small>Edit</small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                             <%--<li class="dropdown">
@@ -154,76 +152,91 @@
                                         class="form-control col-md-7 col-xs-12">--%>
                                 </div>
                             </div>
-                            <div class="item form-group">
+                            <%--<div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
                                     Upload Image <span class="required">*</span>
                                 </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <%--class="form-control col-md-7 col-xs-12"--%>
-                                    <asp:FileUpload ID="FileUpload1" runat="server" class="fileImage" />
-                                    <br />
-                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Image Required"
-                                        ControlToValidate="FileUpload1" runat="server" Display="Dynamic" ForeColor="Red" />--%>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpeg|.png|.JPEG|.jpg|.JPG)$"
+                                <div class="col-md-6 col-sm-6 col-xs-12">--%>
+                            <%-- [leave comment] class="form-control col-md-7 col-xs-12"--%>
+                            <%--<asp:FileUpload ID="FileUpload1" runat="server" class="fileImage" />
+                                    <br />--%>
+                            <%-- [leave comment] <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Image Required"
+                                         [leave comment] ControlToValidate="FileUpload1" runat="server" Display="Dynamic" ForeColor="Red" />--%>
+                            <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpeg|.png|.JPEG|.jpg|.JPG)$"
                                         ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image File file."
                                         Display="Dynamic" />
                                     <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <asp:Label runat="server" ID="lblMessage" ForeColor="Red"></asp:Label>
-                            </div>
-                            <div class="ln_solid">
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
-                                    <asp:Button ID="btnCancel" runat="server" class="btn btn-primary" Text="Cancel" OnClick="btnCancel_Click" />
-                                    <%--<button type="submit" class="btn btn-primary">
+                                </div>--%>
+                        </div>
+                        <div class="item form-group">
+                            <asp:Label runat="server" ID="lblMessage" ForeColor="Red"></asp:Label>
+                        </div>
+                        <div class="ln_solid">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <asp:Button ID="btnCancel" runat="server" class="btn btn-primary" Text="Cancel" OnClick="btnCancel_Click" />
+                                <%--<button type="submit" class="btn btn-primary">
                                         Cancel</button>--%>
-                                    <asp:Button ID="btnSubmit" runat="server" class="btn btn-success saveData" Text="Submit"
-                                        ValidationGroup="Auction" OnClick="btnSubmit_Click" />
-                                    <%-- <button id="send" type="submit" class="btn btn-success">
+                                <asp:Button ID="btnSubmit" runat="server" class="btn btn-success saveData" Text="Submit"
+                                    ValidationGroup="Auction" OnClick="btnSubmit_Click" />
+                                <%-- <button id="send" type="submit" class="btn btn-success">
                                         Submit</button>--%>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <script type="text/javascript">
-
-                        $(document).ready(function () {
-                            $("#dtBox").DateTimePicker();
-                        });
-		
-                    </script>
-                    <script type="text/javascript">
-//                        $(document).ready(function () {
-//                            $('#auctiondate').daterangepicker({
-//                                singleDatePicker: true,
-//                                calender_style: "picker_4"
-//                            }, function (start, end, label) {
-//                                console.log(start.toISOString(), end.toISOString(), label);
-//                            });
-
-                            $('.saveData').click(function () {
-                                if ($(".schedFee").val() < 0) {
-                                    alert("Scheduling fee must be in posetive value")
-                                    return false
-                                }
-                                if ($(".commFee").val() < 0) {
-                                    alert("Commission fee must be in posetive value")
-                                    return false
-                                }
-                                alert($(".fileImage").val())
-                                if ($(".fileImage").val() = "") {
-                                    alert("Image is required");
-                                    return false
-                                }
-                                return true
-                            });
-                        });
-                    </script>
                 </div>
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+                        $("#dtBox").DateTimePicker();
+                    });
+		
+                </script>
+                <script type="text/javascript">
+                    //                        $(document).ready(function () {
+                    //                            $('#auctiondate').daterangepicker({
+                    //                                singleDatePicker: true,
+                    //                                calender_style: "picker_4"
+                    //                            }, function (start, end, label) {
+                    //                                console.log(start.toISOString(), end.toISOString(), label);
+                    //                            });
+
+                    $('.saveData').click(function () {
+                        if ($(".schedFee").val() < 0) {
+                            alert("Scheduling fee must be in posetive value")
+                            flag = 0;
+                        }
+                        if ($(".commFee").val() < 0) {
+                            alert("Commission fee must be in posetive value")
+                            return false
+                        }
+                        alert($(".fileImage").val())
+                        if ($(".fileImage").val() = "") {
+                            alert("Image is required");
+                            return false
+                        }
+                        alert($("#address").html());
+                        $.ajax({
+                            type: "POST",
+                            url: "AuctionView.aspx/SaveAuctionEdit",
+                            data: '{name: "arnab" }',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: OnSuccess,
+                            failure: function (response) {
+                                alert(response.d);
+                            }
+                        });
+
+                        function OnSuccess(response) {
+                            alert(response.d);
+                        }
+                        return true
+                    });
+                </script>
             </div>
         </div>
+    </div>
     </div>
 </asp:Content>

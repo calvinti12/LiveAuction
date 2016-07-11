@@ -10,7 +10,7 @@
 namespace LiveAuction.Admin {
     
     
-    public partial class AuctionView {
+    public partial class Auction {
         
         /// <summary>
         /// txtAuctionName control.

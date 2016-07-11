@@ -79,6 +79,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Auction.aspx" />
+    <Content Include="Admin\AuctionView.aspx" />
     <Content Include="Admin\css\animate.min.css" />
     <Content Include="Admin\css\bootstrap.min.css" />
     <Content Include="Admin\css\calendar\fullcalendar.css" />
@@ -639,6 +640,13 @@
     <Compile Include="Admin\Auction.aspx.designer.cs">
       <DependentUpon>Auction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AuctionView.aspx.cs">
+      <DependentUpon>AuctionView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AuctionView.aspx.designer.cs">
+      <DependentUpon>AuctionView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -885,6 +893,7 @@
     <Folder Include="Admin\images\timepicky\" />
     <Folder Include="App_Data\" />
     <Folder Include="Excel\" />
+    <Folder Include="fileupload\CSV\" />
     <Folder Include="fileupload\upload\" />
     <Folder Include="js\LIB\" />
   </ItemGroup>

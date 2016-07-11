@@ -59,7 +59,7 @@ namespace LiveAuction.Admin
                                 "<td class=''>" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
                                 "<td class=''>" + dt.Rows[i]["Commission"] + "</td>" +
                                 "<td class='last'>" +
-                                    "<a href='AuctionView.aspx?id='" + dt.Rows[i]["AuctionId"] + ">View</a>" +
+                                    "<a href='AuctionView.aspx?id=" + dt.Rows[i]["AuctionId"] + "'>View</a>" +
                                 "</td>" +
                             "</tr>";
                 }
@@ -73,7 +73,7 @@ namespace LiveAuction.Admin
                                 "<td class=''>" + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d") + "</td>" +
                                 "<td class=''>" + dt.Rows[i]["Commission"] + "</td>" +
                                 "<td class='last'>" +
-                                    "<a href='#')>View</a>" +
+                                    "<a href='AuctionView.aspx?id=" + dt.Rows[i]["AuctionId"] + "')>View</a>" +
                                 "</td>" +
                             "</tr>";
                 }
