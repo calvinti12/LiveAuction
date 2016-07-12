@@ -210,6 +210,7 @@
     <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
     <Content Include="Admin\js\colorpicker\docs.js" />
     <Content Include="css\countdown\jquery.countdown.css" />
+    <Content Include="js\app.js" />
     <Content Include="js\countdown\jquery.countdown.js" />
     <Content Include="js\countdown\jquery.plugin.js" />
     <Content Include="Admin\js\cropping\cropper.min.js" />
@@ -453,7 +454,6 @@
     <Content Include="images\trust-card.png" />
     <Content Include="index.aspx" />
     <Content Include="index.html" />
-    <Content Include="js\angular.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\DateTimePicker.js" />
@@ -470,6 +470,11 @@
     <Content Include="logout.aspx" />
     <Content Include="my-account.aspx" />
     <Content Include="my-account.html" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\DropzoneJs_scripts\basic.css" />
     <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\basic.css" />
     <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\dist\dropzone-amd-module.js" />
@@ -970,6 +975,9 @@
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="images\Thumbs.db" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.gitignore" />
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.tagconfig" />
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\.travis.yml" />

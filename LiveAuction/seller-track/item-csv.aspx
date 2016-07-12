@@ -75,7 +75,7 @@
         </div>
     </section>
     <!-- start of bid popup -->
-    <section class="bid-popup-sector"style="margin-top:40%">
+    <section class="bid-popup-sector" style="margin-top: 40%">
         <!-- Modal -->
         <div class="modal fade" id="bidpopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog bid-model-dialog" role="document">
@@ -88,7 +88,11 @@
                   <div class="row">
                     <div class="col-md-12 col-lg-12">
                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn btn-default btn-file" />
-                    <div class="col-xs-12"><hr></div>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$"
+                                        ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid CSV file."
+                                        Display="Dynamic" />
+                                    <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
+                    <div class="col-xs-12"><hr></div><br />
                     <asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" />
                       <%--<div class="cr-accnt pop-cr-accnt">
                       

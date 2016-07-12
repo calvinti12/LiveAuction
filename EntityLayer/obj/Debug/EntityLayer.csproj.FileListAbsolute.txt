@@ -36,6 +36,5 @@ E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\EntityLayer
 E:\Arnab Kundu\Projects\28.06.2016\28.06.2016\SourceCode\LiveAuction\EntityLayer\obj\Debug\EntityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\EntityLayer\bin\Debug\EntityLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\EntityLayer\bin\Debug\EntityLayer.pdb
-E:\Arnab Kundu\Projects\LiveAuction\EntityLayer\obj\Debug\EntityLayer.csprojResolveAssemblyReference.cache
 E:\Arnab Kundu\Projects\LiveAuction\EntityLayer\obj\Debug\EntityLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\EntityLayer\obj\Debug\EntityLayer.pdb

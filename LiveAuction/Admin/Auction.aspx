@@ -165,7 +165,7 @@
                                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" ErrorMessage="Image Required"
                                         ControlToValidate="FileUpload1" runat="server" Display="Dynamic" ForeColor="Red" />--%>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpeg|.png|.JPEG|.jpg|.JPG)$"
-                                        ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image File file."
+                                        ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image file."
                                         Display="Dynamic" />
                                     <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
                                 </div>

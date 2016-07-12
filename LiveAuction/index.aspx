@@ -5,6 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
+    
+        <script src="Scripts/angular.js" type="text/javascript"></script>
+        <script src="Scripts/angular-route.js" type="text/javascript"></script>
     <section class="slider-section">
         <div class="container">
             <div class="row">
