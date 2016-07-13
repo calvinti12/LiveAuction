@@ -44,7 +44,7 @@ namespace LiveAuction
                 <div class='bid-title-sec'>
                   <div class='pull-left bid-title-sec-lft'>
                     <div class='name-content text-center'><!-- if it is content -->
-                      <h1>LOT</h1><h2>" + dt.Rows[0]["LotId"] + "</h2>";
+                      <h2>LOT</h2><h2>" + dt.Rows[0]["LotId"] + "</h2>";
             template += @"</div>
                    <div class='name-pic' style='display: none;'><!-- if it is profile pic -->
                       <img src='' alt='this is for example image'>

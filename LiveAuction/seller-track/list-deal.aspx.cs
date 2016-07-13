@@ -17,7 +17,7 @@ namespace LiveAuction.seller_track
             if (!Page.IsPostBack)
             {
                 PopulateCategoryLevel1();
-                PopulateAuction();
+                //PopulateAuction();
             }
         }
         private void PopulateCategoryLevel1()
@@ -72,15 +72,15 @@ namespace LiveAuction.seller_track
         {
             PopulateCategoryLevel3(Convert.ToInt32(categotyLevel2.SelectedValue));
         }
-        private void PopulateAuction()
-        {
-            ProductLotBL objProductLotBL = new ProductLotBL();
-            DataTable dtAuction = objProductLotBL.GetAuction(Convert.ToString(Session["UserType"]), Convert.ToInt32(Session["UserId"]));
-            auction.DataSource = dtAuction;
-            auction.DataTextField = "AuctionName";
-            auction.DataValueField = "AuctionId";
-            auction.DataBind();
-        }
+        //private void PopulateAuction()
+        //{
+        //    ProductLotBL objProductLotBL = new ProductLotBL();
+        //    DataTable dtAuction = objProductLotBL.GetAuction(Convert.ToString(Session["UserType"]), Convert.ToInt32(Session["UserId"]));
+        //    auction.DataSource = dtAuction;
+        //    auction.DataTextField = "AuctionName";
+        //    auction.DataValueField = "AuctionId";
+        //    auction.DataBind();
+        //}
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
@@ -103,17 +103,17 @@ namespace LiveAuction.seller_track
                     else
                         objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel2.SelectedValue);
                 }
-                objProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
+                //objProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
                 objProductLotEL.IsBranded = rdbYes.Checked;
                 objProductLotEL.Title = txtTitle.Text;
                 objProductLotEL.SKU = txtSKU.Text;
                 objProductLotEL.Description = txtDesc.Text;
                 objProductLotEL.Question = txtQuestion.Text;
-                objProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
+                //objProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
                 objProductLotEL.CostBasis = txtCost.Text;
-                objProductLotEL.RetailPrice = txtRetail.Text;
-                objProductLotEL.BuyPrice = txtBuy.Text;
-                objProductLotEL.StartingBid = txtStartBid.Text;
+                //objProductLotEL.RetailPrice = txtRetail.Text;
+                //objProductLotEL.BuyPrice = txtBuy.Text;
+                //objProductLotEL.StartingBid = txtStartBid.Text;
                 objProductLotEL.ShipCountry = ddlCountry.Text;
                 objProductLotEL.ShipWithin = ddlShipWithin.Text;
                 objProductLotEL.DeliveryTime = ddlTimeTake.Text;
