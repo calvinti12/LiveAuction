@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/seller-track/Seller.Master" AutoEventWireup="true"
-    CodeBehind="list-item.aspx.cs" Inherits="LiveAuction.seller_track.list_item" %>
+    CodeBehind="list-deal.aspx.cs" Inherits="LiveAuction.seller_track.list_deal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../Scripts/DropzoneJs_scripts/dropzone.css" rel="stylesheet" type="text/css" />
@@ -108,7 +108,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="breadcumb">
-                     <a href="#" class="incative">Home &raquo; </a><a href="#" class="incative">Register &raquo; </a><span class="current-page">List Item</span></div>
+                     <a href="#" class="incative">Home &raquo; </a><a href="#" class="incative">Register &raquo; </a><span class="current-page">Deal Item</span></div>
                  </div>
              </div>
          </div>
@@ -328,10 +328,10 @@
                         	<label for="creat-ac-lb" class="col-sm-3 control-label">Packages ship from: </label>
                         	<div class="col-sm-3">
                              <asp:DropDownList runat="server" ID="ddlCountry" CssClass="form-control">
-                                <asp:ListItem Text="UK"></asp:ListItem>
-                                <asp:ListItem Text="Australia"></asp:ListItem>
-                                <asp:ListItem Text="Norway"></asp:ListItem>
-                                <asp:ListItem Text="USA"></asp:ListItem>
+                        <asp:ListItem Text="UK"></asp:ListItem>
+                        <asp:ListItem Text="Australia"></asp:ListItem>
+                        <asp:ListItem Text="Norway"></asp:ListItem>
+                        <asp:ListItem Text="USA"></asp:ListItem>
                         </asp:DropDownList>
    
                         	</div>

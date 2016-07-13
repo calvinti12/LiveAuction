@@ -73,7 +73,7 @@ namespace LiveAuction
                     strRelProduct = strRelProduct + "<p class=\"relcontent\">" + Convert.ToString(dt.Rows[i]["LotDesc"]) + "</p>";
 
                     //strRelProduct = strRelProduct + " <span class=\"dollartxt\">INR " + Convert.ToString(dt.Rows[i]["Price"]) + " </span><a href=\"ProductDetail.aspx?Cat=y&PaintingId=" + dt.Rows[i]["Id"].ToString() + "\" class=\"viewmorebtn\">View</a>";
-                    strRelProduct = strRelProduct + " </td><td><span class=\"dollartxt\"><span class=\"WebRupee\">Current Bid: $</span> " + Convert.ToString(dt.Rows[i]["StartingBid"]) + "</span></td></tr></table>";
+                    strRelProduct = strRelProduct + " </td><td><span class=\"dollartxt\"><span class=\"WebRupee\">Current Bid: £</span> " + Convert.ToString(dt.Rows[i]["StartingBid"]) + "</span></td></tr></table>";
                     strRelProduct = strRelProduct + "</li>";
 
                 }

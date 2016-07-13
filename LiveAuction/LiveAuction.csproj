@@ -496,6 +496,7 @@
     <Content Include="seller-track\advertise.html" />
     <Content Include="seller-track\connecting.aspx" />
     <Content Include="seller-track\connecting.html" />
+    <Content Include="seller-track\list-deal.aspx" />
     <Content Include="seller-track\css\bootstrap.min.css" />
     <Content Include="seller-track\css\custom.css" />
     <Content Include="seller-track\dashboard.aspx" />
@@ -767,6 +768,13 @@
     </Compile>
     <Compile Include="seller-track\connecting.aspx.designer.cs">
       <DependentUpon>connecting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="seller-track\list-deal.aspx.cs">
+      <DependentUpon>list-deal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seller-track\list-deal.aspx.designer.cs">
+      <DependentUpon>list-deal.aspx</DependentUpon>
     </Compile>
     <Compile Include="seller-track\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>

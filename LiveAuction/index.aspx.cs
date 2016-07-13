@@ -47,7 +47,7 @@ namespace LiveAuction
                             $(function () {
 
                                 var austDay = new Date();
-                                austDay = new Date('" + auctionDate + "T" + auctionTime + "');$('#counterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'HMS', description: ''});$('#modalCounterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'HMS', description: ''});}); </script>";
+                                austDay = new Date('" + auctionDate + "T" + auctionTime + "');$('#counterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'DHMS', description: ''});$('#modalCounterDiv" + i + "').countdown({ until: austDay, compact: true,format: 'DHMS', description: ''});}); </script>";
                 //lit = lit + Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("d");
                 lit = lit + @"</p></div></div></div>";
 

@@ -28,7 +28,7 @@ namespace LiveAuction
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "select LotId,Title,LotImageName,LotDesc,AuctionName from dbo.View_list_item where LotId=" + id;
+            string query = "select LotId,Title,LotImageName,LotDesc,AuctionName,RetailPrice,StartingBid from dbo.View_list_item where LotId=" + id;
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -65,8 +65,7 @@ namespace LiveAuction
                   <img src='fileupload/upload/" + dt.Rows[0]["LotImageName"] + "' alt='this is the bid image' class='img-responsive'/>";
             template += @"</div>
               </div>
-              <div class='col-md-12'>
-                <div class='bid-pic-tag'>" + dt.Rows[0]["LotDesc"] + "</div>";
+              <div class='col-md-12'>";
             template += @"<div class='bid-socail-feedback'>
                   <img src='images/bid-social-fid.png' alt='this is for bid social feed' class='img-responsive'>
                 </div>
@@ -86,10 +85,8 @@ namespace LiveAuction
             </div> <!-- end of bid buy sec -->
             <div class='bid-content-sec'>
               <div class='col-md-12'>
-                <div class='bid-content'>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
+                <div class='bid-content'>" + dt.Rows[0]["LotDesc"] + "";
+            template += @"</div>
                 <p></p>
               </div>
             </div> <!-- end of bid content -->
@@ -98,14 +95,13 @@ namespace LiveAuction
           <div class='col-md-3'>
             <div class='bidding-sideber-sec sadow'>
               <div class='bidding-sideber-item'>
-                <div class='bidding-time'>Live Auction: <span>30 Mar 2016 09:00 BST</span> </div>
+                <!--<div class='bidding-time'>Live Auction: <span>30 Mar 2016 09:00 BST</span> </div>-->
               </div>
               <div class='bidding-sideber-item'>
-                <h4><strong>Estimate: <span>20 GBP - 40 GBP</span></strong></h4>
                 <div class='bidder-estimate-bottom'>
-                  <p>Buyer's Premium: <span>20.00% </span></p>
-                  <p>Internet surcharge: <span>3.00%</span></p>
-                </div>
+                  <p>Price : <span>" + dt.Rows[0]["RetailPrice"] + " </span>&nbsp£</p>";
+            template += @"<p>Auction bid: <span>" + dt.Rows[0]["StartingBid"] + "</span>&nbsp£</p>";
+            template += @"</div>
               </div>
               <div class='bidding-sideber-item '>
                 <a href='#' class='btn btn-danger btn-block bidding-sing-btn' data-toggle='modal' data-target='#bidpopup'>SIGN IN TO BID</a>
@@ -115,13 +111,13 @@ namespace LiveAuction
               <div class='bidding-sideber-item'>
                 <div class='bidding-pg-slder-sec'>
                   <div class='bidding-pg-slder-title'>
-                    <h4><strong>Catalogue</strong></h4>
+                    <!--<h4><strong>Catalogue</strong></h4>-->
                   </div>
                   <div class='bidding-pg-slder'>
                     
                   </div>
                   <div class='view-all-item'>
-                    <a href='#'>View all 142 Lots</a>
+                    <!--<a href='#'>View all 142 Lots</a>-->
                   </div>
                 </div>
               </div>

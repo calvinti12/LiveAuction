@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Bidder.Master" AutoEventWireup="true" CodeBehind="list-item.aspx.cs"
+<%@ Page Language="C#" MasterPageFile="~/Bidder.Master" AutoEventWireup="true" CodeBehind="list-item.aspx.cs"
     Inherits="LiveAuction.list_item" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -196,8 +196,8 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span>Cost basis: </label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtCost" CssClass="form-control" runat="server" placeholder="$"></asp:TextBox>
-                          <%--<input type="password" class="form-control" id="creat-pswrd-lb" placeholder="$">--%>
+                        <asp:TextBox ID="txtCost" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                          <%--<input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
                         </div>
                         <div class="col-md-6">
                         	<p>this is orginal cost (to you) of an item. specifing it will allow you to see easily see your products. </p>
@@ -206,15 +206,15 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span> Retail price :</label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtRetail" CssClass="form-control" runat="server" placeholder="$"></asp:TextBox>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="$">--%>
+                        <asp:TextBox ID="txtRetail" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span> "Buy now" price:</label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtBuy" CssClass="form-control" runat="server" placeholder="$"></asp:TextBox>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="$">--%>
+                        <asp:TextBox ID="txtBuy" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
                         </div>
                       </div>
                       <div class="form-group">
@@ -246,8 +246,8 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>Auction</span> starting bid: </label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtStartBid" CssClass="form-control" runat="server" placeholder="$1"></asp:TextBox>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="$1">--%>
+                        <asp:TextBox ID="txtStartBid" CssClass="form-control" runat="server" placeholder="£1"></asp:TextBox>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£1">--%>
                         </div>
                       </div>
                       <div class="form-group">
@@ -331,18 +331,18 @@
                         	<label for="creat-ac-lb" class="col-sm-3 control-label">Shiping price to the us: </label>
                         	<div class="col-sm-3">
                             <asp:DropDownList runat="server" ID="ddlPrice" CssClass="form-control">
-                        <asp:ListItem Text="$0"></asp:ListItem>
-                        <asp:ListItem Text="$1"></asp:ListItem>
-                        <asp:ListItem Text="$2"></asp:ListItem>
-                        <asp:ListItem Text="$3"></asp:ListItem>
-                        <asp:ListItem Text="$4"></asp:ListItem>
+                        <asp:ListItem Text="£0"></asp:ListItem>
+                        <asp:ListItem Text="£1"></asp:ListItem>
+                        <asp:ListItem Text="£2"></asp:ListItem>
+                        <asp:ListItem Text="£3"></asp:ListItem>
+                        <asp:ListItem Text="£4"></asp:ListItem>
                         </asp:DropDownList>
                           		<%--<select class="form-control">
-								  <option>$0 </option>
-								  <option>$2 </option>
-								  <option>$3 </option>
-								  <option>$4 </option>
-								  <option>$5 </option>
+								  <option>£0 </option>
+								  <option>£2 </option>
+								  <option>£3 </option>
+								  <option>£4 </option>
+								  <option>£5 </option>
 								</select>--%>
                         	</div>
                        	</div>

@@ -57,7 +57,7 @@
                             });
                         </script>
                         <div id="counterDiv">ghhh</div>--%>
-                            <h1>TODAY'S AUCTION</h1>
+                            <h1>UPCOMING AUCTION</h1>
                         </div>
                         <div class="item-sec-view pull-right">
                             <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>
