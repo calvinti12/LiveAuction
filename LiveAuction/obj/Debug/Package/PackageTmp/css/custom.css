@@ -282,6 +282,11 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 /* this is for new header */
 .nav-pic li img{width:55px;margin: 0 10px;}
 .nv-lt{width: 330px;font-size: 18px;color: #fff;font-family: Georgia;}
+.watch-sl-sec{height:478px;}
+.watch-sl-sec img{height:100%;}
+.slider-sd-portion{height:232px;}
+.slider-sd-portion img{height:100%;}
+
 
 
 
@@ -309,7 +314,10 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .cr-card-frm-sec{width:68%;}
 .cr-card-frm-sec{margin-left: 0%;}
 .bid-model-dialog{width: 600px;}
-
+.watch-sl-sec{height:auto;}
+.watch-sl-sec img{height:auto;}
+.slider-sd-portion{height:auto;}
+.slider-sd-portion img{height:auto;}
 }
 
 /*this is for max width 786px */

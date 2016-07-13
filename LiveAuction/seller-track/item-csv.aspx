@@ -93,7 +93,7 @@
                                         Display="Dynamic" />
                                     <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
                     <div class="col-xs-12"><hr></div><br />
-                    <%--<asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" />--%>
+                    <asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" />
                       <%--<div class="cr-accnt pop-cr-accnt">
                       
                       </div>--%>
