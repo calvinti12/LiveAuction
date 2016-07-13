@@ -38,7 +38,7 @@ namespace LiveAuction
             {
                 lit = lit + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'><input type='hidden' class='auctionId' value=" + i +
-                                "><img src='./Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
+                                "><img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
                                         "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv"+i+"'>";
                 var auctionDate = Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("yyyy-MM-dd");
                 var auctionTime = Convert.ToDateTime(dt.Rows[i]["AuctionTime"]).TimeOfDay;
@@ -81,7 +81,7 @@ namespace LiveAuction
                                                       "</div>" +
                                                       "<div class='bid-popup-pic'>" +
                                                         "<!--<img src='images/bidpp1.png' alt='this is for bid popup' >-->" +
-                                                        "<img src='./Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/>" +
+                                                        "<img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/>" +
                                                       "</div>" +
                                                       "<div class='bid-p-dis'>" +
                                                         "<p class='bid-alate'>A late 19th century zulu axe asymmetrical blade 13.5 darkwood haft with flared end (cracked).GC plate 6</p>" +
@@ -143,7 +143,7 @@ namespace LiveAuction
                 {
                     modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
                     "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
-                    "<td class='pop-ico'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></td>" +
+                    "<td class='pop-ico'><a href='bid-detail.aspx?id="+dt1.Rows[j]["LotId"]+"'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
                   "</tr>";
                 }
                 modalHtml += "<!--<tr>" +

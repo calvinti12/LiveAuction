@@ -210,6 +210,7 @@
     <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
     <Content Include="Admin\js\colorpicker\docs.js" />
     <Content Include="css\countdown\jquery.countdown.css" />
+    <Content Include="images\celebrating-25.png" />
     <Content Include="js\app.js" />
     <Content Include="js\countdown\jquery.countdown.js" />
     <Content Include="js\countdown\jquery.plugin.js" />
@@ -1025,6 +1026,9 @@
       <Project>{74D3A4A8-9F91-4FED-A46F-6A42576828BC}</Project>
       <Name>UtilityLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
