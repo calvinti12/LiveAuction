@@ -110,7 +110,7 @@ namespace LiveAuction.seller_track
                 objProductLotEL.Description = txtDesc.Text;
                 objProductLotEL.Question = txtQuestion.Text;
                 //objProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
-                objProductLotEL.CostBasis = txtCost.Text;
+                //objProductLotEL.CostBasis = txtCost.Text;
                 //objProductLotEL.RetailPrice = txtRetail.Text;
                 //objProductLotEL.BuyPrice = txtBuy.Text;
                 //objProductLotEL.StartingBid = txtStartBid.Text;

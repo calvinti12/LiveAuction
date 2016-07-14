@@ -164,16 +164,6 @@
                         </div>
                         
                       </div>
-                       <%--<div class="form-group">
-                       
-                        <label for="creat-ac-lb" class="col-sm-3 control-label">Auction</label>
-                        <div class="col-sm-3">                          
-                          <asp:DropDownList runat="server" CssClass="form-control" id="auction"
-                                >
-                                <asp:ListItem Value="1" Text="Test Auction"></asp:ListItem>
-                          </asp:DropDownList>             						  
-                        </div>                        
-                      </div>--%>
                       <div class="form-group">
                         <label for="creat-ac-lb" class="col-sm-3 control-label">Does this product have a brand?</label>
                         <div class="col-sm-9">
@@ -194,10 +184,10 @@
                         <div class="col-sm-3">
                         <asp:TextBox ID="txtTitle" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
                         <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server" ValidationGroup="lot" EnableClientScript="true"
-  ControlToValidate="txtTitle"
-  ErrorMessage="Title is a required field."
-  ForeColor="Red">
-</asp:RequiredFieldValidator>
+                              ControlToValidate="txtTitle"
+                              ErrorMessage="Title is a required field."
+                              ForeColor="Red">
+                            </asp:RequiredFieldValidator>
                           <%--<input type="password" class="form-control" id="creat-pswrd-lb" placeholder="">--%>
                         </div>
                       </div>
@@ -222,7 +212,6 @@
                         <label for="creat-pswrd-lb-re" class="col-sm-3 control-label">Checkout question</label>
                         <div class="col-sm-3">
                         <asp:TextBox ID="txtQuestion" CssClass="form-control" runat="server" placeholder="optional"></asp:TextBox>
-                          <%--<input type="password" class="form-control" id="creat-pswrd-lb-re" placeholder="optional">--%>
                         </div>
                         <div class="col-sm-6">
                           <p><strong>Example</strong> what size should this ring be (6,7 or 8)?(The buyer will be asked this question when they pay)</p>
@@ -236,11 +225,8 @@
                                 <asp:TextBox ID="auctiondate" ClientIDMode="Static" placeholder="DD-MM-YYYY" runat="server"
                                     data-field="date" class="form-control col-md-7 col-xs-12"></asp:TextBox><div id="Div2">
                                     </div>
-                                <%--class="date-picker form-control col-md-7 col-xs-12"></asp:TextBox><div id="Div1" ></div>--%>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Auction date Required" ControlToValidate="auctiondate"
                                     ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
-                                <%-- <input id="auctiondate" class="date-picker form-control col-md-7 col-xs-12" required="required"
-                                    type="text">--%>
                             </div>
                         </div>
                         <div class="item form-group">
@@ -253,8 +239,6 @@
                                     </div>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Auction time Required" ControlToValidate="auctiontime"
                                     ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
-                                <%--  <input type="url" id="auctiontime" name="time" required="required" class="time form-control col-md-7 col-xs-12"
-                                    placeholder="17:00">--%>
                             </div>
                         </div>
                     </div>
@@ -269,80 +253,23 @@
                 </div>
                 <div class="col-md-12">
                     <div class="form-horizontal crt-acnt-frm">
-                      <!--<div class="form-group">
-                        <label for="creat-ac-lb" class="col-sm-3 control-label sr-only">is the products new or used?</label>
-                        <div class="col-sm-6">
-                          <p><strong>Buy now pricing</strong> - offer your item for immediate sale</p>
+                      <div class="form-group">
+                        <label for="creat-pswrd-lb" class="col-sm-3 control-label">Original price:</label>
+                        <div class="col-sm-3">
+                        <asp:TextBox ID="txtBuy" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span>Cost basis: </label>
-                        <div class="col-sm-3">
-                        <asp:TextBox ID="txtCost" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
-                          <%--<input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
-                        </div>
-                        <div class="col-md-6">
-                        	<p>this is orginal cost (to you) of an item. specifing it will allow you to see easily see your products. </p>
-                        </div>
                       </div>
-                      <div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span> Retail price :</label>
-                        <div class="col-sm-3">
-                        <asp:TextBox ID="txtRetail" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
-                        </div>
-                      </div>-->
+                    </div>
+                    <div class="col-md-12">
+                    <div class="form-horizontal crt-acnt-frm">
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label">Deal price:</label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtBuy" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
+                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
                         </div>
                       </div>
-                      <!--<div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span> "Buy now" quantity:</label>
-                        <div class="col-sm-3">
-                        <%--<asp:TextBox ID="txtQuantity" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
-                         <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" ValidationGroup="lot" EnableClientScript="true"
-  ControlToValidate="txtQuantity"
-  ErrorMessage="Quantity is a required field."
-  ForeColor="Red">
-</asp:RequiredFieldValidator>
-                        <asp:CompareValidator ID="cv" runat="server" ControlToValidate="txtQuantity" Type="Integer" ValidationGroup="lot" EnableClientScript="true"
-   Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red"/>--%>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="">--%>
-                        </div>-->
                       </div>
-                      <!--<div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label sr-only">tip1</label>
-                        <div class="col-sm-6">
-                          <p><strong>Tip:</strong> offer a low price to feature your item in the Auction Bid Platform catalogs. If you have more than one item, specify a quantity above to offer them all at the same 'Buy' the price.</p>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label sr-only">tip1</label>
-                        <div class="col-sm-6">
-                          <p><strong>Auction priceing</strong> - cell your item in a fast paced place </p>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>Auction</span> starting bid: </label>
-                        <div class="col-sm-3">
-                        <asp:TextBox ID="txtStartBid" CssClass="form-control" runat="server" placeholder="£1" onkeypress="return OnlyNumbers(event);"></asp:TextBox>
-                        <%-- <asp:RequiredFieldValidator id="RequiredFieldValidator3" runat="server" ValidationGroup="lot" EnableClientScript="true"
-                          ControlToValidate="txtStartBid"
-                          ErrorMessage="Starting Bid is required"
-                          ForeColor="Red">
-                        </asp:RequiredFieldValidator>
-                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£1">--%>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="creat-pswrd-lb" class="col-sm-3 control-label sr-only">tip1</label>
-                        <div class="col-sm-6">
-                          <p><strong>Auction priceing</strong> - cell your item in a fast paced place </p>
-                        </div>
-                      </div>-->
                     </div>
                 </div>
               </div>
@@ -377,34 +304,18 @@
                         <asp:ListItem Text="4 Business day"></asp:ListItem>
                         <asp:ListItem Text="5 Business day"></asp:ListItem>
                         </asp:DropDownList>
-
-                          		<%--<select class="form-control">
-
-								  <option>1 Business day</option>
-								  <option>2 Business day</option>
-								  <option>3 Business day</option>
-								  <option>4 Business day</option>
-								  <option>5 Business day</option>
-								</select>--%>
                         	</div>
                        	</div>
                        	<div class="form-group">
                         	<label for="creat-ac-lb" class="col-sm-3 control-label">Delivery to the U S takes: </label>
                         	<div class="col-sm-3">
                             <asp:DropDownList runat="server" ID="ddlTimeTake" CssClass="form-control">
-                        <asp:ListItem Text="1 Business day"></asp:ListItem>
-                        <asp:ListItem Text="2 Business day"></asp:ListItem>
-                        <asp:ListItem Text="3 Business day"></asp:ListItem>
-                        <asp:ListItem Text="4 Business day"></asp:ListItem>
-                        <asp:ListItem Text="5 Business day"></asp:ListItem>
-                        </asp:DropDownList>
-                          		<%--<select class="form-control">
-								  <option>1 Business day</option>
-								  <option>2 Business day</option>
-								  <option>3 Business day</option>
-								  <option>4 Business day</option>
-								  <option>5 Business day</option>
-								</select>--%>
+                                <asp:ListItem Text="1 Business day"></asp:ListItem>
+                                <asp:ListItem Text="2 Business day"></asp:ListItem>
+                                <asp:ListItem Text="3 Business day"></asp:ListItem>
+                                <asp:ListItem Text="4 Business day"></asp:ListItem>
+                                <asp:ListItem Text="5 Business day"></asp:ListItem>
+                             </asp:DropDownList>
                         	</div>
                        	</div>
                        	<div class="form-group">
@@ -426,13 +337,6 @@
                         <asp:ListItem Text="£3"></asp:ListItem>
                         <asp:ListItem Text="£4"></asp:ListItem>
                         </asp:DropDownList>
-                          		<%--<select class="form-control">
-								  <option>£0 </option>
-								  <option>£2 </option>
-								  <option>£3 </option>
-								  <option>£4 </option>
-								  <option>£5 </option>
-								</select>--%>
                         	</div>
                        	</div>
                        	<div class="form-group">
@@ -440,7 +344,6 @@
 	                        <div class="col-sm-6">
 	                          	<label class="checkbox-inline">
                                 <asp:CheckBox runat="server" ID="chkShip" Text="I ship everywhere" />
-								 <%-- <input type="checkbox" id="inlineCheckbox1" value="option1">--%>
 								</label>
 	                      	</div>
 	                    </div>
@@ -469,18 +372,6 @@
                     	</ul>
                     </div>
                 </div>
-                <%--<div class="col-md-12">
-                	<div class="upload-drop-zone text-center">
-			         
-                        Drag and drop photos into the box.
-			          </div>	
-                      <div>
-                      <asp:FileUpload ID="FileUpload1" runat="server" ToolTip="Click here to upload photos" />                  
-                      </div>	
-    
-			          
-			        
-                </div>--%>
                 <div class="col-md-12">
                        <div id="dZUpload" class="dropzone">
         <div class="dz-default dz-message">
@@ -500,4 +391,9 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dtBox").DateTimePicker();
+        });
+    </script>
 </asp:Content>

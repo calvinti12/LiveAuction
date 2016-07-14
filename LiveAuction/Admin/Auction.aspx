@@ -7,8 +7,7 @@
     <link href="css/timepicker/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script src="js/timepicker/DateTimePicker.js" type="text/javascript"></script>
     <style type="text/css">
-		
-			/*p
+        /*p
 			{
 				margin-left: 20px;
 			}
@@ -20,8 +19,7 @@
 				margin-left: 20px;
 				margin-bottom: 20px;
 			}*/
-		
-		</style>
+    </style>
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -189,11 +187,9 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-
                         $(document).ready(function () {
                             $("#dtBox").DateTimePicker();
                         });
-		
                     </script>
                     <script type="text/javascript">
 //                        $(document).ready(function () {
