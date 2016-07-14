@@ -148,22 +148,22 @@ namespace LiveAuction.seller_track {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// txtBuy control.
+        /// txtOriginalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuy;
+        protected global::System.Web.UI.WebControls.TextBox txtOriginalPrice;
         
         /// <summary>
-        /// TextBox1 control.
+        /// TxtDealPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtDealPrice;
         
         /// <summary>
         /// ddlCountry control.

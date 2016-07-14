@@ -8,7 +8,7 @@ h1, h2{font-weight: 100;}
 .form-control{border-radius: 0px ;}
 .btn-danger{background-color:#39628d; border:1px solid #39628d;}
 #manu-navbar, #top-navbar{padding-left:0px;}
-.top-nvber{margin-bottom: 0px;border: 0px solid transparent;background-color: #111a3a;border-color:#fff;}
+.top-nvber{margin-bottom: 0px;border: 0px solid transparent;background-color: #111a3a;border-color:#fff;border-radius:0 !important;}
 .top-nvber .navbar-brand{min-height:60px;padding:5px 12px;}
 .top-nvber .navbar-brand img{width:300px;padding:5px 12px;}
 #top-navbar .navbar-nav{padding:12px 0;}
@@ -292,6 +292,17 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .slider-sd-portion img{height:100%;}
 
 
+/* this is for left sideber*/
+.account-selling-lstItem li a {
+    color: #565656;
+    display: block;
+    padding: 5px 7px;
+    text-decoration: none;
+}
+.account-selling-lstItem li a:hover{background-color:#247ab1;color:#fff;}
+.account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+
+
 
 
 
@@ -314,7 +325,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 }
 
 @media (max-width: 1024px) {
-.action-item-del-sec{min-height: 1024px;}
+.action-item-del-sec{min-height: auto;}
 .cr-card-frm-sec{width:68%;}
 .cr-card-frm-sec{margin-left: 0%;}
 .bid-model-dialog{width: 600px;}

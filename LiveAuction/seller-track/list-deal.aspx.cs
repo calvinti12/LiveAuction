@@ -22,8 +22,8 @@ namespace LiveAuction.seller_track
         }
         private void PopulateCategoryLevel1()
         {
-            ProductLotBL objProductLotBL = new ProductLotBL();
-            DataTable dtCategoryLevel1 = objProductLotBL.GetProductCategoryLevel1();
+            DealBL objDealBL = new DealBL();
+            DataTable dtCategoryLevel1 = objDealBL.GetProductCategoryLevel1();
             categotyLevel1.DataSource = dtCategoryLevel1;
             categotyLevel1.DataTextField = "CategoryName";
             categotyLevel1.DataValueField = "CategoryId";
@@ -32,8 +32,8 @@ namespace LiveAuction.seller_track
         }
         private void PopulateCategoryLevel2(int parentCategoryIdLevel1)
         {
-            ProductLotBL objProductLotBL = new ProductLotBL();
-            DataTable dtCategoryLevel2 = objProductLotBL.GetProductCategoryLevel2(parentCategoryIdLevel1);
+            DealBL objDealBL = new DealBL();
+            DataTable dtCategoryLevel2 = objDealBL.GetProductCategoryLevel2(parentCategoryIdLevel1);
             categotyLevel2.DataSource = dtCategoryLevel2;
             categotyLevel2.DataTextField = "CategoryName";
             categotyLevel2.DataValueField = "CategoryId";
@@ -51,8 +51,8 @@ namespace LiveAuction.seller_track
         }
         private void PopulateCategoryLevel3(int parentCategoryIdLevel2)
         {
-            ProductLotBL objProductLotBL = new ProductLotBL();
-            DataTable dtCategoryLevel3 = objProductLotBL.GetProductCategoryLevel3(parentCategoryIdLevel2);
+            DealBL objDealBL = new DealBL();
+            DataTable dtCategoryLevel3 = objDealBL.GetProductCategoryLevel3(parentCategoryIdLevel2);
             categotyLevel3.DataSource = dtCategoryLevel3;
             categotyLevel3.DataTextField = "CategoryName";
             categotyLevel3.DataValueField = "CategoryId";
@@ -74,8 +74,8 @@ namespace LiveAuction.seller_track
         }
         //private void PopulateAuction()
         //{
-        //    ProductLotBL objProductLotBL = new ProductLotBL();
-        //    DataTable dtAuction = objProductLotBL.GetAuction(Convert.ToString(Session["UserType"]), Convert.ToInt32(Session["UserId"]));
+        //    DealBL objDealBL = new DealBL();
+        //    DataTable dtAuction = objDealBL.GetAuction(Convert.ToString(Session["UserType"]), Convert.ToInt32(Session["UserId"]));
         //    auction.DataSource = dtAuction;
         //    auction.DataTextField = "AuctionName";
         //    auction.DataValueField = "AuctionId";
@@ -85,43 +85,45 @@ namespace LiveAuction.seller_track
         {
             if (Page.IsValid)
             {
-                ProductLotBL objProductLotBL = new ProductLotBL();
-                ProductLotEL objProductLotEL = new ProductLotEL();
+                DealBL objDealBL = new DealBL();
+                DealEL objDealEL = new DealEL();
                 string Responsetxt = string.Empty;
-                string productimages = Request["hdnimagefiles"];
-                objProductLotEL.ProductUsed = ItemUsed.SelectedItem.ToString();
+                string dealimages = Request["hdnimagefiles"];
+                objDealEL.ProductUsed = ItemUsed.SelectedItem.ToString();
                 if (!categotyLevel2.Visible)
                 {
-                    objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel1.SelectedValue);
+                    objDealEL.CategoryId = Convert.ToInt32(categotyLevel1.SelectedValue);
                 }
                 else
                 {
                     if (categotyLevel3.Visible)
                     {
-                        objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel3.SelectedValue);
+                        objDealEL.CategoryId = Convert.ToInt32(categotyLevel3.SelectedValue);
                     }
                     else
-                        objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel2.SelectedValue);
+                        objDealEL.CategoryId = Convert.ToInt32(categotyLevel2.SelectedValue);
                 }
-                //objProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
-                objProductLotEL.IsBranded = rdbYes.Checked;
-                objProductLotEL.Title = txtTitle.Text;
-                objProductLotEL.SKU = txtSKU.Text;
-                objProductLotEL.Description = txtDesc.Text;
-                objProductLotEL.Question = txtQuestion.Text;
-                //objProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
-                //objProductLotEL.CostBasis = txtCost.Text;
-                //objProductLotEL.RetailPrice = txtRetail.Text;
-                //objProductLotEL.BuyPrice = txtBuy.Text;
-                //objProductLotEL.StartingBid = txtStartBid.Text;
-                objProductLotEL.ShipCountry = ddlCountry.Text;
-                objProductLotEL.ShipWithin = ddlShipWithin.Text;
-                objProductLotEL.DeliveryTime = ddlTimeTake.Text;
-                objProductLotEL.IsFreeShipping = chkFreeShipping.Checked;
-                objProductLotEL.ShippingPrice = ddlPrice.Text;
-                objProductLotEL.IsShippedEverywhere = chkShip.Checked;
-                objProductLotEL.images = productimages;
-                if (objProductLotBL.Save(objProductLotEL, out Responsetxt))
+                //objDealEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
+                objDealEL.IsBranded = rdbYes.Checked;
+                objDealEL.Title = txtTitle.Text;
+                objDealEL.SKU = txtSKU.Text;
+                objDealEL.Description = txtDesc.Text;
+                objDealEL.Question = txtQuestion.Text;
+                //objDealEL.Quantity = Convert.ToInt32(txtQuantity.Text);
+                //objDealEL.CostBasis = txtCost.Text;
+                objDealEL.OriginalPrice = txtOriginalPrice.Text;
+                objDealEL.DealPrice = TxtDealPrice.Text;
+                objDealEL.DealDate = Convert.ToDateTime(auctiondate.Text);
+                objDealEL.DealTime = auctiontime.Text;
+                //objDealEL.StartingBid = txtStartBid.Text;
+                objDealEL.ShipCountry = ddlCountry.Text;
+                objDealEL.ShipWithin = ddlShipWithin.Text;
+                objDealEL.DeliveryTime = ddlTimeTake.Text;
+                objDealEL.IsFreeShipping = chkFreeShipping.Checked;
+                objDealEL.ShippingPrice = ddlPrice.Text;
+                objDealEL.IsShippedEverywhere = chkShip.Checked;
+                objDealEL.images = dealimages;
+                if (objDealBL.Save(objDealEL, out Responsetxt))
                 {
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "alert('" + Responsetxt + "');", true);
                 }

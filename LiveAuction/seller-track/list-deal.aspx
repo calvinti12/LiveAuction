@@ -256,7 +256,7 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label">Original price:</label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="txtBuy" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                        <asp:TextBox ID="txtOriginalPrice" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
                         </div>
                       </div>
                       </div>
@@ -266,7 +266,7 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label">Deal price:</label>
                         <div class="col-sm-3">
-                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                        <asp:TextBox ID="TxtDealPrice" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
                         </div>
                       </div>
                       </div>
