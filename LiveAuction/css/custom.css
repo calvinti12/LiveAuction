@@ -60,7 +60,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 
 .action-item-del-sec{position: relative;border: 1px solid #ebebeb;padding: 17px;margin-bottom: 20px;min-height: 380px;background-color: #fff;}
 .deal-pic{border: 1px solid #ddd;min-height: 140px;text-align: center;padding:0 8%;}
-.deal-pic img{min-width: 260px;max-width: 260px;min-height: 210px;max-height: 210px;}
+.deal-pic img{min-width: 260px;max-width: 260px;min-height: 210px;max-height: 210px;margin:0 auto;}
 .time-button{overflow: auto;}
 .time-button a{text-transform: uppercase;}
 .time-button p{color:#008c50;margin: 10% 0;}
@@ -320,7 +320,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 
 @media (max-width: 1200px) {
 .action-item-del-sec{min-height: 390px;}
-
+.sp-cr-inn{max-height:165px; !important;}
 
 }
 
@@ -333,6 +333,8 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .watch-sl-sec img{height:auto;}
 .slider-sd-portion{height:auto;}
 .slider-sd-portion img{height:auto;}
+.sp-cr-inn{max-height:163px !important;}
+.sldr-sd-caption h3{font-size:15px;}
 }
 
 /*this is for max width 786px */
@@ -344,6 +346,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .cr-card-frm-sec{width:90%;}
 .card-btn button{min-width: 49%;max-width: 100%;}
  .navbar-brand{min-height:145px;background-color:#111a3a;}
+ .sp-cr-inn{max-height:100% !important;}
 }
 
 /*this is for max width 786px */

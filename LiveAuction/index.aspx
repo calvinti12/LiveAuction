@@ -5,9 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
-    
-        <script src="Scripts/angular.js" type="text/javascript"></script>
-        <script src="Scripts/angular-route.js" type="text/javascript"></script>
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script src="Scripts/angular-route.js" type="text/javascript"></script>
     <section class="slider-section">
         <div class="container">
             <div class="row">
@@ -71,9 +70,7 @@
         </div>
     </section>
     <!-- end of action item section -->
-   
-
-   <section class="item-carousel-sec">
+    <section class="item-carousel-sec">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
@@ -131,10 +128,8 @@
                 </div> 
             </div>
         </div>
-    </section> <!-- end of item carousel  section -->
-
-
-
+    </section>
+    <!-- end of item carousel  section -->
     <section class="today-item-section">
         <div class="container">
             <div class="row">
@@ -150,7 +145,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <%--<div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="action-item-del-sec">
                         <div class="deal-pic"> <!-- image must be 260*210px -->
                             <img src="images/frize2.jpg" alt="frize.jpg" class="img-responsive">
@@ -245,7 +240,8 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- end of the turning col -->
+                </div> <!-- end of the turning col -->--%>
+                <asp:PlaceHolder ID="TodaysDealPlaceholder" runat="server"></asp:PlaceHolder>
             </div>
         </div>
     </section>
@@ -266,5 +262,4 @@
             console.log(pic);
         });
     </script>
-
 </asp:Content>

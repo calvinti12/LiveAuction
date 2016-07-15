@@ -113,7 +113,7 @@ namespace LiveAuction.seller_track
                 //objDealEL.CostBasis = txtCost.Text;
                 objDealEL.OriginalPrice = txtOriginalPrice.Text;
                 objDealEL.DealPrice = TxtDealPrice.Text;
-                objDealEL.DealDate = Convert.ToDateTime(auctiondate.Text);
+                objDealEL.DealDate = DateTime.ParseExact(auctiondate.Text, "dd-MM-yyyy", null);
                 objDealEL.DealTime = auctiontime.Text;
                 //objDealEL.StartingBid = txtStartBid.Text;
                 objDealEL.ShipCountry = ddlCountry.Text;

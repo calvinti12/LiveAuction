@@ -15,34 +15,41 @@ namespace LiveAuction
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder html = new StringBuilder();
+            StringBuilder todaysDealStringBuilder = new StringBuilder();
             StringBuilder modalWindowHtml = new StringBuilder();
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             string query = "select * from Auction";
+            string todaysDealQuery = "select DealId,DealDesc,Title,OriginalPrice,DealPrice,DealDate,DealTime,ImageName from View_list_deals";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
+
+            SqlDataAdapter adapterDeal = new SqlDataAdapter(todaysDealQuery, con);
+            DataTable dtTodaysDeal = new DataTable();
+            adapterDeal.Fill(dtTodaysDeal);
             con.Close();
             string modalHtml = "";
             string autionData = "";
-            string lit = "<script type='text/javascript'>$(function () {"+
-                                "var austDay = new Date();"+
-                                "austDay = new Date('2016-07-07T12:00:00');"+
-                                "$('#counterDiv').countdown({ until: austDay, compact: true,"+
-                                    "format: 'DHMS', description: ''"+
-                                "});"+
-                            "});"+
+            string dealData = "";
+            string lit = "<script type='text/javascript'>$(function () {" +
+                                "var austDay = new Date();" +
+                                "austDay = new Date('2016-07-07T12:00:00');" +
+                                "$('#counterDiv').countdown({ until: austDay, compact: true," +
+                                    "format: 'DHMS', description: ''" +
+                                "});" +
+                            "});" +
                         "</script>";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 lit = lit + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'><input type='hidden' class='auctionId' value=" + i +
                                 "><img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
-                                        "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv"+i+"'>";
+                                        "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv" + i + "'>";
                 var auctionDate = Convert.ToDateTime(dt.Rows[i]["AuctionDate"]).Date.ToString("yyyy-MM-dd");
                 var auctionTime = Convert.ToDateTime(dt.Rows[i]["AuctionTime"]).TimeOfDay;
-               // Response.Write(auctionDate +" ");
+                // Response.Write(auctionDate +" ");
                 lit = lit + @"<script type='text/javascript'>
                             $(function () {
 
@@ -143,7 +150,7 @@ namespace LiveAuction
                 {
                     modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
                     "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
-                    "<td class='pop-ico'><a href='bid-detail.aspx?id="+dt1.Rows[j]["LotId"]+"'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
+                    "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
                   "</tr>";
                 }
                 modalHtml += "<!--<tr>" +
@@ -220,6 +227,37 @@ namespace LiveAuction
             modalWindowHtml.Append(modalHtml);
             PlaceHolder1.Controls.Add(new Literal { Text = html.ToString() });
             PlaceHolder2.Controls.Add(new Literal { Text = modalWindowHtml.ToString() });
+
+            for (int i = 0; i < dtTodaysDeal.Rows.Count; i++)
+            {
+                dealData += @"<div class='col-md-4 col-sm-6 col-xs-12'>
+                    <div class='action-item-del-sec'>
+                        <div class='deal-pic'> <!-- image must be 260*210px -->
+                            <img src='/fileupload/upload/" + dtTodaysDeal.Rows[i]["ImageName"] + "' alt='frize.jpg' class='img-responsive'>";
+                dealData += @"</div>
+                        <div class='deal-pic-caption'>
+                            <div class='deal-pic-caption-title'>
+                                <p>" + dtTodaysDeal.Rows[i]["Title"] + "</p>";
+                var dDate = Convert.ToDateTime(dtTodaysDeal.Rows[i]["DealDate"]).Date.ToString("yyyy-MM-dd");
+                var dTime = Convert.ToDateTime(dtTodaysDeal.Rows[i]["DealTime"]).TimeOfDay;
+                // Response.Write(auctionDate +" ");
+                dealData = dealData + @"<script type='text/javascript'>
+                            $(function () {
+
+                                var dDay = new Date();
+                                dDay = new Date('" + dDate + "T" + dTime + "');$('#dealCounterDiv" + i + "').countdown({ until: dDay, compact: true,format: 'DHMS', description: ''});}); </script>";
+                dealData += @"</div>
+                            <div class='time-button'>
+                                <div class='pull-left'><a href='bid-detail.aspx?id=" + dtTodaysDeal.Rows[i]["DealId"] + "&cat=deal' class='btn btn-danger'>BUY NOW !</a></div>";
+                dealData += @"<div class='pull-right'><p><span id='dealCounterDiv" + i + "'></span>&nbsp<span>left</span></p></div>";
+                dealData += @"</div>
+                        </div>
+                    </div>
+                </div>";
+
+            }
+            todaysDealStringBuilder.Append(dealData);
+            TodaysDealPlaceholder.Controls.Add(new Literal { Text = todaysDealStringBuilder.ToString() });
         }
     }
 }
