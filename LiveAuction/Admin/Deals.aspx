@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master"
-    CodeBehind="ListAuction.aspx.cs" Inherits="LiveAuction.Admin.ListAuction" %>
+    CodeBehind="Deals.aspx.cs" Inherits="LiveAuction.Admin.Deals" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Custom styling plus plugins -->
@@ -15,7 +15,7 @@
         <div class="page-title">
             <div class="title_left">
                 <h3>
-                    Auction <small></small>
+                    Deals <small></small>
                 </h3>
             </div>
             <div class="title_right">
@@ -28,7 +28,7 @@
                 <div class="x_panel">
                     <div class="x_title">
                         <h2>
-                            Auction<small>List</small></h2>
+                            Deals<small>List</small></h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a href="#"><i class="fa fa-chevron-up"></i></a></li>
                         </ul>

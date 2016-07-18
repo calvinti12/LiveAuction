@@ -110,7 +110,7 @@ namespace LiveAuction
             template += @"</div>
               </div>
               <div class='bidding-sideber-item '>
-                <a href='#' class='btn btn-danger btn-block bidding-sing-btn' data-toggle='modal' data-target='#bidpopup'>SIGN IN TO BID</a>
+                <a href='#' class='btn btn-danger btn-block bidding-sing-btn' >SIGN IN TO BID</a>
               </div>
             </div>
             <div class='bidding-sideber-sec sadow'>
@@ -221,7 +221,7 @@ namespace LiveAuction
             template += @"</div>
               </div>
               <div class='bidding-sideber-item '>
-                <a href='#' class='btn btn-danger btn-block bidding-sing-btn' data-toggle='modal' data-target='#bidpopup'>Buy Now</a>
+                <a href='#' class='btn btn-danger btn-block bidding-sing-btn'>Buy Now</a>
               </div>
             </div>
             <div class='bidding-sideber-sec sadow'>

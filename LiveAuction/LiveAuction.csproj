@@ -80,6 +80,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Auction.aspx" />
     <Content Include="Admin\AuctionView.aspx" />
+    <Content Include="Admin\Deals.aspx" />
     <Content Include="Admin\css\animate.min.css" />
     <Content Include="Admin\css\bootstrap.min.css" />
     <Content Include="Admin\css\calendar\fullcalendar.css" />
@@ -653,6 +654,13 @@
     </Compile>
     <Compile Include="Admin\AuctionView.aspx.designer.cs">
       <DependentUpon>AuctionView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Deals.aspx.cs">
+      <DependentUpon>Deals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Deals.aspx.designer.cs">
+      <DependentUpon>Deals.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>

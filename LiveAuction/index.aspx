@@ -56,7 +56,7 @@
                             });
                         </script>
                         <div id="counterDiv">ghhh</div>--%>
-                            <h1>UPCOMING AUCTION</h1>
+                            <h1>UPCOMING AUCTIONS</h1>
                         </div>
                         <div class="item-sec-view pull-right">
                             <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>
@@ -136,7 +136,7 @@
                 <div class="col-md-12">
                     <div class="item-sector">
                         <div class="item-sec-title pull-left">
-                            <h1>TODAY'S DEAL</h1>
+                            <h1>TODAY'S DEALS</h1>
                         </div>
                         <div class="item-sec-view pull-right">
                             <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>

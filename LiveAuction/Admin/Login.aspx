@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>citius solvitur</title>
+    <title>Fine Art &amp; Antique Auctions in Kent</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
@@ -66,8 +66,8 @@
                             <div class="clearfix"></div>
                             <br />
                             <div>
-                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Citius Solvitur</h1>
-                                <p>© 2016 Citius Solvitur. All Rights Reserved.</p>
+                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Fine Art &amp; Antique Auctions in Kent</h1>
+                                <p>© 2016 Fine Art &amp; Antique Auctions in Kent. All Rights Reserved.</p>
                             </div>
                         </div>
                     </form>

@@ -21,7 +21,7 @@ namespace LiveAuction
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             string query = "select * from Auction";
-            string todaysDealQuery = "select DealId,DealDesc,Title,OriginalPrice,DealPrice,DealDate,DealTime,ImageName from View_list_deals";
+            string todaysDealQuery = "select DealId,DealDesc,Title,OriginalPrice,DealPrice,DealDate,DealTime,ImageName from View_list_deals where IsDealPassed=1";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
