@@ -10,27 +10,18 @@ using System.Data;
 
 namespace LiveAuction.Admin
 {
-    public partial class Deals : System.Web.UI.Page
+    public partial class DealsApproved : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var id=Request.QueryString["id"];
+            var id = Request.QueryString["id"];
             var cat = Request.QueryString["cat"];
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
             SqlConnection con = new SqlConnection(connectionString);
-            
+
             if (id != null)
             {
-                if (cat.Equals("app"))
-                {
-                    con.Open();
-                    string query = "UPDATE Deals SET IsDealPassed=1 WHERE DealId=" + id;
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, con);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    con.Close();
-                }
-                if (cat.Equals("del"))
+                if (cat.Equals("cancel"))
                 {
                     con.Open();
                     string query = "DELETE FROM Deals WHERE DealId=" + id;
@@ -38,22 +29,20 @@ namespace LiveAuction.Admin
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     con.Close();
+                    Response.Redirect("DealsApproved.aspx");
                 }
- 
             }
             if (!Page.IsPostBack)
             {
                 FillGrid();
             }
-
         }
         private void FillGrid()
         {
-            string modalHtml = "";
-            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "select * from View_Admin_Approve_Deals where IsDealPassed=0";
+            string query = "select * from View_Admin_Approve_Deals where IsDealPassed=1";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -87,7 +76,7 @@ namespace LiveAuction.Admin
                                 "<td class=''>" + Convert.ToDateTime(dt.Rows[i]["DealDate"]).Date.ToString("d") + "</td>" +
                                 "<td class=''>" + dt.Rows[i]["OriginalPrice"] + "£</td>" +
                                 "<td class='last'>" +
-                                    "<a data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["DealId"] + "' href='#'>View</a>&nbsp|&nbsp<a href='Deals.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=app' id='approve" + dt.Rows[i]["DealId"] + "'>Approve</a>&nbsp|&nbsp<a id='reject" + dt.Rows[i]["DealId"] + "'href='Deals.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=del'>Reject</a>&nbsp" +
+                                    "<a data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["DealId"] + "' href='#'>View</a>&nbsp|&nbsp<a href='DealsApproved.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=cancel' id='approve" + dt.Rows[i]["DealId"] + "'>Cancel</a>" +
                                 "</td>" +
                             "</tr>";
                 }
@@ -102,7 +91,7 @@ namespace LiveAuction.Admin
                                 "<td class=''>" + Convert.ToDateTime(dt.Rows[i]["DealDate"]).Date.ToString("d") + "</td>" +
                                 "<td class=''>" + dt.Rows[i]["OriginalPrice"] + "£</td>" +
                                 "<td class='last'>" +
-                                    "<a data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["DealId"] + "' href='#'>View</a>&nbsp|&nbsp<a href='Deals.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=app' id='approve" + dt.Rows[i]["DealId"] + "'>Approve</a>&nbsp|&nbsp<a id='reject" + dt.Rows[i]["DealId"] + "'href='Deals.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=del'>Reject</a>&nbsp" +
+                                    "<a data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["DealId"] + "' href='#'>View</a>&nbsp|&nbsp<a href='DealsApproved.aspx?id=" + dt.Rows[i]["DealId"] + "&cat=cancel' id='approve" + dt.Rows[i]["DealId"] + "'>Cancel</a>" +
                                 "</td>" +
                             "</tr>";
                 }
@@ -154,48 +143,46 @@ namespace LiveAuction.Admin
           </div>
         </div>
       </section>";
-               var lita = "<script>$( document ).ready(function() {" +
-                    "$('#approve" + dt.Rows[i]["DealId"] + "').click(function(e){" +
-                            "e.preventDefault();alert('loaded');" +
-                            "$.ajax({"+
-                            "type: 'POST',"+
-                            "url: 'Deals.aspx/Approve'," +
-                            "data: {id:'" + dt.Rows[i]["DealId"] + "'},"+
-                            "contentType: 'application/json; charset=utf-8',"+
-                            "dataType: 'json',"+
-                            "success: function (response) { console.log(response.d); },"+
-                            "failure: function (response) { console.log(response.d); }"+
-                            "});" +
-                        "});" +
-                     "});" +
-                "</script>";
+                var lita = "<script>$( document ).ready(function() {" +
+                     "$('#approve" + dt.Rows[i]["DealId"] + "').click(function(e){" +
+                             "e.preventDefault();alert('loaded');" +
+                             "$.ajax({" +
+                             "type: 'POST'," +
+                             "url: 'Deals.aspx/Approve'," +
+                             "data: {id:'" + dt.Rows[i]["DealId"] + "'}," +
+                             "contentType: 'application/json; charset=utf-8'," +
+                             "dataType: 'json'," +
+                             "success: function (response) { console.log(response.d); }," +
+                             "failure: function (response) { console.log(response.d); }" +
+                             "});" +
+                         "});" +
+                      "});" +
+                 "</script>";
             }
             lit += "</table>";
 
             literalText.Text = lit;
         }
-
-        [System.Web.Services.WebMethod]
-        public static void Approve(int id)
-        {
-            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            string query = "UPDATE Deals SET IsDealPassed=0 WHERE DealId=" + id;
-            //SqlDataAdapter adapter = new SqlDataAdapter(query, con);
-            //DataTable dt = new DataTable();
-            //adapter.Fill(dt);
-            con.Close();
-        }
-        [System.Web.Services.WebMethod]
-        public static void Reject(int id)
-        {
-            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
-            SqlConnection con = new SqlConnection(connectionString);
-            con.Open();
-            string query = "DELETE FROM Deals WHERE DealId=" + id;
-            con.Close();
-        }
-
+        //[System.Web.Services.WebMethod]
+        //public static void Approve(int id)
+        //{
+        //    string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
+        //    SqlConnection con = new SqlConnection(connectionString);
+        //    con.Open();
+        //    string query = "UPDATE Deals SET IsDealPassed=0 WHERE DealId=" + id;
+        //    //SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+        //    //DataTable dt = new DataTable();
+        //    //adapter.Fill(dt);
+        //    con.Close();
+        //}
+        //[System.Web.Services.WebMethod]
+        //public static void Reject(int id)
+        //{
+        //    string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
+        //    SqlConnection con = new SqlConnection(connectionString);
+        //    con.Open();
+        //    string query = "DELETE FROM Deals WHERE DealId=" + id;
+        //    con.Close();
+        //}
     }
 }

@@ -65,7 +65,7 @@
 </head>
 <body ng-app="mainModule" ng-controller="mainController">
     <%--{{msg}}--%>
-    <form id="form1" runat="server" >
+    <form id="form1" runat="server">
     <div>
         <!-- start of header -->
         <section class="header-section">
@@ -121,8 +121,9 @@
                 <div class="collapse navbar-collapse" id="manu-navbar">
                   <ul class="nav navbar-nav navbar-nav-main-mnu">
                     <li><a href="#">Today's Events</a></li>
-                    <li><a href="bid-detail.aspx">Live Auctions</a></li>
-                    <li><a href="auctions.aspx">Timed Events</a></li>
+                    <li><a href="#">Live Auctions</a></li>
+                    <%--<li><a href="auctions.aspx">Timed Auctions</a></li>--%>
+                    <li><a href="#">Timed Auctions</a></li>
                   </ul>
                   <div class="navbar-form navbar-right navbar-frm-src" role="search">
                     <div class="form-group form-src">

@@ -29,6 +29,7 @@ namespace LiveAuction.Admin
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     con.Close();
+                    Response.Redirect("Deals.aspx");
                 }
                 if (cat.Equals("del"))
                 {
@@ -38,6 +39,7 @@ namespace LiveAuction.Admin
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     con.Close();
+                    Response.Redirect("Deals.aspx");
                 }
  
             }

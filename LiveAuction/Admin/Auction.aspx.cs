@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
+using System.Globalization;
 
 namespace LiveAuction.Admin
 {
@@ -36,21 +37,22 @@ namespace LiveAuction.Admin
                     //{
                     try
                     {
-                        string filename = Path.GetFileName(FileUpload1.FileName) + new DateTime().Millisecond;
-                        filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
+                        string filename = System.DateTime.Now.ToString("ddMMyyhhmmss") + Path.GetFileName(FileUpload1.FileName);
+                        //string filename = Path.GetFileName(FileUpload1.FileName);
+                        filePath = Server.MapPath(@"~\TCAG\Admin\FileUpload\") + filename;
                         System.Drawing.Image imgFile = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
                         //if (imgFile.PhysicalDimension.Width > 600 || imgFile.PhysicalDimension.Height > 400)
                         //{
-
-
                         //filePath = Server.MapPath(@"~/Admin/FileUpload/") + filename;<img src='./Admin/FileUpload/superbox-full-15.jpg' width='200px'/>
                         //filePath = "./Admin/FileUpload/" + filename;
                         //Path.GetFullPath(filePath).Replace(@"/", @"//");
                         FileUpload1.SaveAs(filePath);
-                        string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                        string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
                         SqlConnection con = new SqlConnection(connectionString);
                         con.Open();
-                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName)values('3','" + txtAuctionName.Text + "','" + auctiondate.Text + "','" + auctiontime.Text + "','" + address.Text + "','" + number.Text + "',0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + "," + "'" + schedulingfee.Text + "'" + "," + "'" + filename + "'" + ")";
+                        DateTime temp = DateTime.ParseExact(auctiondate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+                        string str = temp.ToString("yyyy-MM-dd");
+                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName)values('3','" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + address.Text + "','" + number.Text + "',0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + "," + "'" + schedulingfee.Text + "'" + "," + "'" + filename + "'" + ")";
                         SqlCommand cmd = new SqlCommand(query, con);
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
@@ -66,6 +68,8 @@ namespace LiveAuction.Admin
                         }
                         //}
                         //else { fileUploadLabel.Text = "Maximum resolution of a image has to be in 600X400 (Width X Height) "; }
+                        con.Close();
+                        Response.Redirect("Auction.aspx");
                     }
                     catch (Exception ex)
                     {
@@ -78,8 +82,6 @@ namespace LiveAuction.Admin
                     //}
                     //else { fileUploadLabel.Text = "File size has to be less than 100kb"; }
                 }
-
-
             }
         }
     }

@@ -123,7 +123,7 @@
                                 <tbody>
                                   <tr>
                                     <td><strong>Sales</strong></td>
-                                    <td>$0.00</td>
+                                    <td>£0.00</td>
                                   </tr>
                                   <tr>
                                     <td><strong>items</strong></td>

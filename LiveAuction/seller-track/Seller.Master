@@ -25,14 +25,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-     <script src="js/jquery-1.11.3.min.js"></script>
-     <%-- <script src="../js/jquery.js" type="text/javascript"></script>--%>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <%-- <script src="../js/jquery.js" type="text/javascript"></script>--%>
     <script src="../js/jquery.ui.draggable.js" type="text/javascript"></script>
-    
     <script src="../js/jquery.alerts.js" type="text/javascript"></script>
     <link href="../css/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
     <script language="javascript" type="text/javascript">
-        function trG(str) {            
+        function trG(str) {
             jAlert('<b style="color:green;font-size:1.0em;">' + str + '</b>');
         }
 
@@ -64,6 +63,10 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="top-navbar">
+                      <ul class="nav navbar-nav nav-pic">
+                        <li><img src="images/celebrating-25.png" alt="this is for nav left"></li>
+                        <li class="nv-lt">Auctioneers & Valuers of Fine Art, Antiques & Collectors' Items</li>
+                      </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="../index.aspx">BUYING</a></li>
                     <li> <a href="dashboard.aspx">SELLING</a></li>
@@ -154,22 +157,22 @@
             <div class="browse-txt text-center"><p class="alt-text-show">BROWSE FOR CATEGORY</p></div>
             <div class="browse-ct-option">
                 <ul class="list-inline brws-pic-mnu">
-                    <li><a href="#"><img src="images/cutter.png" alt="cutter"></a></li>
-                    <li><a href="#"><img src="images/christan-cap.png" alt="christan-cap"></a></li>
-                    <li><a href="#"><img src="images/coke.png" alt="coke"></a></li>
-                    <li><a href="#"><img src="images/drink.png" alt="drink"></a></li>
-                    <li><a href="#"><img src="images/lk-cake.png" alt="lk-cake"></a></li>
-                    <li><a href="#"><img src="images/lady-shoe.png" alt="lady-shoe"></a></li>
-                    <li><a href="#"><img src="images/lady-bag.png" alt="lady-bag"></a></li>
-                    <li><a href="#"><img src="images/laptop.png" alt="laptop"></a></li>
-                    <li><a href="#"><img src="images/sun.png" alt="sun"></a></li>
-                    <li><a href="#"><img src="images/blowin.png" alt="blowin"></a></li>
-                    <li><a href="#"><img src="images/leaf.png" alt="leaf"></a></li>
-                    <li><a href="#"><img src="images/flwer.png" alt="flwer"></a></li>
-                    <li><a href="#"><img src="images/plane.png" alt="plane"></a></li>
-                    <li><a href="#"><img src="images/hamer.png" alt="hamer"></a></li>
-                    <li><a href="#"><img src="images/car.png" alt="car"></a></li>
-                    <li><a href="#"><img src="images/man-with-cow.png" alt="man-with-cow"></a></li>
+                    <li><a href="#"><img src="images/JEWELLERY.png" alt="JEWELLERY"/></a></li>
+                    <li><a href="#"><img src="images/silver_plate.png" alt="silver plate"/></a></li>
+                    <li><a href="#"><img src="images/WATCHES.png" alt="WATCHES"/></a></li>
+                    <li><a href="#"><img src="images/PICTURES.png" alt="PICTURES"/></a></li>
+                    <li><a href="#"><img src="images/books.png" alt="books-cake"/></a></li>
+                    <li><a href="#"><img src="images/ceramics_glass.png" alt="ceramics & glass"/></a></li>
+                    <li><a href="#"><img src="images/ORIENTAL.png" alt="ORIENTAL"/></a></li>
+                    <li><a href="#"><img src="images/collectors.png" alt="collectors"/></a></li>
+                    <li><a href="#"><img src="images/CLOCKS_BAROMETERS.png" alt="CLOCKS & BAROMETERS"/></a></li>
+                    <li><a href="#"><img src="images/furniture.png" alt="furniture"/></a></li>
+                    <li><a href="#"><img src="images/rug.png" alt="Rug"/></a></li>
+                    <li><a href="#"><img src="images/PICTURES.png" alt="PICTURES"/></a></li>
+                    <li><a href="#"><img src="images/ORIENTAL.png" alt="ORIENTAL"/></a></li>
+                    <li><a href="#"><img src="images/silver_plate.png" alt="silver_plate"/></a></li>
+                    <li><a href="#"><img src="images/ceramics_glass.png" alt="ceramics_glass"/></a></li>
+                    <li><a href="#"><img src="images/collectors.png" alt="collectors"/></a></li>
                 </ul>
             </div>
         </div><!-- end of brows category -->
@@ -297,7 +300,6 @@
         <!-- this is for end of login modal section -->
         <!-- end of footer -->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-       
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <!-- custom js -->

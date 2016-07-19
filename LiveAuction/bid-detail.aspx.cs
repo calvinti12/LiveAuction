@@ -24,7 +24,6 @@ namespace LiveAuction
                     SelectProduct(id);
                 }
                 else { SelectDeal(id); }
-                
             }
         }
         public void SelectProduct(Int32 id)
@@ -39,7 +38,7 @@ namespace LiveAuction
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
-            string siteMapString = @"<a href='#' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["LotDesc"] + "</span></div>";
+            string siteMapString = @"<a href='Index.aspx' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["LotDesc"] + "</span></div>";
             string template = @"<section class='bid-details-sec'>
       <div class='container'>
         <div class='row'>
@@ -68,7 +67,7 @@ namespace LiveAuction
               </div>  <!-- end of dib title col md 12 -->
               <div class='col-md-12'>
                 <div class='bid-pic'>
-                  <img src='fileupload/upload/" + dt.Rows[0]["LotImageName"] + "' alt='this is the bid image' class='img-responsive'/>";
+                  <img src='/fileupload/upload/" + dt.Rows[0]["LotImageName"] + "' alt='this is the bid image' class='img-responsive'/>";
             template += @"</div>
               </div>
               <div class='col-md-12'>";
@@ -150,7 +149,7 @@ namespace LiveAuction
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
-            string siteMapString = @"<a href='#' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["DealDesc"] + "</span></div>";
+            string siteMapString = @"<a href='Index.aspx' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["DealDesc"] + "</span></div>";
             string template = @"<section class='bid-details-sec'>
       <div class='container'>
         <div class='row'>

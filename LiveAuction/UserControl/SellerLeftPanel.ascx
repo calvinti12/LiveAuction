@@ -16,7 +16,7 @@
                     <li id="liItems"><a href="../seller-track/sell-item.aspx">Items</a></li>
                     <li id="liAuctions"><a href="../seller-track/item-auction.aspx">Auctions</a></li>
                     <li id="liCSVAuctions"><a href="../seller-track/item-csv.aspx">CSV Auctions</a></li>
-                    <li id="liItemUpload"><a href="../seller-track/list-item.aspx">Item Upload</a></li>
+                    <li id="liItemUpload"><a href="../seller-track/list-item.aspx">Lot Item Upload</a></li>
                     <li id="liDealUpload"><a href="../seller-track/list-deal.aspx">Deals Upload</a></li>
                 </ul>
             </div>

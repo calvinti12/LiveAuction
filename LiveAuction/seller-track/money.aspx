@@ -47,18 +47,18 @@
                             <tbody>
                               <tr>
                                 <td>Sales & Cradit</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                               <tr>
                                 <td>Fees</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                               <tr>
                                 <td>Net</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                               <tr>
-                                <td colspan="2" class="money-notice">Please note there is a $5.00 minimum. You will receive a payout as soon as your net payout amonut exceeds $5.00</td>
+                                <td colspan="2" class="money-notice">Please note there is a £5.00 minimum. You will receive a payout as soon as your net payout amonut exceeds £5.00</td>
                               </tr>
                             </tbody>
                           </table>
@@ -75,15 +75,15 @@
                             <tbody>
                               <tr>
                                 <td>Sale</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                               <tr>
                                 <td>Fees</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                               <tr>
                                 <td>Net</td>
-                                <td>$0.00</td>
+                                <td>£0.00</td>
                               </tr>
                             </tbody>
                           </table>

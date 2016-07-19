@@ -10,7 +10,7 @@
 namespace LiveAuction.Admin {
     
     
-    public partial class Deals {
+    public partial class DealsApproved {
         
         /// <summary>
         /// literalText control.

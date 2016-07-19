@@ -108,7 +108,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="breadcumb">
-                     <a href="#" class="incative">Home &raquo; </a><a href="#" class="incative">Register &raquo; </a><span class="current-page">List Item</span></div>
+                     <a href="../Index.aspx" class="incative">Home &raquo; </a><a href="#" class="incative">Register &raquo; </a><span class="current-page">List Item</span></div>
                  </div>
              </div>
          </div>
@@ -123,7 +123,7 @@
               <div class="cr-accnt">
                 <div class="col-md-12">
                     <div class="account-creat-title">
-                        <h2>1. Item</h2>
+                        <h2>1. Lot Item</h2>
                     </div>
                 </div>
                 <div class="col-md-8">

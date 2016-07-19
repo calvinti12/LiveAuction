@@ -32,7 +32,7 @@ namespace LiveAuction.seller_track
                           <div class='sell-item-prt'>
                             <div class='sell-left-pic'>
                               <!--<img src='sell-item.png' alt='ttt' class='img-responsive'>-->
-                                  <img src='../fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='ttt' class='img-responsive'></div>";
+                                  <img src='/fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='ttt' class='img-responsive'></div>";
 
                     lit = lit + @"<div class='sell-pic-des'>
                               <ul class='list-unstyled'>

@@ -243,6 +243,27 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .raputaiton-table-week{}
 /*end of dashboard page */
 
+/*start of cat-left-sideber*/
+.cat-sdr-item-lst li a{display: block;padding:8px 12px;color:#354069;font-weight: 700;font-size: 14px;background-color: #354069;color:#fff;}
+.cat-sdr-item-lst li{margin-bottom: 5px;}
+.cat-sdr-item-lst li a:hover{background-color: #111a3a;text-decoration: none;color:#fff;}
+.cat-sdr-title h2{color:#354069;font-weight: 700;margin: 18px 0;}
+.cat-item-sec .deal-pict{height: 200px;overflow: hidden;border: 1px solid #ddd; }
+.cat-item-sec .deal-pict img{margin:0 auto;}
+.cat-item-pic img{margin:0 auto;}
+.cr-accnt{background-color: #fff;overflow: auto;padding:30px; margin-bottom:30px;-webkit-box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3);-moz-box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3);box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3)}
+account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+.account-selling-lstItem-sec{margin-bottom: 20%;}
+.account-selling-lstItem li:hover{background-color: #247ab1;color:#fff !important;}
+.account-selling-lstItem li a{text-decoration: none;color:#565656;padding:5px 7px;display: block}
+.account-selling-lstItem li a:hover{color:#fff;}
+.account-selling-title{margin-left: 5px;}
+.account-creat-title h2:after{content:"";display: block;width:100%;height: 1px;background-color: #eaeaea;margin-bottom: 50px;margin-top: 25px;}
+.ac-inf-social{text-align: left;}
+.account-creat-title h2{margin-top: 0px;}
+.account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+.cat-item-ac{border:1px solid #ddd;border-radius: 3px;}
+
 
 /* this is for new header */
 .nav-pic li img{width:55px;}
@@ -271,7 +292,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .cr-card-frm-sec{width:68%;}
 .cr-card-frm-sec{margin-left: 0%;}
 .bid-model-dialog{width: 600px;}
-
+.action-item-del-sec.cat-item-sec{min-height: 1%;}
 .sell-item-prt{float: left;width: 20%;}
 .sell-item-prt-2{width: 80%;}
 

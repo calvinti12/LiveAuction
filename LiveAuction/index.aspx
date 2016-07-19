@@ -82,42 +82,42 @@
                   <div class="carousel-inner sp-cr-inn">
                     <div class="item active"> 
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider1.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/20.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider2.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/228.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider3.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/235.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider1.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/25.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider2.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/880.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider3.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/959.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider1.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/713.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <a href="#"><img src="images/item-slider2.jpg" class="img-responsive"></a>
+                            <a href="#"><img src="images/700.jpg" class="img-responsive"></a>
                         </div>
                     </div>
                   </div> <!-- end of carousel-inner -->

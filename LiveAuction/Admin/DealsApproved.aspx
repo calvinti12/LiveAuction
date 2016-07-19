@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master"
-    CodeBehind="Deals.aspx.cs" Inherits="LiveAuction.Admin.Deals" %>
+    CodeBehind="DealsApproved.aspx.cs" Inherits="LiveAuction.Admin.DealsApproved" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!-- Custom styling plus plugins -->
@@ -15,7 +15,7 @@
         <div class="page-title">
             <div class="title_left">
                 <h3>
-                    Deals <small></small>
+                    Deals approved <small></small>
                 </h3>
             </div>
             <div class="title_right">
