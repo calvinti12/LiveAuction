@@ -106,12 +106,12 @@ namespace LiveAuction
                                                   "</div>" +
                                                   "<div class='cr-accnt pop-cr-accnt'>" +
                                                     "<div class='log-audio'>" +
-                                                      "<div class='log-lft'>" +
+                                                      "<!--<div class='log-lft'>" +
                                                         "<button type='button' class='btn btn-default btn-sm'>logout</button>" +
-                                                      "</div>" +
-                                                      "<div class='log-lft pull-right'>" +
+                                                      "</div>-->" +
+                                                      "<!--<div class='log-lft pull-right'>" +
                                                         "<p class='pull-left audio-pop'>Audio available &nbsp; &nbsp; </p><button type='button' class='btn btn-default btn-sm  class='pull-left''><i class='fa fa-volume-up'></i></button>" +
-                                                      "</div>" +
+                                                      "</div>-->" +
                                                     "</div>" +
                                                   "</div>" +
                                                 "</div>" +

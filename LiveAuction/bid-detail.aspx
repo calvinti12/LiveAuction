@@ -169,5 +169,5 @@
         </div>
       </section>
     <!-- end of bid popup -->
-    <asp:PlaceHolder ID = "PlaceHolder1" runat="server"/>
+    <asp:PlaceHolder ID="PlaceHolder1" runat="server" />
 </asp:Content>

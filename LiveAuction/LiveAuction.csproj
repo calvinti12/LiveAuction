@@ -211,7 +211,16 @@
     <Content Include="Admin\js\chartjs\chart.min.js" />
     <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
     <Content Include="Admin\js\colorpicker\docs.js" />
+    <Content Include="CatDisplay.aspx" />
     <Content Include="css\countdown\jquery.countdown.css" />
+    <Content Include="images\20.jpg" />
+    <Content Include="images\228.jpg" />
+    <Content Include="images\235.jpg" />
+    <Content Include="images\25.jpg" />
+    <Content Include="images\700.jpg" />
+    <Content Include="images\713.jpg" />
+    <Content Include="images\880.jpg" />
+    <Content Include="images\959.jpg" />
     <Content Include="images\celebrating-25.png" />
     <Content Include="js\app.js" />
     <Content Include="js\countdown\jquery.countdown.js" />
@@ -725,6 +734,13 @@
     </Compile>
     <Compile Include="catalogue.aspx.designer.cs">
       <DependentUpon>catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatDisplay.aspx.cs">
+      <DependentUpon>CatDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatDisplay.aspx.designer.cs">
+      <DependentUpon>CatDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="fileupload\ajax_fileupload.ashx.cs">
       <DependentUpon>ajax_fileupload.ashx</DependentUpon>

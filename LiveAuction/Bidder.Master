@@ -181,7 +181,7 @@
             <div class="browse-txt text-center"><p class="alt-text-show">BROWSE FOR CATEGORY</p></div>
             <div class="browse-ct-option">
                 <ul class="list-inline brws-pic-mnu">
-                    <li><a href="#"><img src="images/JEWELLERY.png" alt="JEWELLERY"/></a></li>
+                    <li><a href="CatDisplay.aspx?Cat=Jewelry"><img src="images/JEWELLERY.png" alt="JEWELLERY"/></a></li>
                     <li><a href="#"><img src="images/silver_plate.png" alt="silver plate"/></a></li>
                     <li><a href="#"><img src="images/WATCHES.png" alt="WATCHES"/></a></li>
                     <li><a href="#"><img src="images/PICTURES.png" alt="PICTURES"/></a></li>
