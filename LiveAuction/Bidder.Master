@@ -181,22 +181,22 @@
             <div class="browse-txt text-center"><p class="alt-text-show">BROWSE FOR CATEGORY</p></div>
             <div class="browse-ct-option">
                 <ul class="list-inline brws-pic-mnu">
-                    <li><a href="CatDisplay.aspx?Cat=Jewelry"><img src="images/JEWELLERY.png" alt="JEWELLERY"/></a></li>
-                    <li><a href="#"><img src="images/silver_plate.png" alt="silver plate"/></a></li>
-                    <li><a href="#"><img src="images/WATCHES.png" alt="WATCHES"/></a></li>
-                    <li><a href="#"><img src="images/PICTURES.png" alt="PICTURES"/></a></li>
-                    <li><a href="#"><img src="images/books.png" alt="books-cake"/></a></li>
-                    <li><a href="#"><img src="images/ceramics_glass.png" alt="ceramics & glass"/></a></li>
-                    <li><a href="#"><img src="images/ORIENTAL.png" alt="ORIENTAL"/></a></li>
-                    <li><a href="#"><img src="images/collectors.png" alt="collectors"/></a></li>
-                    <li><a href="#"><img src="images/CLOCKS_BAROMETERS.png" alt="CLOCKS & BAROMETERS"/></a></li>
-                    <li><a href="#"><img src="images/furniture.png" alt="furniture"/></a></li>
-                    <li><a href="#"><img src="images/rug.png" alt="Rug"/></a></li>
-                    <li><a href="#"><img src="images/PICTURES.png" alt="PICTURES"/></a></li>
-                    <li><a href="#"><img src="images/ORIENTAL.png" alt="ORIENTAL"/></a></li>
-                    <li><a href="#"><img src="images/silver_plate.png" alt="silver_plate"/></a></li>
-                    <li><a href="#"><img src="images/ceramics_glass.png" alt="ceramics_glass"/></a></li>
-                    <li><a href="#"><img src="images/collectors.png" alt="collectors"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=1"><img src="images/JEWELLERY.png" class="cat-item-ac" alt="Jewelry"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=2"><img src="images/silver_plate.png" alt="silver plate"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=3"><img src="images/WATCHES.png" alt="Watches"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=6"><img src="images/books.png" alt="Books-cake"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=5"><img src="images/PICTURES.png" alt="Pictures"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=4"><img src="images/ceramics_glass.png" alt="Ceramics & Glass"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=7"><img src="images/ORIENTAL.png" alt="Oriental"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=8"><img src="images/collectors.png" alt="collectors"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=10"><img src="images/CLOCKS_BAROMETERS.png" alt="Clocks & Barometers"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=12"><img src="images/furniture.png" alt="Furniture"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=11"><img src="images/rug.png" alt="Rug"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=9"><img src="images/PICTURES.png" alt="Pictures"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=13"><img src="images/ORIENTAL.png" alt="Oriental"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=1"><img src="images/silver_plate.png" alt="Silver Plate"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=2"><img src="images/ceramics_glass.png" alt="Ceramics Glass"/></a></li>
+                    <li><a href="CatDisplay.aspx?cat=3"><img src="images/collectors.png" alt="Collectors"/></a></li>
                 </ul>
             </div>
         </div><!-- end of brows category -->

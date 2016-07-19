@@ -1,4 +1,4 @@
-/* this is for global css */
+/* this is for global css by nirob  */
 *{margin: 0;padding: 0;}
 body{font-size: :14px;font-weight: normal;font-family: 'Open Sans', sans-serif;color:#565656;background:url(../images/bg.jpg);}
 ::selection{background: #d6071b;color: #fff;text-shadow: none;}
@@ -280,6 +280,27 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .clander-pagination-sc{padding:15px 15px 10px 15px;}
 /*end of calender item*/
 
+/*start of cat-left-sideber*/
+.cat-sdr-item-lst li a{display: block;padding:8px 12px;color:#354069;font-weight: 700;font-size: 14px;background-color: #354069;color:#fff;}
+.cat-sdr-item-lst li{margin-bottom: 5px;}
+.cat-sdr-item-lst li a:hover{background-color: #111a3a;text-decoration: none;color:#fff;}
+.cat-sdr-title h2{color:#354069;font-weight: 700;margin: 18px 0;}
+.cat-item-sec .deal-pict{height: 200px;overflow: hidden;border: 1px solid #ddd; }
+.cat-item-sec .deal-pict img{margin:0 auto;}
+.cat-item-pic img{margin:0 auto;}
+.cr-accnt{background-color: #fff;overflow: auto;padding:30px; margin-bottom:30px;-webkit-box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3);-moz-box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3);box-shadow: 0px 1px 2px 0px rgba(171,171,171,0.3)}
+account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+.account-selling-lstItem-sec{margin-bottom: 20%;}
+.account-selling-lstItem li:hover{background-color: #247ab1;color:#fff !important;}
+.account-selling-lstItem li a{text-decoration: none;color:#565656;padding:5px 7px;display: block}
+.account-selling-lstItem li a:hover{color:#fff;}
+.account-selling-title{margin-left: 5px;}
+.account-creat-title h2:after{content:"";display: block;width:100%;height: 1px;background-color: #eaeaea;margin-bottom: 50px;margin-top: 25px;}
+.ac-inf-social{text-align: left;}
+.account-creat-title h2{margin-top: 0px;}
+.account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+.cat-item-ac{border:1px solid #787878;;border-radius: 3px;}
+
 
 
 
@@ -301,6 +322,38 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 }
 .account-selling-lstItem li a:hover{background-color:#247ab1;color:#fff;}
 .account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+
+
+
+/*start of selling account info*/
+.account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
+.account-selling-lstItem-sec{margin-bottom: 20%;}
+.account-selling-lstItem li:hover{background-color: #354069;color:#fff !important;}
+.account-selling-lstItem li a{text-decoration: none;color:#565656;padding:5px 7px;display: block}
+.account-selling-lstItem li a:hover{color:#fff;}
+.account-selling-title{margin-left: 5px;}
+.account-creat-title h2:after{content:"";display: block;width:100%;height: 1px;background-color: #eaeaea;margin-bottom: 50px;margin-top: 25px;}
+.ac-inf-social{text-align: left;}
+.account-creat-title h2{margin-top: 0px;}
+
+.sdmnu-active a{background-color: #354069;color:#fff !important;display: block;}
+
+
+/*start of sell-item page */
+.sell-apply{margin-bottom: 20px;}
+.sell-item-sector{margin:15px 0;}
+.sell-itm-set-title{margin-bottom: 10px;}
+.sell-item-con, .sell-item{margin: 12px 0;border: 1px solid #ddd;padding: 15px;overflow: auto;}
+.sell-left-pic, .sell-pic{margin: 5px 0 10px 0;border: 1px solid #eee;padding: 8px;text-align: center;margin-right: 12px;}
+.dropdown .sellDrop{min-width: 0px;}
+.sell-pic-right-se{overflow: auto;}
+.checkbox span{background-color: #ff0000;color:#fff;padding: 3px;border-radius: 2px;}
+
+
+.sell-item-prt{float: left;width: 16%;}
+.sell-item-prt-2{width: 84%;}
+.sell-left-pic img{margin:0 auto;}
+/*start of sell-item page */
 
 
 
@@ -335,6 +388,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 .slider-sd-portion img{height:auto;}
 .sp-cr-inn{max-height:163px !important;}
 .sldr-sd-caption h3{font-size:15px;}
+.action-item-del-sec.cat-item-sec{min-height: 1%;}
 }
 
 /*this is for max width 786px */

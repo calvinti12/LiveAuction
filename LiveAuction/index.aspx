@@ -59,7 +59,7 @@
                             <h1>UPCOMING AUCTIONS</h1>
                         </div>
                         <div class="item-sec-view pull-right">
-                            <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>
+                            <a href="CatDisplay.aspx?cat=AllAuctions" class="btn btn-default btn-item-vew">VIEW ALL</a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                             <h1>TODAY'S DEALS</h1>
                         </div>
                         <div class="item-sec-view pull-right">
-                            <a href="#" class="btn btn-default btn-item-vew">VIEW ALL</a>
+                            <a href="CatDisplay.aspx?cat=AllDeals" class="btn btn-default btn-item-vew">VIEW ALL</a>
                         </div>
                     </div>
                 </div>

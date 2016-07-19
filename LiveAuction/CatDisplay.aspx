@@ -24,15 +24,16 @@
               <div class="cr-accnt">
                   <div class="account-selling-lstItem-sec">
                     <div class="account-selling-title">
-                      <strong><h4>Coke</h4></strong>
+                    <asp:PlaceHolder ID="SubCategoryHeading" runat="server" />
                     </div>
                     <div class="account-selling-lstItem">
                       <ul class="list-unstyled">
-                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <%--<li><a href="dashboard.html">Dashboard</a></li>
                         <li><a href="advertise.html">Advertise</a></li>
                         <li><a href="sell-item.html">Items</a></li>
                         <li><a href="item-auction.html">Auctions</a></li>
-                        <li><a href="item-csv.html">CSV Auctions</a></li>
+                        <li><a href="item-csv.html">CSV Auctions</a></li>--%>
+                        <asp:PlaceHolder ID="PlaceHolderSubCategory" runat="server" />
                       </ul>
                     </div>
                   </div><!-- end of item accont selling -->
@@ -43,11 +44,12 @@
             <div class="col-md-9">
               <div class="cat-item-tl-sec">
                 <div class="cat-item-title">
-                  <h2>Fine Jewelry</h2>
+                  <asp:PlaceHolder ID="CategoryHeading" runat="server" />
                 </div>
 
                 <div class="row">
-                  <div class="col-md-4">
+                <asp:PlaceHolder ID="PlaceHolderCatagoriesMainContainer" runat="server" />
+                  <%--<div class="col-md-4">
                     <div class="action-item-del-sec cat-item-sec">
                         <div class="deal-pict">
                             <img src="images/deal-bag.png" alt="deal-bag.png" class="img-responsive">
@@ -186,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                  </div>  <!-- end of cat-item-sec -->
+                  </div>  <!-- end of cat-item-sec -->--%>
                 </div>
               </div>
             </div>

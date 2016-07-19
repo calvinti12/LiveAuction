@@ -1,4 +1,0 @@
-/*#wrapper {width:250px; margin:50px auto}*/
-#msg {display:none; position:absolute; z-index:200; background:url(../images/msg_arrow.gif) left center no-repeat; padding-left:7px}
-#msgcontent {font:12px Verdana, Arial, Helvetica, sans-serif; color:Red;display:block; background:#f3e6e6; border:2px solid #924949; border-left:none; padding:8px; min-width:85px; max-width:200px}
-#sucessmsgcontent {font:12px Verdana, Arial, Helvetica, sans-serif; color:Red;display:block; background:#f3e6e6; border:2px solid #924949; border-left:none; padding:8px;width:300px; }

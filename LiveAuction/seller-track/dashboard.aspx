@@ -59,7 +59,7 @@
                            </ul>
                            <ul class="list-unstyled dash-tp-item-arrw">
                              <li><a href="#"><span>0 Item schedule into Auctions</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                             <li><a href="#"><span>1 panding Auctions schedule Request</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                             <li><a href="#"><span>1 pending auctions schedule request</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                              <li><a href="#"><span>1 item to be scheduled</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                            </ul>
                          </div>

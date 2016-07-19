@@ -1,4 +1,4 @@
-/* this is for global css */
+/* this is for global css   */
 *{margin: 0;padding: 0;}
 body{font-size: :14px;font-weight: normal;font-family: 'Open Sans', sans-serif;color:#565656;background:url(../images/bg.jpg);}
 ::selection{background: #d6071b;color: #fff;text-shadow: none;}
@@ -181,6 +181,24 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 /*start of sell-item page */
 
 
+/*start of sell-item page */
+.sell-apply{margin-bottom: 20px;}
+.sell-item-sector{margin:15px 0;}
+.sell-itm-set-title{margin-bottom: 10px;}
+.sell-item-con, .sell-item{margin: 12px 0;border: 1px solid #ddd;padding: 15px;overflow: auto;}
+.sell-left-pic, .sell-pic{margin: 5px 0 10px 0;border: 1px solid #eee;padding: 8px;text-align: center;margin-right: 12px;}
+.dropdown .sellDrop{min-width: 0px;}
+.sell-pic-right-se{overflow: auto;}
+.checkbox span{background-color: #ff0000;color:#fff;padding: 3px;border-radius: 2px;}
+
+
+.sell-item-prt{float: left;width: 16%;}
+.sell-item-prt-2{width: 84%;}
+.sell-left-pic img{margin:0 auto;}
+
+/*start of sell-item end */
+
+
 /*start of csv item page */
 .btn-blkitem{padding:6px 120px;}
 .description-title{margin:15px 0;}
@@ -262,7 +280,7 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 .ac-inf-social{text-align: left;}
 .account-creat-title h2{margin-top: 0px;}
 .account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
-.cat-item-ac{border:1px solid #ddd;border-radius: 3px;}
+.cat-item-ac{border:1px solid #787878;;border-radius: 3px;}
 
 
 /* this is for new header */

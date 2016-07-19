@@ -60,7 +60,7 @@
                 <div class="cr-accnt">
                   <div class="tt">
                       <div class="account-creat-title">
-                          <h2>Want to sell in higher voluem?</h2>
+                          <h2>Want to sell in higher volume?</h2>
                       </div>
                   </div>
                   <div class="tt">
@@ -78,11 +78,11 @@
                           <div class="form-group">
                             <div class="dropdown">
                               <button class="btn btn-default dropdown-toggle" type="button" id="feedbackdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Everythings
+                                All
                                 <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="feedbackdropdown">
-                                <li><a href="#">Everythings</a></li>
+                                <li><a href="#">All</a></li>
                                 <li><a href="#">Unlisted</a></li>
                                 <li><a href="#">Listed</a></li>
                                 <li><a href="#">Scheduled</a></li>
@@ -121,7 +121,7 @@
                           <div class="form-group">
                             <div class="dropdown">
                               <button class="btn btn-default dropdown-toggle" type="button" id="feedbackdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Everytings
+                                All
                                 <span class="caret"></span>
                               </button>
                               <ul class="dropdown-menu" aria-labelledby="feedbackdropdown">
