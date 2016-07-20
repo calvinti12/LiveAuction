@@ -121,7 +121,7 @@
                 <div class="collapse navbar-collapse" id="manu-navbar">
                   <ul class="nav navbar-nav navbar-nav-main-mnu">
                     <li><a href="#">Today's Events</a></li>
-                    <li><a href="#">Live Auctions</a></li>
+                    <li><a href="CatDisplay.aspx?cat=AllAuctions">Live Auctions</a></li>
                     <%--<li><a href="auctions.aspx">Timed Auctions</a></li>--%>
                     <li><a href="#">Timed Auctions</a></li>
                   </ul>
@@ -162,7 +162,7 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right navbar-nav-mobile-main-mnu">
                     <li><a href="#">Today's Events</a></li>
-                    <li><a href="#">Live Auctions</a></li>
+                    <li><a href="CatDisplay.aspx?cat=AllAuctions">Live Auctions</a></li>
                     <li><a href="#">Timed Events</a></li>
                   </ul>
                   <div class="navbar-form navbar-frm-src" role="search">

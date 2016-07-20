@@ -13,15 +13,6 @@ namespace LiveAuction {
     public partial class CatDisplay {
         
         /// <summary>
-        /// SubCategoryHeading control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder SubCategoryHeading;
-        
-        /// <summary>
         /// PlaceHolderSubCategory control.
         /// </summary>
         /// <remarks>
@@ -29,15 +20,6 @@ namespace LiveAuction {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderSubCategory;
-        
-        /// <summary>
-        /// CategoryHeading control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder CategoryHeading;
         
         /// <summary>
         /// PlaceHolderCatagoriesMainContainer control.

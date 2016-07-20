@@ -10,7 +10,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="breadcumb">
-                     <a href="#" class="incative">Home &raquo; </a><a href="#" class="incative">Live Auctions &raquo; </a><span class="current-page">Registration</span></div>
+                     <a href="index.aspx" class="incative">Home &raquo; </a><a href="CatDisplay.aspx?cat=AllAuctions" class="incative">Live Auctions &raquo; </a><%--<span class="current-page">Registration</span>--%></div>
                  </div>
              </div>
          </div>
@@ -24,7 +24,8 @@
               <div class="cr-accnt">
                   <div class="account-selling-lstItem-sec">
                     <div class="account-selling-title">
-                    <asp:PlaceHolder ID="SubCategoryHeading" runat="server" />
+                    <%--<asp:PlaceHolder ID="SubCategoryHeading" runat="server" />--%>
+                     <strong><h4>Categoris</h4></strong>
                     </div>
                     <div class="account-selling-lstItem">
                       <ul class="list-unstyled">
@@ -44,7 +45,8 @@
             <div class="col-md-9">
               <div class="cat-item-tl-sec">
                 <div class="cat-item-title">
-                  <asp:PlaceHolder ID="CategoryHeading" runat="server" />
+                  <%--<asp:PlaceHolder ID="CategoryHeading" runat="server" />--%>
+                  <h2>All Auctions</h2>
                 </div>
 
                 <div class="row">

@@ -38,3 +38,4 @@ E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dl
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache

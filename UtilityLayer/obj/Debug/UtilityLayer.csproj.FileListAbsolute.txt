@@ -38,3 +38,4 @@ E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\bin\Debug\UtilityLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\bin\Debug\UtilityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.pdb
+E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.csprojResolveAssemblyReference.cache
