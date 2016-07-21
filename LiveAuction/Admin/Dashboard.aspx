@@ -89,7 +89,7 @@
               </div>--%>
               <div class="col-md-12">
                 <div class="cr-accnt
-                <div class="tt">
+<%--                <div class="tt">
                     <div class="row">
                         <form>
                             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -148,7 +148,7 @@
                                </div> -->
                         </form>
                     </div>
-                </div>
+                </div>--%>
                   <div class="tt">
                   	<div class="dash-higher-vl">
                   		<div class="alert alert-success"><span class="dash-tt"><strong>Sell in volume</strong></span> <strong>interested in selling in more volume?</strong>  Learn more about our partner program <a href="#">here</a></div>
