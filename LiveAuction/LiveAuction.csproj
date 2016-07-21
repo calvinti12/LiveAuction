@@ -80,6 +80,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Admin\Auction.aspx" />
     <Content Include="Admin\AuctionView.aspx" />
+    <Content Include="Admin\css\custom_seller.css" />
     <Content Include="Admin\DealsApproved.aspx" />
     <Content Include="Admin\Deals.aspx" />
     <Content Include="Admin\css\animate.min.css" />

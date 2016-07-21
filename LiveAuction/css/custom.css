@@ -1,4 +1,4 @@
-/* this is for global css by nirob  */
+	/* this is for global css by nirob  */
 *{margin: 0;padding: 0;}
 body{font-size: :14px;font-weight: normal;font-family: 'Open Sans', sans-serif;color:#565656;background:url(../images/bg.jpg);}
 ::selection{background: #d6071b;color: #fff;text-shadow: none;}
