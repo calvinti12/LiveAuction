@@ -91,7 +91,7 @@
                       </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.aspx" class="active">BUYING</a></li>
-                    <li><%--<a href="seller-track/dashboard.aspx">SELLING</a>--%><asp:LinkButton ID="lnkSeller" runat="server" OnClick="lnkSeller_Click" CausesValidation="false">SELLING</asp:LinkButton></li>
+                    <%--<li><a href="seller-track/dashboard.aspx">SELLING</a><asp:LinkButton ID="lnkSeller" runat="server" OnClick="lnkSeller_Click" CausesValidation="false">SELLING</asp:LinkButton></li>--%>
                     <li><a href="#">HELP</a></li>
                     <li class="tp-nv-spce tp-nv-spec-fst" id="liSignUp" runat="server"><a id="aSignUp" runat="server" href="signup.aspx">SIGN UP</a></li>
                     <li class="tp-nv-spce tp-nv-spec-lst" id="liLogIn" runat="server"><a href="#" data-toggle="modal" data-target="#loginmodal">LOG IN</a></li>

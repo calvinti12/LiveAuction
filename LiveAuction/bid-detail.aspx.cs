@@ -38,7 +38,7 @@ namespace LiveAuction
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             con.Close();
-            string siteMapString = @"<a href='Index.aspx' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["LotDesc"] + "</span></div>";
+            string siteMapString = @"<a href='Index.aspx' class='incative'>Home &raquo; </a><a href='#' class='incative'>Live Auctions &raquo; </a><span class='current-page'>" + dt.Rows[0]["Title"] + "</span></div>";
             string template = @"<section class='bid-details-sec'>
       <div class='container'>
         <div class='row'>

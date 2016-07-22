@@ -45,7 +45,7 @@
                         ControlToValidate="txtLoginPassword" ForeColor="Red"></asp:RequiredFieldValidator>
                     <i class="fa fa-eye"></i>
                 </div>
-                <div class="form-group">
+<%--                <div class="form-group">
                     <table cellpadding="5" cellspacing="5">
                         <tr>
                             <td>
@@ -62,7 +62,7 @@
                             </td>
                         </tr>
                     </table>
-                </div>
+                </div>--%>
                 <div class="checkbox text-center">
                     <label>
                         <input type="checkbox" id="chkPwdSave" runat="server">

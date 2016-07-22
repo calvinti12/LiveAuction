@@ -39,7 +39,7 @@
               <div class="cat-item-tl-sec">
                 <div class="cat-item-title">
                   <%--<asp:PlaceHolder ID="CategoryHeading" runat="server" />--%>
-                  <h2>All Auctions</h2>
+                  <h2>All items</h2>
                 </div>
 
                 <div class="row">

@@ -43,7 +43,8 @@ namespace LiveAuction.UserControl
         {
             string Email = txtLoginEmail.Text.Trim();
             string Password = txtLoginPassword.Text.Trim();
-            string UserType = rdbtnlistUserType.SelectedValue;
+            //string UserType = rdbtnlistUserType.SelectedValue;
+            string UserType = "1";
             DataTable dtLogin = objBidderBL.GetLoginUser(Email, Password, UserType);
             if (dtLogin != null && dtLogin.Rows.Count > 0)
             {

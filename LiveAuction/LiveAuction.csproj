@@ -78,8 +78,11 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Admin\account-info.aspx" />
+    <Content Include="Admin\advertise.aspx" />
     <Content Include="Admin\Auction.aspx" />
     <Content Include="Admin\AuctionView.aspx" />
+    <Content Include="Admin\connecting.aspx" />
     <Content Include="Admin\css\custom_seller.css" />
     <Content Include="Admin\DealsApproved.aspx" />
     <Content Include="Admin\Deals.aspx" />
@@ -157,6 +160,7 @@
     <Content Include="Admin\css\switchery\switchery.min.css" />
     <Content Include="Admin\css\timepicker\DateTimePicker.css" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\feedback.aspx" />
     <Content Include="Admin\FileUpload\superbox-full-10.jpg" />
     <Content Include="Admin\FileUpload\upload.png" />
     <Content Include="Admin\fonts\css\font-awesome.css" />
@@ -203,6 +207,10 @@
     <Content Include="Admin\images\sprite-skin-simple.png" />
     <Content Include="Admin\images\user.png" />
     <Content Include="Admin\images\visa.png" />
+    <Content Include="Admin\inbox.aspx" />
+    <Content Include="Admin\item-auction.aspx" />
+    <Content Include="Admin\item-bulkaction.aspx" />
+    <Content Include="Admin\item-csv.aspx" />
     <Content Include="Admin\js\angular.js" />
     <Content Include="Admin\js\autocomplete\countries.js" />
     <Content Include="Admin\js\autocomplete\jquery.autocomplete.js" />
@@ -212,110 +220,13 @@
     <Content Include="Admin\js\chartjs\chart.min.js" />
     <Content Include="Admin\js\colorpicker\bootstrap-colorpicker.min.js" />
     <Content Include="Admin\js\colorpicker\docs.js" />
-    <Content Include="Admin\seller-track\account-info.aspx" />
-    <Content Include="Admin\seller-track\account-info.html" />
-    <Content Include="Admin\seller-track\advertise.aspx" />
-    <Content Include="Admin\seller-track\advertise.html" />
-    <Content Include="Admin\seller-track\connecting.aspx" />
-    <Content Include="Admin\seller-track\connecting.html" />
-    <Content Include="Admin\seller-track\css\bootstrap.min.css" />
-    <Content Include="Admin\seller-track\css\custom.css" />
-    <Content Include="Admin\seller-track\dashboard.aspx" />
-    <Content Include="Admin\seller-track\dashboard.html" />
-    <Content Include="Admin\seller-track\feedback.aspx" />
-    <Content Include="Admin\seller-track\feedback.html" />
-    <Content Include="Admin\seller-track\font-awesome\css\font-awesome.css" />
-    <Content Include="Admin\seller-track\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Admin\seller-track\images\accept-card.png" />
-    <Content Include="Admin\seller-track\images\action-item-logo.png" />
-    <Content Include="Admin\seller-track\images\ball-fl.jpg" />
-    <Content Include="Admin\seller-track\images\better-other.png" />
-    <Content Include="Admin\seller-track\images\bg.jpg" />
-    <Content Include="Admin\seller-track\images\bid-bought.png" />
-    <Content Include="Admin\seller-track\images\bid-social-fid.png" />
-    <Content Include="Admin\seller-track\images\bidpp1.png" />
-    <Content Include="Admin\seller-track\images\blowin.png" />
-    <Content Include="Admin\seller-track\images\books.png" />
-    <Content Include="Admin\seller-track\images\calender-bishop.png" />
-    <Content Include="Admin\seller-track\images\calender-item-pic.png" />
-    <Content Include="Admin\seller-track\images\calender-product.png" />
-    <Content Include="Admin\seller-track\images\car.png" />
-    <Content Include="Admin\seller-track\images\celebrating-25.png" />
-    <Content Include="Admin\seller-track\images\ceramics_glass.png" />
-    <Content Include="Admin\seller-track\images\christan-cap.png" />
-    <Content Include="Admin\seller-track\images\CLOCKS_BAROMETERS.png" />
-    <Content Include="Admin\seller-track\images\coke.png" />
-    <Content Include="Admin\seller-track\images\collectors.png" />
-    <Content Include="Admin\seller-track\images\cr-card.png" />
-    <Content Include="Admin\seller-track\images\cr-card2.png" />
-    <Content Include="Admin\seller-track\images\cutter.png" />
-    <Content Include="Admin\seller-track\images\deal-bag.png" />
-    <Content Include="Admin\seller-track\images\deal-laptop.png" />
-    <Content Include="Admin\seller-track\images\deal-mouse.png" />
-    <Content Include="Admin\seller-track\images\deal-nekless.png" />
-    <Content Include="Admin\seller-track\images\deal-shoe.png" />
-    <Content Include="Admin\seller-track\images\drink.png" />
-    <Content Include="Admin\seller-track\images\duck-pot.jpg" />
-    <Content Include="Admin\seller-track\images\duck-pot2.jpg" />
-    <Content Include="Admin\seller-track\images\enjoy-shopping-girl.jpg" />
-    <Content Include="Admin\seller-track\images\favicon.png" />
-    <Content Include="Admin\seller-track\images\flwer.png" />
-    <Content Include="Admin\seller-track\images\frize.jpg" />
-    <Content Include="Admin\seller-track\images\frize2.jpg" />
-    <Content Include="Admin\seller-track\images\furniture.png" />
-    <Content Include="Admin\seller-track\images\hamer.png" />
-    <Content Include="Admin\seller-track\images\icon.png" />
-    <Content Include="Admin\seller-track\images\IMG_0328_thumb.jpg" />
-    <Content Include="Admin\seller-track\images\item-car-lt-ctrl.png" />
-    <Content Include="Admin\seller-track\images\item-car-rt-ctrl.png" />
-    <Content Include="Admin\seller-track\images\item-slider1.jpg" />
-    <Content Include="Admin\seller-track\images\item-slider2.jpg" />
-    <Content Include="Admin\seller-track\images\item-slider3.jpg" />
-    <Content Include="Admin\seller-track\images\item-time-live.png" />
-    <Content Include="Admin\seller-track\images\JEWELLERY.png" />
-    <Content Include="Admin\seller-track\images\lady-bag.png" />
-    <Content Include="Admin\seller-track\images\lady-shoe.png" />
-    <Content Include="Admin\seller-track\images\laptop.png" />
-    <Content Include="Admin\seller-track\images\leaf.png" />
-    <Content Include="Admin\seller-track\images\lk-cake.png" />
-    <Content Include="Admin\seller-track\images\logo.png" />
-    <Content Include="Admin\seller-track\images\man-with-cow.png" />
-    <Content Include="Admin\seller-track\images\ORIENTAL.png" />
-    <Content Include="Admin\seller-track\images\PICTURES.png" />
-    <Content Include="Admin\seller-track\images\plane.png" />
-    <Content Include="Admin\seller-track\images\rug.png" />
-    <Content Include="Admin\seller-track\images\sell-item.png" />
-    <Content Include="Admin\seller-track\images\selling1-mpTowr.png" />
-    <Content Include="Admin\seller-track\images\silver_plate.png" />
-    <Content Include="Admin\seller-track\images\slider1.jpg" />
-    <Content Include="Admin\seller-track\images\sun.png" />
-    <Content Include="Admin\seller-track\images\trust-card.png" />
-    <Content Include="Admin\seller-track\images\WATCHES.png" />
-    <Content Include="Admin\seller-track\inbox.aspx" />
-    <Content Include="Admin\seller-track\inbox.html" />
-    <Content Include="Admin\seller-track\item-auction.aspx" />
-    <Content Include="Admin\seller-track\item-auction.html" />
-    <Content Include="Admin\seller-track\item-bulkaction.aspx" />
-    <Content Include="Admin\seller-track\item-bulkaction.html" />
-    <Content Include="Admin\seller-track\item-csv.aspx" />
-    <Content Include="Admin\seller-track\item-csv.html" />
-    <Content Include="Admin\seller-track\js\bootstrap.min.js" />
-    <Content Include="Admin\seller-track\js\custom.js" />
-    <Content Include="Admin\seller-track\js\jquery-1.11.3.min.js" />
-    <Content Include="Admin\seller-track\list-deal.aspx" />
-    <Content Include="Admin\seller-track\list-item.aspx" />
-    <Content Include="Admin\seller-track\list-item.html" />
-    <Content Include="Admin\seller-track\money.aspx" />
-    <Content Include="Admin\seller-track\money.html" />
-    <Content Include="Admin\seller-track\sell-item-Copy.html" />
-    <Content Include="Admin\seller-track\sell-item.aspx" />
-    <Content Include="Admin\seller-track\sell-item.html" />
-    <Content Include="Admin\seller-track\seller1.aspx" />
-    <Content Include="Admin\seller-track\seller1.html" />
-    <Content Include="Admin\seller-track\seller2.aspx" />
-    <Content Include="Admin\seller-track\seller2.html" />
-    <Content Include="Admin\seller-track\stats.aspx" />
-    <Content Include="Admin\seller-track\stats.html" />
+    <Content Include="Admin\list-deal.aspx" />
+    <Content Include="Admin\list-item.aspx" />
+    <Content Include="Admin\money.aspx" />
+    <Content Include="Admin\sell-item.aspx" />
+    <Content Include="Admin\seller1.aspx" />
+    <Content Include="Admin\seller2.aspx" />
+    <Content Include="Admin\stats.aspx" />
     <Content Include="CatDisplay.aspx" />
     <Content Include="css\countdown\jquery.countdown.css" />
     <Content Include="images\20.jpg" />
@@ -606,97 +517,6 @@
     <Content Include="Scripts\DropzoneJs_scripts\dropzone-master\test\test.js" />
     <Content Include="Scripts\DropzoneJs_scripts\dropzone.css" />
     <Content Include="Scripts\DropzoneJs_scripts\dropzone.js" />
-    <Content Include="seller-track\account-info.aspx" />
-    <Content Include="seller-track\account-info.html" />
-    <Content Include="seller-track\advertise.aspx" />
-    <Content Include="seller-track\advertise.html" />
-    <Content Include="seller-track\connecting.aspx" />
-    <Content Include="seller-track\connecting.html" />
-    <Content Include="seller-track\list-deal.aspx" />
-    <Content Include="seller-track\css\bootstrap.min.css" />
-    <Content Include="seller-track\css\custom.css" />
-    <Content Include="seller-track\dashboard.aspx" />
-    <Content Include="seller-track\dashboard.html" />
-    <Content Include="seller-track\feedback.aspx" />
-    <Content Include="seller-track\feedback.html" />
-    <Content Include="seller-track\font-awesome\css\font-awesome.css" />
-    <Content Include="seller-track\font-awesome\css\font-awesome.min.css" />
-    <Content Include="seller-track\images\accept-card.png" />
-    <Content Include="seller-track\images\action-item-logo.png" />
-    <Content Include="seller-track\images\ball-fl.jpg" />
-    <Content Include="seller-track\images\better-other.png" />
-    <Content Include="seller-track\images\bg.jpg" />
-    <Content Include="seller-track\images\bid-bought.png" />
-    <Content Include="seller-track\images\bid-social-fid.png" />
-    <Content Include="seller-track\images\bidpp1.png" />
-    <Content Include="seller-track\images\blowin.png" />
-    <Content Include="seller-track\images\calender-bishop.png" />
-    <Content Include="seller-track\images\calender-item-pic.png" />
-    <Content Include="seller-track\images\calender-product.png" />
-    <Content Include="seller-track\images\car.png" />
-    <Content Include="seller-track\images\christan-cap.png" />
-    <Content Include="seller-track\images\coke.png" />
-    <Content Include="seller-track\images\cr-card.png" />
-    <Content Include="seller-track\images\cr-card2.png" />
-    <Content Include="seller-track\images\cutter.png" />
-    <Content Include="seller-track\images\deal-bag.png" />
-    <Content Include="seller-track\images\deal-laptop.png" />
-    <Content Include="seller-track\images\deal-mouse.png" />
-    <Content Include="seller-track\images\deal-nekless.png" />
-    <Content Include="seller-track\images\deal-shoe.png" />
-    <Content Include="seller-track\images\drink.png" />
-    <Content Include="seller-track\images\duck-pot.jpg" />
-    <Content Include="seller-track\images\duck-pot2.jpg" />
-    <Content Include="seller-track\images\enjoy-shopping-girl.jpg" />
-    <Content Include="seller-track\images\favicon.png" />
-    <Content Include="seller-track\images\flwer.png" />
-    <Content Include="seller-track\images\frize.jpg" />
-    <Content Include="seller-track\images\frize2.jpg" />
-    <Content Include="seller-track\images\hamer.png" />
-    <Content Include="seller-track\images\IMG_0328_thumb.jpg" />
-    <Content Include="seller-track\images\item-car-lt-ctrl.png" />
-    <Content Include="seller-track\images\item-car-rt-ctrl.png" />
-    <Content Include="seller-track\images\item-slider1.jpg" />
-    <Content Include="seller-track\images\item-slider2.jpg" />
-    <Content Include="seller-track\images\item-slider3.jpg" />
-    <Content Include="seller-track\images\item-time-live.png" />
-    <Content Include="seller-track\images\lady-bag.png" />
-    <Content Include="seller-track\images\lady-shoe.png" />
-    <Content Include="seller-track\images\laptop.png" />
-    <Content Include="seller-track\images\leaf.png" />
-    <Content Include="seller-track\images\lk-cake.png" />
-    <Content Include="seller-track\images\logo.png" />
-    <Content Include="seller-track\images\man-with-cow.png" />
-    <Content Include="seller-track\images\plane.png" />
-    <Content Include="seller-track\images\sell-item.png" />
-    <Content Include="seller-track\images\selling1-mpTowr.png" />
-    <Content Include="seller-track\images\slider1.jpg" />
-    <Content Include="seller-track\images\sun.png" />
-    <Content Include="seller-track\images\trust-card.png" />
-    <Content Include="seller-track\inbox.aspx" />
-    <Content Include="seller-track\inbox.html" />
-    <Content Include="seller-track\item-auction.aspx" />
-    <Content Include="seller-track\item-auction.html" />
-    <Content Include="seller-track\item-bulkaction.aspx" />
-    <Content Include="seller-track\item-bulkaction.html" />
-    <Content Include="seller-track\item-csv.aspx" />
-    <Content Include="seller-track\item-csv.html" />
-    <Content Include="seller-track\js\bootstrap.min.js" />
-    <Content Include="seller-track\js\custom.js" />
-    <Content Include="seller-track\js\jquery-1.11.3.min.js" />
-    <Content Include="seller-track\list-item.aspx" />
-    <Content Include="seller-track\list-item.html" />
-    <Content Include="seller-track\money.aspx" />
-    <Content Include="seller-track\money.html" />
-    <Content Include="seller-track\sell-item-Copy.html" />
-    <Content Include="seller-track\sell-item.aspx" />
-    <Content Include="seller-track\sell-item.html" />
-    <Content Include="seller-track\seller1.aspx" />
-    <Content Include="seller-track\seller1.html" />
-    <Content Include="seller-track\seller2.aspx" />
-    <Content Include="seller-track\seller2.html" />
-    <Content Include="seller-track\stats.aspx" />
-    <Content Include="seller-track\stats.html" />
     <Content Include="Selling.aspx" />
     <Content Include="SendTestMail.aspx" />
     <Content Include="signup.aspx" />
@@ -749,12 +569,26 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\account-info.aspx.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\account-info.aspx.designer.cs">
+      <DependentUpon>account-info.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\advertise.aspx.cs">
+      <DependentUpon>advertise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\advertise.aspx.designer.cs">
+      <DependentUpon>advertise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Auction.aspx.cs">
       <DependentUpon>Auction.aspx</DependentUpon>
@@ -769,6 +603,13 @@
     </Compile>
     <Compile Include="Admin\AuctionView.aspx.designer.cs">
       <DependentUpon>AuctionView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\connecting.aspx.cs">
+      <DependentUpon>connecting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\connecting.aspx.designer.cs">
+      <DependentUpon>connecting.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DealsApproved.aspx.cs">
       <DependentUpon>DealsApproved.aspx</DependentUpon>
@@ -791,6 +632,55 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\feedback.aspx.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\feedback.aspx.designer.cs">
+      <DependentUpon>feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\inbox.aspx.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\inbox.aspx.designer.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\item-auction.aspx.cs">
+      <DependentUpon>item-auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\item-auction.aspx.designer.cs">
+      <DependentUpon>item-auction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\item-bulkaction.aspx.cs">
+      <DependentUpon>item-bulkaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\item-bulkaction.aspx.designer.cs">
+      <DependentUpon>item-bulkaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\item-csv.aspx.cs">
+      <DependentUpon>item-csv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\item-csv.aspx.designer.cs">
+      <DependentUpon>item-csv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\list-deal.aspx.cs">
+      <DependentUpon>list-deal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\list-deal.aspx.designer.cs">
+      <DependentUpon>list-deal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\list-item.aspx.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\list-item.aspx.designer.cs">
+      <DependentUpon>list-item.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ListAuction.aspx.cs">
       <DependentUpon>ListAuction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -805,106 +695,46 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\account-info.aspx.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
+    <Compile Include="Admin\money.aspx.cs">
+      <DependentUpon>money.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\account-info.aspx.designer.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\advertise.aspx.cs">
-      <DependentUpon>advertise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\advertise.aspx.designer.cs">
-      <DependentUpon>advertise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\connecting.aspx.cs">
-      <DependentUpon>connecting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\connecting.aspx.designer.cs">
-      <DependentUpon>connecting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\feedback.aspx.cs">
-      <DependentUpon>feedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\feedback.aspx.designer.cs">
-      <DependentUpon>feedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\inbox.aspx.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\inbox.aspx.designer.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-auction.aspx.cs">
-      <DependentUpon>item-auction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-auction.aspx.designer.cs">
-      <DependentUpon>item-auction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-bulkaction.aspx.cs">
-      <DependentUpon>item-bulkaction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-bulkaction.aspx.designer.cs">
-      <DependentUpon>item-bulkaction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-csv.aspx.cs">
-      <DependentUpon>item-csv.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\item-csv.aspx.designer.cs">
-      <DependentUpon>item-csv.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\list-deal.aspx.cs">
-      <DependentUpon>list-deal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\list-deal.aspx.designer.cs">
-      <DependentUpon>list-deal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\list-item.aspx.cs">
-      <DependentUpon>list-item.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\list-item.aspx.designer.cs">
-      <DependentUpon>list-item.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\money.aspx.cs">
+    <Compile Include="Admin\money.aspx.designer.cs">
       <DependentUpon>money.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\money.aspx.designer.cs">
-      <DependentUpon>money.aspx</DependentUpon>
+    <Compile Include="Admin\sell-item.aspx.cs">
+      <DependentUpon>sell-item.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\sell-item.aspx.cs">
+    <Compile Include="Admin\sell-item.aspx.designer.cs">
       <DependentUpon>sell-item.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\sell-item.aspx.designer.cs">
-      <DependentUpon>sell-item.aspx</DependentUpon>
+    <Compile Include="Admin\Seller.Master.cs">
+      <DependentUpon>Seller.Master_old_original</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\Seller.Master.cs">
-      <DependentUpon>Seller.Master</DependentUpon>
+    <Compile Include="Admin\Seller.Master.designer.cs">
+      <DependentUpon>Seller.Master_old_original</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\Seller.Master.designer.cs">
-      <DependentUpon>Seller.Master</DependentUpon>
+    <Compile Include="Admin\seller1.aspx.cs">
+      <DependentUpon>seller1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\seller1.aspx.cs">
+    <Compile Include="Admin\seller1.aspx.designer.cs">
       <DependentUpon>seller1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\seller1.aspx.designer.cs">
-      <DependentUpon>seller1.aspx</DependentUpon>
+    <Compile Include="Admin\seller2.aspx.cs">
+      <DependentUpon>seller2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\seller2.aspx.cs">
+    <Compile Include="Admin\seller2.aspx.designer.cs">
       <DependentUpon>seller2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\seller-track\seller2.aspx.designer.cs">
-      <DependentUpon>seller2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\seller-track\stats.aspx.cs">
+    <Compile Include="Admin\stats.aspx.cs">
       <DependentUpon>stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\seller-track\stats.aspx.designer.cs">
+    <Compile Include="Admin\stats.aspx.designer.cs">
       <DependentUpon>stats.aspx</DependentUpon>
     </Compile>
     <Compile Include="auctions.aspx.cs">
@@ -987,125 +817,6 @@
       <DependentUpon>my-account.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="seller-track\account-info.aspx.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\account-info.aspx.designer.cs">
-      <DependentUpon>account-info.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\advertise.aspx.cs">
-      <DependentUpon>advertise.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\advertise.aspx.designer.cs">
-      <DependentUpon>advertise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\connecting.aspx.cs">
-      <DependentUpon>connecting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\connecting.aspx.designer.cs">
-      <DependentUpon>connecting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\list-deal.aspx.cs">
-      <DependentUpon>list-deal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\list-deal.aspx.designer.cs">
-      <DependentUpon>list-deal.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\feedback.aspx.cs">
-      <DependentUpon>feedback.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\feedback.aspx.designer.cs">
-      <DependentUpon>feedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\inbox.aspx.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\inbox.aspx.designer.cs">
-      <DependentUpon>inbox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\item-auction.aspx.cs">
-      <DependentUpon>item-auction.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\item-auction.aspx.designer.cs">
-      <DependentUpon>item-auction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\item-bulkaction.aspx.cs">
-      <DependentUpon>item-bulkaction.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\item-bulkaction.aspx.designer.cs">
-      <DependentUpon>item-bulkaction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\item-csv.aspx.cs">
-      <DependentUpon>item-csv.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\item-csv.aspx.designer.cs">
-      <DependentUpon>item-csv.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\list-item.aspx.cs">
-      <DependentUpon>list-item.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\list-item.aspx.designer.cs">
-      <DependentUpon>list-item.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\money.aspx.cs">
-      <DependentUpon>money.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\money.aspx.designer.cs">
-      <DependentUpon>money.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\sell-item.aspx.cs">
-      <DependentUpon>sell-item.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\sell-item.aspx.designer.cs">
-      <DependentUpon>sell-item.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\Seller.Master.cs">
-      <DependentUpon>Seller.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\Seller.Master.designer.cs">
-      <DependentUpon>Seller.Master</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\seller1.aspx.cs">
-      <DependentUpon>seller1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\seller1.aspx.designer.cs">
-      <DependentUpon>seller1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\seller2.aspx.cs">
-      <DependentUpon>seller2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\seller2.aspx.designer.cs">
-      <DependentUpon>seller2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="seller-track\stats.aspx.cs">
-      <DependentUpon>stats.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="seller-track\stats.aspx.designer.cs">
-      <DependentUpon>stats.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Selling.aspx.cs">
       <DependentUpon>Selling.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1158,6 +869,7 @@
     <Content Include="Admin\Admin.Master" />
     <None Include="Admin\css\datatables\images\Sorting icons.psd" />
     <None Include="Admin\css\timepicker.less" />
+    <None Include="Admin\debug.log" />
     <None Include="Admin\fonts\fonts\fontawesome-webfont.eot" />
     <None Include="Admin\fonts\fonts\fontawesome-webfont.ttf" />
     <None Include="Admin\fonts\fonts\fontawesome-webfont.woff" />
@@ -1208,20 +920,7 @@
     <None Include="Admin\js\datatables\tools\make.sh" />
     <None Include="Admin\js\datatables\tools\Readme.md" />
     <None Include="Admin\js\maps\us-unemployment.json" />
-    <None Include="Admin\seller-track\debug.log" />
-    <None Include="Admin\seller-track\font-awesome\fonts\fontawesome-webfont.eot" />
-    <None Include="Admin\seller-track\font-awesome\fonts\fontawesome-webfont.svg" />
-    <None Include="Admin\seller-track\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <None Include="Admin\seller-track\font-awesome\fonts\fontawesome-webfont.woff" />
-    <None Include="Admin\seller-track\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <None Include="Admin\seller-track\font-awesome\fonts\FontAwesome.otf" />
-    <None Include="Admin\seller-track\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="Admin\seller-track\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="Admin\seller-track\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="Admin\seller-track\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Admin\seller-track\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Admin\seller-track\images\Thumbs.db" />
-    <Content Include="Admin\seller-track\Seller.Master" />
+    <None Include="Admin\Seller.Master_old_original" />
     <None Include="debug.log" />
     <Content Include="fileupload\ajax_fileupload.ashx" />
     <Content Include="fileupload\Handler.ashx" />
@@ -1259,20 +958,6 @@
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\src\dropzone.scss" />
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\test.sh" />
     <None Include="Scripts\DropzoneJs_scripts\dropzone-master\test\test.coffee" />
-    <None Include="seller-track\debug.log" />
-    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.eot" />
-    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.svg" />
-    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.woff" />
-    <None Include="seller-track\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <None Include="seller-track\font-awesome\fonts\FontAwesome.otf" />
-    <None Include="seller-track\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="seller-track\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="seller-track\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="seller-track\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="seller-track\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="seller-track\images\Thumbs.db" />
-    <Content Include="seller-track\Seller.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">

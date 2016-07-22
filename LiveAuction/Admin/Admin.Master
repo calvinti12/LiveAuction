@@ -101,10 +101,32 @@
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
-                    <nav class="" role="navigation">
+                    <nav class="" role="navigation ">
                         <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
+                         <!-- <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Selling<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li class="#"><a href="dashboard.aspx">Dashboard</a></li>
+                                <li><a href="sell-item.aspx">Items</a></li>
+                                <li><a href="item-auction.aspx">Auctions</a></li>
+                                <li><a href="item-csv.aspx">CSV Auctions</a></li>
+                                <li><a href="list-item.aspx">Lot Upload</a></li>
+                                <li><a href="list-deal.aspx">Deal Upload</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Account info</a></li>
+                                <li><a href="#">Reminders</a></li>
+                                <li><a href="#">Inbox</a></li>
+                                <li><a href="#">Sign Out</a></li>
+                              </ul>
+                            </li>
+                        </ul>   -->
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -205,28 +227,34 @@
                         </ul>
                     </nav>
                 <!-- selling dropdown area -->
-                <div class="tt">
-                    <div class="row">
+
+
+
+
+                <div class="tt clearfix">
+                    <div class="st">
                         <form>
                         <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="form-group dash-dp">
+                            <div class="form-group dash-dp dash-dp-spc">
                                 <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle form-control btn-ad-top" type="button" data-toggle="dropdown">
                                         selling <span class="caret pull-right"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li class="#"><a href="seller-track/dashboard.aspx">Dashboard</a></li>
-                                        <li><a href="seller-track/list-item.aspx">Items</a></li>
-                                        <li><a href="seller-track/item-auction.aspx">Auctions</a></li>
-                                        <li><a href="seller-track/item-csv.aspx">CSV Auctions</a></li>
+                                        <li class="#"><a href="dashboard.aspx">Dashboard</a></li>
+                                        <li><a href="sell-item.aspx">Items</a></li>
+                                        <li><a href="item-auction.aspx">Auctions</a></li>
+                                        <li><a href="item-csv.aspx">CSV Auctions</a></li>
+                                        <li><a href="list-item.aspx">Lot Upload</a></li>
+                                        <li><a href="list-deal.aspx">Deal Upload</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                        <%--  <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="form-group dash-dp">
                                 <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle form-control  btn-ad-top" type="button" data-toggle="dropdown">
                                         sales <span class="caret pull-right"></span>
                                     </button>
                                     <ul class="dropdown-menu">
@@ -236,11 +264,11 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="form-group dash-dp">
                                 <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle form-control btn-ad-top" type="button" data-toggle="dropdown">
                                         Account <span class="caret pull-right"></span>
                                     </button>
                                     <ul class="dropdown-menu">

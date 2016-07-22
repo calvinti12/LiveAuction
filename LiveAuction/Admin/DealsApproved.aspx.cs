@@ -128,9 +128,6 @@ namespace LiveAuction.Admin
                           </div>
                         </div>
                       </div>
-                      <div class='cr-accnt pop-cr-accnt'>
-                       
-                      </div>
                     </div>
                     
                   </div>
