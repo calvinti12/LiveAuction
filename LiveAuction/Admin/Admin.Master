@@ -238,11 +238,11 @@
                             <div class="form-group dash-dp dash-dp-spc">
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle form-control btn-ad-top" type="button" data-toggle="dropdown">
-                                        selling <span class="caret pull-right"></span>
+                                        Selling <span class="caret pull-right"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li class="#"><a href="dashboard.aspx">Dashboard</a></li>
-                                        <li><a href="sell-item.aspx">Items</a></li>
+                                        <li><a href="sell-item.aspx">Lots</a></li>
                                         <li><a href="item-auction.aspx">Auctions</a></li>
                                         <li><a href="item-csv.aspx">CSV Auctions</a></li>
                                         <li><a href="list-item.aspx">Lot Upload</a></li>
