@@ -113,7 +113,7 @@ namespace LiveAuction
                                                             "<img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/>" +
                                                           "</div>" +
                                                           "<div class='bid-p-dis'>" +
-                                                            "<p class='bid-alate'>"+ dt.Rows[i]["Description"] +"</p>" +
+                                                            "<p class='bid-alate'>" + dt.Rows[i]["Description"] + "</p>" +
                                                           "</div>" +
                                                           "<!--<div class='bid-p-dis text-center'>" +
                                                             "<h4>Estimates 250 275 GBP</h4>" +
@@ -137,7 +137,7 @@ namespace LiveAuction
                                                         "</div>" +
                                                       "</div>" +
                                                     "</div>" +
-                                                    "<div class='col-md-6'>" +
+                                                    "<!--<div class='col-md-6'>" +
                                                       "<div class='cr-accnt pop-cr-accnt'>" +
                                                         "<div class='log-audio'>" +
                                                           "<div class='log-lft'>" +
@@ -147,7 +147,7 @@ namespace LiveAuction
                                                             "<p class='pull-left'>Selling carency: &nbsp; &nbsp; </p><p class='pull-right'><strong>GBP</strong></p>" +
                                                           "</div>" +
                                                         "</div>" +
-                                                      "</div>" +
+                                                      "</div>-->" +
                                                       "<div class='cr-accnt pop-cr-accnt'>" +
                                                         "<div class='pop-tble'>" +
                                                           "<div class='table-responsive'>" +
@@ -168,12 +168,19 @@ namespace LiveAuction
                                                                 "</tr>" +
                                                               "</thead>" +
                                                               "<tbody>";
-                    for (int j = 0; j < dt1.Rows.Count; j++)
+                    if (dt1.Rows.Count == 0)
                     {
-                        modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
-                        "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
-                        "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
-                      "</tr>";
+                        modalHtml += "<tr><td colspan=3>No lots available</td></tr>";
+                    }
+                    else
+                    {
+                        for (int j = 0; j < dt1.Rows.Count; j++)
+                        {
+                            modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
+                            "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
+                            "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
+                          "</tr>";
+                        }
                     }
                     modalHtml += "<!--<tr>" +
                       "<td>693</td>" +
@@ -350,12 +357,20 @@ namespace LiveAuction
                                                                 "</tr>" +
                                                               "</thead>" +
                                                               "<tbody>";
-                    for (int j = 0; j < dt1.Rows.Count; j++)
+                    if (dt1.Rows.Count == 0)
                     {
-                        modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
-                        "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
-                        "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
-                      "</tr>";
+                        modalHtml += "<tr><td colspan=3>No lots available</td></tr>";
+                    }
+                    else
+                    {
+                        for (int j = 0; j < dt1.Rows.Count; j++)
+                        {
+                            var lotNo = j + 1;
+                            modalHtml += "<tr><td>" + lotNo + "</td>" +
+                            "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
+                            "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
+                          "</tr>";
+                        }
                     }
                     modalHtml += "<!--<tr>" +
                       "<td>693</td>" +

@@ -9,6 +9,77 @@
     <!-- Datatables -->
     <script src="js/datatables/js/jquery.dataTables.js"></script>
     <script src="js/datatables/tools/js/dataTables.tableTools.js"></script>
+    <link href="../Scripts/DropzoneJs_scripts/dropzone.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/DropzoneJs_scripts/dropzone.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var dropImages = [];
+        $(document).ready(function () {
+
+            Dropzone.autoDiscover = false;
+
+            //Simple Dropzonejs 
+            $("#dZUpload").dropzone({
+                url: "../fileupload/ajax_fileupload.ashx",
+                maxFiles: 5,
+                maxFilesize: 2,
+                addRemoveLinks: true,
+                removedfile: function (file) {
+
+                    var deleteurl = $(file.previewTemplate).find('a.dz-remove').attr('data-dz-remove');
+                    //ajax call
+                    $.ajax({
+                        url: deleteurl,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        //data: obj,
+                        responseType: "json",
+                        success: function (e) { },
+                        error: function (e) { }
+                    });
+
+                    //remove the image from array
+                    var imageName = file.xhr.response;
+                    dropImages = $.grep(dropImages, function (value) {
+                        return value != imageName;
+                    });
+                    //remove the image from UI
+                    var _ref;
+                    return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+                    //file.previewElement.parentNode.removeChild(file.previewElement);
+
+                },
+                success: function (file, response) {
+
+                    var imgName = response;
+                    file.previewElement.classList.add("dz-success");
+                    dropImages.push(imgName);
+                    console.log("Successfully uploaded :" + imgName);
+                    var url = '../fileupload/ajax_fileupload.ashx?cmd=delete&file=' + response;
+                    $(file.previewTemplate).find('a.dz-remove').attr('data-dz-remove', url);
+                },
+                error: function (file, response) {
+                    file.previewElement.classList.add("dz-error");
+                }
+            });
+
+            $("#successbtn").click(function () {
+                $(this).after(
+        '<div class="alert alert-success alert-dismissable">' +
+            '<button type="button" class="close" ' +
+                    'data-dismiss="alert" aria-hidden="true">' +
+                '&times;' +
+            '</button>' +
+            'Password Changed' +
+         '</div>');
+            });
+        });
+
+        function validateForm() {
+            debugger;
+            $('#hdnimagefiles').val(dropImages.toString());
+            return true;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="">

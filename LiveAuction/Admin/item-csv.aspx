@@ -96,10 +96,11 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                     <h4 class="modal-title" id="H2">Upload CSV file</h4>
-                    <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn btn-default btn-file" />
+                    <asp:FileUpload ID="CSVFileUpload" runat="server" CssClass="btn btn-default btn-file" />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$"
-                                        ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid CSV file."
+                                        ControlToValidate="CSVFileUpload" runat="server" ForeColor="Red" ErrorMessage="Please select a valid CSV file."
                                         Display="Dynamic" />
+                                        <asp:RequiredFieldValidator  ControlToValidate="CSVFileUpload" ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                                     <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                     <div class="col-xs-12"><hr></div><br />
                       <%--<div class="cr-accnt pop-cr-accnt">
@@ -107,10 +108,11 @@
                     </div>
                     <div class="col-md-6 col-lg-6">
                     <h4 class="modal-title" id="H3">Upload Image files</h4>
-                    <asp:FileUpload ID="FileUpload3" runat="server" multiple="multiple" CssClass="btn btn-default btn-file"/>
+                    <asp:FileUpload ID="ImageFileUpload" runat="server" multiple="multiple" CssClass="btn btn-default btn-file" required="required"/>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png)$"
-                                        ControlToValidate="FileUpload3" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image file."
+                                        ControlToValidate="ImageFileUpload" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image file."
                                         Display="Dynamic" />
+                                        <asp:RequiredFieldValidator  ControlToValidate="ImageFileUpload" ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                                     <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
                     <div class="col-xs-12"><hr></div><br />
                       <%--<div class="cr-accnt pop-cr-accnt">

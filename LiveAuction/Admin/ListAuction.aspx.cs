@@ -76,6 +76,11 @@ namespace LiveAuction.Admin
                                 "</td>" +
                             "</tr>";
                 }
+                string subquery = "select LotId,LotDesc,LotImageName from [AuctionBidPlatform].[dbo].[View_list_item]   where AuctionId=" + dt.Rows[i]["AuctionId"] + " and IsScheduled=1";
+                SqlDataAdapter adapter1 = new SqlDataAdapter(subquery, con);
+                DataTable dt1 = new DataTable();
+                adapter1.Fill(dt1);
+                con.Close();
                 moralHtml += @"</table><section class='bid-popup-sector'>
         <div class='modal fade' id='bidpopup" + dt.Rows[i]["AuctionId"] + "' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>";
                 moralHtml += @"<div class='modal-dialog bid-model-dialog' role='document'>
@@ -89,24 +94,49 @@ namespace LiveAuction.Admin
                     <div class='col-md-6'>
                       <div class='cr-accnt pop-cr-accnt'>
                         <div class='bid-popup-pic-sec'>
-                          <div class='bid-popup-title'>
+                          <!--<div class='bid-popup-title'>
                             <h3>Lot 693</h3>
-                          </div>
+                          </div>-->
                           <div class='bid-popup-pic'>
-                            <img src='FileUpload/" + dt.Rows[i]["ImageName"] + "' alt='this is for bid popup' width='200px'>";
+                            <img src='/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' alt='this is for bid popup' width='200px' style='margin-left: 26%;'>";
                 moralHtml += @"</div>
                           <div class='bid-p-dis'>
                             <p class='bid-alate'>" + dt.Rows[i]["Description"] + "</p>";
                 moralHtml += @"</div>
-                          <div class='bid-p-dis text-center'>
+                          <!--<div class='bid-p-dis text-center'>
                             <h4>Estimates 250 275 GBP</h4>
                           </div>
                           <div class='bid-p-dis text-center'>
                             <h4>Room Bid 240 GBP</h4>
                           </div>
-                          <!--<div class='bid-p-dis'>
+                          <div class='bid-p-dis'>
                             <button type='button' class='btn btn-danger btn-block'>Bid 150 GBP</button>
                           </div>-->
+                           <div class='cr-accnt pop-cr-accnt'style='margin-bottom: 0;'>
+                            <!-- CSV SECTION -->
+                                <div class='col-md-12 col-lg-12'>
+                                <h4 class='modal-title' id='H3'>Upload Image files</h4>
+                                        <div class='cr-accnt'>
+                                            <div class='col-md-12'>
+                                                <div id='dZUpload' class='dropzone'>
+                                                    <div class='dz-default dz-message'>
+                                                        Drag and drop photos into the box.
+                                                    </div>
+                                                </div>
+                                                 <input type='hidden' id='hdnimagefiles' name='hdnimagefiles' />
+                                            </div>
+                                      </div>
+                                </div>
+                                <div class='col-md-12 col-lg-12'>
+                                    <h4 class='modal-title' id='H2'>Upload CSV file</h4>
+                                        <input type='file'/>
+                                <div class='col-xs-12'><hr></div><br />
+                                </div>
+                                <div class='col-md-12 col-lg-12'>
+                                    <input tyep='button' class='btn btn-default' value='Upload'/>
+                                </div>
+                            <!-- CSV SECTION END -->
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -125,14 +155,6 @@ namespace LiveAuction.Admin
                         <div class='pop-tble'>
                           <div class='table-responsive'>
                             <table class='table table-bordered table-striped table-hover'>
-                              <thead>
-                                <tr>
-                                  <td>Firstname</td>
-                                  <td>Lastname</td>
-                                  <td>Email</td>
-                                  
-                                </tr>
-                              </thead>
                               <thead >
                                 <tr>
                                   <th>Lot</th>
@@ -140,33 +162,23 @@ namespace LiveAuction.Admin
                                   <th>Image</th>
                                 </tr>
                               </thead>
-                              <tbody>
-                                <tr>
-                                  <td>692</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class='pop-ico'><i class='fa fa-camera'></i></td>
-                                </tr>
-                                <tr>
-                                  <td>693</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class='pop-ico'><i class='fa fa-camera'></i></td>
-                                </tr>
-                                <tr>
-                                  <td>694</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class='pop-ico'><i class='fa fa-camera'></i></td>
-                                </tr>
-                                <tr>
-                                  <td>695</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class='pop-ico'><i class='fa fa-camera'></i></td>
-                                </tr>
-                                <tr>
-                                  <td>696</td>
-                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, se</td>
-                                  <td class='pop-ico'><i class='fa fa-camera'></i></td>
-                                </tr>
-                              </tbody>
+                              <tbody>";
+                if (dt1.Rows.Count == 0)
+                {
+                    moralHtml += "<tr><td colspan=3>No lots available</td></tr>";
+                }
+                else
+                {
+                    for (int j = 0; j < dt1.Rows.Count; j++)
+                    {
+                        var lotNo = j + 1;
+                        moralHtml += "<tr><td>" + lotNo + "</td>" +
+                        "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
+                        "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
+                      "</tr>";
+                    }
+                }
+                moralHtml += @"</tbody>
                             </table>
                           </div>
                         </div> <!-- end of popup table -->
@@ -175,37 +187,8 @@ namespace LiveAuction.Admin
                         </div>
                         </div>
                       </div>
-                      <div class='cr-accnt pop-cr-accnt'>
-                        <p class='clck-txt'>clicking the bid button is a legally binding obligation to buy and pay for the lot should your bid successful.For security, we track all bids placed </p>
-                      </div>
                     </div>
-                  </div>
-                  <div class='row'>
-                    <div class='col-md-12'>
-                        <div class='cr-accnt'>
-                          <div class='log-audio'>
-                            <div class='log-lft'>
-                              <div class='pop-footer-lft pull-left'>
-                                <H3><STRONG>WALLIS & WALLIS</STRONG></H3>
-                              </div>
-                              <div class='pop-footer-rht'>
-                                <ul class='list-unstyled'>
-                                  <li><strong>Bidder information</strong></li>
-                                  <li>Bidder id: <span class='popup-bidder-id'>SR661855</span></li>
-                                  <li>Currency <span class='popup-carency'>GBP</span></li>
-                                </ul>
-                              </div>
-                            </div>
-                            <div class='log-lft pull-right'>
-                              <ul class='list-unstyled rt-direct'>
-                                <li><strong>Need Help?</strong></li>
-                                <li><span>support: </span> +44(0)203 &nbsp;725&nbsp;555 </li>
-                                <li><span>Auctioneer: </span><a href='#'>http://wallisandwallis.co.uk</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
+                  
                   </div>
               </div>
             </div>
