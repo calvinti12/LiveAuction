@@ -69,13 +69,17 @@
                                         <li><a href="Dashboard.aspx">Dashboard</a> </li>
                                     </ul>
                                 </li>
-                                <li><a><i class="fa fa-edit"></i>Master Forms <span class="fa fa-chevron-down"></span>
-                                </a>
+                                <li><a><i class="fa fa-edit"></i>Options <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li><a href="Auction.aspx">Auction</a> </li>
                                         <li><a href="ListAuction.aspx">List Auction</a> </li>
+                                        <li><a href="sell-item.aspx">Lots</a></li>
+                                        <li><a href="item-auction.aspx">Auctions</a></li>
+                                        <li><a href="item-csv.aspx">CSV Auctions</a></li>
+                                        <li><a href="list-item.aspx">Lot Upload</a></li>
+                                        <%--<li><a href="list-deal.aspx">Deal Upload</a></li>
                                         <li><a href="Deals.aspx">Deals</a> </li>
-                                        <li><a href="DealsApproved.aspx">Deals approved</a> </li>
+                                        <li><a href="DealsApproved.aspx">Deals approved</a> </li>--%>
                                     </ul>
                                 </li>
                             </ul>
@@ -226,15 +230,11 @@
                             </li>
                         </ul>
                     </nav>
-                <!-- selling dropdown area -->
-
-
-
-
-                <div class="tt clearfix">
-                    <div class="st">
-                        <form>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
+                    <!-- selling dropdown area -->
+                    <div class="tt clearfix">
+                        <div class="st">
+                            <form>
+                            <%-- <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="form-group dash-dp dash-dp-spc">
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle form-control btn-ad-top" type="button" data-toggle="dropdown">
@@ -251,7 +251,7 @@
                                 </div>
                             </div>
                         </div>
-                        <%--  <div class="col-md-3 col-sm-6 col-xs-12">
+                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="form-group dash-dp">
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle form-control  btn-ad-top" type="button" data-toggle="dropdown">
@@ -264,7 +264,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>--%>
+                        </div>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="form-group dash-dp">
                                 <div class="dropdown">
@@ -279,8 +279,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
+                        </div>--%>
+                            <!-- <div class="col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group dash-dp">
                                     <div class="dropdown">
                                       <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">PURCHASES
@@ -292,10 +292,10 @@
                                     </div>
                                 </div>
                                </div> -->
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <!-- selling dropdown area end -->
+                    <!-- selling dropdown area end -->
                 </div>
             </div>
             <!-- /top navigation -->

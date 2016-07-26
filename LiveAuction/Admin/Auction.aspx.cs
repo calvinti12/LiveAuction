@@ -23,7 +23,9 @@ namespace LiveAuction.Admin
             txtAuctionName.Text = "";
             auctiontime.Text = "";
             auctiondate.Text = "";
-            number.Text = "";
+            description.Text = "";
+            address.Text = "";
+            fileUploadLabel.Text = "";
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace LiveAuction.Admin
                     {
                         string filename = System.DateTime.Now.ToString("ddMMyyhhmmss") + Path.GetFileName(FileUpload1.FileName);
                         //string filename = Path.GetFileName(FileUpload1.FileName);
-                        filePath = Server.MapPath(@"~\TCAG\Admin\FileUpload\") + filename;
+                        filePath = Server.MapPath(@"~\Admin\FileUpload\") + filename;
                         System.Drawing.Image imgFile = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
                         //if (imgFile.PhysicalDimension.Width > 600 || imgFile.PhysicalDimension.Height > 400)
                         //{
@@ -52,7 +54,7 @@ namespace LiveAuction.Admin
                         con.Open();
                         DateTime temp = DateTime.ParseExact(auctiondate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                         string str = temp.ToString("yyyy-MM-dd");
-                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName)values('3','" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + address.Text + "','" + number.Text + "',0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + "," + "'" + schedulingfee.Text + "'" + "," + "'" + filename + "'" + ")";
+                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName,Description)values('3','" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + address.Text + "',NULL,0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + ",NULL," + "'" + filename + "','" +description.Text+ "')";
                         SqlCommand cmd = new SqlCommand(query, con);
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
@@ -60,10 +62,11 @@ namespace LiveAuction.Admin
                             txtAuctionName.Text = "";
                             auctiontime.Text = "";
                             auctiondate.Text = "";
-                            number.Text = "";
+                            //number.Text = "";
                             fileUploadLabel.Text = "";
                             address.Text = "";
-                            schedulingfee.Text = "";
+                            description.Text = "";
+                           // schedulingfee.Text = "";
                             lblMessage.Text = "<span style=\"color: #54a75c\">Auction saved successfully</span>";
                         }
                         //}

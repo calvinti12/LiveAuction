@@ -38,9 +38,10 @@
                       <a class="btn btn-primary btn-blkitem" data-toggle="modal" data-target="#bidpopup">Upload Bulk Items</a>
                       <span class="label label-success successUpload" style="visibility:hidden">File uploaded successfully.</span>
                       <asp:PlaceHolder ID="fileUploadSuccessfull" runat="server"></asp:PlaceHolder>
+
                     </div>
                   </div>
-                  <div class="tt">
+                  <%--<div class="tt">
                     <div class="description-table-sec">
                       <div class="description-title">
                         CSV table description and acceptable values:
@@ -68,7 +69,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>--%>
                 </div>
               </div>
             </div>
@@ -82,24 +83,47 @@
             <div class="modal-content bid-model-content" style="margin-top: 25%;">
               <div class="modal-header bid-model-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Upload CSV file</h4>
+                <h4 class="modal-title" id="myModalLabel">CSV section</h4>
               </div>
               <div class="modal-body bid-model-body">
                   <div class="row">
                     <div class="col-md-12 col-lg-12">
+                    <h4 class="modal-title" id="H1">Select Auction</h4>
+                    <asp:DropDownList ID="auction" runat="server" CssClass="form-control"></asp:DropDownList>
+                    <div class="col-xs-12"><hr></div><br />
+                      <%--<div class="cr-accnt pop-cr-accnt">
+                      </div>--%>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                    <h4 class="modal-title" id="H2">Upload CSV file</h4>
                     <asp:FileUpload ID="FileUpload1" runat="server" CssClass="btn btn-default btn-file" />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$"
                                         ControlToValidate="FileUpload1" runat="server" ForeColor="Red" ErrorMessage="Please select a valid CSV file."
                                         Display="Dynamic" />
-                                    <asp:Label ID="fileUploadLabel" runat="server" ForeColor="Red"></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                     <div class="col-xs-12"><hr></div><br />
+                      <%--<div class="cr-accnt pop-cr-accnt">
+                      </div>--%>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                    <h4 class="modal-title" id="H3">Upload Image files</h4>
+                    <asp:FileUpload ID="FileUpload3" runat="server" multiple="multiple" CssClass="btn btn-default btn-file"/>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png)$"
+                                        ControlToValidate="FileUpload3" runat="server" ForeColor="Red" ErrorMessage="Please select a valid image file."
+                                        Display="Dynamic" />
+                                    <asp:Label ID="Label2" runat="server" ForeColor="Red"></asp:Label>
+                    <div class="col-xs-12"><hr></div><br />
+                      <%--<div class="cr-accnt pop-cr-accnt">
+                      </div>--%>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
                     <asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" />
                       <%--<div class="cr-accnt pop-cr-accnt">
-                      
                       </div>--%>
                     </div>
                   </div>
               </div>
+              <!-- modal main body end -->
             </div>
           </div>
         </div>

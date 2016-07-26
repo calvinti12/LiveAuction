@@ -115,18 +115,31 @@
                             </div>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                    Description <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <asp:TextBox ID="description" runat="server" class="time form-control col-md-7 col-xs-12"
+                                        TextMode="MultiLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Description Required"
+                                        ControlToValidate="description" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
+                                    <%--  <input type="url" id="auctiontime" name="time" required="required" class="time form-control col-md-7 col-xs-12"
+                                        placeholder="17:00">--%>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
                                     Address <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <asp:TextBox ID="address" runat="server" class="time form-control col-md-7 col-xs-12"
                                         placeholder="Office 33, 27 Colmore Row, Birmingham,England B3 2EW" TextMode="MultiLine"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Address Required"
-                                        ControlToValidate="auctiontime" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
+                                        ControlToValidate="address" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <%--  <input type="url" id="auctiontime" name="time" required="required" class="time form-control col-md-7 col-xs-12"
                                         placeholder="17:00">--%>
                                 </div>
                             </div>
-                            <div class="item form-group">
+                            <%--<div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
                                     Scheduling Fee&nbsp(£) <span class="required">*</span>
                                 </label>
@@ -135,8 +148,8 @@
                                         class="form-control col-md-7 col-xs-12 schedFee" placeholder="£"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Scheduling Fee Required"
                                         ControlToValidate="number" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
-                                    <%-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
-                                        class="form-control col-md-7 col-xs-12">--%>
+                                    <!-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
+                                        class="form-control col-md-7 col-xs-12">-->
                                 </div>
                             </div>
                             <div class="item form-group">
@@ -148,10 +161,10 @@
                                         class="form-control col-md-7 col-xs-12 commFee"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ErrorMessage="Commission Required" ControlToValidate="number"
                                         ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
-                                    <%-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
-                                        class="form-control col-md-7 col-xs-12">--%>
+                                    <!-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
+                                        class="form-control col-md-7 col-xs-12">-->
                                 </div>
-                            </div>
+                            </div>--%>
                             <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
                                     Upload Image <span class="required">*</span>

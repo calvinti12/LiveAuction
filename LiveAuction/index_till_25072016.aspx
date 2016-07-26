@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Bidder.Master" CodeBehind="index.aspx.cs"
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Bidder.Master" CodeBehind="index_till_25072016.aspx.cs"
     Inherits="LiveAuction.index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -143,8 +143,7 @@
                             <h1>UPCOMING AUCTIONS</h1>
                         </div>
                         <div class="item-sec-view pull-right">
-                            <%--<a href="CatDisplay.aspx?dcat=AllDeals" class="btn btn-default btn-item-vew">VIEW ALL</a>--%>
-                            <a href="CatDisplay.aspx?cat=AllAuctions" class="btn btn-default btn-item-vew">VIEW ALL</a>
+                            <a href="CatDisplay.aspx?dcat=AllDeals" class="btn btn-default btn-item-vew">VIEW ALL</a>
                         </div>
                     </div>
                 </div>
@@ -247,7 +246,6 @@
                     </div>
                 </div> <!-- end of the turning col -->--%>
                 <asp:PlaceHolder ID="TodaysDealPlaceholder" runat="server"></asp:PlaceHolder>
-                <asp:PlaceHolder ID="UpcomingAuctionPlaceHolder" runat="server"></asp:PlaceHolder>
             </div>
         </div>
     </section>
