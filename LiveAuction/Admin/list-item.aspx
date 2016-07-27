@@ -245,6 +245,22 @@
                         </div>
                       </div>
                       <div class="form-group">
+                        <label for="creat-pswrd-lb" class="col-sm-3 control-label">Low estimate price :</label>
+                        <div class="col-sm-3">
+                        <asp:TextBox ID="lowEstimatePrice" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ValidationGroup="lot" EnableClientScript="true" ControlToValidate="lowEstimatePrice" ErrorMessage="Low estimate price required" ForeColor="Red"></asp:RequiredFieldValidator>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="creat-pswrd-lb" class="col-sm-3 control-label">High estimate price :</label>
+                        <div class="col-sm-3">
+                        <asp:TextBox ID="highEstimatePrice" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="lot" EnableClientScript="true" ControlToValidate="highEstimatePrice" ErrorMessage="High estimate price required" ForeColor="Red"></asp:RequiredFieldValidator>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
+                        </div>
+                      </div>
+                      <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label"><span>optional</span>Cost basis: </label>
                         <div class="col-sm-3">
                         <asp:TextBox ID="txtCost" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
@@ -273,12 +289,12 @@
                         <div class="col-sm-3">
                         <asp:TextBox ID="txtQuantity" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
                          <asp:RequiredFieldValidator id="RequiredFieldValidator2" runat="server" ValidationGroup="lot" EnableClientScript="true"
-  ControlToValidate="txtQuantity"
-  ErrorMessage="Quantity is a required field."
-  ForeColor="Red">
-</asp:RequiredFieldValidator>
+                            ControlToValidate="txtQuantity"
+                            ErrorMessage="Quantity is a required field."
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="cv" runat="server" ControlToValidate="txtQuantity" Type="Integer" ValidationGroup="lot" EnableClientScript="true"
-   Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red"/>
+                            Operator="DataTypeCheck" ErrorMessage="Value must be an integer!" ForeColor="Red"/>
                          <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="">--%>
                         </div>
                       </div>
@@ -291,7 +307,7 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label sr-only">tip1</label>
                         <div class="col-sm-6">
-                          <p><strong>Auction priceing</strong> - cell your item in a fast paced place </p>
+                          <p><strong>Auction pricing</strong> - cell your item in a fast paced place </p>
                         </div>
                       </div>
                       <div class="form-group">
@@ -309,7 +325,7 @@
                       <div class="form-group">
                         <label for="creat-pswrd-lb" class="col-sm-3 control-label sr-only">tip1</label>
                         <div class="col-sm-6">
-                          <p><strong>Auction priceing</strong> - cell your item in a fast paced place </p>
+                          <p><strong>Auction pricing</strong> - cell your item in a fast paced place </p>
                         </div>
                       </div>
                     </div>
@@ -440,23 +456,19 @@
                 </div>
                 <%--<div class="col-md-12">
                 	<div class="upload-drop-zone text-center">
-			         
                         Drag and drop photos into the box.
 			          </div>	
                       <div>
                       <asp:FileUpload ID="FileUpload1" runat="server" ToolTip="Click here to upload photos" />                  
-                      </div>	
-    
-			          
-			        
+                      </div>
                 </div>--%>
                 <div class="col-md-12">
-                       <div id="dZUpload" class="dropzone">
-        <div class="dz-default dz-message">
+                <div id="dZUpload" class="dropzone">
+                    <div class="dz-default dz-message">
             Drag and drop photos into the box.
         </div>
-    </div>
-    <input type="hidden" id="hdnimagefiles" name="hdnimagefiles" />
+                </div>
+                <input type="hidden" id="hdnimagefiles" name="hdnimagefiles" />
                 </div>
               </div>
               <div class="col-md-12">
@@ -465,7 +477,6 @@
                         CssClass="btn btn-danger" onclick="btnSave_Click" ValidationGroup="lot" CausesValidation="true" OnClientClick="return validateForm()"/>              		
               	</div>
               </div>
-              
             </div>
         </div>
     </section>

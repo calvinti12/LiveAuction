@@ -20,7 +20,7 @@
             //Simple Dropzonejs 
             $("#dZUpload").dropzone({
                 url: "../fileupload/ajax_fileupload.ashx",
-                maxFiles: 5,
+                maxFiles: 20,
                 maxFilesize: 2,
                 addRemoveLinks: true,
                 removedfile: function (file) {

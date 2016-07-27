@@ -71,10 +71,14 @@ namespace LiveAuction.seller_track
             new DataColumn("IsShippingEveryWhere", typeof(string)),            
             new DataColumn("IsScheduled", typeof(string))
             });
-
+                var headerCounter = 1;
                 string csvData = File.ReadAllText(csvPath);
                 foreach (string row in csvData.Split('\n'))
                 {
+                    //++headerCounter;
+                    //if (headerCounter != 1)
+                    //{
+                    Response.Write("<br/>" + row.Count());
                     try
                     {
                         if (!string.IsNullOrEmpty(row))
@@ -111,10 +115,11 @@ namespace LiveAuction.seller_track
                     catch (Exception)
                     {
                         Response.Write("<script type='text/javascript'>alert('There might be a problem in uploading the file.Please try again !');</script>");
-                        fileUploadSuccessfull.Controls.Add(new Literal { Text = "<script type='text/javascript'> $('.successUpload').css('visibility','hidden');</script>" });
+                        //fileUploadSuccessfull.Controls.Add(new Literal { Text = "<script type='text/javascript'> $('.successUpload').css('visibility','hidden');</script>" });
                     }
-                    fileUploadSuccessfull.Controls.Add(new Literal { Text = "<script type='text/javascript'> $('.successUpload').css('visibility','visible');</script>" });
+                    //fileUploadSuccessfull.Controls.Add(new Literal { Text = "<script type='text/javascript'> $('.successUpload').css('visibility','visible');</script>" });
                 }
+
             }
         }
     }

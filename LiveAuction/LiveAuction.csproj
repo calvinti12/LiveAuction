@@ -766,6 +766,9 @@
     <Compile Include="fileupload\ajax_fileupload.ashx.cs">
       <DependentUpon>ajax_fileupload.ashx</DependentUpon>
     </Compile>
+    <Compile Include="fileupload\admin_ajax_fileupload.ashx.cs">
+      <DependentUpon>admin_ajax_fileupload.ashx</DependentUpon>
+    </Compile>
     <Compile Include="fileupload\Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
     </Compile>
@@ -908,6 +911,7 @@
     <None Include="debug.log" />
     <Content Include="fileupload\ajax_fileupload.ashx" />
     <Content Include="fileupload\Handler.ashx" />
+    <Content Include="fileupload\admin_ajax_fileupload.ashx" />
     <None Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <None Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <None Include="font-awesome\fonts\fontawesome-webfont.ttf" />
