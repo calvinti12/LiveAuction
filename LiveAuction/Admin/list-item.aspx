@@ -40,7 +40,7 @@
             //Simple Dropzonejs 
             $("#dZUpload").dropzone({
                 url: "../fileupload/ajax_fileupload.ashx",
-                maxFiles: 5,
+                maxFiles: 1,
                 maxFilesize: 2,
                 addRemoveLinks: true,
                 removedfile: function (file) {
@@ -441,10 +441,10 @@
                 </div>
                 <div class="col-md-12">
                 	<div class="photo-detail">
-                		<p>Please upload at least (2) photos of your item</p>
+                		<p>Please upload a photo of your item &nbsp(Only 1)</p>
                 	</div>
                 </div>
-                <div class="col-md-12">
+                <%--<div class="col-md-12">
                     <div class="well">
                     	<ul class="shipping-lst">
                     		<li>at least 1 photo should be take by you, clearly showing any feature or defects</li>
@@ -453,7 +453,7 @@
                     		<li>Drag and Drop photos to change the order</li>
                     	</ul>
                     </div>
-                </div>
+                </div>--%>
                 <%--<div class="col-md-12">
                 	<div class="upload-drop-zone text-center">
                         Drag and drop photos into the box.

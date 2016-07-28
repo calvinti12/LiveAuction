@@ -66,9 +66,11 @@ namespace BusinessLogicLayer
                     proc.AddVarcharPara("@ShippingPrice", 200, productLotEL.ShippingPrice);
                     proc.AddBooleanPara("@IsFreeShipping", productLotEL.IsFreeShipping);
                     proc.AddBooleanPara("@IsShippedEverywhere", productLotEL.IsShippedEverywhere);
+                    proc.AddBooleanPara("@IsScheduled", productLotEL.IsScheduled);
                     proc.AddVarcharPara("@Images", 800, productLotEL.images);
                     proc.AddNVarcharPara("@ReturnValue", 500, productLotEL.ReturnValue, QueryParameterDirection.Output);
-
+                    proc.AddVarcharPara("@LowEstimatePrice", 200, productLotEL.LowEstimatePrice);
+                    proc.AddVarcharPara("@HighEstimatePrice", 200, productLotEL.HighEstimatePrice);
                     int i = proc.RunActionQuery();
                     if (i > 0)
                     {

@@ -256,7 +256,7 @@ namespace LiveAuction
                 {
                     litUpcomingAuction = litUpcomingAuction + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'><input type='hidden' class='auctionId' value=" + i +
-                                        "><img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
+                                        "><img src='/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" + dt.Rows[i]["Address"] +
                                                 "</p><a href='#' class='btn btn-danger btn-block bidding-sing-btn todaysAction' data-toggle='modal' data-target='#bidpopup" + dt.Rows[i]["AuctionId"] + "' >View Details</a><div class='action-timing-sec'><p id='counterDiv" + i + "'>";
 
 
@@ -299,7 +299,7 @@ namespace LiveAuction
                                                           "</div>" +
                                                           "<div class='bid-popup-pic'>" +
                                                             "<!--<img src='images/bidpp1.png' alt='this is for bid popup' >-->" +
-                                                            "<img src='/TCAG/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/>" +
+                                                            "<img src='/Admin/FileUpload/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/>" +
                                                           "</div>" +
                                                           "<div class='bid-p-dis'>" +
                                                             "<p class='bid-alate'>" + dt.Rows[i]["Description"] + "</p>" +

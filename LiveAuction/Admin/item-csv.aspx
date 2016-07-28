@@ -184,7 +184,7 @@
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$"
                                         ControlToValidate="CSVFileUpload" runat="server" ForeColor="Red" ErrorMessage="Please select a valid CSV file."
                                         Display="Dynamic" />
-                                        <asp:RequiredFieldValidator  ControlToValidate="CSVFileUpload" ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                                        <asp:RequiredFieldValidator  ControlToValidate="CSVFileUpload" ID="RequiredFieldValidator1" runat="server" ErrorMessage="CSV file is required" ForeColor="Red"></asp:RequiredFieldValidator>
                                     <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
                     <div class="col-xs-12"><hr></div><br />
                       <%--<div class="cr-accnt pop-cr-accnt">

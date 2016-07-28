@@ -27,7 +27,10 @@ namespace EntityLayer
         public bool IsFreeShipping { get; set; }
         public string ShippingPrice { get; set; }
         public bool IsShippedEverywhere { get; set; }
+        public bool IsScheduled { get; set; }
         public string images { get; set; }
         public string ReturnValue { get; set; }
+        public string LowEstimatePrice { get; set; }
+        public string HighEstimatePrice { get; set; }
     }
 }

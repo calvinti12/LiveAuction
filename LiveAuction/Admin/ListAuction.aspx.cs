@@ -116,15 +116,17 @@ namespace LiveAuction.Admin
                             <!-- CSV SECTION -->
                                 <div class='col-md-12 col-lg-12'>
                                 <h4 class='modal-title' id='H3'>Upload Image files</h4>
-                                        <div class='cr-accnt'>
-                                            <div class='col-md-12'>
-                                                <div id='dZUpload' class='dropzone'>
-                                                    <div class='dz-default dz-message'>
-                                                        Drag and drop photos into the box.
+                                        <div>
+                                           <div class='row'>
+                                             <div class='col-md-12'>
+                                                    <div id='dZUpload' class='dropzone'>
+                                                        <div class='dz-default dz-message'>
+                                                            Drag and drop photos into the box.
+                                                        </div>
                                                     </div>
+                                                     <input type='hidden' id='hdnimagefiles' name='hdnimagefiles' />
                                                 </div>
-                                                 <input type='hidden' id='hdnimagefiles' name='hdnimagefiles' />
-                                            </div>
+                                          </div>
                                       </div>
                                 </div>
                                 <div class='col-md-12 col-lg-12'>

@@ -845,6 +845,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Excel\" />
     <Folder Include="fileupload\CSV\" />
+    <Folder Include="fileupload\lotUpload\" />
     <Folder Include="fileupload\upload\" />
     <Folder Include="js\LIB\" />
   </ItemGroup>
