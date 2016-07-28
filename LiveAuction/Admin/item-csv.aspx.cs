@@ -113,17 +113,15 @@ namespace LiveAuction.seller_track
                 {
                     try
                     {
+
                         Response.Write(dt.Rows.Count);
                         for (int i = 1; i < dt.Rows.Count; i++)
                         {
-                            Response.Write("<br/>" + dt.Rows[i]["SaleSection"]);
                             var category = Convert.ToString(dt.Rows[i]["SaleSection"]).Trim();
                             string CategoryQuery = "select * from ProductCategory where CategoryName like '" + category + "'";
                             SqlDataAdapter adapter = new SqlDataAdapter(CategoryQuery, con);
                             DataTable dtCategory = new DataTable();
                             adapter.Fill(dtCategory);
-
-                            Response.Write(dtCategory.Rows.Count);
                             objProductLotEL.ProductUsed = "";
                             objProductLotEL.CategoryId = Convert.ToInt32(dtCategory.Rows[0]["CategoryId"]);
                             objProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
