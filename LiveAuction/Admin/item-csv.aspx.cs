@@ -11,6 +11,7 @@ using System.Configuration;
 using BusinessLogicLayer;
 using EntityLayer;
 using System.Data.OleDb;
+using System.Collections;
 
 
 namespace LiveAuction.seller_track
@@ -79,6 +80,12 @@ namespace LiveAuction.seller_track
                 ProductLotEL objProductLotEL = new ProductLotEL();
                 string Responsetxt = string.Empty;
                 string productimages = Request["hdnimagefiles"];
+                ArrayList images = new ArrayList();
+                foreach (string image in productimages.Split(','))
+                {
+                    images.Add(image);
+                }
+                Response.Write(images.Count);
                 /*--------- proc call end -------*/
                 string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
                 using (SqlConnection con = new SqlConnection(connectionString))
@@ -112,7 +119,7 @@ namespace LiveAuction.seller_track
                             objProductLotEL.ShippingPrice = "";
                             objProductLotEL.IsShippedEverywhere = true;
                             objProductLotEL.IsScheduled = true;
-                            objProductLotEL.images = productimages;
+                            objProductLotEL.images = Convert.ToString(images[i-1]);
                             objProductLotEL.LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]);
                             objProductLotEL.HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"]);
                             if (objProductLotBL.Save(objProductLotEL, out Responsetxt))

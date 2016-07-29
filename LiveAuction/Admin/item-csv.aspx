@@ -109,38 +109,8 @@
                       <a class="btn btn-primary btn-blkitem" data-toggle="modal" data-target="#bidpopup">Upload Bulk Items</a>
                       <span class="label label-success successUpload" style="visibility:hidden">File uploaded successfully.</span>
                       <asp:PlaceHolder ID="fileUploadSuccessfull" runat="server"></asp:PlaceHolder>
-
                     </div>
                   </div>
-                  <%--<div class="tt">
-                    <div class="description-table-sec">
-                      <div class="description-title">
-                        CSV table description and acceptable values:
-                      </div>
-                      <div class="description-table">
-                        <div class="table-responsive">
-                          <table class="table table-bordered table-striped table-condensed table-csv">
-                            <thead class="btn-primary">
-                              <tr class="row">
-                                <th class="col-xs-3">HEADER</th>
-                                <th class="col-xs-3">REQUIRED</th>
-                                <th class="col-xs-3">TYPE</th>
-                                <th class="col-xs-3">ACCEPTABLE VALUES</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr class="row">
-                                <td class="col-xs-3">1</td>
-                                <td class="col-xs-3">2</td>
-                                <td class="col-xs-3">3</td>
-                                <td class="col-xs-3">4</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>--%>
                 </div>
               </div>
             </div>
@@ -191,7 +161,7 @@
                       </div>--%>
                     </div>
                     <div class="col-md-12 col-lg-12">
-                    <asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" />
+                    <asp:Button ID="Button1"  CssClass="btn btn-default" Text="Upload" OnClick = "Upload" runat="server" OnClientClick="return validateForm()" />
                       <%--<div class="cr-accnt pop-cr-accnt">
                       </div>--%>
                     </div>
