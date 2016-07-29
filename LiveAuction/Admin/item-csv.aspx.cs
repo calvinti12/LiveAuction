@@ -113,8 +113,6 @@ namespace LiveAuction.seller_track
                 {
                     try
                     {
-
-                        Response.Write(dt.Rows.Count);
                         for (int i = 1; i < dt.Rows.Count; i++)
                         {
                             var category = Convert.ToString(dt.Rows[i]["SaleSection"]).Trim();
@@ -147,12 +145,12 @@ namespace LiveAuction.seller_track
                             objProductLotEL.HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"]);
                             if (objProductLotBL.Save(objProductLotEL, out Responsetxt))
                             {
-                                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "console.log('" + Responsetxt + "');", true);
+                                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "alert('" + Responsetxt + "');", true);
                             }
                             else
                             {
 
-                                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "console.log('" + Responsetxt + "');", true);
+                                ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "alert('" + Responsetxt + "');", true);
                             }
 
                             //string query = "INSERT INTO ProductLot(LotDesc,CategoryId,RangeStart,RangeEnd,Currency,CreatedOn,CreatedBy,UpdatedOn,UpdatedBy,IsProductUsed,AuctionId,IsBranded,Title,SKU,CheckoutQuestion,Quantity,CostBasis,RetailPrice,BuynowPrice,StartingBid,ShipFrom,ShipWithin,DeliveryTakes,IsFreeShipping,ShippingPrice,IsShippingEveryWhere,IsScheduled)VALUES('" + dt.Rows[i]["LotDesc"] + "'," + dt.Rows[i]["CategoryId"] + "," + dt.Rows[i]["RangeStart"] + "," + dt.Rows[i]["RangeEnd"] + ",'" + dt.Rows[i]["Currency"] + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',1," + dt.Rows[i]["UpdatedOn"] + "," + dt.Rows[i]["UpdatedBy"] + ",'" + dt.Rows[i]["IsProductUsed"] + "'," + auction.SelectedItem.Value + "," + dt.Rows[i]["IsBranded"] + ",'" + dt.Rows[i]["Title"] + "','" + dt.Rows[i]["SKU"] + "','" + dt.Rows[i]["CheckoutQuestion"] + "'," + dt.Rows[i]["Quantity"] + ",'" + dt.Rows[i]["CostBasis"] + "','" + dt.Rows[i]["RetailPrice"] + "','" + dt.Rows[i]["BuynowPrice"] + "','" + dt.Rows[i]["StartingBid"] + "','" + dt.Rows[i]["ShipFrom"] + "','" + dt.Rows[i]["ShipWithin"] + "','" + dt.Rows[i]["DeliveryTakes"] + "'," + dt.Rows[i]["IsFreeShipping"] + ",'" + dt.Rows[i]["ShippingPrice"] + "'," + dt.Rows[i]["IsShippingEveryWhere"] + "," + dt.Rows[i]["IsScheduled"] + ")";
