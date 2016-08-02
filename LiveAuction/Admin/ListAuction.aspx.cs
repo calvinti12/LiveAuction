@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using BusinessLogicLayer;
+using EntityLayer;
 
 namespace LiveAuction.Admin
 {
@@ -18,7 +20,6 @@ namespace LiveAuction.Admin
             {
                 FillGrid();
             }
-
         }
         private void FillGrid()
         {
@@ -112,7 +113,7 @@ namespace LiveAuction.Admin
                           <div class='bid-p-dis'>
                             <button type='button' class='btn btn-danger btn-block'>Bid 150 GBP</button>
                           </div>-->
-                           <div class='cr-accnt pop-cr-accnt'style='margin-bottom: 0;'>
+                           <div class='cr-accnt pop-cr-accnt'>
                             <!-- CSV SECTION -->
                                 <div class='col-md-12 col-lg-12'>
                                 <h4 class='modal-title' id='H3'>Upload Image files</h4>
@@ -135,8 +136,13 @@ namespace LiveAuction.Admin
                                 <div class='col-xs-12'><hr></div><br />
                                 </div>
                                 <div class='col-md-12 col-lg-12'>
-                                    <input tyep='button' class='btn btn-default' value='Upload'/>
-                                </div>
+                                     <script type = 'text/javascript'>
+                                       $(document).ready(function () {
+                                       $('#csvUpload" + i + "').click(function () { alert("+i+"+' clicked'); });";
+                moralHtml += @"});
+                                    </script>
+                                    <input type='button' class='btn btn-default' id='csvUpload" + i + "' value='Upload' OnClientClick='return validateForm()'/>";
+                moralHtml += @"</div> 
                             <!-- CSV SECTION END -->
                           </div>
                         </div>
@@ -176,7 +182,7 @@ namespace LiveAuction.Admin
                         var lotNo = j + 1;
                         moralHtml += "<tr><td>" + lotNo + "</td>" +
                         "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
-                        "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
+                        "<td class='pop-ico'><a href='../TCAG/bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
                       "</tr>";
                     }
                 }
@@ -198,9 +204,17 @@ namespace LiveAuction.Admin
         </div>
       </section>";
             }
-            lit += @"</table>";
+            //lit += @"</table>";
             literalText.Text = lit + moralHtml;
 
         }
+
+        [System.Web.Services.WebMethod]
+        public static string BlukCSVupload()
+        {
+            return "Hello " + Environment.NewLine + "The Current Time is: "
+                + DateTime.Now.ToString();
+        }
+
     }
 }

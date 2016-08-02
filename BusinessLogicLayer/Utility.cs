@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using DataAccessLayer;
+using EntityLayer;
 
 namespace BusinessLogicLayer
 {
-    class Utility
+    public class Utility
     {
         public static void DataBaseAccess(string q,int id)
         {

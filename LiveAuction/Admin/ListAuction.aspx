@@ -15,6 +15,22 @@
         var dropImages = [];
         $(document).ready(function () {
 
+            function ShowCurrentTime() {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'ListAuction.aspx/BlukCSVupload',
+                                               
+                                            contentType: 'application/json; charset=utf-8',
+                                            dataType: 'json',
+                                            success: OnSuccess,
+                                            failure: function(response) {
+                                                alert(response.d);
+                                            }
+                                        });
+                                    }
+                                    function OnSuccess(response) {
+                                        alert(response.d);
+                                    }
             Dropzone.autoDiscover = false;
 
             //Simple Dropzonejs 

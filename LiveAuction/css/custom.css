@@ -435,3 +435,20 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 .main-slider-caption p{font-size: 7px;}
 .btn-account-submit{padding:10px 33%;}
 }
+
+/*this area is for live auction*/
+.{margin:0;padding: 0;}
+.category-sell-item-full{}
+.category-sell-pic{}
+.category-sell-pic img{width:100%;}
+.category-sell-pic-caption{padding: 9px 0px;background-color: #111a3a;}
+.category-sell-pic-caption h1{text-transform: uppercase;color: #fff;}
+.category-curent-itm-dis .panel-footer h1, .category-curent-itm-dis .panel-footer h2{margin:0;}
+.ttll-pnl-foot .pull-right h1.bg-primary{padding: 5px 10px;border-radius: 4px;}
+.category-curent-itm-dis .panel{max-height: 357px;}
+.category-curent-itm-dis .panel-body{height: 164px;overflow: hidden;}
+.panel-ttle-cat{margin: 0;}
+.cat-sell-snt{width: 33%;margin-right: 10px;float: left;}
+.cat-sell-snt:last-child{margin-right: 0px;}
+.cat-sell-single-item{margin-bottom: 15px;border-bottom: 1px solid #ddd;padding-bottom: 15px;}
+.catergory-sell-item-sw{border: 1px solid #ddd; padding: 5px 15px;border-radius: 4px;height: 611px;overflow: hidden;}
