@@ -7,7 +7,6 @@
     <script src="js/custom.js" type="text/javascript"></script>
     <script src="Scripts/angular.js" type="text/javascript"></script>
     <script src="Scripts/angular-route.js" type="text/javascript"></script>
-    
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">
@@ -26,27 +25,21 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="row">
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div class="category-sell-item-full-sec">
-								<div class="category-sell-pic">
-									<img src="images/tt.jpg" alt="this is for selling item images" class="img-responsive" />
-								</div>
-								<div class="category-sell-pic-caption text-center">
-									<h1>current lot 101</h1>
-								</div>
-							</div>
-							<div class="category-sell-item-des-sec">
-								<h3 class="text-primary">CP 09 05 sujuki witch hatchback 5 seats 4 doors</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type <a href="#" class="text-info">specimen book. It has survived not</a>  only five</p>
-							</div>
-						</div>
+                        <asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="category-curent-itm-dis">
 								<div class="panel panel-default">
 								  <div class="panel-heading">
-								    <h3 class="text-primary panel-ttle-cat">current sale</h3>
-								    <p class="text-info">Arcle load basic</p>
-								    <p class="text-info">Damage vichels</p>
+								    <h3 class="text-primary panel-ttle-cat">Live video</h3>
+								    <%--<p class="text-info">Arcle load basic</p>--%>
+                                    <div class="">
+                                     <video width="320" height="240" controls  poster="video_contents/video.gif">
+                                        <source src="video_contents/movie.mp4" type="video/mp4">
+                                        <source src="video_contents/movie.ogg" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                     </video> 
+                                     </div>
+								    <%--<p class="text-info">Damage vichels</p>--%>
 								  </div>
 								  <div class="panel-body">
 								    <div class="cat-it-dis">
@@ -76,6 +69,23 @@
 				</div>
 				<div class="col-md-4 col-sm-12 col-xs-12">
 					<div class="catergory-sell-item-sw clearfix">
+                        <asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>
+						<%--<div class="cat-sell-single-item clearfix">
+							<div class="cat-sell-title">
+								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
+							</div>
+							<div class="cat-sell-tag">
+								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
+							</div>
+							<div class="cat-sell-pic-sec">
+								<div class="cat-sell-snt">
+									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
+								</div>
+								<div class="cat-sell-snt">
+									<a href="#" class="text-info">View More</a>
+								</div>
+							</div>
+						</div>
 						<div class="cat-sell-single-item clearfix">
 							<div class="cat-sell-title">
 								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
@@ -92,7 +102,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="cat-sell-single-item clearfix">
 							<div class="cat-sell-title">
 								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
@@ -109,7 +118,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="cat-sell-single-item clearfix">
 							<div class="cat-sell-title">
 								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
@@ -126,7 +134,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="cat-sell-single-item clearfix">
 							<div class="cat-sell-title">
 								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
@@ -142,29 +149,11 @@
 									<a href="#" class="text-info">View More</a>
 								</div>
 							</div>
-						</div>
-
-						<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>
+						</div>--%>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
     <!-- this is the start of category display  sell page -->
-   
 </asp:Content>

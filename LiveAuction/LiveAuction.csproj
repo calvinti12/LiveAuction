@@ -529,6 +529,9 @@
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="UserControl\LoginControl.ascx" />
     <Content Include="UserControl\SellerLeftPanel.ascx" />
+    <Content Include="video_contents\movie.mp4" />
+    <Content Include="video_contents\video.gif" />
+    <Content Include="video_contents\video.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
