@@ -15,8 +15,14 @@ namespace LiveAuction
     public partial class live_auction : System.Web.UI.Page
     {
         public static string currentLotNo = "";
+        //public static string userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+        //public static string adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
+        public static string userName;
+        public static string adminName;
         protected void Page_Load(object sender, EventArgs e)
         {
+            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+            adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
             //Response.Write("User : " + Convert.ToString(Session["AdminUserName"]) + "<br/>user id : " + Session["UserId"] + "<br/>User name : " + Session["UserName"]);
             StringBuilder html = new StringBuilder();
             StringBuilder currentHtml = new StringBuilder();
@@ -89,6 +95,23 @@ namespace LiveAuction
                 html.Append(lit);
             }
             PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
+            StringBuilder bidBtnHtml = new StringBuilder();
+            var bidBtn = "";
+
+            if (userName != null && userName != "")
+            {
+                bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
+            }
+            else if (adminName != null && adminName != "")
+            {
+                bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
+            }
+            else
+            {
+                bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
+            }
+            bidBtnHtml.Append(bidBtn);
+            PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
         }
         #region Log file add
         public static void AddtoLogFile(string Message, string WebPage, string fileName)
@@ -142,8 +165,8 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static string WriteToLog()
         {
-            var userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
-            var adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
+            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+            adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
             if (userName != null && userName != "")
             {
                 AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + currentLotNo);
@@ -152,8 +175,7 @@ namespace LiveAuction
             {
                 AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + currentLotNo);
             }
-            return "Hello " + Environment.NewLine + "The Current Time is: "
-                + DateTime.Now.ToString();
+            return "Your bid has been made ";
         }
         #endregion
     }

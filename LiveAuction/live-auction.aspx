@@ -34,6 +34,7 @@
                     var validUrl = UrlExists(url);
                     if (validUrl) {
                         $(".wel-message").load(url);
+                        alert(response.d);
                     }
                     else {
                     }
@@ -98,7 +99,8 @@
                                             <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
 										<div class="pull-right">
-											<a href="#" class="bidBtn"><h1 class="bg-primary">Bid</h1></a>
+                                            <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
+											<%--<a href="#" class="bidBtn"><h1 class="bg-primary">Bid</h1></a>--%>
 										</div>
 								  	</div>
 								  </div>

@@ -444,7 +444,8 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 .category-sell-pic-caption{padding: 9px 0px;background-color: #111a3a;}
 .category-sell-pic-caption h1{text-transform: uppercase;color: #fff;}
 .category-curent-itm-dis .panel-footer h1, .category-curent-itm-dis .panel-footer h2{margin:0;}
-.ttll-pnl-foot .pull-right h1.bg-primary{padding: 5px 10px;border-radius: 4px;}
+.ttll-pnl-foot .pull-right h1.bg-primary{padding: 5px 10px;border-radius: 4px;font-size:25px;}
+.ttll-pnl-foot .pull-right a.bidBtn:hover, .ttll-pnl-foot .pull-right a.bidBtn:focus{text-decoration:none !important;}
 .category-curent-itm-dis .panel{}
 .category-curent-itm-dis .panel-body{height: 164px;overflow: hidden;}
 .panel-ttle-cat{margin: 0;}
