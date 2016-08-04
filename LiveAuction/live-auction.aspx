@@ -55,7 +55,7 @@
 								  	<div class="ttll-pnl-foot clearfix">
 								  		<div class="pull-left">
 											<h2>Asking Bid</h2>
-											<h1 class="text-danger">AU$ <span>0</span></h1>
+                                            <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
 										<div class="pull-right">
 											<a href="#"><h1 class="bg-primary">Bid</h1></a>

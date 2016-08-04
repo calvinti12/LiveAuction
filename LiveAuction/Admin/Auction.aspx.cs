@@ -25,6 +25,7 @@ namespace LiveAuction.Admin
             auctiondate.Text = "";
             description.Text = "";
             address.Text = "";
+            askingbid.Text = "";
             fileUploadLabel.Text = "";
         }
 
@@ -54,7 +55,7 @@ namespace LiveAuction.Admin
                         con.Open();
                         DateTime temp = DateTime.ParseExact(auctiondate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                         string str = temp.ToString("yyyy-MM-dd");
-                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName,Description)values('3','" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + address.Text + "',NULL,0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + ",NULL," + "'" + filename + "','" +description.Text+ "')";
+                        string query = "insert into Auction(AuctionTypeId,AuctionName,AuctionDate,AuctionTime,Address,Commission,IsSchedule,UserType,UserId,ImagePath,SchedulingFee,ImageName,Description,AskingBid)values('3','" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + address.Text + "',NULL,0,'Admin'," + Convert.ToInt32(Session["AdminUserId"]) + "," + "'" + filePath + "'" + ",NULL," + "'" + filename + "','" + description.Text + "','"+askingbid.Text+"')";
                         SqlCommand cmd = new SqlCommand(query, con);
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
@@ -62,6 +63,7 @@ namespace LiveAuction.Admin
                             txtAuctionName.Text = "";
                             auctiontime.Text = "";
                             auctiondate.Text = "";
+                            askingbid.Text = "";
                             //number.Text = "";
                             fileUploadLabel.Text = "";
                             address.Text = "";

@@ -114,6 +114,19 @@
                                 </div>
                             </div>
                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">
+                                    Asking Bid&nbsp(£) <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <asp:TextBox ID="askingbid" runat="server"
+                                        class="form-control col-md-7 col-xs-12 schedFee" placeholder="£"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Asking bid is Required"
+                                        ControlToValidate="askingbid" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
+                                    <!-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
+                                        class="form-control col-md-7 col-xs-12">-->
+                                </div>
+                            </div>
+                            <div class="item form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
                                     Description <span class="required">*</span>
                                 </label>

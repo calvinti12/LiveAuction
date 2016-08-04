@@ -77,6 +77,7 @@
                                         <li><a href="item-auction.aspx">All Auctions list</a></li>
                                         <li><a href="item-csv.aspx">CSV Auctions</a></li>
                                         <li><a href="list-item.aspx">Lot Upload</a></li>
+                                        <li><a href="live-auction-log.aspx">Live Auction Log</a></li>
                                         <%--<li><a href="list-deal.aspx">Deal Upload</a></li>
                                         <li><a href="Deals.aspx">Deals</a> </li>
                                         <li><a href="DealsApproved.aspx">Deals approved</a> </li>--%>

@@ -83,6 +83,7 @@
     <Content Include="Admin\Auction.aspx" />
     <Content Include="Admin\AuctionView.aspx" />
     <Content Include="Admin\connecting.aspx" />
+    <Content Include="Admin\live-auction-log.aspx" />
     <Content Include="Admin\css\custom_seller.css" />
     <Content Include="Admin\css\animate.min.css" />
     <Content Include="Admin\css\bootstrap.min.css" />
@@ -615,6 +616,13 @@
     <Compile Include="Admin\connecting.aspx.designer.cs">
       <DependentUpon>connecting.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\live-auction-log.aspx.cs">
+      <DependentUpon>live-auction-log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\live-auction-log.aspx.designer.cs">
+      <DependentUpon>live-auction-log.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -855,6 +863,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\images\timepicky\" />
+    <Folder Include="Admin\log_files\" />
     <Folder Include="App_Data\" />
     <Folder Include="Excel\" />
     <Folder Include="fileupload\CSV\" />

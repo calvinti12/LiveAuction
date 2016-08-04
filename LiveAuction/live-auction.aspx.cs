@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+using System.IO;
 
 namespace LiveAuction
 {
@@ -14,12 +16,24 @@ namespace LiveAuction
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var userName = Convert.ToString(Session["UserName"]).Trim();
+            var adminName=Convert.ToString(Session["AdminUserName"]).Trim();
+            if (userName != null && userName != "")
+            {
+                AddtoLogFile(userName + " added the bid", "sampleWebsite");
+            }
+            if (adminName != null && adminName != "")
+            {
+                AddtoLogFile(adminName + " added the bid", "sampleWebsite");
+            }
+            //Response.Write("User : " + Convert.ToString(Session["AdminUserName"]) + "<br/>user id : " + Session["UserId"] + "<br/>User name : " + Session["UserName"]);
             StringBuilder html = new StringBuilder();
             StringBuilder currentHtml = new StringBuilder();
+            StringBuilder askingBidHtml = new StringBuilder();
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "select Distinct * from [AuctionBidPlatform].[dbo].[View_list_item]";
+            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -31,6 +45,7 @@ namespace LiveAuction
             con.Close();
             string lit = "";
             string currentLit = "";
+            string askingBid = "";
             currentLit += @"<div class='col-md-6 col-sm-6 col-xs-12'>
 							<div class='category-sell-item-full-sec'>
 								<div class='category-sell-pic'>
@@ -43,11 +58,24 @@ namespace LiveAuction
 							<div class='category-sell-item-des-sec'>
 								<h3 class='text-primary'>Auction : " + dt1.Rows[0]["AuctionName"] + "</h3>";
             currentLit += @"<p>" + dt1.Rows[0]["LotDesc"] + "</p>";
+            currentLit += @"<p>Low estimate price&nbsp-&nbsp" + dt1.Rows[0]["LowEstimatePrice"] + "£</p>";
+            currentLit += @"<p>High estimate price&nbsp-&nbsp" + dt1.Rows[0]["HighEstimatePrice"] + "£</p>";
             currentLit += @"</div>
 						</div>";
+            var lowEstimatePrice=Convert.ToInt32(dt1.Rows[0]["LowEstimatePrice"]);
+            var askingBidPrice = 0;
+            if (lowEstimatePrice >= 0 && lowEstimatePrice <= 200) { askingBidPrice = 5; }
+            if (lowEstimatePrice >= 101 && lowEstimatePrice <= 500) { askingBidPrice = 10; }
+            if (lowEstimatePrice >= 501 && lowEstimatePrice <= 1000) { askingBidPrice = 50; }
+            if (lowEstimatePrice >= 501 && lowEstimatePrice <= 1000) { askingBidPrice = 50; }
+            if (lowEstimatePrice >= 1001 && lowEstimatePrice <= 3000) { askingBidPrice = 150; }
+            if (lowEstimatePrice >= 3001 && lowEstimatePrice <= 10000) { askingBidPrice = 500; }
+            askingBid += @"<h1 class='text-danger'>£ <span>" + askingBidPrice + "</span></h1>";
+            askingBidHtml.Append(askingBid);
+            PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
             currentHtml.Append(currentLit);
             PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 1; i < dt.Rows.Count-1; i++)
             {
                 lit = @"<div class='cat-sell-single-item clearfix'>
 							<div class='cat-sell-title'>
@@ -67,8 +95,50 @@ namespace LiveAuction
 						</div>";
                 html.Append(lit);
             }
-            html.Append(lit);
             PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
         }
+        #region Log file add
+        public void AddtoLogFile(string Message, string WebPage)
+        {
+            string LogPath = Server.MapPath(@"~\Admin\log_files\").ToString();
+            //string LogPath = ConfigurationManager.AppSettings["LogPath"].ToString();
+            string filename = "Log_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt";
+            string filepath = LogPath + filename;
+            if (File.Exists(filepath))
+            {
+                using (StreamWriter writer = new StreamWriter(filepath, true))
+                {
+                    writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                    writer.WriteLine("Source :" + ErrorPage);
+                    writer.WriteLine(Message);
+                    writer.WriteLine("-------------------END-------------" + DateTime.Now);
+                }
+                //WriteToDatabase(filename.ToString(),filepath);
+            }
+            else
+            {
+                StreamWriter writer = File.CreateText(filepath);
+                writer.WriteLine("-------------------START-------------" + DateTime.Now);
+                writer.WriteLine("Source :" + ErrorPage);
+                writer.WriteLine(Message);
+                writer.WriteLine("-------------------END-------------" + DateTime.Now);
+                writer.Close();
+                WriteToDatabase(filename.ToString(), filepath);
+            }
+            
+        }
+
+        private void WriteToDatabase(string filename,string filepath)
+        {
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string query = "INSERT INTO [AuctionBidPlatform].[dbo].[LiveAuctionLogs]([FileName],[CreatedOn],[FilePath])VALUES('" + filename + "'," + DateTime.Now.ToString("yyyy-MM-dd") + ",'" + filepath + "')";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            con.Close();
+        }
+        #endregion
     }
 }
