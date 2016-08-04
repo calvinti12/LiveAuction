@@ -7,6 +7,46 @@
     <script src="js/custom.js" type="text/javascript"></script>
     <script src="Scripts/angular.js" type="text/javascript"></script>
     <script src="Scripts/angular-route.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $("document").ready(function () {
+            var lotId = $(".currentLotClass").html();
+            var logFileUrl = "Admin/log_files/Log_lotNo_" + lotId + ".txt";
+            var urlValidate = UrlExists(logFileUrl);
+            if (urlValidate) {
+                $(".wel-message").load(logFileUrl);
+            }
+            else {
+                $(".wel-message").html("No bid has been made yet");
+            }
+            $(".bidBtn").click(function (e) {
+                e.preventDefault();
+                //alert("button clicked");
+                var url = logFileUrl;
+                $.ajax({
+                    type: "POST",
+                    url: "live-auction.aspx/WriteToLog",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccess,
+                    failure: function (response) { alert(response.d); }
+                });
+                function onSuccess() {
+                    var validUrl = UrlExists(url);
+                    if (validUrl) {
+                        $(".wel-message").load(url);
+                    }
+                    else {
+                    }
+                }
+            });
+            function UrlExists(url) {
+                var http = new XMLHttpRequest();
+                http.open('HEAD', url, false);
+                http.send();
+                return http.status != 404;
+            }
+        });
+    </script>
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">
@@ -58,7 +98,7 @@
                                             <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
 										<div class="pull-right">
-											<a href="#"><h1 class="bg-primary">Bid</h1></a>
+											<a href="#" class="bidBtn"><h1 class="bg-primary">Bid</h1></a>
 										</div>
 								  	</div>
 								  </div>
