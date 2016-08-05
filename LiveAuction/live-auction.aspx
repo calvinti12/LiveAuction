@@ -10,9 +10,23 @@
     <script type="text/javascript">
         $("document").ready(function () {
             var lotId = $(".currentLotClass").html();
+            //var logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
             var logFileUrl = "Admin/log_files/Log_lotNo_" + lotId + ".txt";
+            console.log(logFileUrl);
             var urlValidate = UrlExists(logFileUrl);
             if (urlValidate) {
+                $.get(logFileUrl, function (response) {
+                    //var str = "04-08-2016 15:08:58 - bidder added the bid";
+                    var str = response;
+                    var res = str.match(/\b\d{2}[-]?\d{2}[-]?\d{4}? \d{2}?:\d{2}?:\d{2}\b/g);
+                    //                    document.getElementById("demo").innerHTML = res;
+                    //var logfile = response;
+                    for (var i = 0; i < res.length; i++) {
+                        var date = new Date(res[i]);
+                        console.log(date);
+                    }
+
+                });
                 $(".wel-message").load(logFileUrl);
             }
             else {
@@ -30,14 +44,24 @@
                     success: onSuccess,
                     failure: function (response) { alert(response.d); }
                 });
-                function onSuccess() {
+                function onSuccess(response) {
                     var validUrl = UrlExists(url);
                     if (validUrl) {
+                        $.get(url, function (response) {
+                            var logfile = response;
+                            console.log(logfile)
+                        });
                         $(".wel-message").load(url);
-                        alert(response.d);
+                       // alert(response.d);
                     }
                     else {
                     }
+                }
+                function UrlExists(url) {
+                    var http = new XMLHttpRequest();
+                    http.open('HEAD', url, false);
+                    http.send();
+                    return http.status != 404;
                 }
             });
             function UrlExists(url) {
@@ -85,10 +109,10 @@
 								  <div class="panel-body">
 								    <div class="cat-it-dis">
 								    	<p class="text-success">successfully conected to server</p>
-								    	<div class="wel-message">
-								    		<p>welcome</p>
+								    	<div class="wel-message" style="font-size:12px;">
+								    		<%--<p>welcome</p>
 								    		<p><span>This is now</span>&nbsp;&nbsp;<span>thu march 3 3:32(Est)</span></p>
-								    		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+								    		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>--%>
 								    	</div>
 								    </div>
 								  </div>

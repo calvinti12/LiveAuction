@@ -19,6 +19,7 @@ namespace LiveAuction
         //public static string adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
         public static string userName;
         public static string adminName;
+        public static int askingBidPrice = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
@@ -61,8 +62,6 @@ namespace LiveAuction
             currentLit += @"</div>
 						</div>";
             var lowEstimatePrice = Convert.ToInt32(dt1.Rows[0]["LowEstimatePrice"]);
-
-            var askingBidPrice = 0;
             if (lowEstimatePrice >= 0 && lowEstimatePrice <= 200) { askingBidPrice = 5; }
             if (lowEstimatePrice >= 101 && lowEstimatePrice <= 500) { askingBidPrice = 10; }
             if (lowEstimatePrice >= 501 && lowEstimatePrice <= 1000) { askingBidPrice = 50; }
@@ -114,8 +113,9 @@ namespace LiveAuction
             PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
         }
         #region Log file add
-        public static void AddtoLogFile(string Message, string WebPage, string fileName)
+        public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBidPrice)
         {
+            //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
             string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
             //string LogPath = ConfigurationManager.AppSettings["LogPath"].ToString();
             //string filename = "Log_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt";
@@ -129,8 +129,8 @@ namespace LiveAuction
                     //writer.WriteLine("Source :" + ErrorPage);
                     //writer.WriteLine(Message);
                     //writer.WriteLine("-------------------END-------------" + DateTime.Now);
-                    writer.WriteLine("-----------------------------------------------------------");
-                    writer.WriteLine(Message + " at " + DateTime.Now);
+                    writer.WriteLine("---------------------------------------------------------------------");
+                    writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy HH:MM:ss") + " - " + Message + " at " + askingBidPrice + "£");
                 }
                 //WriteToDatabase(filename.ToString(),filepath);
             }
@@ -141,8 +141,8 @@ namespace LiveAuction
                 //writer.WriteLine("Source :" + ErrorPage);
                 //writer.WriteLine(Message);
                 //writer.WriteLine("-------------------END-------------" + DateTime.Now);
-                writer.WriteLine("-----------------------------------------------------------");
-                writer.WriteLine(Message + " at " + DateTime.Now);
+                writer.WriteLine("---------------------------------------------------------------------");
+                writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy HH:MM:ss") + " - " + Message + " at " + askingBidPrice + "£");
                 writer.Close();
                 WriteToDatabase(filename.ToString(), filepath);
             }
@@ -163,19 +163,20 @@ namespace LiveAuction
         #region Calling Web Method
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static string WriteToLog()
+        public static void WriteToLog()
         {
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
             adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
             if (userName != null && userName != "")
             {
-                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + currentLotNo);
+                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + currentLotNo , askingBidPrice);
+                //return "Your bid has been made ";
             }
             if (adminName != null && adminName != "")
             {
-                AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + currentLotNo);
+                AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + currentLotNo , askingBidPrice);
+                //return "Your bid has been made ";
             }
-            return "Your bid has been made ";
         }
         #endregion
     }
