@@ -221,6 +221,7 @@
     <Content Include="Admin\js\colorpicker\docs.js" />
     <Content Include="Admin\list-deal.aspx" />
     <Content Include="Admin\list-item.aspx" />
+    <Content Include="Admin\live-auction.aspx" />
     <Content Include="Admin\money.aspx" />
     <Content Include="Admin\sell-item.aspx" />
     <Content Include="Admin\seller1.aspx" />
@@ -490,11 +491,11 @@
     <Content Include="js\jquery-1.4.4.min.js" />
     <Content Include="js\jquery-1.7.2.min.js" />
     <Content Include="js\jquery.alerts.js" />
+    <Content Include="js\jquery.blink.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\jquery.quick.pagination.min.js" />
     <Content Include="js\jquery.ui.draggable.js" />
-    <Content Include="js\moment.js" />
     <Content Include="list-item.aspx" />
     <Content Include="list-item.html" />
     <Content Include="live-auction.aspx" />
@@ -685,6 +686,13 @@
     </Compile>
     <Compile Include="Admin\ListAuction.aspx.designer.cs">
       <DependentUpon>ListAuction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\live-auction.aspx.cs">
+      <DependentUpon>live-auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\live-auction.aspx.designer.cs">
+      <DependentUpon>live-auction.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

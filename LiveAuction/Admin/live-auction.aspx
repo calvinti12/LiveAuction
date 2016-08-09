@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="live-auction.aspx.cs" Inherits="LiveAuction.live_auction"
-    MasterPageFile="~/Bidder.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="live-auction.aspx.cs" Inherits="LiveAuction.Admin.live_auction_admin"
+    MasterPageFile="~/Admin/Admin.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,10 +7,9 @@
     <script src="js/custom.js" type="text/javascript"></script>
     <script type="text/javascript">
         $("document").ready(function () {
-            $('.blink').blink({ delay: 150 });
             var lotId = $(".currentLotClass").html();
             //var logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-            var logFileUrl = "Admin/log_files/Log_lotNo_" + lotId + ".txt";
+            var logFileUrl = "log_files/Log_lotNo_" + lotId + ".txt";
             console.log(logFileUrl);
             var urlValidate = UrlExists(logFileUrl);
             if (urlValidate) {
@@ -125,7 +124,8 @@
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
 											<%--<h4 id="counterDiv">30sec</h4>--%>
-                                            <h4><span class="blink">FAIR WARNING</span></h4>
+                                            <button type="button" class="btn btn-info">FAIR WARNING</button>
+                                            <button type="button" class="btn btn-info">SOLD</button>
 										</div>
 										<div class="pull-right">
                                             <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>

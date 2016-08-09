@@ -10,9 +10,9 @@ using System.Data;
 using System.Configuration;
 using System.IO;
 
-namespace LiveAuction
+namespace LiveAuction.Admin
 {
-    public partial class live_auction : System.Web.UI.Page
+    public partial class live_auction_admin : System.Web.UI.Page
     {
         public static string currentLotNo = "";
         //public static string userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
@@ -110,14 +110,14 @@ namespace LiveAuction
             StringBuilder bidBtnHtml = new StringBuilder();
             var bidBtn = "";
 
-            if (userName != null && userName != "")
-            {
-                bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
-            }
-            //else if (adminName != null && adminName != "")
+            //if (userName != null && userName != "")
             //{
             //    bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
             //}
+            if (adminName != null && adminName != "")
+            {
+                bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
+            }
             else
             {
                 bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
@@ -132,7 +132,7 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static void FetchCurrentLot()
         {
-            live_auction la = new live_auction( );
+            live_auction_admin la = new live_auction_admin();
             //la.FetchLots();
             //Page_Load(null, EventArgs.Empty);
         }
