@@ -494,6 +494,7 @@
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\jquery.quick.pagination.min.js" />
     <Content Include="js\jquery.ui.draggable.js" />
+    <Content Include="js\moment.js" />
     <Content Include="list-item.aspx" />
     <Content Include="list-item.html" />
     <Content Include="live-auction.aspx" />
@@ -532,7 +533,6 @@
     <Content Include="UserControl\SellerLeftPanel.ascx" />
     <Content Include="video_contents\movie.mp4" />
     <Content Include="video_contents\video.gif" />
-    <Content Include="video_contents\video.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

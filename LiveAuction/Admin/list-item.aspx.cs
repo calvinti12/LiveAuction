@@ -122,6 +122,7 @@ namespace LiveAuction.seller_track
                 objProductLotEL.IsShippedEverywhere = chkShip.Checked;
                 objProductLotEL.LowEstimatePrice = lowEstimatePrice.Text;
                 objProductLotEL.HighEstimatePrice = highEstimatePrice.Text;
+                objProductLotEL.LiveAuctionPassed = "0";
                 objProductLotEL.images = productimages;
                 if (objProductLotBL.Save(objProductLotEL, out Responsetxt))
                 {

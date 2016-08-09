@@ -32,5 +32,6 @@ namespace EntityLayer
         public string ReturnValue { get; set; }
         public string LowEstimatePrice { get; set; }
         public string HighEstimatePrice { get; set; }
+        public string LiveAuctionPassed { get; set; }
     }
 }

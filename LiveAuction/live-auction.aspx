@@ -5,8 +5,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
-    <script src="Scripts/angular.js" type="text/javascript"></script>
-    <script src="Scripts/angular-route.js" type="text/javascript"></script>
     <script type="text/javascript">
         $("document").ready(function () {
             var lotId = $(".currentLotClass").html();
@@ -16,16 +14,14 @@
             var urlValidate = UrlExists(logFileUrl);
             if (urlValidate) {
                 $.get(logFileUrl, function (response) {
-                    //var str = "04-08-2016 15:08:58 - bidder added the bid";
                     var str = response;
-                    var res = str.match(/\b\d{2}[-]?\d{2}[-]?\d{4}? \d{2}?:\d{2}?:\d{2}\b/g);
-                    //                    document.getElementById("demo").innerHTML = res;
-                    //var logfile = response;
-                    for (var i = 0; i < res.length; i++) {
-                        var date = new Date(res[i]);
-                        console.log(date);
-                    }
-
+                    //                    var res = str.match(/\b\d{2}[-]?\d{2}[-]?\d{4}? \d{2}?:\d{2}?:\d{2}\b/g);
+                    //                    for (var i = 0; i < res.length; i++) {
+                    //                        var date = new Date(res[i]);
+                    //                        var day = "2016-05-08 09:08:04";
+                    //                        var tDate = new Date(day).toLocaleString();
+                    //                        console.log(tDate);
+                    //                    }
                 });
                 $(".wel-message").load(logFileUrl);
             }
@@ -34,7 +30,6 @@
             }
             $(".bidBtn").click(function (e) {
                 e.preventDefault();
-                //alert("button clicked");
                 var url = logFileUrl;
                 $.ajax({
                     type: "POST",
@@ -42,7 +37,7 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: onSuccess,
-                    failure: function (response) { alert(response.d); }
+                    failure: function (response) { alert("write log failure " + response.d); }
                 });
                 function onSuccess(response) {
                     var validUrl = UrlExists(url);
@@ -52,7 +47,7 @@
                             console.log(logfile)
                         });
                         $(".wel-message").load(url);
-                       // alert(response.d);
+                        // alert(response.d);
                     }
                     else {
                     }
@@ -62,6 +57,17 @@
                     http.open('HEAD', url, false);
                     http.send();
                     return http.status != 404;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "live-auction.aspx/FetchAskingBidValue",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onAskingBidPriceSuccess,
+                    failure: function (response) { alert("failure " + response.d); }
+                });
+                function onAskingBidPriceSuccess(response) {
+                    $("#askingBidPrice").html((response.d));
                 }
             });
             function UrlExists(url) {
@@ -96,24 +102,18 @@
 								<div class="panel panel-default">
 								  <div class="panel-heading">
 								    <h3 class="text-primary panel-ttle-cat">Live video</h3>
-								    <%--<p class="text-info">Arcle load basic</p>--%>
                                     <div class="">
                                      <video width="320" height="240" controls  poster="video_contents/video.gif">
-                                        <source src="video_contents/movie.mp4" type="video/mp4">
-                                        <source src="video_contents/movie.ogg" type="video/ogg">
+                                        <%--<source src="video_contents/movie.mp4" type="video/mp4">
+                                        <source src="video_contents/movie.ogg" type="video/ogg">--%>
                                         Your browser does not support the video tag.
                                      </video> 
                                      </div>
-								    <%--<p class="text-info">Damage vichels</p>--%>
 								  </div>
 								  <div class="panel-body">
 								    <div class="cat-it-dis">
 								    	<p class="text-success">successfully conected to server</p>
-								    	<div class="wel-message" style="font-size:12px;">
-								    		<%--<p>welcome</p>
-								    		<p><span>This is now</span>&nbsp;&nbsp;<span>thu march 3 3:32(Est)</span></p>
-								    		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>--%>
-								    	</div>
+								    	<div class="wel-message" style="font-size:12px;"></div>
 								    </div>
 								  </div>
 								  <div class="panel-footer">
@@ -122,9 +122,47 @@
 											<h2>Asking Bid</h2>
                                             <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
+                                        <div class="pull-left" style="margin-left:10%;color:#a94442">
+											<h4 id="counterDiv">30sec</h4>
+										</div>
+                                        <script type='text/javascript'>
+                                            $(function () {
+                                                //var austDay = new Date();
+                                                //austDay = new Date('2016-09-09T12:00:00');
+                                                Timer();
+                                                function Timer() {
+                                                    var time = new Date();
+                                                    time.setSeconds(time.getSeconds() + 10);
+                                                    $('#counterDiv').countdown({ until: time, compact: true,
+                                                        format: 'S', description: 'sec', onExpiry: liftOff
+                                                    });
+                                                }
+                                                function liftOff() {
+                                                    alert('Time expired');
+//                                                    $.ajax({
+//                                                        type: "POST",
+//                                                        url: "live-auction.aspx/UpdateCurrentLot",
+//                                                        contentType: "application/json; charset=utf-8",
+//                                                        dataType: "json",
+//                                                        success: onUpdateCurrentLotSuccess,
+//                                                        failure: function (response) { alert("failure " + response.d); }
+//                                                    });
+//                                                    function onUpdateCurrentLotSuccess(response) {
+                                                        //  $.ajax({
+                                                        //  type: "POST",
+                                                        //  url: "live-auction.aspx/FetchCurrentLot",
+                                                        //  contentType: "application/json; charset=utf-8",
+                                                        //  dataType: "json",
+                                                        //  success: function (response) { alert("failure " + response.d); },
+                                                        //  failure: function (response) { alert("failure " + response.d); }
+                                                        //  });
+                                                            location.reload();
+                                                    }
+                                                }
+                                            });
+                                        </script>
 										<div class="pull-right">
                                             <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
-											<%--<a href="#" class="bidBtn"><h1 class="bg-primary">Bid</h1></a>--%>
 										</div>
 								  	</div>
 								  </div>
@@ -136,90 +174,11 @@
 				<div class="col-md-4 col-sm-12 col-xs-12">
 					<div class="catergory-sell-item-sw clearfix">
                         <asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>
-						<%--<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>
-						<div class="cat-sell-single-item clearfix">
-							<div class="cat-sell-title">
-								<p><span class="text-primary">Lot 102</span>&nbsp;&nbsp; <span><a href="#" class="text-muted">Add to wish list</a></span></p>
-							</div>
-							<div class="cat-sell-tag">
-								<h3>cp 08/98, sujuki, crown vira, wagon, 5 sites, 4 doors</h3>
-							</div>
-							<div class="cat-sell-pic-sec">
-								<div class="cat-sell-snt">
-									<img src="images/tt.jpg" alt="this is for cat sell snt" class="img-responsive">
-								</div>
-								<div class="cat-sell-snt">
-									<a href="#" class="text-info">View More</a>
-								</div>
-							</div>
-						</div>--%>
 					</div>
 				</div>
 			</div>
 		</div>
+
 	</section>
     <!-- this is the start of category display  sell page -->
 </asp:Content>

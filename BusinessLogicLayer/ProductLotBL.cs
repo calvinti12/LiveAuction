@@ -71,6 +71,7 @@ namespace BusinessLogicLayer
                     proc.AddNVarcharPara("@ReturnValue", 500, productLotEL.ReturnValue, QueryParameterDirection.Output);
                     proc.AddVarcharPara("@LowEstimatePrice", 200, productLotEL.LowEstimatePrice);
                     proc.AddVarcharPara("@HighEstimatePrice", 200, productLotEL.HighEstimatePrice);
+                    proc.AddVarcharPara("@LiveAuctionPassed", 200, productLotEL.LiveAuctionPassed);
                     int i = proc.RunActionQuery();
                     if (i > 0)
                     {
