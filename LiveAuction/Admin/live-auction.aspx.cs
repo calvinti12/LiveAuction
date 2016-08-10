@@ -27,7 +27,7 @@ namespace LiveAuction.Admin
         //----------------- end -----------------------
         protected void Page_Load(object sender, EventArgs e)
         {
-            FetchLots();
+           // FetchLots();
         }
         #region Fetch lots
 
@@ -82,6 +82,7 @@ namespace LiveAuction.Admin
 						</div>";
                 askingBid += @"<h1 class='text-danger'>£ <span id='askingBidPrice'>" + askingBidPrice + "</span></h1>";
                 askingBidHtml.Append(askingBid);
+                
                 PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
                 currentHtml.Append(currentLit);
                 PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
@@ -114,7 +115,6 @@ namespace LiveAuction.Admin
             //PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
             StringBuilder bidBtnHtml = new StringBuilder();
             var bidBtn = "";
-
             //if (userName != null && userName != "")
             //{
             //    bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
@@ -129,13 +129,12 @@ namespace LiveAuction.Admin
             }
             bidBtnHtml.Append(bidBtn);
             PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
-
         }
         #endregion
         #region Fetch Lot For AJAX call
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static void FetchCurrentLot()
+        public void FetchCurrentLot()
         {
             live_auction_admin la = new live_auction_admin();
             //la.FetchLots();
@@ -326,14 +325,13 @@ namespace LiveAuction.Admin
         #region Sold Item
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static List<ProductLot> SoldItem()
+        public static List<ProductLot> SoldItem(string id)
         {
-            string query = "UPDATE dbo.ProductLot set IsSold = 1 WHERE LotId=" + currentLotNo;
+            string query = "UPDATE dbo.ProductLot set IsSold = 1 WHERE LotId=" + id;
             RunDatabaseScript(query);
             string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
             DataTable dt = RunDatabaseScript(fetchQuery);
             ProductLot productLot = new ProductLot();
-
             List<ProductLot> lots = new List<ProductLot>();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -349,14 +347,6 @@ namespace LiveAuction.Admin
                     HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
                 });
             }
-            //Object o = new
-            //{
-            //    //total = lots.Count,
-            //    lots = lots
-            //};
-
-            //var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            //return oSerializer.Serialize(o);
             return lots;
         }
         #endregion
@@ -370,7 +360,30 @@ namespace LiveAuction.Admin
         }
         #endregion
         #region FetchLotJSON
-        //public static 
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static List<ProductLot> FetchAllLots()
+        {
+            string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
+            DataTable dt = RunDatabaseScript(fetchQuery);
+            ProductLot productLot = new ProductLot();
+            List<ProductLot> lots = new List<ProductLot>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lots.Add(new ProductLot
+                {
+                    LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
+                    Title = Convert.ToString(dt.Rows[i]["Title"]),
+                    AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
+                    Address = Convert.ToString(dt.Rows[i]["Address"]),
+                    LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
+                    HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
+                });
+            }
+            return lots;
+        }
         #endregion
         #region General Database Operation
         public static DataTable RunDatabaseScript(string query)
