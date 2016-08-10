@@ -80,7 +80,7 @@ namespace LiveAuction
                 askingBidHtml.Append(askingBid);
                 PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
                 currentHtml.Append(currentLit);
-                PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
+               // PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
             }
             else {
                 Response.Write("<script type='text/javascript'>alert('No more items left for Live Auction');</script>");

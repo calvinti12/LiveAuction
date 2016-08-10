@@ -21,6 +21,10 @@ namespace LiveAuction.Admin
         public static string adminName;
         public static int askingBidPrice = 0;
         public static string currentLotId = "";
+        //-------------- server urls ------------------ AddToLogFile, SoldItem
+        //----------------- end -----------------------
+        //--------------local urls --------------------
+        //----------------- end -----------------------
         protected void Page_Load(object sender, EventArgs e)
         {
             FetchLots();
@@ -63,17 +67,17 @@ namespace LiveAuction.Admin
                 currentLit += @"<div class='col-md-6 col-sm-6 col-xs-12'>
 							<div class='category-sell-item-full-sec'>
 								<div class='category-sell-pic'>
-									<img src='/fileupload/upload/" + dt1.Rows[0]["LotImageName"] + "' alt='this is for selling item images' class='img-responsive' />";
+									<img id='currentLotImageName' src='/fileupload/upload/" + dt1.Rows[0]["LotImageName"] + "' alt='this is for selling item images' class='img-responsive' />";
                 currentLit += @"</div>
 								<div class='category-sell-pic-caption text-center'>
-									<h1>current lot <span class='currentLotClass'>" + dt1.Rows[0]["LotId"] + "</span></h1>";
+									<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + dt1.Rows[0]["LotId"] + "</span></h1>";
                 currentLit += @"</div>
 							</div>
 							<div class='category-sell-item-des-sec'>
-								<h3 class='text-primary'>Auction : " + dt1.Rows[0]["AuctionName"] + "</h3>";
-                currentLit += @"<p>" + dt1.Rows[0]["LotDesc"] + "</p>";
-                currentLit += @"<p>Low estimate price&nbsp-&nbsp" + dt1.Rows[0]["LowEstimatePrice"] + "£</p>";
-                currentLit += @"<p>High estimate price&nbsp-&nbsp" + dt1.Rows[0]["HighEstimatePrice"] + "£</p>";
+								<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + dt1.Rows[0]["AuctionName"] + "</span></h3>";
+                currentLit += @"<p id='currentLotDesc'>" + dt1.Rows[0]["LotDesc"] + "</p>";
+                currentLit += @"<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>" + dt1.Rows[0]["LowEstimatePrice"] + "</span>£</p>";
+                currentLit += @"<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>" + dt1.Rows[0]["HighEstimatePrice"] + "</span>£</p>";
                 currentLit += @"</div>
 						</div>";
                 askingBid += @"<h1 class='text-danger'>£ <span id='askingBidPrice'>" + askingBidPrice + "</span></h1>";
@@ -107,7 +111,7 @@ namespace LiveAuction.Admin
 						</div>";
                 html.Append(lit);
             }
-            PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
+            //PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
             StringBuilder bidBtnHtml = new StringBuilder();
             var bidBtn = "";
 
@@ -322,10 +326,38 @@ namespace LiveAuction.Admin
         #region Sold Item
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static void SoldItem()
+        public static List<ProductLot> SoldItem()
         {
             string query = "UPDATE dbo.ProductLot set IsSold = 1 WHERE LotId=" + currentLotNo;
             RunDatabaseScript(query);
+            string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
+            DataTable dt = RunDatabaseScript(fetchQuery);
+            ProductLot productLot = new ProductLot();
+
+            List<ProductLot> lots = new List<ProductLot>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lots.Add(new ProductLot
+                {
+                    LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
+                    Title = Convert.ToString(dt.Rows[i]["Title"]),
+                    AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
+                    Address = Convert.ToString(dt.Rows[i]["Address"]),
+                    LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
+                    HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
+                });
+            }
+            //Object o = new
+            //{
+            //    //total = lots.Count,
+            //    lots = lots
+            //};
+
+            //var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            //return oSerializer.Serialize(o);
+            return lots;
         }
         #endregion
         #region Fair Warning
@@ -337,37 +369,8 @@ namespace LiveAuction.Admin
             RunDatabaseScript(query);
         }
         #endregion
-        #region Fetch Lots For JSON result
-        [System.Web.Services.WebMethod(EnableSession = true)]
-        [System.Web.Script.Services.ScriptMethod(UseHttpGet = true, ResponseFormat = System.Web.Script.Services.ResponseFormat.Json)]
-        public static string FetchLotJSON()
-        {
-            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
-            DataTable dt = RunDatabaseScript(query);
-            List<Object> lots = new List<object>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lots.Add(new
-                {
-                    LotId=dt.Rows[i]["LotId"],
-                    LotImageUrl = "fileupload/upload/"+dt.Rows[i]["LotImageName"],
-                    LotDesc=dt.Rows[i]["LotDesc"],
-                    Title=dt.Rows[i]["Title"],
-                    AuctionName=dt.Rows[i]["AuctionName"],
-                    Address=dt.Rows[i]["Address"],
-                    LowEstimatePrice=dt.Rows[i]["LowEstimatePrice"],
-                    HighEstimatePrice=dt.Rows[i]["HighEstimatePrice"],
-                });
-            }
-            Object o = new
-            {
-                //total = lots.Count,
-                lots = lots
-            };
-
-            var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            return oSerializer.Serialize(o);
-        }
+        #region FetchLotJSON
+        //public static 
         #endregion
         #region General Database Operation
         public static DataTable RunDatabaseScript(string query)
@@ -382,5 +385,16 @@ namespace LiveAuction.Admin
             return dt;
         }
         #endregion
+    }
+    public class ProductLot
+    {
+        public int LotId {get;set;}
+        public string LotImageUrl {get;set;}
+        public string LotDesc {get;set;}
+        public string Title {get;set;}
+        public string AuctionName {get;set;}
+        public string Address {get;set;}
+        public string LowEstimatePrice {get;set;}
+        public string HighEstimatePrice { get; set; }
     }
 }
