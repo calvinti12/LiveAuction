@@ -33,5 +33,7 @@ namespace EntityLayer
         public string LowEstimatePrice { get; set; }
         public string HighEstimatePrice { get; set; }
         public string LiveAuctionPassed { get; set; }
+        public bool FairWarning { get; set; }
+        public bool IsSold { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace LiveAuction.Admin
             FetchLots();
         }
         #region Fetch lots
-        
+
         public void FetchLots()
         {
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
@@ -37,7 +37,7 @@ namespace LiveAuction.Admin
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where LiveAuctionPassed=0";
+            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -46,7 +46,7 @@ namespace LiveAuction.Admin
             //DataTable deldt = new DataTable();
             //deladapter.Fill(deldt);
 
-            string currentLotQuery = "select top 1 * from [AuctionBidPlatform].[dbo].[View_list_item] where LiveAuctionPassed=0";
+            string currentLotQuery = "select top 1 * from [AuctionBidPlatform].[dbo].[View_list_item] where IsSold=0";
             SqlDataAdapter adapter1 = new SqlDataAdapter(currentLotQuery, con);
             DataTable dt1 = new DataTable();
             adapter1.Fill(dt1);
@@ -82,7 +82,8 @@ namespace LiveAuction.Admin
                 currentHtml.Append(currentLit);
                 PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
             }
-            else {
+            else
+            {
                 Response.Write("<script type='text/javascript'>alert('No more items left for Live Auction');</script>");
                 //Response.Redirect("index.aspx");
             }
@@ -124,7 +125,7 @@ namespace LiveAuction.Admin
             }
             bidBtnHtml.Append(bidBtn);
             PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
-            
+
         }
         #endregion
         #region Fetch Lot For AJAX call
@@ -145,7 +146,7 @@ namespace LiveAuction.Admin
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "UPDATE [AuctionBidPlatform].[dbo].[ProductLot] SET LiveAuctionPassed=1 WHERE LotId="+currentLotNo;
+            string query = "UPDATE [AuctionBidPlatform].[dbo].[ProductLot] SET LiveAuctionPassed=1 WHERE LotId=" + currentLotNo;
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -247,7 +248,8 @@ namespace LiveAuction.Admin
         }
         #endregion
         #region Insert Asking Bid
-        public static void InsertAskingBid() {
+        public static void InsertAskingBid()
+        {
 
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
@@ -289,10 +291,10 @@ namespace LiveAuction.Admin
             }
         }
         #endregion
-        #region Getting Asking Bid price value 
+        #region Getting Asking Bid price value
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static int  FetchAskingBidValue()
+        public static int FetchAskingBidValue()
         {
             if (currentLotId != "")
             {
@@ -314,7 +316,70 @@ namespace LiveAuction.Admin
             }
             else
                 return 0;
-            
+
+        }
+        #endregion
+        #region Sold Item
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static void SoldItem()
+        {
+            string query = "UPDATE dbo.ProductLot set IsSold = 1 WHERE LotId=" + currentLotNo;
+            RunDatabaseScript(query);
+        }
+        #endregion
+        #region Fair Warning
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static void FairWarning()
+        {
+            string query = "UPDATE dbo.ProductLot set FairWarning = 1 WHERE LotId=" + currentLotNo;
+            RunDatabaseScript(query);
+        }
+        #endregion
+        #region Fetch Lots For JSON result
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod(UseHttpGet = true, ResponseFormat = System.Web.Script.Services.ResponseFormat.Json)]
+        public static string FetchLotJSON()
+        {
+            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
+            DataTable dt = RunDatabaseScript(query);
+            List<Object> lots = new List<object>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                lots.Add(new
+                {
+                    LotId=dt.Rows[i]["LotId"],
+                    LotImageUrl = "fileupload/upload/"+dt.Rows[i]["LotImageName"],
+                    LotDesc=dt.Rows[i]["LotDesc"],
+                    Title=dt.Rows[i]["Title"],
+                    AuctionName=dt.Rows[i]["AuctionName"],
+                    Address=dt.Rows[i]["Address"],
+                    LowEstimatePrice=dt.Rows[i]["LowEstimatePrice"],
+                    HighEstimatePrice=dt.Rows[i]["HighEstimatePrice"],
+                });
+            }
+            Object o = new
+            {
+                //total = lots.Count,
+                lots = lots
+            };
+
+            var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return oSerializer.Serialize(o);
+        }
+        #endregion
+        #region General Database Operation
+        public static DataTable RunDatabaseScript(string query)
+        {
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            con.Close();
+            return dt;
         }
         #endregion
     }

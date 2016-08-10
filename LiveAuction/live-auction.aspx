@@ -6,8 +6,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function blinkeffect(selector) {
+            $(selector).fadeOut(1000, function () {
+                $(this).fadeIn(1000, function () {
+                    blinkeffect(this);
+                });
+            });
+        }
         $("document").ready(function () {
-            $('.blink').blink({ delay: 150 });
+           // $('.blink').blink({ delay: 150 });
+            // $(".blink").effect("pulsate", { times: 5 }, 3000);
+            blinkeffect('.blink');
             var lotId = $(".currentLotClass").html();
             //var logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
             var logFileUrl = "Admin/log_files/Log_lotNo_" + lotId + ".txt";
@@ -124,9 +133,46 @@
                                             <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
-											<%--<h4 id="counterDiv">30sec</h4>--%>
-                                            <h4><span class="blink">FAIR WARNING</span></h4>
+											<h4 id="counterDiv">30sec</h4>
+                                            <h4><span class="blink"></span></h4>
 										</div>
+                                        <script type='text/javascript'>
+                                            $(function () {
+                                                //var austDay = new Date();
+                                                //austDay = new Date('2016-09-09T12:00:00');
+                                                Timer();
+                                                function Timer() {
+                                                    var time = new Date();
+                                                    time.setSeconds(time.getSeconds() + 10);
+                                                    $('#counterDiv').countdown({ until: time, compact: true,
+                                                        format: 'S', description: 'sec', onExpiry: liftOff
+                                                    });
+                                                }
+                                                function liftOff() {
+                                                    //alert('Time expired');
+
+                                                    Timer();
+//                                                    $.ajax({
+//                                                        type: "POST",
+//                                                        url: "live-auction.aspx/UpdateCurrentLot",
+//                                                        contentType: "application/json; charset=utf-8",
+//                                                        dataType: "json",
+//                                                        success: onUpdateCurrentLotSuccess,
+//                                                        failure: function (response) { alert("failure " + response.d); }
+//                                                    });
+                                                    function onUpdateCurrentLotSuccess(response) {
+                                                          $.ajax({
+                                                          type: "POST",
+                                                          url: "live-auction.aspx/FetchCurrentLot",
+                                                          contentType: "application/json; charset=utf-8",
+                                                          dataType: "json",
+                                                          success: function (response) { alert("failure " + response.d); },
+                                                          failure: function (response) { alert("failure " + response.d); }
+                                                          });
+                                                    }
+                                                }
+                                            });
+                                        </script>
 										<div class="pull-right">
                                             <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
 										</div>

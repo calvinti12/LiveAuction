@@ -72,6 +72,8 @@ namespace BusinessLogicLayer
                     proc.AddVarcharPara("@LowEstimatePrice", 200, productLotEL.LowEstimatePrice);
                     proc.AddVarcharPara("@HighEstimatePrice", 200, productLotEL.HighEstimatePrice);
                     proc.AddVarcharPara("@LiveAuctionPassed", 200, productLotEL.LiveAuctionPassed);
+                    proc.AddBooleanPara("@FairWarning", productLotEL.FairWarning);
+                    proc.AddBooleanPara("@IsSold", productLotEL.IsSold);
                     int i = proc.RunActionQuery();
                     if (i > 0)
                     {

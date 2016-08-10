@@ -76,6 +76,44 @@
                 http.send();
                 return http.status != 404;
             }
+            $('#soldBtn').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "live-auction.aspx/SoldItem",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccess,
+                    failure: function (response) { alert("write log failure " + response.d); }
+                });
+                function onSuccess(response) {
+                    $.ajax({
+                        type: "GET",
+                        url: "live-auction.aspx/FetchLotJSON",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: onFetchLotJSONSuccess,
+                        failure: function (response) { alert("write log failure " + response.d); }
+                    });
+                }
+                function onFetchLotJSONSuccess(response) {
+                    $.each(response.d, function (index, element) {
+                        console.log(index);
+                    });
+                    //console.log(response.d[1]);
+                }
+            });
+            $('#fairBtn').click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "live-auction.aspx/FairWarning",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccess,
+                    failure: function (response) { alert("write log failure " + response.d); }
+                });
+                function onSuccess(response) {
+                }
+            });
         });
     </script>
     <!-- this is the breadcumbs area -->
@@ -124,10 +162,11 @@
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
 											<%--<h4 id="counterDiv">30sec</h4>--%>
-                                            <button type="button" class="btn btn-info">FAIR WARNING</button>
-                                            <button type="button" class="btn btn-info">SOLD</button>
+                                            
 										</div>
 										<div class="pull-right">
+                                            <button type="button" class="btn btn-danger" id="fairBtn">FAIR WARNING</button>
+                                            <button type="button" class="btn btn-danger" id="soldBtn">SOLD</button>
                                             <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
 										</div>
 								  	</div>

@@ -37,7 +37,7 @@ namespace LiveAuction
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where LiveAuctionPassed=0";
+            string query = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -46,7 +46,7 @@ namespace LiveAuction
             //DataTable deldt = new DataTable();
             //deladapter.Fill(deldt);
 
-            string currentLotQuery = "select top 1 * from [AuctionBidPlatform].[dbo].[View_list_item] where LiveAuctionPassed=0";
+            string currentLotQuery = "select top 1 * from [AuctionBidPlatform].[dbo].[View_list_item] where IsSold=0";
             SqlDataAdapter adapter1 = new SqlDataAdapter(currentLotQuery, con);
             DataTable dt1 = new DataTable();
             adapter1.Fill(dt1);
