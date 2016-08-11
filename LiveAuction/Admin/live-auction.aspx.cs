@@ -27,7 +27,7 @@ namespace LiveAuction.Admin
         //----------------- end -----------------------
         protected void Page_Load(object sender, EventArgs e)
         {
-           // FetchLots();
+            FetchLots();
         }
         #region Fetch lots
 
@@ -55,63 +55,63 @@ namespace LiveAuction.Admin
             DataTable dt1 = new DataTable();
             adapter1.Fill(dt1);
             con.Close();
-            string lit = "";
-            string currentLit = "";
-            string askingBid = "";
-            if (dt1.Rows.Count > 0)
-            {
-                currentLotNo = Convert.ToString(dt1.Rows[0]["LotId"]);
+            //string lit = "";
+            //string currentLit = "";
+            //string askingBid = "";
+//            if (dt1.Rows.Count > 0)
+//            {
+//                currentLotNo = Convert.ToString(dt1.Rows[0]["LotId"]);
 
-                currentLotId = currentLotNo;
-                FetchAskingBidValue();
-                currentLit += @"<div class='col-md-6 col-sm-6 col-xs-12'>
-							<div class='category-sell-item-full-sec'>
-								<div class='category-sell-pic'>
-									<img id='currentLotImageName' src='/fileupload/upload/" + dt1.Rows[0]["LotImageName"] + "' alt='this is for selling item images' class='img-responsive' />";
-                currentLit += @"</div>
-								<div class='category-sell-pic-caption text-center'>
-									<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + dt1.Rows[0]["LotId"] + "</span></h1>";
-                currentLit += @"</div>
-							</div>
-							<div class='category-sell-item-des-sec'>
-								<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + dt1.Rows[0]["AuctionName"] + "</span></h3>";
-                currentLit += @"<p id='currentLotDesc'>" + dt1.Rows[0]["LotDesc"] + "</p>";
-                currentLit += @"<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>" + dt1.Rows[0]["LowEstimatePrice"] + "</span>£</p>";
-                currentLit += @"<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>" + dt1.Rows[0]["HighEstimatePrice"] + "</span>£</p>";
-                currentLit += @"</div>
-						</div>";
-                askingBid += @"<h1 class='text-danger'>£ <span id='askingBidPrice'>" + askingBidPrice + "</span></h1>";
-                askingBidHtml.Append(askingBid);
+//                currentLotId = currentLotNo;
+            FetchAskingBidValue();
+//                currentLit += @"<div class='col-md-6 col-sm-6 col-xs-12'>
+//							<div class='category-sell-item-full-sec'>
+//								<div class='category-sell-pic'>
+//									<img id='currentLotImageName' src='/fileupload/upload/" + dt1.Rows[0]["LotImageName"] + "' alt='this is for selling item images' class='img-responsive' />";
+//                currentLit += @"</div>
+//								<div class='category-sell-pic-caption text-center'>
+//									<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + dt1.Rows[0]["LotId"] + "</span></h1>";
+//                currentLit += @"</div>
+//							</div>
+//							<div class='category-sell-item-des-sec'>
+//								<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + dt1.Rows[0]["AuctionName"] + "</span></h3>";
+//                currentLit += @"<p id='currentLotDesc'>" + dt1.Rows[0]["LotDesc"] + "</p>";
+//                currentLit += @"<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>" + dt1.Rows[0]["LowEstimatePrice"] + "</span>£</p>";
+//                currentLit += @"<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>" + dt1.Rows[0]["HighEstimatePrice"] + "</span>£</p>";
+//                currentLit += @"</div>
+//						</div>";
+//                askingBid += @"<h1 class='text-danger'>£ <span id='askingBidPrice'>" + askingBidPrice + "</span></h1>";
+//                askingBidHtml.Append(askingBid);
                 
-                PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
-                currentHtml.Append(currentLit);
-                PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
-            }
-            else
-            {
-                Response.Write("<script type='text/javascript'>alert('No more items left for Live Auction');</script>");
-                //Response.Redirect("index.aspx");
-            }
-            for (int i = 1; i < dt.Rows.Count - 1; i++)
-            {
-                lit = @"<div class='cat-sell-single-item clearfix'>
-							<div class='cat-sell-title'>
-								<p><span class='text-primary'><span>Lot&nbsp</span>" + dt.Rows[i]["LotId"] + "</span></p>";
-                lit += @"</div>
-							<div class='cat-sell-tag'>
-								<h3>" + dt.Rows[i]["Title"] + "</h3>";
-                lit += @"</div>
-							<div class='cat-sell-pic-sec'>
-								<div class='cat-sell-snt'>
-									<img src='/fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='this is for cat sell snt' class='img-responsive'>";
-                lit += @"</div>
-								<div class='cat-sell-snt'>
-									<a href='bid-detail.aspx?id=" + dt.Rows[i]["LotId"] + "&cat=auction' class='text-info'>View More</a>";
-                lit += @"</div>
-							</div>
-						</div>";
-                html.Append(lit);
-            }
+//                PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
+//                currentHtml.Append(currentLit);
+//                PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
+//            }
+//            else
+//            {
+//                Response.Write("<script type='text/javascript'>alert('No more items left for Live Auction');</script>");
+//                //Response.Redirect("index.aspx");
+//            }
+//            for (int i = 1; i < dt.Rows.Count - 1; i++)
+//            {
+//                lit = @"<div class='cat-sell-single-item clearfix'>
+//							<div class='cat-sell-title'>
+//								<p><span class='text-primary'><span>Lot&nbsp</span>" + dt.Rows[i]["LotId"] + "</span></p>";
+//                lit += @"</div>
+//							<div class='cat-sell-tag'>
+//								<h3>" + dt.Rows[i]["Title"] + "</h3>";
+//                lit += @"</div>
+//							<div class='cat-sell-pic-sec'>
+//								<div class='cat-sell-snt'>
+//									<img src='/fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='this is for cat sell snt' class='img-responsive'>";
+//                lit += @"</div>
+//								<div class='cat-sell-snt'>
+//									<a href='bid-detail.aspx?id=" + dt.Rows[i]["LotId"] + "&cat=auction' class='text-info'>View More</a>";
+//                lit += @"</div>
+//							</div>
+//						</div>";
+//                html.Append(lit);
+//            }
             //PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
             StringBuilder bidBtnHtml = new StringBuilder();
             var bidBtn = "";
@@ -280,13 +280,13 @@ namespace LiveAuction.Admin
         #region Calling Web Method
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static void WriteToLog()
+        public static void WriteToLog(string lotId)
         {
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
             adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
             if (userName != null && userName != "")
             {
-                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + currentLotNo, askingBidPrice);
+                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + lotId, askingBidPrice);
             }
             if (adminName != null && adminName != "")
             {

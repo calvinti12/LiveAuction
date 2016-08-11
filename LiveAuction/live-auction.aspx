@@ -133,8 +133,8 @@
                                             <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
-											<h4 id="counterDiv">30sec</h4>
-                                            <h4><span class="blink"></span></h4>
+											<%--<h4 id="counterDiv">30sec</h4>--%>
+                                            <h4><span class="blink">Fair Warning</span></h4>
 										</div>
                                         <script type='text/javascript'>
                                             $(function () {
@@ -160,15 +160,15 @@
 //                                                        success: onUpdateCurrentLotSuccess,
 //                                                        failure: function (response) { alert("failure " + response.d); }
 //                                                    });
-                                                    function onUpdateCurrentLotSuccess(response) {
-                                                          $.ajax({
-                                                          type: "POST",
-                                                          url: "live-auction.aspx/FetchCurrentLot",
-                                                          contentType: "application/json; charset=utf-8",
-                                                          dataType: "json",
-                                                          success: function (response) { alert("failure " + response.d); },
-                                                          failure: function (response) { alert("failure " + response.d); }
-                                                          });
+//                                                    function onUpdateCurrentLotSuccess(response) {
+//                                                          $.ajax({
+//                                                          type: "POST",
+//                                                          url: "live-auction.aspx/FetchCurrentLot",
+//                                                          contentType: "application/json; charset=utf-8",
+//                                                          dataType: "json",
+//                                                          success: function (response) { alert("failure " + response.d); },
+//                                                          failure: function (response) { alert("failure " + response.d); }
+//                                                          });
                                                     }
                                                 }
                                             });
