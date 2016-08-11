@@ -6,7 +6,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
     <script src="js/LiveAuction.js" type="text/javascript"></script>
-    
+    <%--<%
+        adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
+        var bidBtn = "";
+        HttpContext.Current.Session["UserID"] = "ABC";
+        if (adminName != null && adminName != "")
+        {
+            bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
+        }
+        else
+        {
+            bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
+        }
+        
+    %>--%>
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">
@@ -25,7 +38,7 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="row">
-                        <asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>
+                        <%--<asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>--%>
                         <div class="col-md-6 col-sm-6 col-xs-12" id='currentLot'>
                         <%--<div class="category-sell-item-full-sec">
 								<div class="category-sell-pic">
@@ -63,7 +76,8 @@
 								  	<div class="ttll-pnl-foot clearfix">
 								  		<div class="pull-left">
 											<h2>Asking Bid</h2>
-                                            <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
+                                            <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
+                                           <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
 											<%--<h4 id="counterDiv">30sec</h4>--%>
@@ -72,7 +86,7 @@
 										<div class="pull-right">
                                             <button type="button" class="btn btn-danger" id="fairBtn">FAIR WARNING</button>
                                             <button type="button" class="btn btn-danger" id="soldBtn">SOLD</button>
-                                            <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
+                                            <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
 										</div>
 								  	</div>
 								  </div>

@@ -500,6 +500,7 @@
     <Content Include="js\jquery.nicescroll.min.js" />
     <Content Include="js\jquery.quick.pagination.min.js" />
     <Content Include="js\jquery.ui.draggable.js" />
+    <Content Include="js\LiveAuction.js" />
     <Content Include="list-item.aspx" />
     <Content Include="list-item.html" />
     <Content Include="live-auction.aspx" />

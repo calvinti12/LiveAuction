@@ -5,89 +5,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function blinkeffect(selector) {
-            $(selector).fadeOut(1000, function () {
-                $(this).fadeIn(1000, function () {
-                    blinkeffect(this);
-                });
-            });
+    <script src="js/LiveAuction.js" type="text/javascript"></script>
+    <%--<%
+        adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
+        var bidBtn = "";
+        HttpContext.Current.Session["UserID"] = "ABC";
+        if (adminName != null && adminName != "")
+        {
+            bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
         }
-        $("document").ready(function () {
-           // $('.blink').blink({ delay: 150 });
-            // $(".blink").effect("pulsate", { times: 5 }, 3000);
-            blinkeffect('.blink');
-            var lotId = $(".currentLotClass").html();
-            //var logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-            var logFileUrl = "Admin/log_files/Log_lotNo_" + lotId + ".txt";
-            console.log(logFileUrl);
-            var urlValidate = UrlExists(logFileUrl);
-            if (urlValidate) {
-                $.get(logFileUrl, function (response) {
-                    var str = response;
-                    //                    var res = str.match(/\b\d{2}[-]?\d{2}[-]?\d{4}? \d{2}?:\d{2}?:\d{2}\b/g);
-                    //                    for (var i = 0; i < res.length; i++) {
-                    //                        var date = new Date(res[i]);
-                    //                        var day = "2016-05-08 09:08:04";
-                    //                        var tDate = new Date(day).toLocaleString();
-                    //                        console.log(tDate);
-                    //                    }
-                });
-                $(".wel-message").load(logFileUrl);
-            }
-            else {
-                $(".wel-message").html("No bid has been made yet");
-            }
-            $(".bidBtn").click(function (e) {
-                e.preventDefault();
-                var url = logFileUrl;
-                $.ajax({
-                    type: "POST",
-                    url: "live-auction.aspx/WriteToLog",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: onSuccess,
-                    failure: function (response) { alert("write log failure " + response.d); }
-                });
-                function onSuccess(response) {
-                    var validUrl = UrlExists(url);
-                    if (validUrl) {
-                        $.get(url, function (response) {
-                            var logfile = response;
-                            console.log(logfile)
-                        });
-                        $(".wel-message").load(url);
-                        // alert(response.d);
-                    }
-                    else {
-                    }
-                }
-                function UrlExists(url) {
-                    var http = new XMLHttpRequest();
-                    http.open('HEAD', url, false);
-                    http.send();
-                    return http.status != 404;
-                }
-                $.ajax({
-                    type: "POST",
-                    url: "live-auction.aspx/FetchAskingBidValue",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: onAskingBidPriceSuccess,
-                    failure: function (response) { alert("failure " + response.d); }
-                });
-                function onAskingBidPriceSuccess(response) {
-                    $("#askingBidPrice").html((response.d));
-                }
-            });
-            function UrlExists(url) {
-                var http = new XMLHttpRequest();
-                http.open('HEAD', url, false);
-                http.send();
-                return http.status != 404;
-            }
-        });
-    </script>
+        else
+        {
+            bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
+        }
+        
+    %>--%>
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">
@@ -106,7 +38,21 @@
 			<div class="row">
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="row">
-                        <asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>
+                        <%--<asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>--%>
+                        <div class="col-md-6 col-sm-6 col-xs-12" id='currentLot'>
+                        <%--<div class="category-sell-item-full-sec">
+								<div class="category-sell-pic">
+									<img src="images/tt.jpg" alt="this is for selling item images" class="img-responsive" />
+								</div>
+								<div class="category-sell-pic-caption text-center">
+									<h1>current lot 101</h1>
+								</div>
+							</div>
+							<div class="category-sell-item-des-sec">
+								<h3 class="text-primary">CP 09 05 sujuki witch hatchback 5 seats 4 doors</h3>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type <a href="#" class="text-info">specimen book. It has survived not</a>  only five</p>
+							</div>--%>
+						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="category-curent-itm-dis">
 								<div class="panel panel-default">
@@ -130,51 +76,17 @@
 								  	<div class="ttll-pnl-foot clearfix">
 								  		<div class="pull-left">
 											<h2>Asking Bid</h2>
-                                            <asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder>
+                                            <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
+                                           <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
 										</div>
                                         <div class="pull-left" style="margin-left:10%;color:#a94442">
 											<%--<h4 id="counterDiv">30sec</h4>--%>
-                                            <h4><span class="blink">Fair Warning</span></h4>
+                                            
 										</div>
-                                        <script type='text/javascript'>
-                                            $(function () {
-                                                //var austDay = new Date();
-                                                //austDay = new Date('2016-09-09T12:00:00');
-                                                Timer();
-                                                function Timer() {
-                                                    var time = new Date();
-                                                    time.setSeconds(time.getSeconds() + 10);
-                                                    $('#counterDiv').countdown({ until: time, compact: true,
-                                                        format: 'S', description: 'sec', onExpiry: liftOff
-                                                    });
-                                                }
-                                                function liftOff() {
-                                                    //alert('Time expired');
-
-                                                    Timer();
-//                                                    $.ajax({
-//                                                        type: "POST",
-//                                                        url: "live-auction.aspx/UpdateCurrentLot",
-//                                                        contentType: "application/json; charset=utf-8",
-//                                                        dataType: "json",
-//                                                        success: onUpdateCurrentLotSuccess,
-//                                                        failure: function (response) { alert("failure " + response.d); }
-//                                                    });
-//                                                    function onUpdateCurrentLotSuccess(response) {
-//                                                          $.ajax({
-//                                                          type: "POST",
-//                                                          url: "live-auction.aspx/FetchCurrentLot",
-//                                                          contentType: "application/json; charset=utf-8",
-//                                                          dataType: "json",
-//                                                          success: function (response) { alert("failure " + response.d); },
-//                                                          failure: function (response) { alert("failure " + response.d); }
-//                                                          });
-                                                    }
-                                                }
-                                            });
-                                        </script>
 										<div class="pull-right">
-                                            <asp:PlaceHolder ID="PlaceHolderBidButton" runat="server"></asp:PlaceHolder>
+                                            <button type="button" class="btn btn-danger" id="fairBtn">FAIR WARNING</button>
+                                            <button type="button" class="btn btn-danger" id="soldBtn">SOLD</button>
+                                            <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
 										</div>
 								  	</div>
 								  </div>
@@ -184,8 +96,8 @@
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-12 col-xs-12">
-					<div class="catergory-sell-item-sw clearfix">
-                        <asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>
+					<div class="catergory-sell-item-sw clearfix" id="lotQueue">
+                        <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
 					</div>
 				</div>
 			</div>

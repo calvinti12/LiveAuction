@@ -9,7 +9,6 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.IO;
-
 namespace LiveAuction.Admin
 {
     public partial class live_auction_admin : System.Web.UI.Page
@@ -30,7 +29,6 @@ namespace LiveAuction.Admin
             FetchLots();
         }
         #region Fetch lots
-
         public void FetchLots()
         {
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
@@ -55,80 +53,10 @@ namespace LiveAuction.Admin
             DataTable dt1 = new DataTable();
             adapter1.Fill(dt1);
             con.Close();
-            //string lit = "";
-            //string currentLit = "";
-            //string askingBid = "";
-//            if (dt1.Rows.Count > 0)
-//            {
-//                currentLotNo = Convert.ToString(dt1.Rows[0]["LotId"]);
-
-//                currentLotId = currentLotNo;
-            FetchAskingBidValue();
-//                currentLit += @"<div class='col-md-6 col-sm-6 col-xs-12'>
-//							<div class='category-sell-item-full-sec'>
-//								<div class='category-sell-pic'>
-//									<img id='currentLotImageName' src='/fileupload/upload/" + dt1.Rows[0]["LotImageName"] + "' alt='this is for selling item images' class='img-responsive' />";
-//                currentLit += @"</div>
-//								<div class='category-sell-pic-caption text-center'>
-//									<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + dt1.Rows[0]["LotId"] + "</span></h1>";
-//                currentLit += @"</div>
-//							</div>
-//							<div class='category-sell-item-des-sec'>
-//								<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + dt1.Rows[0]["AuctionName"] + "</span></h3>";
-//                currentLit += @"<p id='currentLotDesc'>" + dt1.Rows[0]["LotDesc"] + "</p>";
-//                currentLit += @"<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>" + dt1.Rows[0]["LowEstimatePrice"] + "</span>£</p>";
-//                currentLit += @"<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>" + dt1.Rows[0]["HighEstimatePrice"] + "</span>£</p>";
-//                currentLit += @"</div>
-//						</div>";
-//                askingBid += @"<h1 class='text-danger'>£ <span id='askingBidPrice'>" + askingBidPrice + "</span></h1>";
-//                askingBidHtml.Append(askingBid);
-                
-//                PlaceHolderAskingBid.Controls.Add(new Literal { Text = askingBidHtml.ToString() });
-//                currentHtml.Append(currentLit);
-//                PlaceHolderCurrentLot.Controls.Add(new Literal { Text = currentHtml.ToString() });
-//            }
-//            else
-//            {
-//                Response.Write("<script type='text/javascript'>alert('No more items left for Live Auction');</script>");
-//                //Response.Redirect("index.aspx");
-//            }
-//            for (int i = 1; i < dt.Rows.Count - 1; i++)
-//            {
-//                lit = @"<div class='cat-sell-single-item clearfix'>
-//							<div class='cat-sell-title'>
-//								<p><span class='text-primary'><span>Lot&nbsp</span>" + dt.Rows[i]["LotId"] + "</span></p>";
-//                lit += @"</div>
-//							<div class='cat-sell-tag'>
-//								<h3>" + dt.Rows[i]["Title"] + "</h3>";
-//                lit += @"</div>
-//							<div class='cat-sell-pic-sec'>
-//								<div class='cat-sell-snt'>
-//									<img src='/fileupload/upload/" + dt.Rows[i]["LotImageName"] + "' alt='this is for cat sell snt' class='img-responsive'>";
-//                lit += @"</div>
-//								<div class='cat-sell-snt'>
-//									<a href='bid-detail.aspx?id=" + dt.Rows[i]["LotId"] + "&cat=auction' class='text-info'>View More</a>";
-//                lit += @"</div>
-//							</div>
-//						</div>";
-//                html.Append(lit);
-//            }
-            //PlaceHolderQueueLot.Controls.Add(new Literal { Text = html.ToString() });
+            //FetchAskingBidValue();
             StringBuilder bidBtnHtml = new StringBuilder();
-            var bidBtn = "";
-            //if (userName != null && userName != "")
-            //{
-            //    bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
-            //}
-            if (adminName != null && adminName != "")
-            {
-                bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
-            }
-            else
-            {
-                bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
-            }
-            bidBtnHtml.Append(bidBtn);
-            PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
+            
+           // PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
         }
         #endregion
         #region Fetch Lot For AJAX call
@@ -157,7 +85,7 @@ namespace LiveAuction.Admin
         }
         #endregion
         #region Add Log File
-        public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid)
+        public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid,string id)
         {
             //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
             string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
@@ -174,28 +102,28 @@ namespace LiveAuction.Admin
                         askingBidPrice += 5;
                         writer.WriteLine("---------------------------------------------------------------------");
                         writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                        UpdateAskingBid();
+                        UpdateAskingBid(id);
                     }
                     if (askingBidPrice >= 100 && askingBidPrice < 300)
                     {
                         askingBidPrice += 10;
                         writer.WriteLine("---------------------------------------------------------------------");
                         writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                        UpdateAskingBid();
+                        UpdateAskingBid(id);
                     }
                     if (askingBidPrice >= 300 && askingBidPrice < 1000)
                     {
                         askingBidPrice += 20;
                         writer.WriteLine("---------------------------------------------------------------------");
                         writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                        UpdateAskingBid();
+                        UpdateAskingBid(id);
                     }
                     if (askingBidPrice >= 1000 && askingBidPrice <= 3000)
                     {
                         askingBidPrice += 25;
                         writer.WriteLine("---------------------------------------------------------------------");
                         writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                        UpdateAskingBid();
+                        UpdateAskingBid(id);
                     }
                 }
             }
@@ -209,28 +137,28 @@ namespace LiveAuction.Admin
                     askingBidPrice += 5;
                     writer.WriteLine("---------------------------------------------------------------------");
                     writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                    UpdateAskingBid();
+                    UpdateAskingBid(id);
                 }
                 if (askingBidPrice >= 100 && askingBidPrice < 300)
                 {
                     askingBidPrice += 10;
                     writer.WriteLine("---------------------------------------------------------------------");
                     writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                    UpdateAskingBid();
+                    UpdateAskingBid(id);
                 }
                 if (askingBidPrice >= 300 && askingBidPrice < 1000)
                 {
                     askingBidPrice += 20;
                     writer.WriteLine("---------------------------------------------------------------------");
                     writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                    UpdateAskingBid();
+                    UpdateAskingBid(id);
                 }
                 if (askingBidPrice >= 1000 && askingBidPrice < 3000)
                 {
                     askingBidPrice += 25;
                     writer.WriteLine("---------------------------------------------------------------------");
                     writer.WriteLine(DateTime.Now.ToString("dd-MM-yyyy") + " - " + Message + " at " + " £ " + askingBidPrice);
-                    UpdateAskingBid();
+                    UpdateAskingBid(id);
                 }
                 writer.Close();
                 //WriteToDatabase(filename.ToString(), filepath);
@@ -238,12 +166,12 @@ namespace LiveAuction.Admin
         }
         #endregion
         #region Update asking Log Bid
-        public static void UpdateAskingBid()
+        public static void UpdateAskingBid(string id)
         {
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "UPDATE [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] set BidValue=" + askingBidPrice + " where LotId=" + currentLotId;
+            string query = "UPDATE [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] set BidValue=" + askingBidPrice + " where LotId=" + id;
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -253,7 +181,6 @@ namespace LiveAuction.Admin
         #region Insert Asking Bid
         public static void InsertAskingBid()
         {
-
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
@@ -277,34 +204,29 @@ namespace LiveAuction.Admin
             con.Close();
         }
         #endregion
-        #region Calling Web Method
+        #region WriteToLog
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static void WriteToLog(string lotId)
+        public static void WriteToLog(string id)
         {
-            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
             adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
-            if (userName != null && userName != "")
-            {
-                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + lotId, askingBidPrice);
-            }
             if (adminName != null && adminName != "")
             {
-                AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + currentLotNo, askingBidPrice);
+                AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice,id);
             }
         }
         #endregion
         #region Getting Asking Bid price value
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static int FetchAskingBidValue()
+        public static int FetchAskingBidValue(string id)
         {
-            if (currentLotId != "")
+            if (id != "")
             {
                 string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
-                string query = "SELECT [BidValue] FROM [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] WHERE [LotId]=" + currentLotId;
+                string query = "SELECT [BidValue] FROM [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] WHERE [LotId]=" + id;
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -368,6 +290,7 @@ namespace LiveAuction.Admin
             DataTable dt = RunDatabaseScript(fetchQuery);
             ProductLot productLot = new ProductLot();
             List<ProductLot> lots = new List<ProductLot>();
+            currentLotNo = Convert.ToString(dt.Rows[0]["LotId"]);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 lots.Add(new ProductLot

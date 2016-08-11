@@ -7,36 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LiveAuction.Admin {
+namespace LiveAuction {
     
     
-    public partial class live_auction_admin {
-        
-        /// <summary>
-        /// PlaceHolderCurrentLot control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderCurrentLot;
-        
-        /// <summary>
-        /// PlaceHolderAskingBid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderAskingBid;
-        
-        /// <summary>
-        /// PlaceHolderBidButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderBidButton;
+    public partial class live_auction {
     }
 }
