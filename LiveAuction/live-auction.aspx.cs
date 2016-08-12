@@ -207,13 +207,16 @@ namespace LiveAuction
         #region WriteToLog
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
-        public static void WriteToLog(string id)
+        public static string WriteToLog(string id)
         {
-            adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
-            if (adminName != null && adminName != "")
+            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+            if (userName != null && userName != "")
             {
-                AddtoLogFile("admin added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice,id);
+                AddtoLogFile(userName+" added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice,id);
+                return "1";
             }
+            else
+                return "Please sign in for bid";
         }
         #endregion
         #region Getting Asking Bid price value
@@ -221,7 +224,7 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static int FetchAskingBidValue(string id)
         {
-            if (id != "")
+            if (id != "" && id!=null)
             {
                 string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection con = new SqlConnection(connectionString);
@@ -306,6 +309,25 @@ namespace LiveAuction
                 });
             }
             return lots;
+        }
+        #endregion
+        #region Fetch fair warning 
+        
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool FetchFairWarning(int id)
+        {
+            string query = "select FairWarning from dbo.ProductLot where LotId="+id;
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            Boolean key = Convert.ToBoolean(dt.Rows[0]["FairWarning"]);
+            con.Close();
+
+            return key;
         }
         #endregion
         #region General Database Operation

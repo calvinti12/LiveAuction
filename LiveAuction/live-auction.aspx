@@ -79,14 +79,14 @@
                                             <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
                                            <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
 										</div>
-                                        <div class="pull-left" style="margin-left:10%;color:#a94442">
-											<%--<h4 id="counterDiv">30sec</h4>--%>
-                                            
-										</div>
-										<div class="pull-right">
-                                            <button type="button" class="btn btn-danger" id="fairBtn">FAIR WARNING</button>
-                                            <button type="button" class="btn btn-danger" id="soldBtn">SOLD</button>
-                                            <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
+                                        <div class="pull-right" style="margin-left:10%;color:#a94442">
+                                            <div class="fair-burn1">
+                                                <%--<h4 id="counterDiv">30sec</h4>--%>
+                                                <h4><span class="blink"></span></h4>
+                                            </div>
+                                            <div class="fair-burn">
+                                                <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
+                                            </div>
 										</div>
 								  	</div>
 								  </div>

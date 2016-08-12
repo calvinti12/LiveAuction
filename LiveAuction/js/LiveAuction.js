@@ -1,14 +1,16 @@
 ﻿$("document").ready(function () {
     var currentLotId;
     var logFileUrl;
+    blinkeffect('.blink');
     fetchAllLots();
+    startRefresh();
     //----------------------- bid button clicked ---------------------------------
     $(".bidBtn").click(function (e) {
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
         // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        logFileUrl = "log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -19,16 +21,22 @@
             failure: function (response) { alert("write log failure " + response.d); }
         });
         function onSuccess(response) {
-            var validUrl = UrlExists(logFileUrl);
-            if (validUrl) {
+            if (response.d == '0') {
 
-                $.get(url, function (response) {
-                    var logfile = response;
-                });
-                $(".wel-message").load(url);
-                // alert(response.d);
+                var validUrl = UrlExists(logFileUrl);
+                if (validUrl) {
+
+                    $.get(url, function (response) {
+                        var logfile = response;
+                    });
+                    $(".wel-message").load(url);
+                    // alert(response.d);
+                }
+                else {
+                }
             }
             else {
+                //alert(response.d);
             }
         }
         function UrlExists(url) {
@@ -154,13 +162,14 @@ function fetchAllLots() {
         $("#lotQueue").html(lotsQueue);
         fetchLotFiles();
         fetchAskingBidValue(currentLotId);
+        fetchFairWarning();
     }
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
     // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     console.log('lot id ' + currentLotId);
-    logFileUrl = "log_files/Log_lotNo_" + currentLotId + ".txt";
+    logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
     if (urlValidate) {
@@ -180,11 +189,13 @@ function UrlExists(url) {
     return http.status != 404;
 }
 //------------------------------ fetchAskingBidValue -----------------------------------------------
-function fetchAskingBidValue(lotId) {
+function fetchAskingBidValue(id) {
+
+    console.log("currentLotId" + id);
     $.ajax({
         type: "POST",
         url: "live-auction.aspx/FetchAskingBidValue",
-        data: '{id:"' + lotId + '"}',
+        data: '{id:"' + id + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: onAskingBidPriceSuccess,
@@ -193,4 +204,39 @@ function fetchAskingBidValue(lotId) {
     function onAskingBidPriceSuccess(response) {
         $("#askingBidPrice").html('£ '+response.d);
     }
+}
+function fetchFairWarning() {
+    $.ajax({
+        type: "POST",
+        url: "live-auction.aspx/FetchFairWarning",
+        data: '{id:"' + currentLotId + '"}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: onfetchFairWarningSuccess,
+        failure: function (response) { alert("failure " + response.d); }
+    });
+    function onfetchFairWarningSuccess(response) {
+        console.log(response.d);
+        if (response.d) {
+            $(".blink").html('Fair warning !');
+        }
+        else
+        { $(".blink").html(''); }
+    }
+}
+function startRefresh() {
+ var lotId = $('#currentLotId').html();
+    setTimeout(startRefresh, 1000);
+    console.log('refresh made');
+    fetchAllLots();
+    //fetchLotFiles();
+    //fetchAskingBidValue(lotId);
+    fetchFairWarning();
+}
+function blinkeffect(selector) {
+    $(selector).fadeOut(1000, function () {
+        $(this).fadeIn(1000, function () {
+            blinkeffect(this);
+        });
+    });
 }
