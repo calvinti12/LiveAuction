@@ -149,7 +149,7 @@ function fetchAllLots() {
                                 "<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
                                 "</div>";
         $("#currentLot").html(currentLot)
-        var lotsQueue;
+        var lotsQueue="";
         var counter = 0;
         $(lots).each(function (index, element) {
             if (index != 0) {
@@ -162,6 +162,7 @@ function fetchAllLots() {
                                 "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
             }
         });
+        console.log(lotsQueue);
         $("#lotQueue").html(lotsQueue);
         //fetchLotFiles();
         fetchAskingBidValue(currentLotId);
@@ -205,10 +206,14 @@ function fetchAskingBidValue(id) {
         failure: function (response) { alert("failure " + response.d); }
     });
     function onAskingBidPriceSuccess(response) {
-        if (response.d != null) {
+        if (response.d[0].AskingBidOwner != null && response.d[0].AskingBidOwner != "") {
             $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' placed the bid at £' + response.d[0].BidValue);
-            $("#askingBidPrice").html('£' + response.d[0].BidValue);
         }
+        else {
+            $("#liveBidLogs").html("Item sold <br/> New item has been arrived");
+        }
+
+        $("#askingBidPrice").html('£' + response.d[0].BidValue);
     }
 }
 function fetchFairWarning() {

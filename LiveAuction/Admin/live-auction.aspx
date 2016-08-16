@@ -5,7 +5,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
-    <script src="js/LiveAuction.js" type="text/javascript"></script>
+    <%--<script src="js/LiveAuction.js" type="text/javascript"></script>--%>
+    <script src="../js/LiveAuction.js" type="text/javascript"></script>
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">

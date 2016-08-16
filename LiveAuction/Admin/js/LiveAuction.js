@@ -115,6 +115,7 @@
 });
 //----------------------------------- fetch all lots section ------------------------------------------------
 function fetchAllLots() {
+    var currentLotFlag=0;
     $.ajax({
         type: "POST",
         url: "live-auction.aspx/FetchAllLots",
@@ -126,15 +127,16 @@ function fetchAllLots() {
     function onSuccess(response) {
         var lots = response.d;
         currentLotId = lots[0].LotId;
-        console.log('current lot id ' + currentLotId);
-        $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
-        $('#currentLotId').html(lots[0].LotId);
-        $('#currentLotAuctionName').html(lots[0].AuctionName);
-        $('#currentLotDesc').html(lots[0].LotDesc);
-        $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
-        $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
+        if (currentLotFlag != 1) {
+            console.log('current lot id ' + currentLotId);
+            $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
+            $('#currentLotId').html(lots[0].LotId);
+            $('#currentLotAuctionName').html(lots[0].AuctionName);
+            $('#currentLotDesc').html(lots[0].LotDesc);
+            $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
+            $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
 
-        var currentLot = "<div class='category-sell-item-full-sec'>" +
+            var currentLot = "<div class='category-sell-item-full-sec'>" +
 								"<div class='category-sell-pic'>" +
 									"<img id='currentLotImageName' src='" + lots[0].LotImageUrl + "' alt='this is for selling item images' class='img-responsive' />" +
                                  "</div>" +
@@ -148,7 +150,9 @@ function fetchAllLots() {
                                 "<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>" +
                                 "<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
                                 "</div>";
-        $("#currentLot").html(currentLot)
+            $("#currentLot").html(currentLot);
+            currentLotFlag = 1;
+        }
         var lotsQueue;
         var counter = 0;
         $(lots).each(function (index, element) {
@@ -233,7 +237,6 @@ function fetchFairWarning() {
 function startRefresh() {
     var lotId = $('#currentLotId').html();
     setTimeout(startRefresh, 1000);
-    console.log('refresh made');
     fetchAllLots();
 }
 function blinkeffect(selector) {

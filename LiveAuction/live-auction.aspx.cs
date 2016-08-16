@@ -240,15 +240,18 @@ namespace LiveAuction
                 adapter.Fill(dt);
                 con.Close();
                 int bidVal;
-                string AskingBidOwner = Convert.ToString(dt.Rows[0]["AskingBidOwner"]);
+                string askingBidOwner = "";
                 if (dt.Rows.Count > 0)
-                { bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]); }
+                { 
+                    bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
+                    askingBidOwner = Convert.ToString(dt.Rows[0]["AskingBidOwner"]);
+                }
                 else
                 { bidVal = 10; }
                 askingBids.Add(new LiveAuctionAskingBids
                 {
                     BidValue = bidVal,
-                    AskingBidOwner = AskingBidOwner
+                    AskingBidOwner = askingBidOwner
                 });
                 askingBidPrice = Convert.ToInt32(bidVal);
                 return askingBids;
@@ -272,8 +275,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -309,8 +312,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -323,7 +326,6 @@ namespace LiveAuction
         }
         #endregion
         #region Fetch fair warning
-
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
         public static bool FetchFairWarning(int id)
@@ -338,6 +340,23 @@ namespace LiveAuction
             Boolean key = Convert.ToBoolean(dt.Rows[0]["FairWarning"]);
             con.Close();
 
+            return key;
+        }
+        #endregion
+        #region IsSoldOrNot
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static bool IsSoldOrNot(int id)
+        {
+            string query = "SELECT IsSold FROM dbo.ProductLot where LotId=" + id;
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            Boolean key = Convert.ToBoolean(dt.Rows[0]["IsSold"]);
+            con.Close();
             return key;
         }
         #endregion
