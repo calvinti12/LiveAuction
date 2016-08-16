@@ -1,7 +1,6 @@
 ﻿$("document").ready(function () {
     var currentLotId;
     var logFileUrl;
-    blinkeffect('.blink');
     fetchAllLots();
     startRefresh();
     //----------------------- bid button clicked ---------------------------------
@@ -9,8 +8,8 @@
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -21,24 +20,16 @@
             failure: function (response) { alert("write log failure " + response.d); }
         });
         function onSuccess(response) {
-            if (response.d != "Please sign in for bid") {
-                //            if (response.d == '0') {
-                //                var validUrl = UrlExists(logFileUrl);
-                //                if (validUrl) {
-                //                    $.get(url, function (response) {
-                //                        var logfile = response;
-                //                    });
-                //                    $(".wel-message").load(url);
-                //                    // alert(response.d);
-                //                }
-                //                else {
-                //                }
-                //alert(response.d);
-                $("#liveBidLogs").html(response.d);
+            var validUrl = UrlExists(logFileUrl);
+            if (validUrl) {
+
+                $.get(url, function (response) {
+                    var logfile = response;
+                });
+                $(".wel-message").load(url);
+                // alert(response.d);
             }
             else {
-                //alert(response.d);
-                $("#signInAlert").html("Please sign in to bid");
             }
         }
         function UrlExists(url) {
@@ -47,19 +38,18 @@
             http.send();
             return http.status != 404;
         }
-        //        $.ajax({
-        //            type: "POST",
-        //            url: "live-auction.aspx/FetchAskingBidValue",
-        //            data: '{id:"' + lotId + '"}',
-        //            contentType: "application/json; charset=utf-8",
-        //            dataType: "json",
-        //            success: onAskingBidPriceSuccess,
-        //            failure: function (response) { alert("failure " + response.d); }
-        //        });
-        //        function onAskingBidPriceSuccess(response) {
-        //            $("#askingBidPrice").html('£ ' + response.d);
-        //        }
-        fetchAskingBidValue(lotId);
+        $.ajax({
+            type: "POST",
+            url: "live-auction.aspx/FetchAskingBidValue",
+            data: '{id:"' + lotId + '"}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: onAskingBidPriceSuccess,
+            failure: function (response) { alert("failure " + response.d); }
+        });
+        function onAskingBidPriceSuccess(response) {
+            $("#askingBidPrice").html('£ ' + response.d);
+        }
     });
     //--------------------------- sold button clicked ------------------------------------------
     $('#soldBtn').click(function () {
@@ -145,8 +135,8 @@ function fetchAllLots() {
 							"<div class='category-sell-item-des-sec'>" +
 								"<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>" +
                                 "<p id='currentLotDesc'>" + lots[0].LotDesc + "</p>" +
-                                "<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>" +
-                                "<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
+                                "<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>" + lots[0].LowEstimatePrice + "</span>£</p>" +
+                                "<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>" + lots[0].HighEstimatePrice + "</span>£</p>" +
                                 "</div>";
         $("#currentLot").html(currentLot)
         var lotsQueue;
@@ -163,16 +153,15 @@ function fetchAllLots() {
             }
         });
         $("#lotQueue").html(lotsQueue);
-        //fetchLotFiles();
+        fetchLotFiles();
         fetchAskingBidValue(currentLotId);
-        fetchFairWarning();
     }
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
-    //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+    logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     console.log('lot id ' + currentLotId);
-    logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
+    //logFileUrl = "log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
     if (urlValidate) {
@@ -192,54 +181,23 @@ function UrlExists(url) {
     return http.status != 404;
 }
 //------------------------------ fetchAskingBidValue -----------------------------------------------
-function fetchAskingBidValue(id) {
-
-    console.log("currentLotId" + id);
+function fetchAskingBidValue(lotId) {
     $.ajax({
         type: "POST",
         url: "live-auction.aspx/FetchAskingBidValue",
-        data: '{id:"' + id + '"}',
+        data: '{id:"' + lotId + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: onAskingBidPriceSuccess,
         failure: function (response) { alert("failure " + response.d); }
     });
     function onAskingBidPriceSuccess(response) {
-        if (response.d != null) {
-            $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' placed the bid at £' + response.d[0].BidValue);
-            $("#askingBidPrice").html('£' + response.d[0].BidValue);
-        }
-    }
-}
-function fetchFairWarning() {
-    $.ajax({
-        type: "POST",
-        url: "live-auction.aspx/FetchFairWarning",
-        data: '{id:"' + currentLotId + '"}',
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: onfetchFairWarningSuccess,
-        failure: function (response) { alert("failure " + response.d); }
-    });
-    function onfetchFairWarningSuccess(response) {
-        console.log(response.d);
-        if (response.d) {
-            $(".blink").html('Fair warning !');
-        }
-        else
-        { $(".blink").html(''); }
+        $("#askingBidPrice").html('£ '+response.d);
     }
 }
 function startRefresh() {
     var lotId = $('#currentLotId').html();
-    setTimeout(startRefresh, 1000);
+    setTimeout(startRefresh, 500000);
     console.log('refresh made');
     fetchAllLots();
-}
-function blinkeffect(selector) {
-    $(selector).fadeOut(1000, function () {
-        $(this).fadeIn(1000, function () {
-            blinkeffect(this);
-        });
-    });
 }

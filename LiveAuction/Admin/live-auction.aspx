@@ -6,20 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script src="js/custom.js" type="text/javascript"></script>
     <script src="js/LiveAuction.js" type="text/javascript"></script>
-    <%--<%
-        adminName = Convert.ToString(HttpContext.Current.Session["AdminUserName"]).Trim();
-        var bidBtn = "";
-        HttpContext.Current.Session["UserID"] = "ABC";
-        if (adminName != null && adminName != "")
-        {
-            bidBtn += @"<a href='#' class='bidBtn'><h1 class='bg-primary'>Bid</h1></a>";
-        }
-        else
-        {
-            bidBtn += @"<a href='#' class='bidBtn' data-toggle='modal' data-target='#loginmodal'><h1 class='bg-primary'>Sign in to Bid</h1></a>";
-        }
-        
-    %>--%>
     <!-- this is the breadcumbs area -->
     <section class="breadcumbs-area-sec">
          <div class="container">
@@ -60,7 +46,7 @@
                                     <div class="cat-it-dis">
 								    	<%--<p class="text-success">successfully conected to server</p>--%>
 								    	<div class="wel-message text-center" style="font-size:12px;">
-                                            <p class="text-center text-success">admin placed the bid at 15</p>
+                                            <p class="text-center text-success" id="liveBidLogs">admin placed the bid at 15</p>
                                         </div>
 								    </div>
 								    <div class="ttll-pnl-foot clearfix">

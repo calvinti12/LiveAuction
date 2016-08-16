@@ -46,7 +46,7 @@
 								     <div class="cat-it-dis">
 								    	<%--<p class="text-success">successfully conected to server</p>--%>
 								    	<div class="wel-message text-center" style="font-size:12px;">
-                                            <p class="text-center text-success">admin placed the bid at 15</p>
+                                            <p class="text-center text-success" id="liveBidLogs"></p>
                                         </div>
 								    </div>
                                     <div class="ttll-pnl-foot clearfix">
@@ -54,6 +54,7 @@
 											<h2>Asking Bid</h2>
                                             <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
                                            <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
+                                           <span id='signInAlert' class="text-danger"></span>
 										</div>
                                         <div class="pull-right" style="margin-left:10%;color:#a94442">
                                             <div class="fair-burn1">

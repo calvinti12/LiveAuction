@@ -85,6 +85,7 @@
     <Content Include="Admin\connecting.aspx" />
     <Content Include="Admin\images\tt.jpg" />
     <Content Include="Admin\js\LiveAuction.js" />
+    <Content Include="Admin\js\LiveAuction_old.js" />
     <Content Include="Admin\live-auction-log.aspx" />
     <Content Include="Admin\css\custom_seller.css" />
     <Content Include="Admin\css\animate.min.css" />
