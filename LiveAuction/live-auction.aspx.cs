@@ -55,8 +55,8 @@ namespace LiveAuction
             con.Close();
             //FetchAskingBidValue();
             StringBuilder bidBtnHtml = new StringBuilder();
-            
-           // PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
+
+            // PlaceHolderBidButton.Controls.Add(new Literal { Text = bidBtnHtml.ToString() });
         }
         #endregion
         #region Fetch Lot For AJAX call
@@ -85,7 +85,7 @@ namespace LiveAuction
         }
         #endregion
         #region Add Log File
-        public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid,string id)
+        public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid, string id)
         {
             //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
             string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
@@ -171,7 +171,7 @@ namespace LiveAuction
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "UPDATE [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] set BidValue=" + askingBidPrice + " where LotId=" + id;
+            string query = "UPDATE [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids] set BidValue=" + askingBidPrice + ",AskingBidOwner=" + userName + " where LotId=" + id;
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -184,7 +184,7 @@ namespace LiveAuction
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
-            string query = "INSERT INTO [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids]([LotId],[BidValue])VALUES(" + currentLotNo + "," + askingBidPrice + ")";
+            string query = "INSERT INTO [AuctionBidPlatform].[dbo].[LiveAuctionAskingBids]([LotId],[BidValue],[AskingBidOwner])VALUES(" + currentLotNo + "," + askingBidPrice + "," + userName + ")";
             SqlDataAdapter adapter = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -212,7 +212,7 @@ namespace LiveAuction
             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
             if (userName != null && userName != "")
             {
-                AddtoLogFile(userName+" added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice,id);
+                AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
                 return "1";
             }
             else
@@ -224,7 +224,7 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static int FetchAskingBidValue(string id)
         {
-            if (id != "" && id!=null)
+            if (id != "" && id != null)
             {
                 string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
                 SqlConnection con = new SqlConnection(connectionString);
@@ -263,7 +263,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -299,7 +300,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -311,13 +313,13 @@ namespace LiveAuction
             return lots;
         }
         #endregion
-        #region Fetch fair warning 
-        
+        #region Fetch fair warning
+
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
         public static bool FetchFairWarning(int id)
         {
-            string query = "select FairWarning from dbo.ProductLot where LotId="+id;
+            string query = "select FairWarning from dbo.ProductLot where LotId=" + id;
             string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"];
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();

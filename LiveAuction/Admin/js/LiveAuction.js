@@ -2,13 +2,14 @@
     var currentLotId;
     var logFileUrl;
     fetchAllLots();
+    startRefresh();
     //----------------------- bid button clicked ---------------------------------
     $(".bidBtn").click(function (e) {
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        logFileUrl = "log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -158,9 +159,9 @@ function fetchAllLots() {
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
-    // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+    logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     console.log('lot id ' + currentLotId);
-    logFileUrl = "log_files/Log_lotNo_" + currentLotId + ".txt";
+    //logFileUrl = "log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
     if (urlValidate) {
@@ -193,4 +194,10 @@ function fetchAskingBidValue(lotId) {
     function onAskingBidPriceSuccess(response) {
         $("#askingBidPrice").html('£ '+response.d);
     }
+}
+function startRefresh() {
+    var lotId = $('#currentLotId').html();
+    setTimeout(startRefresh, 500000);
+    console.log('refresh made');
+    fetchAllLots();
 }

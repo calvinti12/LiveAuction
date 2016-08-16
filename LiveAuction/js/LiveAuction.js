@@ -9,7 +9,7 @@
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
         logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
@@ -36,7 +36,7 @@
                 }
             }
             else {
-                //alert(response.d);
+                alert(response.d);
             }
         }
         function UrlExists(url) {
@@ -160,14 +160,14 @@ function fetchAllLots() {
             }
         });
         $("#lotQueue").html(lotsQueue);
-        fetchLotFiles();
+        //fetchLotFiles();
         fetchAskingBidValue(currentLotId);
         fetchFairWarning();
     }
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
-    // logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+     //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     console.log('lot id ' + currentLotId);
     logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
@@ -229,9 +229,6 @@ function startRefresh() {
     setTimeout(startRefresh, 1000);
     console.log('refresh made');
     fetchAllLots();
-    //fetchLotFiles();
-    //fetchAskingBidValue(lotId);
-    fetchFairWarning();
 }
 function blinkeffect(selector) {
     $(selector).fadeOut(1000, function () {
