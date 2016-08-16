@@ -228,7 +228,7 @@ function startRefresh() {
  var lotId = $('#currentLotId').html();
     setTimeout(startRefresh, 1000);
     console.log('refresh made');
-    fetchAllLots();
+//    fetchAllLots();
 }
 function blinkeffect(selector) {
     $(selector).fadeOut(1000, function () {

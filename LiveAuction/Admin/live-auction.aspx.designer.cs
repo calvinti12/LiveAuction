@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LiveAuction {
+namespace LiveAuction.Admin {
     
     
-    public partial class live_auction {
+    public partial class live_auction_admin {
     }
 }

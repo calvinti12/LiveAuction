@@ -363,6 +363,8 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 
 /* this is for dash top dropdown for item of left sideber */
 .fair-burn1{min-height:25px;}
+/* this is for asking bid top section  */
+.cat-it-dis{min-height:160px;background-color:#fff;}
 
 
 
@@ -453,9 +455,11 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 .ttll-pnl-foot .pull-right h1.bg-primary{padding: 5px 10px;border-radius: 4px;font-size:25px;}
 .ttll-pnl-foot .pull-right a.bidBtn:hover, .ttll-pnl-foot .pull-right a.bidBtn:focus{text-decoration:none !important;}
 .category-curent-itm-dis .panel{}
-.category-curent-itm-dis .panel-body{height: 164px;overflow: hidden;}
+.category-curent-itm-dis .panel-body{position:relative;padding:0;}
+.wel-message p{padding-top:20%;font-size:16px;}
 .panel-ttle-cat{margin: 0;}
-.cat-sell-snt{width: 33%;margin-right: 10px;float: left;}
+.cat-sell-snt{width: 26%;margin-right: 10px;float: left;}
+.cat-sell-tag h3{margin-top:0px;}
 .cat-sell-snt:last-child{margin-right: 0px;}
 .cat-sell-single-item{margin-bottom: 15px;border-bottom: 1px solid #ddd;padding-bottom: 15px;}
-.catergory-sell-item-sw{border: 1px solid #ddd; padding: 5px 15px;border-radius: 4px;height: 611px;overflow: hidden;}
+.catergory-sell-item-sw{border: 1px solid #ddd; padding: 5px 15px;border-radius: 4px;height: 200px;overflow: hidden;}

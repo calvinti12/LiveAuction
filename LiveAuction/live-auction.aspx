@@ -43,23 +43,13 @@
 							<div class="category-curent-itm-dis">
 								<div class="panel panel-default">
 								  <div class="panel-heading">
-								    <h3 class="text-primary panel-ttle-cat">Live video</h3>
-                                    <div class="">
-                                     <video width="320" height="240" controls  poster="video_contents/video.gif">
-                                        <%--<source src="video_contents/movie.mp4" type="video/mp4">
-                                        <source src="video_contents/movie.ogg" type="video/ogg">--%>
-                                        Your browser does not support the video tag.
-                                     </video> 
-                                     </div>
-								  </div>
-								  <div class="panel-body">
-								    <div class="cat-it-dis">
+								     <div class="cat-it-dis">
 								    	<%--<p class="text-success">successfully conected to server</p>--%>
-								    	<div class="wel-message" style="font-size:12px;"></div>
+								    	<div class="wel-message text-center" style="font-size:12px;">
+                                            <p class="text-center text-success">admin placed the bid at 15</p>
+                                        </div>
 								    </div>
-								  </div>
-								  <div class="panel-footer">
-								  	<div class="ttll-pnl-foot clearfix">
+                                    <div class="ttll-pnl-foot clearfix">
 								  		<div class="pull-left">
 											<h2>Asking Bid</h2>
                                             <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
@@ -76,15 +66,27 @@
 										</div>
 								  	</div>
 								  </div>
+								  <div class="panel-body">
+								    <div class="catergory-sell-item-sw clearfix" id="lotQueue">
+                        
+                                        <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
+					                </div>
+								  </div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-12 col-xs-12">
-					<div class="catergory-sell-item-sw clearfix" id="lotQueue">
-                        <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
-					</div>
+                    <h3 class="text-primary panel-ttle-cat">Live video</h3>
+                    <div class="">
+                        <video width="100%" height="240" controls  poster="video_contents/video.gif">
+                        <%--<source src="video_contents/movie.mp4" type="video/mp4">
+                        <source src="video_contents/movie.ogg" type="video/ogg">--%>
+                        Your browser does not support the video tag.
+                        </video> 
+                        </div>
+					
 				</div>
 			</div>
 		</div>
