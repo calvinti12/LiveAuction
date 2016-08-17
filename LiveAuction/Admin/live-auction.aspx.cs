@@ -214,9 +214,9 @@ namespace LiveAuction.Admin
             if (userName != null && userName != "")
             {
                 //AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
-                AddtoLogFile(userName + " placed the bid at £", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
+                AddtoLogFile("Room bid placed at £", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
                 UpdateFairWarning(id);
-                return userName + " placed the bid at £" + askingBidPrice;
+                return "Room bid placed at £" + askingBidPrice;
             }
             else
                 return "Please sign in for bid";
@@ -244,8 +244,17 @@ namespace LiveAuction.Admin
                 string askingBidOwner="";
                 if (dt.Rows.Count > 0)
                 {
-                    bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
                     askingBidOwner = Convert.ToString(dt.Rows[0]["AskingBidOwner"]);
+                    if (askingBidOwner.Equals("admin@admin.com"))
+                    {
+                        bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
+                        askingBidOwner = "Room bid";
+                    }
+                    else
+                    {
+                        bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
+                        askingBidOwner = "Internet bid";
+                    }
                 }
                 else
                 { bidVal = 10; }

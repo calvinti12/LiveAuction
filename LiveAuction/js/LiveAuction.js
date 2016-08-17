@@ -170,7 +170,6 @@ function fetchAllLots() {
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
     logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-    console.log('lot id ' + currentLotId);
     //logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
@@ -203,7 +202,7 @@ function fetchAskingBidValue(id) {
     });
     function onAskingBidPriceSuccess(response) {
         if (response.d[0].AskingBidOwner != null && response.d[0].AskingBidOwner != "") {
-            $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' placed the bid at £' + response.d[0].BidValue);
+            $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' placed at £' + response.d[0].BidValue);
         }
         else {
             $("#liveBidLogs").html("Item sold <br/> New item has been arrived");
