@@ -21,7 +21,7 @@
     <!-- this is the start of category display sell page -->
     <section class="category-sell">
 		<div class="container">
-			<div class="row">
+			<div class="row"> 
 				<div class="col-md-8 col-sm-12 col-xs-12">
 					<div class="row">
                         <%--<asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>--%>
@@ -39,7 +39,7 @@
 								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type <a href="#" class="text-info">specimen book. It has survived not</a>  only five</p>
 							</div>--%>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="col-md-6 col-sm-6 col-xs-12 ">
 							<div class="category-curent-itm-dis">
 								<div class="panel panel-default">
 								  <div class="panel-heading">
@@ -77,7 +77,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> 
 				<div class="col-md-4 col-sm-12 col-xs-12">
                     <h3 class="text-primary panel-ttle-cat">Live video</h3>
                     <div class="">

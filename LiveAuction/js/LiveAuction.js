@@ -10,8 +10,8 @@
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        //logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -170,8 +170,8 @@ function fetchAllLots() {
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
-    logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-    //logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
+    //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+    logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
     if (urlValidate) {
@@ -203,7 +203,7 @@ function fetchAskingBidValue(id) {
     });
     function onAskingBidPriceSuccess(response) {
         if (response.d[0].AskingBidOwner != null && response.d[0].AskingBidOwner != "") {
-            $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' placed at £' + response.d[0].BidValue);
+            $("#liveBidLogs").html(response.d[0].AskingBidOwner + ' £' + response.d[0].BidValue);
         }
         else {
             $("#liveBidLogs").html("Item sold <br/> New item has been arrived");
