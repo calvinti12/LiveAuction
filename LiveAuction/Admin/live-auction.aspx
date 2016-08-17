@@ -47,7 +47,7 @@
                                     <div class="cat-it-dis">
 								    	<%--<p class="text-success">successfully conected to server</p>--%>
 								    	<div class="wel-message text-center" style="font-size:12px;">
-                                            <p class="text-center text-success" id="liveBidLogs">admin placed the bid at 15</p>
+                                            <p class="text-center text-success" id="liveBidLogs"></p>
                                         </div>
 								    </div>
 								    <div class="ttll-pnl-foot clearfix">

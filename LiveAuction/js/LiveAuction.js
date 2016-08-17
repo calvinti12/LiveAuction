@@ -9,8 +9,8 @@
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -126,7 +126,6 @@ function fetchAllLots() {
     function onSuccess(response) {
         var lots = response.d;
         currentLotId = lots[0].LotId;
-        console.log('current lot id ' + currentLotId);
         $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
         $('#currentLotId').html(lots[0].LotId);
         $('#currentLotAuctionName').html(lots[0].AuctionName);
@@ -162,7 +161,6 @@ function fetchAllLots() {
                                 "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
             }
         });
-        console.log(lotsQueue);
         $("#lotQueue").html(lotsQueue);
         //fetchLotFiles();
         fetchAskingBidValue(currentLotId);
@@ -171,9 +169,9 @@ function fetchAllLots() {
 }
 //-------------------------------- fetch all text files ------------------------------------------------------------------
 function fetchLotFiles() {
-    //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+    logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     console.log('lot id ' + currentLotId);
-    logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
+    //logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
     console.log(logFileUrl);
     var urlValidate = UrlExists(logFileUrl);
     if (urlValidate) {
@@ -194,8 +192,6 @@ function UrlExists(url) {
 }
 //------------------------------ fetchAskingBidValue -----------------------------------------------
 function fetchAskingBidValue(id) {
-
-    console.log("currentLotId" + id);
     $.ajax({
         type: "POST",
         url: "live-auction.aspx/FetchAskingBidValue",
@@ -227,7 +223,6 @@ function fetchFairWarning() {
         failure: function (response) { alert("failure " + response.d); }
     });
     function onfetchFairWarningSuccess(response) {
-        console.log(response.d);
         if (response.d) {
             $(".blink").html('Fair warning !');
         }
@@ -238,7 +233,6 @@ function fetchFairWarning() {
 function startRefresh() {
     var lotId = $('#currentLotId').html();
     setTimeout(startRefresh, 1000);
-    console.log('refresh made');
     fetchAllLots();
 }
 function blinkeffect(selector) {

@@ -87,8 +87,8 @@ namespace LiveAuction
         #region Add Log File
         public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid, string id)
         {
-            //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
-            string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
+            string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
+            //string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
             string filename = "Log_" + fileName + ".txt";
             string filepath = LogPath + filename;
             if (File.Exists(filepath))
@@ -215,6 +215,7 @@ namespace LiveAuction
             {
                 //AddtoLogFile(userName + " added the bid", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
                 AddtoLogFile(userName + " placed the bid at £", "sampleWebsite", "lotNo_" + id, askingBidPrice, id);
+                UpdateFairWarning(id);
                 return userName + " placed the bid at £" + askingBidPrice;
             }
             else
@@ -275,8 +276,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -297,6 +298,19 @@ namespace LiveAuction
             RunDatabaseScript(query);
         }
         #endregion
+        #region Update Fair Warning 
+        public static void UpdateFairWarning(string id)
+        {
+            string connectionString = System.Configuration.ConfigurationSettings.AppSettings["ConnStr"]; //ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            string query = "UPDATE [AuctionBidPlatform].[dbo].[ProductLot] set FairWarning=0 where LotId=" + id;
+            SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            con.Close();
+        }
+        #endregion
         #region FetchLotJSON
         [System.Web.Services.WebMethod(EnableSession = true)]
         [System.Web.Script.Services.ScriptMethod()]
@@ -312,8 +326,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
