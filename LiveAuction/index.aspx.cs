@@ -86,7 +86,7 @@ namespace LiveAuction
                                   "'auctionAddress':'" + dt.Rows[i]["Address"] + "'," +
                                   "'id':'" + i + "'," +
                                   "'auctionImageName':'" + dt.Rows[i]["ImageName"] + "'};todayDeal.push(data);</script>";
-
+                    con.Open();
                     string subquery = "select LotId,LotDesc,LotImageName from [AuctionBidPlatform].[dbo].[View_list_item]   where AuctionId=" + dt.Rows[i]["AuctionId"] + " and IsScheduled=1";
                     SqlDataAdapter adapter1 = new SqlDataAdapter(subquery, con);
                     DataTable dt1 = new DataTable();
@@ -122,7 +122,8 @@ namespace LiveAuction
                                                             "<h4>Room Bid 240 GBP</h4>" +
                                                           "</div>-->" +
                                                           "<div class='bid-p-dis'>" +
-                                                            "<p  id='modalCounterDiva" + i + "' type='button' class='btn btn-danger btn-block'>LIVE</p>" +
+                                                            "<a  id='modalCounterDiva" + i + "' type='button' class='btn btn-danger btn-block' href='live-auction.aspx'>LIVE</a>" +
+                                                            "<a  id='modalCounterDiva" + i + "' type='button' class='btn btn-danger btn-block' href='live-auction.aspx?cat=watch'>WATCH AUCTION</a>" +
                                                             "</div>" +
                                                         "</div>" +
                                                       "</div>" +
@@ -174,13 +175,21 @@ namespace LiveAuction
                     }
                     else
                     {
+                        //con.Open();
                         for (int j = 0; j < dt1.Rows.Count; j++)
                         {
+                            //string QueryToMakeLotLive = "update dbo.ProductLot set IsInLive = 1 where LotId = " + dt1.Rows[j]["LotId"];
+                            //SqlDataAdapter liveLotAdapter = new SqlDataAdapter(QueryToMakeLotLive, con);
+                            //DataTable liveLotdt = new DataTable();
+                            //liveLotAdapter.Fill(liveLotdt);
+                            //adapterDeal.Fill(dtTodaysDeal);
+
                             modalHtml += "<tr><td>" + dt1.Rows[j]["LotId"] + "</td>" +
                             "<td>" + dt1.Rows[j]["LotDesc"] + "</td>" +
                             "<td class='pop-ico'><a href='bid-detail.aspx?id=" + dt1.Rows[j]["LotId"] + "&cat=auction'><img  width='50px' src='../fileupload/upload/" + dt1.Rows[j]["LotImageName"] + "'/></a></td>" +
                           "</tr>";
                         }
+                        //con.Close();
                     }
                     modalHtml += "<!--<tr>" +
                       "<td>693</td>" +
