@@ -1,12 +1,13 @@
 ﻿$("document").ready(function () {
     var currentLotId;
     var logFileUrl;
-    blinkeffect('.blink');
+    blinkeffect('#blink');
+    $("#blink").removeClass("alert alert-danger");
     fetchAllLots();
     startRefresh();
     getUrlVars();
     //----------------------- bid button clicked ---------------------------------
-    $(".bidBtn").click(function (e) {
+    $("#bidBtn").click(function (e) {
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
@@ -22,7 +23,7 @@
             failure: function (response) { alert("write log failure " + response.d); }
         });
         function onSuccess(response) {
-            if (response.d != "Please sign in for bid") {
+            if (response.d != "0") {
                 //            if (response.d == '0') {
                 //                var validUrl = UrlExists(logFileUrl);
                 //                if (validUrl) {
@@ -39,7 +40,9 @@
             }
             else {
                 //alert(response.d);
-                $("#signInAlert").html("Please sign in to bid");
+                //$("#signInAlert").html("Log in to bid");
+                //$("#bidBtn").val("Log in to bid");
+                $("#ButtonPlace").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid' data-toggle='modal' data-target='#loginmodal'>Login to Bid</a>");
             }
         }
         function UrlExists(url) {
@@ -141,25 +144,44 @@ function fetchAllLots() {
 								"<div class='category-sell-pic-caption text-center'>" +
 									"<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + lots[0].LotId + "</span></h1>" +
                                  "</div>" +
-							"</div>" +
-							"<div class='category-sell-item-des-sec'>" +
-								"<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>" +
-                                "<p id='currentLotDesc'>" + lots[0].LotDesc + "</p>" +
-                                "<p>Low estimate price&nbsp-&nbsp<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>" +
-                                "<p>High estimate price&nbsp-&nbsp<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
-                                "</div>";
-        $("#currentLot").html(currentLot)
-        var lotsQueue="";
+							"</div>";  
+
+          var currentLotDescription= "<div class='category-sell-item-des-sec'>"+
+                                "<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>"+
+                                "<p id='currentLotDesc'>" + lots[0].LotDesc + "</p>"+
+                                "<p class='pull-left'>Low estimate price&nbsp;-&nbsp;<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>"+
+                                "<p class='pull-right'>High estimate price&nbsp;-&nbsp;<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>"+
+                            "</div>";
+
+          $("#currentLot").html(currentLot);
+          $("#currentLotDesc").html(currentLotDescription);
+        var lotsQueue = "";
         var counter = 0;
         $(lots).each(function (index, element) {
             if (index != 0) {
-                lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
-                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
-							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
-                            "</div>" +
-							"<div class='cat-sell-pic-sec'>" +
-								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
-                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
+                //                lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
+                //                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
+                //							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
+                //                            "</div>" +
+                //							"<div class='cat-sell-pic-sec'>" +
+                //								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
+                //                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
+                var parsedTitle = showMore(this.Title);
+                console.log(parsedTitle);
+                lotsQueue += "<div class='cat-sell-single-item clearfix'>" +
+                                "<div class='pull-left'>" +
+                                    "<div class='cat-sell-pic'>" +
+                                        "<img src='" + this.LotImageUrl + "' />" +
+                                        "<p>LOT " + this.LotId + "</p>" +
+                                    "</div>" +
+
+                                "</div>" +
+                                "<div class='pull-left'>" +
+                                    "<div class='cat-sell-dis'>" +
+                                        "<p>" + this.Title + "</p>" +
+                                    "</div>" +
+                                "</div>" +
+                            "</div>";
             }
         });
         $("#lotQueue").html(lotsQueue);
@@ -224,10 +246,13 @@ function fetchFairWarning() {
     });
     function onfetchFairWarningSuccess(response) {
         if (response.d) {
-            $(".blink").html('Fair warning !');
+            $("#blink").addClass("alert alert-danger");
+            $("#blink").html('Fair warning !');
         }
-        else
-        { $(".blink").html(''); }
+        else {
+            $("#blink").removeClass("alert alert-danger");
+            $("#blink").html(""); 
+        }
     }
 }
 function startRefresh() {
@@ -251,6 +276,18 @@ function getUrlVars() {
         vars[hash[0]] = hash[1];
     }
     if (vars.cat == 'watch') {
-        $(".bidBtn").hide();
+        $("#bidBtn").hide();
     }
+}
+function showMore(originalContent) {
+    var showChar = 8;
+    var ellipsestext = "...";
+    var moretext = "more";
+    var lesstext = "less";
+        var content = originalContent;
+        if (content.length > showChar) {
+            var c = content.substr(0, showChar);
+            var html = c + ellipsestext;
+            return html;
+        }
 }

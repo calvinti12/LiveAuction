@@ -22,8 +22,9 @@
     <section class="category-sell">
 		<div class="container">
 			<div class="row"> 
-				<div class="col-md-8 col-sm-12 col-xs-12">
-					<div class="row">
+				<div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="bid-details sadow">
+                        <div class="row">
                         <%--<asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>--%>
                         <div class="col-md-6 col-sm-6 col-xs-12" id='currentLot'>
                         <%--<div class="category-sell-item-full-sec">
@@ -41,54 +42,86 @@
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-12 ">
 							<div class="category-curent-itm-dis">
-								<div class="panel panel-default">
-								  <div class="panel-heading">
-								     <div class="cat-it-dis">
+								<div class="">
+								  <div class="">
+								     
+                                    <div class="ttll-pnl-foot clearfix">
+								  		<div class="asking clearfix">
+											<h2 >Asking Bid</h2>
+                                            <div class="alert alert-danger" role="alert" id="blink"></div>
+                                            <div class="lot-doll clearfix">
+                                                <div class="pull-left">
+                                                    <h1 class="text-danger pull-left"><span id='askingBidPrice'class="price01"></span></h1>
+                                                    <span id='signInAlert' class="text-danger"></span>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <div class="fair-burn" id="ButtonPlace">
+                                                        <a href='#' id='bidBtn' class="btn btn-primary btn-lg btn-bid">Bid</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+										</div>
+								  	</div>
+                                    <div class="cat-it-dis">
 								    	<%--<p class="text-success">successfully conected to server</p>--%>
 								    	<div class="wel-message text-center" style="font-size:12px;">
                                             <p class="text-center text-success" id="liveBidLogs"></p>
                                         </div>
 								    </div>
-                                    <div class="ttll-pnl-foot clearfix">
-								  		<div class="pull-left">
-											<h2>Asking Bid</h2>
-                                            <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
-                                           <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
-                                           <span id='signInAlert' class="text-danger"></span>
-										</div>
-                                        <div class="pull-right" style="margin-left:10%;color:#a94442">
-                                            <div class="fair-burn1">
-                                                <%--<h4 id="counterDiv">30sec</h4>--%>
-                                                <h4><span class="blink"></span></h4>
-                                            </div>
-                                            <div class="fair-burn">
-                                                <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
-                                            </div>
-										</div>
-								  	</div>
 								  </div>
-								  <div class="panel-body">
-								    <div class="catergory-sell-item-sw clearfix" id="lotQueue">
-                        
-                                        <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
-					                </div>
-								  </div>
+								  
 								</div>
 							</div>
 						</div>
-					</div>
-				</div> 
-				<div class="col-md-4 col-sm-12 col-xs-12">
-                    <h3 class="text-primary panel-ttle-cat">Live video</h3>
-                    <div class="">
-                        <video width="100%" height="240" controls  poster="video_contents/video.gif">
-                        <%--<source src="video_contents/movie.mp4" type="video/mp4">
-                        <source src="video_contents/movie.ogg" type="video/ogg">--%>
-                        Your browser does not support the video tag.
-                        </video> 
+                        <div class="col-md-12" id="currentLotDesc">
+                            <%--<div class="category-sell-item-des-sec">
+                                <h3 class="text-primary">Auction : <span id="currentLotAuctionName">Chorley Auction House</span></h3>
+                                <p id="currentLotDesc">Test description</p>
+                                <p>Low estimate price&nbsp;-&nbsp;<span id="currentLotLowEstimatePrice">£500</span></p>
+                                <p>High estimate price&nbsp;-&nbsp;<span id="currentLotHighEstimatePrice">£700</span></p>
+                            </div>--%>
+                            <div class=""></div>
                         </div>
-					
+					</div>
+                    </div>
+				</div> 
+				<div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="bid-details sadow">
+                        <div class="upcoming-lttitle"><h3>Lots</h3></div>
+                        <div class="catergory-sell-item-sw clearfix" id="lotQueue">
+                           <%-- <div class="cat-sell-single-item clearfix">
+                                <div class="pull-left">
+                                    <div class="cat-sell-pic">
+                                        <img src="images/700.jpg" />
+                                    </div>
+                                    <div class="lot-st">
+                                        <p>Lot 1</p>
+                                    </div>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="cat-sell-dis">
+                                        <p>Tow bottle of scots single</p>
+                                    </div>
+                                </div>
+                            </div>--%>
+                        </div>
+                            <%--<div class="catergory-sell-item-sw clearfix" id="lotQueue">--%>
+                            <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
+					    </div>
+
+                         <div class="bid-details sadow"> 
+							<h4>Live video</h4>
+                            <div class="">
+                                <video width="100%" height="150" controls  poster="video_contents/video.gif">
+                                <%--<source src="video_contents/movie.mp4" type="video/mp4">
+                                <source src="video_contents/movie.ogg" type="video/ogg">--%>
+                                Your browser does not support the video tag.
+                                </video> 
+                            </div>
+						</div>
+                    </div>
 				</div>
+            
 			</div>
 		</div>
 

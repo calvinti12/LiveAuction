@@ -53,7 +53,8 @@ namespace LiveAuction.UserControl
                     Session["UserType"] = "Bidder";
                     Session["UserName"] = Convert.ToString(dtLogin.Rows[0]["PreferredName"]);
                     Session["UserId"] = Convert.ToString(dtLogin.Rows[0]["BidderId"]);
-                    Response.Redirect("index.aspx");
+                    //Response.Redirect("index.aspx");
+                    Response.Redirect(Request.RawUrl);
                 }
                 else
                 {

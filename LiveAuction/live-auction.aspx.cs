@@ -219,7 +219,7 @@ namespace LiveAuction
                 return "Internet bid £" + askingBidPrice;
             }
             else
-                return "Please sign in for bid";
+                return "0";
         }
         #endregion
         #region FetchAskingBidValue

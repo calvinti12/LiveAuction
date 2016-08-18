@@ -296,7 +296,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $(".category-curent-itm-dis .panel-body").niceScroll();
-                $('.panel-body').getNiceScroll(0).doScrollTop($('.wel-message').height(), -1);
+                
                 $(".catergory-sell-item-sw").niceScroll();
             })
         </script>
