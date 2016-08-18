@@ -22,71 +22,73 @@
     <!-- this is the start of category display sell page -->
     <section class="category-sell">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-sm-12 col-xs-12">
-					<div class="row">
-                        <%--<asp:PlaceHolder ID = "PlaceHolderCurrentLot" runat="server"/>--%>
+			<div class="row"> 
+				<div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="bid-details sadow">
+                        <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12" id='currentLot'>
-                        <%--<div class="category-sell-item-full-sec">
-								<div class="category-sell-pic">
-									<img src="images/tt.jpg" alt="this is for selling item images" class="img-responsive" />
-								</div>
-								<div class="category-sell-pic-caption text-center">
-									<h1>current lot 101</h1>
-								</div>
-							</div>
-							<div class="category-sell-item-des-sec">
-								<h3 class="text-primary">CP 09 05 sujuki witch hatchback 5 seats 4 doors</h3>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type <a href="#" class="text-info">specimen book. It has survived not</a>  only five</p>
-							</div>--%>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="col-md-6 col-sm-6 col-xs-12 ">
 							<div class="category-curent-itm-dis">
-								<div class="panel panel-default">
-								  <div class="panel-heading">
-                                    <div class="cat-it-dis">
-								    	<%--<p class="text-success">successfully conected to server</p>--%>
-								    	<div class="wel-message text-center" style="font-size:12px;">
-                                            <p class="text-center text-success" id="liveBidLogs"></p>
-                                        </div>
-								    </div>
-								    <div class="ttll-pnl-foot clearfix">
-								  		<div class="pull-left">
-											<h2>Asking Bid</h2>
-                                            <%--<asp:PlaceHolder ID="PlaceHolderAskingBid" runat="server"></asp:PlaceHolder--%>
-                                           <h1 class="text-danger"><span id='askingBidPrice'></span></h1>
-										</div>
-                                        <div class="pull-left" style="margin-left:10%;color:#a94442">
-											<%--<h4 id="counterDiv">30sec</h4>--%>
+								<div class="">
+								  <div class="">
+								     
+                                    <div class="ttll-pnl-foot clearfix">
+								  		<div class="asking clearfix">
+											<h2 >Asking Bid</h2>
+                                            <div class="alert alert-danger alert-bid" role="alert" id="blink"></div>
                                             
-										</div>
-										<div class="pull-right">
-                                            <button type="button" class="btn btn-danger" id="fairBtn">FAIR WARNING</button>
-                                            <button type="button" class="btn btn-danger" id="soldBtn">SOLD</button>
-                                            <a href='#' class='bidBtn'><h1 class='bg-primary' style="text-align: center;">Bid</h1></a>
+                                            <div class="lot-doll clearfix">
+                                                <div class="pull-left">
+                                                    <h1 class="text-danger pull-left"><span id='askingBidPrice'class="price01"></span></h1>
+                                                    <span id='signInAlert' class="text-danger"></span>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <div class="fair-burn" id="ButtonPlace">
+                                                        <a href='#' id='bidBtn' class="btn btn-primary btn-lg btn-bid">Bid</a>
+                                                    </div>
+                                                </div>
+                                            </div>
 										</div>
 								  	</div>
+                                    <div class="cat-it-dis">
+                                        <div class="alert alert-warning text-center" role="alert" id="liveBidLogs"> </div>
+								    </div>
+                                    <div class="frbtn clearfix">
+	                                    <button type="button" class="btn btn-danger pull-left" id="fairBtn">FAIR WARNING</button>
+	                                    <button type="button" class="btn btn-danger pull-right" id="soldBtn">SOLD</button>
+                                    </div>
 								  </div>
-								  <div class="panel-body">
-                                    <div class="catergory-sell-item-sw clearfix" id="lotQueue">
-                                        <%--<asp:PlaceHolder ID = "PlaceHolderQueueLot" runat="server"/>--%>
-					                </div>
-								  </div>
+								  
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-12 col-xs-12">
-                    <h3 class="text-primary panel-ttle-cat">Live video</h3>
-                    <div class="">
-                        <video width="320" height="240" controls  poster="video_contents/video.gif">
-                        <%--<source src="video_contents/movie.mp4" type="video/mp4">
-                        <source src="video_contents/movie.ogg" type="video/ogg">--%>
-                        Your browser does not support the video tag.
-                        </video> 
+                        <div class="col-md-12" id="currentLotDesc">
+                            <div class=""></div>
                         </div>
+					</div>
+                    </div>
+				</div> 
+				<div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="bid-details sadow">
+                        <div class="upcoming-lttitle"><h3>Lots</h3></div>
+                        <div class="catergory-sell-item-sw clearfix" id="lotQueue">
+                        </div>
+					    </div>
+
+                         <div class="bid-details sadow"> 
+							<h4>Live video</h4>
+                            <div class="">
+                                <video width="100%" height="150" controls  poster="video_contents/video.gif">
+                                <%--<source src="video_contents/movie.mp4" type="video/mp4">
+                                <source src="video_contents/movie.ogg" type="video/ogg">--%>
+                                Your browser does not support the video tag.
+                                </video> 
+                            </div>
+						</div>
+                    </div>
 				</div>
+            
 			</div>
 		</div>
 

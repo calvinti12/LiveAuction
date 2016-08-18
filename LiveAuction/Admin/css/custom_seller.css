@@ -6,7 +6,7 @@
 section{padding-bottom: 30px;}
 h1, h2{font-weight: 100;}
 .form-control{border-radius: 0px ;}
-.btn-danger{background-color:#39628d; border:#39628d solid 1px}
+
 #manu-navbar, #top-navbar{padding-left:0px;}
 .top-nvber{margin-bottom: 0px;border: 0px solid transparent;background-color: #111a3a;border-color:#fff;}
 .top-nvber .navbar-brand{min-height:60px;padding:5px 12px;}
@@ -245,7 +245,7 @@ box-shadow: 0px 3px 5px 0px rgba(171,171,171,0.3)}
 
 /*start of items auction page */
 .schduled-big-title h1{border: 1px solid #ddd;padding: 10px;text-align: center;font-weight: 700;color: #000;background-color: #F1F1F1;margin-bottom: 35px;margin-top: 0px;}
-.btn-primary{border-radius: 0px;}
+.btn-primary{}
 .aution-table{margin: 25px 0;border-top: 2px solid #ddd;border-bottom: 1px solid #ddd;}
 /*end of items aucion page */
 
