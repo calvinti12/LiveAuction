@@ -6,13 +6,13 @@
     fetchAllLots();
     startRefresh();
     getUrlVars();
-    //----------------------- bid button clicked ---------------------------------
+    //-------------------------------------- bid button clicked ---------------------------------
     $("#bidBtn").click(function (e) {
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        //logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
@@ -65,7 +65,7 @@
         //        }
         fetchAskingBidValue(lotId);
     });
-    //--------------------------- sold button clicked ------------------------------------------
+    //------------------------------------- sold button clicked ---------------------------------
     $('#soldBtn').click(function () {
         var lotId = $('#currentLotId').html();
         $.ajax({
@@ -103,7 +103,7 @@
             fetchAllLots();
         }
     });
-    //------------------------------ fair button clicked ---------------------------------------------------------
+    //------------------------------------- fair button clicked ---------------------------------
     $('#fairBtn').click(function () {
         $.ajax({
             type: "POST",
@@ -117,7 +117,7 @@
         }
     });
 });
-//----------------------------------- fetch all lots section ------------------------------------------------
+//---------------------------------------- fetch all lots section -------------------------------
 function fetchAllLots() {
     $.ajax({
         type: "POST",
@@ -149,8 +149,8 @@ function fetchAllLots() {
           var currentLotDescription= "<div class='category-sell-item-des-sec'>"+
                                 "<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>"+
                                 "<p id='currentLotDesc'>" + lots[0].LotDesc + "</p>"+
-                                "<p class='pull-left'>Low estimate price&nbsp;-&nbsp;<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>"+
-                                "<p class='pull-right'>High estimate price&nbsp;-&nbsp;<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>"+
+                                "<p class='pull-left alert alert-success'>Low estimate price&nbsp;-&nbsp;<span id='currentLotLowEstimatePrice'>£" + lots[0].LowEstimatePrice + "</span></p>"+
+                                "<p class='pull-right alert alert-success'>High estimate price&nbsp;-&nbsp;<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
                             "</div>";
 
           $("#currentLot").html(currentLot);
@@ -166,8 +166,10 @@ function fetchAllLots() {
                 //							"<div class='cat-sell-pic-sec'>" +
                 //								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
                 //                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
-                var parsedTitle = showMore(this.Title);
+                //var parsedTitle = showMore(this.Title);
+                var parsedTitle = this.Title.slice(0,20)+"..."
                 console.log(parsedTitle);
+                this.Title = parsedTitle;
                 lotsQueue += "<div class='cat-sell-single-item clearfix'>" +
                                 "<div class='pull-left'>" +
                                     "<div class='cat-sell-pic'>" +
@@ -190,7 +192,7 @@ function fetchAllLots() {
         fetchFairWarning();
     }
 }
-//-------------------------------- fetch all text files ------------------------------------------------------------------
+//----------------------------------------- fetch all text files --------------------------------
 function fetchLotFiles() {
     logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
     //logFileUrl = "/admin/log_files/Log_lotNo_" + currentLotId + ".txt";
@@ -212,7 +214,7 @@ function UrlExists(url) {
     http.send();
     return http.status != 404;
 }
-//------------------------------ fetchAskingBidValue -----------------------------------------------
+//----------------------------------------- fetchAskingBidValue ---------------------------------
 function fetchAskingBidValue(id) {
     $.ajax({
         type: "POST",

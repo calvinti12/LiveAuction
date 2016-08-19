@@ -87,8 +87,8 @@ namespace LiveAuction
         #region Add Log File
         public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid, string id)
         {
-            string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
-            //string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
+            //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\log_files\").ToString();
+            string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\log_files\").ToString();
             string filename = "Log_" + fileName + ".txt";
             string filepath = LogPath + filename;
             if (File.Exists(filepath))
@@ -285,8 +285,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -335,8 +335,8 @@ namespace LiveAuction
                 lots.Add(new ProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
