@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BidderEL.cs" />
+    <Compile Include="TimedProductLotEL.cs" />
     <Compile Include="DealEL.cs" />
     <Compile Include="ProductLotEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AuctionBL.cs" />
     <Compile Include="BidderBL.cs" />
+    <Compile Include="TimedProductLotBL.cs" />
     <Compile Include="DealBL.cs" />
     <Compile Include="ProductLotBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

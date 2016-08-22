@@ -83,6 +83,8 @@
     <Content Include="Admin\Auction.aspx" />
     <Content Include="Admin\AuctionView.aspx" />
     <Content Include="Admin\connecting.aspx" />
+    <Content Include="Admin\timed-aution-lot.aspx" />
+    <Content Include="Admin\timed-auction.aspx" />
     <Content Include="Admin\images\tt.jpg" />
     <Content Include="Admin\js\LiveAuction.js" />
     <Content Include="Admin\js\LiveAuction_old.js" />
@@ -623,6 +625,20 @@
     <Compile Include="Admin\connecting.aspx.designer.cs">
       <DependentUpon>connecting.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\timed-aution-lot.aspx.cs">
+      <DependentUpon>timed-aution-lot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\timed-aution-lot.aspx.designer.cs">
+      <DependentUpon>timed-aution-lot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\timed-auction.aspx.cs">
+      <DependentUpon>timed-auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\timed-auction.aspx.designer.cs">
+      <DependentUpon>timed-auction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\live-auction-log.aspx.cs">
       <DependentUpon>live-auction-log.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -876,6 +892,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\FileUpload\timedAuction\" />
     <Folder Include="Admin\images\timepicky\" />
     <Folder Include="Admin\log_files\" />
     <Folder Include="App_Data\" />

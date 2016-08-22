@@ -57,6 +57,8 @@
                                     <div class="frbtn clearfix">
 	                                    <button type="button" class="btn btn-danger pull-left" id="fairBtn">FAIR WARNING</button>
 	                                    <button type="button" class="btn btn-danger pull-right" id="soldBtn">SOLD</button>
+                                        <input type="text" class="form-control" Placeholder="Bid increment" />
+                                        <a href='#' id='A1' class="btn btn-primary btn-lg btn-bid">Bid Increment</a>
                                     </div>
 								  </div>
 								  

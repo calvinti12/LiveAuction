@@ -11,8 +11,8 @@
         e.preventDefault();
         var url = logFileUrl;
         var lotId = $('#currentLotId').html();
-        //logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
-        logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
+        logFileUrl = "http://auctionbidplatform.com/TCAG/Admin/log_files/Log_lotNo_" + lotId + ".txt";
+        //logFileUrl = "/admin/log_files/Log_lotNo_" + lotId + ".txt";
         $.ajax({
             type: "POST",
             url: "live-auction.aspx/WriteToLog",
