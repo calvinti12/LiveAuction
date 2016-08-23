@@ -25,7 +25,7 @@ namespace LiveAuction.Admin
             auctiondate.Text = "";
             description.Text = "";
             askingbid.Text = "";
-            maxreservevalue.Text = "";
+            //maxreservevalue.Text = "";
             fileUploadLabel.Text = "";
         }
 
@@ -55,7 +55,7 @@ namespace LiveAuction.Admin
                         con.Open();
                         DateTime temp = DateTime.ParseExact(auctiondate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
                         string str = temp.ToString("yyyy-MM-dd");
-                        string query = "insert into TimedAuction(AuctionName,AuctionDate,AuctionTime,AskingBid,[Description],MaxReserveValue,ImagePath,ImageName)values('" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + askingbid.Text + "','" + description.Text + "','"+maxreservevalue.Text+"','" + filePath + "','"+filename+"')";
+                        string query = "insert into TimedAuction(AuctionName,AuctionDate,AuctionTime,AskingBid,[Description],MaxReserveValue,ImagePath,ImageName)values('" + txtAuctionName.Text + "','" + str + "','" + auctiontime.Text + "','" + askingbid.Text + "','" + description.Text + "',NULL,'" + filePath + "','"+filename+"')";
                         SqlCommand cmd = new SqlCommand(query, con);
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
@@ -65,13 +65,13 @@ namespace LiveAuction.Admin
                             auctiondate.Text = "";
                             description.Text = "";
                             askingbid.Text = "";
-                            maxreservevalue.Text = "";
+                            //maxreservevalue.Text = "";
                             lblMessage.Text = "<span style=\"color: #54a75c\">Auction saved successfully</span>";
                         }
                         //}
                         //else { fileUploadLabel.Text = "Maximum resolution of a image has to be in 600X400 (Width X Height) "; }
                         con.Close();
-                        Response.Redirect("Auction.aspx");
+                        Response.Redirect("timed-auction.aspx");
                     }
                     catch (Exception ex)
                     {

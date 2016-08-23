@@ -6,20 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="css/timepicker/DateTimePicker.css" rel="stylesheet" type="text/css" />
     <script src="js/timepicker/DateTimePicker.js" type="text/javascript"></script>
-    <style type="text/css">
-        /*p
-			{
-				margin-left: 20px;
-			}
-		
-			input
-			{
-				width: 200px;
-				padding: 10px;
-				margin-left: 20px;
-				margin-bottom: 20px;
-			}*/
-    </style>
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -101,19 +87,6 @@
                                         ControlToValidate="askingbid" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
                                     <!-- <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100"
                                         class="form-control col-md-7 col-xs-12">-->
-                                </div>
-                            </div>
-                            <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
-                                    Maximum Reserve Value <span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <asp:TextBox ID="maxreservevalue" runat="server" class="time form-control col-md-7 col-xs-12"
-                                        placeholder="£" TextMode="SingleLine"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Maximum Reserve Value Required"
-                                        ControlToValidate="maxreservevalue" ForeColor="Red" ValidationGroup="Auction"></asp:RequiredFieldValidator>
-                                    <%--  <input type="url" id="auctiontime" name="time" required="required" class="time form-control col-md-7 col-xs-12"
-                                        placeholder="17:00">--%>
                                 </div>
                             </div>
                             <div class="item form-group">

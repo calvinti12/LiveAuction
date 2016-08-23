@@ -126,7 +126,7 @@
                     <li><a href="#">Today's Events</a></li>
                     <li><a href="live-auction.aspx">Live Auctions</a></li>
                     <%--<li><a href="auctions.aspx">Timed Auctions</a></li>--%>
-                    <li><a href="#">Timed Auctions</a></li>
+                    <li><a href="timed-auction.aspx">Timed Auctions</a></li>
                   </ul>
                   <div class="navbar-form navbar-right navbar-frm-src" role="search">
                     <div class="form-group form-src">
@@ -166,7 +166,7 @@
                   <ul class="nav navbar-nav navbar-right navbar-nav-mobile-main-mnu">
                     <li><a href="#">Today's Events</a></li>
                     <li><a href="CatDisplay.aspx?cat=AllAuctions">Live Auctions</a></li>
-                    <li><a href="#">Timed Events</a></li>
+                    <li><a href="timed-auction.aspx">Timed Events</a></li>
                   </ul>
                   <div class="navbar-form navbar-frm-src" role="search">
                     <div class="form-group form-src">

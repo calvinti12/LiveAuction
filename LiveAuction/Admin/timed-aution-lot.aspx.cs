@@ -78,7 +78,7 @@ namespace LiveAuction.seller_track
             DataTable dtAuction = objTimedProductLotBL.GetAuction(Convert.ToString(Session["UserType"]), Convert.ToInt32(Session["UserId"]));
             auction.DataSource = dtAuction;
             auction.DataTextField = "AuctionName";
-            auction.DataValueField = "AuctionId";
+            auction.DataValueField = "TimedAuctionId";
             auction.DataBind();
         }
         protected void btnSave_Click(object sender, EventArgs e)
@@ -86,48 +86,67 @@ namespace LiveAuction.seller_track
             if (Page.IsValid)
             {
                 TimedProductLotBL objTimedProductLotBL = new TimedProductLotBL();
-                ProductLotEL objProductLotEL = new ProductLotEL();
+                TimedProductLotEL objTimedProductLotEL = new TimedProductLotEL();
                 string Responsetxt = string.Empty;
                 string productimages = Request["hdnimagefiles"];
-                objProductLotEL.ProductUsed = ItemUsed.SelectedItem.ToString();
+                objTimedProductLotEL.ProductUsed = ItemUsed.SelectedItem.ToString();
                 if (!categotyLevel2.Visible)
                 {
-                    objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel1.SelectedValue);
+                    objTimedProductLotEL.CategoryId = Convert.ToInt32(categotyLevel1.SelectedValue);
                 }
                 else
                 {
                     if (categotyLevel3.Visible)
                     {
-                        objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel3.SelectedValue);
+                        objTimedProductLotEL.CategoryId = Convert.ToInt32(categotyLevel3.SelectedValue);
                     }
                     else
-                        objProductLotEL.CategoryId = Convert.ToInt32(categotyLevel2.SelectedValue);
+                        objTimedProductLotEL.CategoryId = Convert.ToInt32(categotyLevel2.SelectedValue);
                 }
-                objProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
-                objProductLotEL.IsBranded = rdbYes.Checked;
-                objProductLotEL.Title = txtTitle.Text;
-                objProductLotEL.SKU = txtSKU.Text;
-                objProductLotEL.Description = txtDesc.Text;
-                objProductLotEL.Question = txtQuestion.Text;
-                objProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
-                objProductLotEL.CostBasis = txtCost.Text;
-                objProductLotEL.RetailPrice = txtRetail.Text;
-                objProductLotEL.BuyPrice = txtBuy.Text;
-                objProductLotEL.StartingBid = txtStartBid.Text;
-                objProductLotEL.ShipCountry = ddlCountry.Text;
-                objProductLotEL.ShipWithin = ddlShipWithin.Text;
-                objProductLotEL.DeliveryTime = ddlTimeTake.Text;
-                objProductLotEL.IsFreeShipping = chkFreeShipping.Checked;
-                objProductLotEL.ShippingPrice = ddlPrice.Text;
-                objProductLotEL.IsShippedEverywhere = chkShip.Checked;
-                objProductLotEL.LowEstimatePrice = lowEstimatePrice.Text;
-                objProductLotEL.HighEstimatePrice = highEstimatePrice.Text;
-                objProductLotEL.LiveAuctionPassed = "0";
-                objProductLotEL.FairWarning = false;
-                objProductLotEL.IsSold = false;
-                objProductLotEL.images = productimages;
-                if (objTimedProductLotBL.Save(objProductLotEL, out Responsetxt))
+                objTimedProductLotEL.AuctionId = Convert.ToInt32(auction.SelectedValue);
+                objTimedProductLotEL.IsBranded = rdbYes.Checked;
+                objTimedProductLotEL.Title = txtTitle.Text;
+                objTimedProductLotEL.SKU = txtSKU.Text;
+                objTimedProductLotEL.Description = txtDesc.Text;
+                objTimedProductLotEL.Question = txtQuestion.Text;
+                objTimedProductLotEL.Quantity = Convert.ToInt32(txtQuantity.Text);
+                objTimedProductLotEL.CostBasis = txtCost.Text;
+                objTimedProductLotEL.RetailPrice = txtRetail.Text;
+                objTimedProductLotEL.BuyPrice = txtBuy.Text;
+                objTimedProductLotEL.StartingBid = txtStartBid.Text;
+                objTimedProductLotEL.ShipCountry = ddlCountry.Text;
+                objTimedProductLotEL.ShipWithin = ddlShipWithin.Text;
+                objTimedProductLotEL.DeliveryTime = ddlTimeTake.Text;
+                objTimedProductLotEL.IsFreeShipping = chkFreeShipping.Checked;
+                objTimedProductLotEL.ShippingPrice = ddlPrice.Text;
+                objTimedProductLotEL.IsShippedEverywhere = chkShip.Checked;
+                objTimedProductLotEL.LowEstimatePrice = lowEstimatePrice.Text;
+                objTimedProductLotEL.HighEstimatePrice = highEstimatePrice.Text;
+                objTimedProductLotEL.MaximumReserveValue = maximumReserveValue.Text;
+                objTimedProductLotEL.BidderId = 0;
+                objTimedProductLotEL.IsSold = false;
+                objTimedProductLotEL.images = productimages;
+                if (objTimedProductLotBL.Save(objTimedProductLotEL, out Responsetxt))
                 {
+                    rdbYes.Checked=false;
+                    txtTitle.Text="";
+                    txtSKU.Text="";
+                    txtDesc.Text="";
+                    txtQuestion.Text="";
+                    txtQuantity.Text="";
+                    txtCost.Text="";
+                    txtRetail.Text="";
+                    txtBuy.Text="";
+                    txtStartBid.Text="";
+                    ddlCountry.Text="";
+                    ddlShipWithin.Text="";
+                    ddlTimeTake.Text="";
+                    chkFreeShipping.Checked=false;
+                    ddlPrice.Text="";
+                    chkShip.Checked=false;
+                    lowEstimatePrice.Text="";
+                    highEstimatePrice.Text="";
+                    maximumReserveValue.Text="";
                     ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "ScriptRegistration", "alert('" + Responsetxt + "');", true);
                 }
                 else

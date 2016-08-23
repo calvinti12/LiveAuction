@@ -233,6 +233,9 @@
     <Content Include="Admin\seller2.aspx" />
     <Content Include="Admin\stats.aspx" />
     <Content Include="CatDisplay.aspx" />
+    <Content Include="js\TimedAuction.js" />
+    <Content Include="timed-auction-lots.aspx" />
+    <Content Include="timed-auction.aspx" />
     <Content Include="css\countdown\jquery.countdown.css" />
     <Content Include="images\20.jpg" />
     <Content Include="images\228.jpg" />
@@ -807,11 +810,28 @@
     <Compile Include="CatDisplay.aspx.designer.cs">
       <DependentUpon>CatDisplay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="timed-auction-lots.aspx.cs">
+      <DependentUpon>timed-auction-lots.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="timed-auction-lots.aspx.designer.cs">
+      <DependentUpon>timed-auction-lots.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="timed-auction.aspx.cs">
+      <DependentUpon>timed-auction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="timed-auction.aspx.designer.cs">
+      <DependentUpon>timed-auction.aspx</DependentUpon>
+    </Compile>
     <Compile Include="fileupload\ajax_fileupload.ashx.cs">
       <DependentUpon>ajax_fileupload.ashx</DependentUpon>
     </Compile>
     <Compile Include="fileupload\admin_ajax_fileupload.ashx.cs">
       <DependentUpon>admin_ajax_fileupload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="fileupload\ajax_timedLotfileupload.ashx.cs">
+      <DependentUpon>ajax_timedLotfileupload.ashx</DependentUpon>
     </Compile>
     <Compile Include="fileupload\Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
@@ -895,10 +915,12 @@
     <Folder Include="Admin\FileUpload\timedAuction\" />
     <Folder Include="Admin\images\timepicky\" />
     <Folder Include="Admin\log_files\" />
+    <Folder Include="Admin\timed_log_files\" />
     <Folder Include="App_Data\" />
     <Folder Include="Excel\" />
     <Folder Include="fileupload\CSV\" />
     <Folder Include="fileupload\lotUpload\" />
+    <Folder Include="fileupload\timedLots\" />
     <Folder Include="fileupload\upload\" />
     <Folder Include="js\LIB\" />
   </ItemGroup>
@@ -966,6 +988,7 @@
     <Content Include="fileupload\ajax_fileupload.ashx" />
     <Content Include="fileupload\Handler.ashx" />
     <Content Include="fileupload\admin_ajax_fileupload.ashx" />
+    <Content Include="fileupload\ajax_timedLotfileupload.ashx" />
     <None Include="font-awesome\fonts\fontawesome-webfont.eot" />
     <None Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <None Include="font-awesome\fonts\fontawesome-webfont.ttf" />

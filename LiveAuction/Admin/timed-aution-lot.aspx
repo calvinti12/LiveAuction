@@ -39,7 +39,7 @@
 
             //Simple Dropzonejs 
             $("#dZUpload").dropzone({
-                url: "../fileupload/ajax_fileupload.ashx",
+                url: "../fileupload/ajax_timedLotfileupload.ashx",
                 maxFiles: 1,
                 maxFilesize: 2,
                 addRemoveLinks: true,
@@ -74,7 +74,7 @@
                     file.previewElement.classList.add("dz-success");
                     dropImages.push(imgName);
                     console.log("Successfully uploaded :" + imgName);
-                    var url = '../fileupload/ajax_fileupload.ashx?cmd=delete&file=' + response;
+                    var url = '../fileupload/ajax_timedLotfileupload.ashx?cmd=delete&file=' + response;
                     $(file.previewTemplate).find('a.dz-remove').attr('data-dz-remove', url);
                 },
                 error: function (file, response) {
@@ -192,10 +192,10 @@
                         <div class="col-sm-3">
                         <asp:TextBox ID="txtTitle" CssClass="form-control" runat="server" placeholder=""></asp:TextBox>
                         <asp:RequiredFieldValidator id="RequiredFieldValidator1" runat="server" ValidationGroup="lot" EnableClientScript="true"
-  ControlToValidate="txtTitle"
-  ErrorMessage="Title is a required field."
-  ForeColor="Red">
-</asp:RequiredFieldValidator>
+                          ControlToValidate="txtTitle"
+                          ErrorMessage="Title is a required field."
+                          ForeColor="Red">
+                        </asp:RequiredFieldValidator>
                           <%--<input type="password" class="form-control" id="creat-pswrd-lb" placeholder="">--%>
                         </div>
                       </div>
@@ -257,6 +257,14 @@
                         <div class="col-sm-3">
                         <asp:TextBox ID="highEstimatePrice" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
                          <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ValidationGroup="lot" EnableClientScript="true" ControlToValidate="highEstimatePrice" ErrorMessage="High estimate price required" ForeColor="Red"></asp:RequiredFieldValidator>
+                         <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="creat-pswrd-lb" class="col-sm-3 control-label">Maximum Reserve Value :</label>
+                        <div class="col-sm-3">
+                        <asp:TextBox ID="maximumReserveValue" CssClass="form-control" runat="server" placeholder="£"></asp:TextBox>
+                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ValidationGroup="lot" EnableClientScript="true" ControlToValidate="maximumReserveValue" ErrorMessage="Maximum Reserve Value required" ForeColor="Red"></asp:RequiredFieldValidator>
                          <%-- <input type="password" class="form-control" id="creat-pswrd-lb" placeholder="£">--%>
                         </div>
                       </div>
