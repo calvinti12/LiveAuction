@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="timed-auction-lots.aspx.cs" Inherits="LiveAuction.timed_auction_lots"
-    MasterPageFile="~/Bidder.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="timed-auction-lots.aspx.cs"
+    Inherits="LiveAuction.timed_auction_lots" MasterPageFile="~/Bidder.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -12,7 +12,7 @@
              <div class="row">
                  <div class="col-md-12">
                      <div class="breadcumb">
-                     <a href="index.aspx" class="incative">Home &raquo; </a>Live Auctions &raquo;</div>
+                     <a href="index.aspx" class="incative">Home &raquo; </a>Timed Auctions &raquo;</div>
                  </div>
              </div>
          </div>
@@ -51,8 +51,12 @@
                                     <div class="cat-it-dis">
                                         <div class="alert alert-warning text-center" role="alert" id="liveBidLogs"> </div>
 								    </div>
+                                    <div class="fair-burn" id="Div1">
+                                        <a href='#' id='A1' class="btn btn-primary btn-lg btn-bid buyNowPriceId soldBtn" data-toggle="tooltip" title="
+                                        Suspendisse hendrerit iaculis quam, ut tempor magna aliquet at. In mollis a ex ac bibendum. Curabitur venenatis egestas ante faucibus tempor.
+                                        " data-placement="bottom"></a>
+                                    </div>
 								  </div>
-								  
 								</div>
 							</div>
 						</div>

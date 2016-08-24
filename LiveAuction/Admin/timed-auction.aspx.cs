@@ -42,7 +42,8 @@ namespace LiveAuction.Admin
                     {
                         string filename = System.DateTime.Now.ToString("ddMMyyhhmmss") + Path.GetFileName(FileUpload1.FileName);
                         //string filename = Path.GetFileName(FileUpload1.FileName);
-                        filePath = Server.MapPath(@"~\Admin\FileUpload\timedAuction\") + filename;
+                        filePath = Server.MapPath(@"~\TCAG\Admin\FileUpload\timedAuction\") + filename;
+                        //filePath = Server.MapPath(@"~\Admin\FileUpload\timedAuction\") + filename;
                         System.Drawing.Image imgFile = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream);
                         //if (imgFile.PhysicalDimension.Width > 600 || imgFile.PhysicalDimension.Height > 400)
                         //{

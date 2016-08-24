@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.IO;
+using System.Net.Mail;
 namespace LiveAuction
 {
     public partial class timed_auction_lots : System.Web.UI.Page
@@ -26,7 +27,7 @@ namespace LiveAuction
         //----------------- end -----------------------
         protected void Page_Load(object sender, EventArgs e)
         {
-            FetchLots();
+            //FetchLots();
         }
         #region Fetch lots
         public void FetchLots()
@@ -87,8 +88,8 @@ namespace LiveAuction
         #region Add Log File
         public static void AddtoLogFile(string Message, string WebPage, string fileName, int askingBid, string id)
         {
-            //string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\timed_log_files\").ToString();
-            string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\timed_log_files\").ToString();
+            string LogPath = HttpContext.Current.Server.MapPath(@"~\TCAG\Admin\timed_log_files\").ToString();
+            //string LogPath = HttpContext.Current.Server.MapPath(@"~\Admin\timed_log_files\").ToString();
             string filename = "Log_" + fileName + ".txt";
             string filepath = LogPath + filename;
             if (File.Exists(filepath))
@@ -249,7 +250,7 @@ namespace LiveAuction
                         bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
                         askingBidOwner = "Room bid";
                     }
-                    else 
+                    else
                     {
                         bidVal = Convert.ToInt32(dt.Rows[0]["BidValue"]);
                         askingBidOwner = "Internet bid";
@@ -273,27 +274,38 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static List<TimedProductLot> SoldItem(string id)
         {
-            string query = "UPDATE dbo.TimedProductLot set IsSold = 1 WHERE LotId=" + id;
-            RunDatabaseScript(query);
-            string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
-            DataTable dt = RunDatabaseScript(fetchQuery);
-            TimedProductLot TimedProductLot = new TimedProductLot();
-            List<TimedProductLot> lots = new List<TimedProductLot>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                lots.Add(new TimedProductLot
-                {
-                    LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                    LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
-                    Title = Convert.ToString(dt.Rows[i]["Title"]),
-                    AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
-                    LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
-                    HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
-                });
-            }
-            return lots;
+             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+             if (userName != null && userName != "")
+             {
+                 string query = "UPDATE dbo.TimedProductLot set IsSold = 1 WHERE LotId=" + id;
+                 RunDatabaseScript(query);
+                 string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
+                 DataTable dt = RunDatabaseScript(fetchQuery);
+                 TimedProductLot TimedProductLot = new TimedProductLot();
+                 List<TimedProductLot> lots = new List<TimedProductLot>();
+                 for (int i = 0; i < dt.Rows.Count; i++)
+                 {
+                     lots.Add(new TimedProductLot
+                     {
+                         LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
+                         //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                         LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                         LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
+                         Title = Convert.ToString(dt.Rows[i]["Title"]),
+                         AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
+                         LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
+                         HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
+                     });
+                 }
+                 return lots;
+             }
+             List<TimedProductLot> blanklot = new List<TimedProductLot>();
+                 blanklot.Add(new TimedProductLot
+                 {
+                     Title = "novalue",
+                     
+                 });
+                 return blanklot;
         }
         #endregion
         #region FetchAllLots
@@ -313,8 +325,8 @@ namespace LiveAuction
                 lots.Add(new TimedProductLot
                 {
                     LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                    LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["ImageName"],
-                    //LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["ImageName"],
+                    //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["ImageName"],
+                    LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["ImageName"],
                     LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
                     Title = Convert.ToString(dt.Rows[i]["Title"]),
                     AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
@@ -322,7 +334,8 @@ namespace LiveAuction
                     AuctionTime = Convert.ToString(auctionTime),
                     LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
                     HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"]),
-                    MaximumReserveValue = Convert.ToString(dt.Rows[i]["MaxReserveValue"])
+                    MaximumReserveValue = Convert.ToString(dt.Rows[i]["MaxReserveValue"]),
+                    BuynowPrice = Convert.ToString(dt.Rows[i]["BuynowPrice"]),
                 });
             }
             return lots;
@@ -376,6 +389,33 @@ namespace LiveAuction
             return dt;
         }
         #endregion
+        #region send mail
+        protected string SendEmail(string toAddress, string subject, string body)
+        {
+            string result = "Message Sent Successfully..!!";
+            string senderID = "SenderEmailID";// use sender’s email id here..
+            const string senderPassword = "Password"; // sender password here…
+            try
+            {
+                SmtpClient smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com", // smtp server address here…
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    Credentials = new System.Net.NetworkCredential(senderID, senderPassword),
+                    Timeout = 30000,
+                };
+                MailMessage message = new MailMessage(senderID, toAddress, subject, body);
+                smtp.Send(message);
+            }
+            catch (Exception ex)
+            {
+                result = "Error sending email.!!!";
+            }
+            return result;
+        }
+        #endregion
     }
     public class TimedProductLot
     {
@@ -389,6 +429,7 @@ namespace LiveAuction
         public string LowEstimatePrice { get; set; }
         public string HighEstimatePrice { get; set; }
         public string MaximumReserveValue { get; set; }
+        public string BuynowPrice { get; set; }
     }
     public class TimedAuctionAskingBids
     {

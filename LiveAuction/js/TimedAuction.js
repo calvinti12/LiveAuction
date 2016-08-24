@@ -1,10 +1,12 @@
 ﻿$("document").ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $("#buyLoginMsg").hide();
     var currentLotId;
     var logFileUrl;
     blinkeffect('#blink');
     $("#blink").removeClass("alert alert-danger");
     fetchAllLots();
-    //startRefresh();
+    startRefresh();
     getUrlVars();
     //-------------------------------------- bid button clicked ---------------------------------
     $("#bidBtn").click(function (e) {
@@ -66,7 +68,8 @@
         fetchAskingBidValue(lotId);
     });
     //------------------------------------- sold button clicked ---------------------------------
-    $('#soldBtn').click(function () {
+    $('.soldBtn').click(function (e) {
+        e.preventDefault();
         var lotId = $('#currentLotId').html();
         $.ajax({
             type: "POST",
@@ -79,28 +82,33 @@
         });
         function onSuccess(response) {
             var lots = response.d;
-            $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
-            $('#currentLotId').html(lots[0].LotId);
-            $('#currentLotAuctionName').html(lots[0].AuctionName);
-            $('#currentLotDesc').html(lots[0].LotDesc);
-            $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
-            $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
-            console.log(lots[0].AuctionName);
-            var lotsQueue;
-            var counter = 0;
-            $(lots).each(function (index, element) {
-                if (index != 0) {
-                    lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
-                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
-							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
-                            "</div>" +
-							"<div class='cat-sell-pic-sec'>" +
-								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
-                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
-                }
-            });
-            $("#lotQueue").html(lotsQueue);
-            fetchAllLots();
+            var responseTitle = lots[0].Title;
+            if (responseTitle != "novalue") {
+                $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
+                $('#currentLotId').html(lots[0].LotId);
+                $('#currentLotAuctionName').html(lots[0].AuctionName);
+                $('#currentLotDesc').html(lots[0].LotDesc);
+                $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
+                $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
+                var lotsQueue;
+                var counter = 0;
+                $(lots).each(function (index, element) {
+                    if (index != 0) {
+                        lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
+                                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
+                							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
+                                            "</div>" +
+                							"<div class='cat-sell-pic-sec'>" +
+                								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
+                                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
+                    }
+                });
+                $("#lotQueue").html(lotsQueue);
+                fetchAllLots();
+            }
+            else {
+                $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
+            }
         }
     });
     //------------------------------------- fair button clicked ---------------------------------
@@ -125,7 +133,7 @@ function fetchAllLots() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: onSuccess,
-        failure: function (response) { alert("write log failure " + response.d); }
+        failure: function (response) { alert("write log failure "); }
     });
     function onSuccess(response) {
         var lots = response.d;
@@ -146,6 +154,8 @@ function fetchAllLots() {
                                  "</div>" +
 							"</div>";
         var dateTime = lots[0].AuctionDate + " " + lots[0].AuctionTime;
+        longWayOff = formatDate(dateTime);
+        $('#byMonth').countdown({ until: new Date(2014, 12 - 1, 25), format: 'odHM' });
         var currentLotDescription = "<div class='category-sell-item-des-sec'>" +
                                 "<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>" +
                                 "<h4 class='text-primary'>Auction valid till : <span id='currentLotAuctionName'>" + formatDate(dateTime) + "</span></h4>" +
@@ -155,6 +165,7 @@ function fetchAllLots() {
                             "</div>";
 
         $("#currentLot").html(currentLot);
+        $(".buyNowPriceId").html("Buy now price £" + lots[0].BuynowPrice);
         $("#currentLotDesc").html(currentLotDescription);
         var lotsQueue = "";
         var counter = 0;
@@ -169,7 +180,6 @@ function fetchAllLots() {
                 //                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
                 //var parsedTitle = showMore(this.Title);
                 var parsedTitle = this.Title.slice(0, 20) + "..."
-                console.log(parsedTitle);
                 this.Title = parsedTitle;
                 lotsQueue += "<div class='cat-sell-single-item clearfix'>" +
                                 "<div class='pull-left'>" +

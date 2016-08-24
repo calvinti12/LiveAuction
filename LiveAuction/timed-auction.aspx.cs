@@ -66,7 +66,7 @@ namespace LiveAuction
                 {
                     litUpcomingAuction = litUpcomingAuction + @"<div class='col-md-3 col-sm-6 col-xs-12'>
                             <div class='action-item-sec text-center'><input type='hidden' class='auctionId' value=" + i +
-                                        "><img src='/Admin/FileUpload/timedauction/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" +
+                                        "><img src='Admin/FileUpload/timedauction/" + dt.Rows[i]["ImageName"] + "' width='200px' alt='" + dt.Rows[i]["AuctionName"] + " image" + "'/><p>" +
                                                 dt.Rows[i]["AuctionName"] + "</p><a href='timed-auction-lots.aspx' class='btn btn-danger btn-block bidding-sing-btn todaysAction'>Bid</a><div class='action-timing-sec'><p id='counterDiv" + i + "'>";
                     // Response.Write(auctionDate +" ");
                     litUpcomingAuction = litUpcomingAuction + @"<script type='text/javascript'>
@@ -83,6 +83,10 @@ namespace LiveAuction
                                   "'id':'" + i + "'," +
                                   "'auctionImageName':'" + dt.Rows[i]["ImageName"] + "'};todayDeal.push(data);</script>";
                 }
+            }
+            if (dt.Rows.Count == 0)
+            {
+                litUpcomingAuction += "<h1>No Timed auction available</h1>";
             }
             html.Append(litLiveAuction);
             htmlLive.Append(litUpcomingAuction);
