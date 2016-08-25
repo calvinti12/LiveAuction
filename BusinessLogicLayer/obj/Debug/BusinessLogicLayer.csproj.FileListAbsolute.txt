@@ -79,3 +79,12 @@ E:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojResolveAssemblyReference.cache
 E:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\bin\Debug\EntityLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

@@ -70,6 +70,8 @@
     //------------------------------------- sold button clicked ---------------------------------
     $('.soldBtn').click(function (e) {
         e.preventDefault();
+        //var user = getAuthorizedUser().toString();
+        alert(user);
         var lotId = $('#currentLotId').html();
         $.ajax({
             type: "POST",
@@ -104,7 +106,9 @@
                     }
                 });
                 $("#lotQueue").html(lotsQueue);
-                fetchAllLots();
+                //window.location.href = "payment-service.aspx";
+                $('.soldBtn').attr("href", "payment-service.aspx")
+                //fetchAllLots();
             }
             else {
                 $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
@@ -137,15 +141,16 @@ function fetchAllLots() {
     });
     function onSuccess(response) {
         var lots = response.d;
-        currentLotId = lots[0].LotId;
-        $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
-        $('#currentLotId').html(lots[0].LotId);
-        $('#currentLotAuctionName').html(lots[0].AuctionName);
-        $('#currentLotDesc').html(lots[0].LotDesc);
-        $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
-        $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
+        if (lots.length >= 1) {
+            currentLotId = lots[0].LotId;
+            $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
+            $('#currentLotId').html(lots[0].LotId);
+            $('#currentLotAuctionName').html(lots[0].AuctionName);
+            $('#currentLotDesc').html(lots[0].LotDesc);
+            $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
+            $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
 
-        var currentLot = "<div class='category-sell-item-full-sec'>" +
+            var currentLot = "<div class='category-sell-item-full-sec'>" +
 								"<div class='category-sell-pic'>" +
 									"<img id='currentLotImageName' src='" + lots[0].LotImageUrl + "' alt='this is for selling item images' class='img-responsive' />" +
                                  "</div>" +
@@ -153,10 +158,10 @@ function fetchAllLots() {
 									"<h1>current lot <span class='currentLotClass'  id='currentLotId'>" + lots[0].LotId + "</span></h1>" +
                                  "</div>" +
 							"</div>";
-        var dateTime = lots[0].AuctionDate + " " + lots[0].AuctionTime;
-        longWayOff = formatDate(dateTime);
-        $('#byMonth').countdown({ until: new Date(2014, 12 - 1, 25), format: 'odHM' });
-        var currentLotDescription = "<div class='category-sell-item-des-sec'>" +
+            var dateTime = lots[0].AuctionDate + " " + lots[0].AuctionTime;
+            longWayOff = formatDate(dateTime);
+            $('#byMonth').countdown({ until: new Date(2014, 12 - 1, 25), format: 'odHM' });
+            var currentLotDescription = "<div class='category-sell-item-des-sec'>" +
                                 "<h3 class='text-primary'>Auction : <span id='currentLotAuctionName'>" + lots[0].AuctionName + "</span></h3>" +
                                 "<h4 class='text-primary'>Auction valid till : <span id='currentLotAuctionName'>" + formatDate(dateTime) + "</span></h4>" +
                                 "<p id='currentLotDesc'>" + lots[0].LotDesc + "</p>" +
@@ -164,24 +169,24 @@ function fetchAllLots() {
                                 "<p class='pull-right alert alert-success'>High estimate price&nbsp;-&nbsp;<span id='currentLotHighEstimatePrice'>£" + lots[0].HighEstimatePrice + "</span></p>" +
                             "</div>";
 
-        $("#currentLot").html(currentLot);
-        $(".buyNowPriceId").html("Buy now price £" + lots[0].BuynowPrice);
-        $("#currentLotDesc").html(currentLotDescription);
-        var lotsQueue = "";
-        var counter = 0;
-        $(lots).each(function (index, element) {
-            if (index != 0) {
-                //                lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
-                //                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
-                //							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
-                //                            "</div>" +
-                //							"<div class='cat-sell-pic-sec'>" +
-                //								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
-                //                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
-                //var parsedTitle = showMore(this.Title);
-                var parsedTitle = this.Title.slice(0, 20) + "..."
-                this.Title = parsedTitle;
-                lotsQueue += "<div class='cat-sell-single-item clearfix'>" +
+            $("#currentLot").html(currentLot);
+            $(".buyNowPriceId").html("Buy now price £" + lots[0].BuynowPrice);
+            $("#currentLotDesc").html(currentLotDescription);
+            var lotsQueue = "";
+            var counter = 0;
+            $(lots).each(function (index, element) {
+                if (index != 0) {
+                    //                lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
+                    //                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
+                    //							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
+                    //                            "</div>" +
+                    //							"<div class='cat-sell-pic-sec'>" +
+                    //								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
+                    //                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
+                    //var parsedTitle = showMore(this.Title);
+                    var parsedTitle = this.Title.slice(0, 20) + "..."
+                    this.Title = parsedTitle;
+                    lotsQueue += "<div class='cat-sell-single-item clearfix'>" +
                                 "<div class='pull-left'>" +
                                     "<div class='cat-sell-pic'>" +
                                         "<img src='" + this.LotImageUrl + "' />" +
@@ -195,12 +200,16 @@ function fetchAllLots() {
                                     "</div>" +
                                 "</div>" +
                             "</div>";
-            }
-        });
-        $("#lotQueue").html(lotsQueue);
-        //fetchLotFiles();
-        fetchAskingBidValue(currentLotId);
-        //fetchFairWarning();
+                }
+            });
+            $("#lotQueue").html(lotsQueue);
+            //fetchLotFiles();
+            fetchAskingBidValue(currentLotId);
+            //fetchFairWarning();
+        }
+        else {
+            window.location.href = "timed-auction.aspx";
+        }
     }
 }
 //----------------------------------------- fetch all text files --------------------------------
@@ -330,3 +339,16 @@ function formatDate(date) {
 }
 
 //alert(formatDate("04/02/2011 23:00:00"));
+function getAuthorizedUser() {
+    $.ajax({
+        type: "POST",
+        url: "timed-auction-lots.aspx/GetUserName",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: onSuccess,
+        failure: function (response) { alert("failure " + response.d); }
+    });
+    function onSuccess(response) {
+        return response.d;
+    }
+}

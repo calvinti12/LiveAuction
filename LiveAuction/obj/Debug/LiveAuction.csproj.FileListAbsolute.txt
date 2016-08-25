@@ -115,3 +115,16 @@ E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\UtilityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\DataAccessLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.dll
 E:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\ResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\obj\Debug\LiveAuction.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\LiveAuction.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\LiveAuction.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\BusinessLogicLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\EntityLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\UtilityLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\DataAccessLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\BusinessLogicLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\EntityLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\UtilityLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\LiveAuction\bin\DataAccessLayer.pdb

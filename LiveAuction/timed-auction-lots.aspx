@@ -52,7 +52,7 @@
                                         <div class="alert alert-warning text-center" role="alert" id="liveBidLogs"> </div>
 								    </div>
                                     <div class="fair-burn" id="Div1">
-                                        <a href='#' id='A1' class="btn btn-primary btn-lg btn-bid buyNowPriceId soldBtn" data-toggle="tooltip" title="
+                                        <a href="payment-service.aspx" id='A1' class="btn btn-primary btn-lg btn-bid buyNowPriceId soldBtn" data-toggle="tooltip" title="
                                         Suspendisse hendrerit iaculis quam, ut tempor magna aliquet at. In mollis a ex ac bibendum. Curabitur venenatis egestas ante faucibus tempor.
                                         " data-placement="bottom"></a>
                                     </div>

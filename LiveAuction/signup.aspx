@@ -75,7 +75,7 @@
                           <asp:TextBox ID="txtCnfPassword" runat="server" class="form-control" TextMode="Password" placeholder="Password"></asp:TextBox>
                         </div>
                       </div>
-                      <div class="form-group">
+                      <%--<div class="form-group">
                         <label for="creat-pswrd-lb-re" class="col-sm-3 control-label">User Type</label>
                         <div class="col-sm-9" style="padding: 5px 0 0 15px;">
                          <asp:RadioButtonList ID="rdbtnlistUserType" runat="server" RepeatDirection="Horizontal"
@@ -83,6 +83,62 @@
                                     <asp:ListItem Text="Bidder" Value="1" Selected="True"></asp:ListItem>
                                     <asp:ListItem Text="Seller" Value="2"></asp:ListItem>
                                 </asp:RadioButtonList>
+                        </div>
+                      </div>--%>
+                      <!-- this is for payment getway -->
+                      <div class="form-group">
+                        <label for="kk" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="sq-pyinfo"><b>Secure Payment Info</b></p>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="kk" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <div class="radio-line">
+                            <!-- <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            </label>
+                            <label class="radio-inline">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"><img src="images/accept-card-pay.png" alt="this for all dabit card" class="img-responsive">
+                            </label> -->
+                            <img src="images/accept-card-pay.png" alt="this for all dabit card" class="img-responsive">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Name (as its appear on the card)</p>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Card No (no dashes or spaces)</p>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Expiration Date</p>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control" placeholder="start date">
+                            </div>
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control" placeholder="end date">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-3">
+                          <p class="text-success">Security Code(cvv)</p>
+                          <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="form-group">

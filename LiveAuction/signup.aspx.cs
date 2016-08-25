@@ -22,7 +22,8 @@ namespace LiveAuction
             string Responsetxt = string.Empty;
             objBidderEL.Email = txtEmail.Text;
             objBidderEL.Password = txtPassword.Text;
-            objBidderEL.UserType = rdbtnlistUserType.SelectedValue;
+            //objBidderEL.UserType = rdbtnlistUserType.SelectedValue;
+            objBidderEL.UserType = "1";
             if (chkAgree.Checked)
             {
                 if (objBidderBL.BidderSignUp(objBidderEL, out Responsetxt))

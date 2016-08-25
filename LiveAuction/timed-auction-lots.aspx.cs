@@ -274,38 +274,38 @@ namespace LiveAuction
         [System.Web.Script.Services.ScriptMethod()]
         public static List<TimedProductLot> SoldItem(string id)
         {
-             userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
-             if (userName != null && userName != "")
-             {
-                 string query = "UPDATE dbo.TimedProductLot set IsSold = 1 WHERE LotId=" + id;
-                 RunDatabaseScript(query);
-                 string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
-                 DataTable dt = RunDatabaseScript(fetchQuery);
-                 TimedProductLot TimedProductLot = new TimedProductLot();
-                 List<TimedProductLot> lots = new List<TimedProductLot>();
-                 for (int i = 0; i < dt.Rows.Count; i++)
-                 {
-                     lots.Add(new TimedProductLot
-                     {
-                         LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
-                         //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                         LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
-                         LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
-                         Title = Convert.ToString(dt.Rows[i]["Title"]),
-                         AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
-                         LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
-                         HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
-                     });
-                 }
-                 return lots;
-             }
-             List<TimedProductLot> blanklot = new List<TimedProductLot>();
-                 blanklot.Add(new TimedProductLot
-                 {
-                     Title = "novalue",
-                     
-                 });
-                 return blanklot;
+            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+            if (userName != null && userName != "")
+            {
+                //string query = "UPDATE dbo.TimedProductLot set IsSold = 1 WHERE LotId=" + id;
+                //RunDatabaseScript(query);
+                string fetchQuery = "select * from [AuctionBidPlatform].[dbo].[View_list_item]  where IsSold=0";
+                DataTable dt = RunDatabaseScript(fetchQuery);
+                TimedProductLot TimedProductLot = new TimedProductLot();
+                List<TimedProductLot> lots = new List<TimedProductLot>();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lots.Add(new TimedProductLot
+                    {
+                        LotId = Convert.ToInt32(dt.Rows[i]["LotId"]),
+                        //LotImageUrl = "http://127.0.0.1:2520/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                        LotImageUrl = "http://auctionbidplatform.com/fileupload/upload/" + dt.Rows[i]["LotImageName"],
+                        LotDesc = Convert.ToString(dt.Rows[i]["LotDesc"]),
+                        Title = Convert.ToString(dt.Rows[i]["Title"]),
+                        AuctionName = Convert.ToString(dt.Rows[i]["AuctionName"]),
+                        LowEstimatePrice = Convert.ToString(dt.Rows[i]["LowEstimatePrice"]),
+                        HighEstimatePrice = Convert.ToString(dt.Rows[i]["HighEstimatePrice"])
+                    });
+                }
+                return lots;
+            }
+            List<TimedProductLot> blanklot = new List<TimedProductLot>();
+            blanklot.Add(new TimedProductLot
+            {
+                Title = "novalue",
+
+            });
+            return blanklot;
         }
         #endregion
         #region FetchAllLots
@@ -414,6 +414,19 @@ namespace LiveAuction
                 result = "Error sending email.!!!";
             }
             return result;
+        }
+        #endregion
+        #region getuserName
+        [System.Web.Services.WebMethod(EnableSession = true)]
+        [System.Web.Script.Services.ScriptMethod()]
+        public static string GetUserName()
+        {
+            userName = Convert.ToString(HttpContext.Current.Session["UserName"]).Trim();
+            if (userName != null && userName != "")
+            {
+                return userName;
+            }
+            else { return ""; }
         }
         #endregion
     }

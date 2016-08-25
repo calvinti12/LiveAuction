@@ -233,7 +233,9 @@
     <Content Include="Admin\seller2.aspx" />
     <Content Include="Admin\stats.aspx" />
     <Content Include="CatDisplay.aspx" />
+    <Content Include="images\accept-card-pay.png" />
     <Content Include="js\TimedAuction.js" />
+    <Content Include="payment-service.aspx" />
     <Content Include="timed-auction-lots.aspx" />
     <Content Include="timed-auction.aspx" />
     <Content Include="css\countdown\jquery.countdown.css" />
@@ -809,6 +811,13 @@
     </Compile>
     <Compile Include="CatDisplay.aspx.designer.cs">
       <DependentUpon>CatDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment-service.aspx.cs">
+      <DependentUpon>payment-service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment-service.aspx.designer.cs">
+      <DependentUpon>payment-service.aspx</DependentUpon>
     </Compile>
     <Compile Include="timed-auction-lots.aspx.cs">
       <DependentUpon>timed-auction-lots.aspx</DependentUpon>

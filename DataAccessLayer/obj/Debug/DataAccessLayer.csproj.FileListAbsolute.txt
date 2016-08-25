@@ -39,3 +39,8 @@ E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pd
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

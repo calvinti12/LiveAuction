@@ -39,3 +39,8 @@ E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\bin\Debug\UtilityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.dll
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.pdb
 E:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.csprojResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\bin\Debug\UtilityLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\bin\Debug\UtilityLayer.pdb
+D:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\ResolveAssemblyReference.cache
+D:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.dll
+D:\Arnab Kundu\Projects\LiveAuction\UtilityLayer\obj\Debug\UtilityLayer.pdb

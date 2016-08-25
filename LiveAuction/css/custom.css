@@ -476,4 +476,6 @@ account-selling-lstItem-sec h4{text-transform: uppercase;color:#000;}
 .price01{font-size:70px}
 .btn-bid{padding:10px 48px;margin-top:15px;}
 .lot-doll h1.text-danger {margin:0;}
-
+/*this is for payment getway in sign up page*/
+.sq-pyinfo{border-bottom: 1px solid #ddd;padding-bottom: 5px;}
+.payment-section{margin-top:25px;}
