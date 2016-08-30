@@ -19,7 +19,7 @@ namespace LiveAuction
         {
             BidderEL objBidderEL = new BidderEL();
             BidderBL objBidderBL = new BidderBL();
-            BidderCardDetailEL objBidderCardEL = new BidderCardDetailEL();
+            //BidderCardDetailEL objBidderCardEL = new BidderCardDetailEL();
             string Responsetxt = string.Empty;
             objBidderEL.Email = txtEmail.Text;
             objBidderEL.Password = txtPassword.Text;
@@ -29,9 +29,12 @@ namespace LiveAuction
             objBidderEL.City = town.Text;
             objBidderEL.PinCode = postcode.Text;
             objBidderEL.Telephone = telephone.Text;
-            objBidderCardEL.CardHolderName = cardHolderName.Text;
-            objBidderCardEL.CardNo = cardNo.Text;
-            objBidderCardEL.SecurityCode = cvv.Text;
+            objBidderEL.CardExpiryMonth = Convert.ToInt32(ExpMonth.Text);
+            objBidderEL.CardExpiryYear = Convert.ToInt32(ExpYear.Text);
+            objBidderEL.CardHolderName = cardHolderName.Text;
+            objBidderEL.CardNo = cardNo.Text;
+            objBidderEL.SecurityCode = cvv.Text;
+            objBidderEL.CardBillingAddress1 = address1.Text; ;
 
             //objBidderEL.UserType = rdbtnlistUserType.SelectedValue;
             objBidderEL.UserType = "1";

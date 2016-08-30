@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Bidder.Master" AutoEventWireup="true" CodeBehind="payment-service.aspx.cs" Inherits="LiveAuction.payment_service" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <script src="js/PaymentService.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <section class="creat-account-sec payment-section">
@@ -44,13 +44,13 @@
                                   <div class="form-group">
                                     <div class="col-sm-9">
                                       <p class="text-success">Name (as its appear on the card)</p>
-                                      <input type="text" class="form-control" value="456- 2589-333" disabled>
+                                      <input type="text" class="form-control fullName " value="456- 2589-333" disabled>
                                     </div>
                                   </div>
                                   <div class="form-group">
                                     <div class="col-sm-9">
                                       <p class="text-success">Card No (no dashes or spaces)</p>
-                                      <input type="text" class="form-control" value="20135987436" disabled>
+                                      <input type="text" class="form-control cardNo" value="20135987436" disabled>
                                     </div>
                                   </div>
                                   <div class="form-group clearfix">
@@ -58,10 +58,10 @@
                                       <p class="text-success">Expiration Date</p>
                                       <div class="row">
                                         <div class="col-sm-6">
-                                          <input type="text" class="form-control" placeholder="start date" value="04-16" disabled>
+                                          <input type="text" class="form-control month" placeholder="start date" value="04-16" disabled>
                                         </div>
                                         <div class="col-sm-6">
-                                          <input type="text" class="form-control" placeholder="end date" value="04-18" disabled>
+                                          <input type="text" class="form-control year" placeholder="end date" value="04-18" disabled>
                                         </div>
                                       </div>
                                     </div>
@@ -69,12 +69,12 @@
                                   <div class="form-group clearfix">
                                     <div class="col-sm-3">
                                       <p class="text-success">Security Code(cvv)</p>
-                                      <input type="text" class="form-control">
+                                      <input type="text" class="form-control securityCode">
                                     </div>
                                   </div>
                                   <div class="form-group">
                                     <div class="col-sm-8">
-                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                      <button type="submit" class="btn btn-primary makePayment">Submit</button>
                                     </div>
                                   </div>
                               </div>

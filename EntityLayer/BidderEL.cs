@@ -33,5 +33,22 @@ namespace EntityLayer
         public string TimeZone { get; set; }
         public string OTP { get; set; }
         public string ReturnValue { get; set; }
+
+        public string CardType { get; set; }
+        public string CardNo { get; set; }
+        public int CardExpiryMonth { get; set; }
+        public int CardExpiryYear { get; set; }
+        public string SecurityCode { get; set; }
+        public string CardNickName { get; set; }
+        public string CardHolderName { get; set; }
+        public string CardBillingAddress1 { get; set; }
+        public string CardBillingAddress2 { get; set; }
+        public string CardBillingCity { get; set; }
+        public string CardBillingCountry { get; set; }
+        public string CardBillingState { get; set; }
+        public string CardBillingZipCode { get; set; }
+        public string CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
+        public string IpAddress { get; set; }
     }
 }

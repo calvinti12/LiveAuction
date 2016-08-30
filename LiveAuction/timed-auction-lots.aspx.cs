@@ -426,10 +426,16 @@ namespace LiveAuction
             {
                 return userName;
             }
-            else { return ""; }
+            else
+                return "";
         }
         #endregion
+        public void RedirecToPaymentPage()
+        {
+            HttpContext.Current.Response.Redirect("payment-service.aspx");
+        }
     }
+
     public class TimedProductLot
     {
         public int LotId { get; set; }

@@ -10,7 +10,8 @@ namespace EntityLayer
         public int BidderId { get; set; }
         public string CardType { get; set; }
         public string CardNo { get; set; }
-        public DateTime CardExpiry { get; set; }
+        public int CardExpiryMonth { get; set; }
+        public int CardExpiryYear { get; set; }
         public string SecurityCode { get; set; }
         public string CardNickName { get; set; }
         public string CardHolderName { get; set; }

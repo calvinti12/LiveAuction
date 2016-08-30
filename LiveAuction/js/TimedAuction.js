@@ -1,4 +1,5 @@
-﻿$("document").ready(function () {
+﻿var buyNowFlag = 0;
+$("document").ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
     $("#buyLoginMsg").hide();
     var currentLotId;
@@ -68,53 +69,11 @@
         fetchAskingBidValue(lotId);
     });
     //------------------------------------- sold button clicked ---------------------------------
-    $('.soldBtn').click(function (e) {
+    $('.buyNowPriceId').click(function (e) {
         e.preventDefault();
-        //var user = getAuthorizedUser().toString();
-        alert(user);
-        var lotId = $('#currentLotId').html();
-        $.ajax({
-            type: "POST",
-            url: "timed-auction-lots.aspx/SoldItem",
-            data: '{id:"' + lotId + '"}',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: onSuccess,
-            failure: function (response) { alert("write log failure " + response.d); }
-        });
-        function onSuccess(response) {
-            var lots = response.d;
-            var responseTitle = lots[0].Title;
-            if (responseTitle != "novalue") {
-                $('#currentLotImageName').attr('src', lots[0].LotImageUrl);
-                $('#currentLotId').html(lots[0].LotId);
-                $('#currentLotAuctionName').html(lots[0].AuctionName);
-                $('#currentLotDesc').html(lots[0].LotDesc);
-                $('#currentLotLowEstimatePrice').html(lots[0].LowEstimatePrice);
-                $('#currentLotHighEstimatePrice').html(lots[0].HighEstimatePrice);
-                var lotsQueue;
-                var counter = 0;
-                $(lots).each(function (index, element) {
-                    if (index != 0) {
-                        lotsQueue += "<div class='cat-sell-single-item clearfix'><div class='cat-sell-title'><p>" +
-                                        "<span class='text-primary'><span>Lot&nbsp</span>" + this.LotId + "</span></p></div>" +
-                							"<div class='cat-sell-tag'><h3>" + this.Title + "</h3>" +
-                                            "</div>" +
-                							"<div class='cat-sell-pic-sec'>" +
-                								"<div class='cat-sell-snt'><img src='" + this.LotImageUrl +
-                                                "' alt='this is for cat sell snt' class='img-responsive'></div></div></div>";
-                    }
-                });
-                $("#lotQueue").html(lotsQueue);
-                //window.location.href = "payment-service.aspx";
-                $('.soldBtn').attr("href", "payment-service.aspx")
-                //fetchAllLots();
-            }
-            else {
-                $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
-            }
-        }
+        getAuthorizedUser();
     });
+
     //------------------------------------- fair button clicked ---------------------------------
     $('#fairBtn').click(function () {
         $.ajax({
@@ -170,7 +129,9 @@ function fetchAllLots() {
                             "</div>";
 
             $("#currentLot").html(currentLot);
-            $(".buyNowPriceId").html("Buy now price £" + lots[0].BuynowPrice);
+            if (buyNowFlag == 0) {
+                $(".buyNowPriceId").html("Buy now price £" + lots[0].BuynowPrice);
+            }
             $("#currentLotDesc").html(currentLotDescription);
             var lotsQueue = "";
             var counter = 0;
@@ -206,6 +167,7 @@ function fetchAllLots() {
             //fetchLotFiles();
             fetchAskingBidValue(currentLotId);
             //fetchFairWarning();
+            //getAuthorizedUser();
         }
         else {
             window.location.href = "timed-auction.aspx";
@@ -339,6 +301,22 @@ function formatDate(date) {
 }
 
 //alert(formatDate("04/02/2011 23:00:00"));
+
+//$(".soldBtn").click(function (e) {
+//    e.preventDefault();
+//    alert();
+//    $.ajax({
+//        type: "POST",
+//        url: "timed-auction-lots.aspx/GetUserName",
+//        contentType: "application/json; charset=utf-8",
+//        dataType: "json",
+//        success: onSuccess,
+//        failure: function (response) { alert("write log failure " + response.d); }
+//    });
+//    function onSuccess(response) {
+//        $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
+//    }
+//});
 function getAuthorizedUser() {
     $.ajax({
         type: "POST",
@@ -346,9 +324,18 @@ function getAuthorizedUser() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: onSuccess,
-        failure: function (response) { alert("failure " + response.d); }
+        failure: function (response) { alert("write log failure " + response.d); }
     });
     function onSuccess(response) {
-        return response.d;
+        console.log(response.d);
+        var username = response.d;
+        console.log(username.length);
+        if (username.length == 0) {
+            buyNowFlag = 1;
+            $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid buyNowPriceId' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
+        }
+        else {
+            $("#Div1").html("<a href='payment-service.aspx' id='A1' class='btn btn-primary btn-lg btn-bid buyNowPriceId' data-toggle='tooltip' title='Suspendisse hendrerit iaculis quam, ut tempor magna aliquet at. In mollis a ex ac bibendum. Curabitur venenatis egestas ante faucibus tempor.' data-placement='bottom'></a>");
+        }
     }
 }
