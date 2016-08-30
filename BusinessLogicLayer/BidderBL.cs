@@ -10,6 +10,7 @@ namespace BusinessLogicLayer
 
         public bool BidderSignUp(BidderEL objBidderEL, out string Responcetxt)
         {
+            BidderCardDetailEL BidderCardDetailEL=new BidderCardDetailEL();
             ProcedureExecute proc;
             bool Res = false; string strError = string.Empty;
             try
@@ -21,7 +22,23 @@ namespace BusinessLogicLayer
                     proc.AddVarcharPara("@Password", 200, objBidderEL.Password);
                     proc.AddVarcharPara("@UserType", 200, objBidderEL.UserType);
                     proc.AddNVarcharPara("@ReturnValue", 500, objBidderEL.ReturnValue, QueryParameterDirection.Output);
-
+                    proc.AddVarcharPara("@CardType", 200, BidderCardDetailEL.CardType);
+                    proc.AddVarcharPara("@CardNo", 200, BidderCardDetailEL.CardNo);
+                    proc.AddDateTimePara("@CardExpiry", BidderCardDetailEL.CardExpiry);
+                    proc.AddVarcharPara("@SecurityCode",200, BidderCardDetailEL.SecurityCode);
+                    proc.AddVarcharPara("@CardNickName",200, BidderCardDetailEL.CardNickName);
+                    proc.AddVarcharPara("@CardHolderName",200, BidderCardDetailEL.CardHolderName);
+                    proc.AddVarcharPara("@CardBillingAddress1",200, BidderCardDetailEL.CardBillingAddress1);
+                    proc.AddVarcharPara("@CardBillingAddress2",200, BidderCardDetailEL.CardBillingAddress2);
+                    proc.AddVarcharPara("@CardBillingCity",200, BidderCardDetailEL.CardBillingCity);
+                    proc.AddVarcharPara("@CardBillingCountry",200, BidderCardDetailEL.CardBillingCountry);
+                    proc.AddVarcharPara("@CardBillingState",200, BidderCardDetailEL.CardBillingState);
+                    proc.AddVarcharPara("@CardBillingZipCode",200, BidderCardDetailEL.CardBillingZipCode);
+                    proc.AddVarcharPara("@CreatedBy",200, BidderCardDetailEL.CreatedBy);
+                    proc.AddIntegerPara("@UpdatedBy", BidderCardDetailEL.UpdatedBy);
+                    proc.AddIntegerPara("@UpdatedBy", BidderCardDetailEL.UpdatedBy);
+                    proc.AddDateTimePara("@UpdatedOn", BidderCardDetailEL.UpdatedOn);
+                    proc.AddVarcharPara("@IpAddress",200, BidderCardDetailEL.IpAddress);
                     int i = proc.RunActionQuery();
                     if (i > 0)
                     {
@@ -63,7 +80,7 @@ namespace BusinessLogicLayer
         {
             ProcedureExecute proc = new ProcedureExecute("prcBidder");
             proc.AddVarcharPara("@Action", 100, "EmailCheck");
-            proc.AddVarcharPara("@Email", 200, Email);            
+            proc.AddVarcharPara("@Email", 200, Email);
             proc.AddVarcharPara("@UserType", 200, UserType);
             return proc.GetTable();
         }
@@ -72,20 +89,20 @@ namespace BusinessLogicLayer
         {
             ProcedureExecute proc = new ProcedureExecute("prcBidder");
             proc.AddVarcharPara("@Action", 100, "SellerAccountDetails");
-            proc.AddIntegerPara("@SellerId", SellerId);            
+            proc.AddIntegerPara("@SellerId", SellerId);
             return proc.GetTable();
         }
         public DataTable GetCountries()
         {
             ProcedureExecute proc = new ProcedureExecute("prcBidder");
-            proc.AddVarcharPara("@Action", 100, "GetCountries");            
+            proc.AddVarcharPara("@Action", 100, "GetCountries");
             return proc.GetTable();
         }
         public DataTable GetTimeZonesFromCountry(int CountryId)
         {
             ProcedureExecute proc = new ProcedureExecute("prcBidder");
             proc.AddVarcharPara("@Action", 100, "GetTimeZonesFromCountry");
-            proc.AddIntegerPara("@CountryId", CountryId); 
+            proc.AddIntegerPara("@CountryId", CountryId);
             return proc.GetTable();
         }
 
@@ -102,7 +119,7 @@ namespace BusinessLogicLayer
                     proc.AddVarcharPara("@Telephone", 50, objBidderEL.Telephone);
                     proc.AddVarcharPara("@Country", 50, objBidderEL.Country);
                     proc.AddVarcharPara("@TimeZone", 50, objBidderEL.TimeZone);
-                    proc.AddIntegerPara("@SellerId", objBidderEL.BidderId); 
+                    proc.AddIntegerPara("@SellerId", objBidderEL.BidderId);
 
                     proc.AddNVarcharPara("@ReturnValue", 500, objBidderEL.ReturnValue, QueryParameterDirection.Output);
 

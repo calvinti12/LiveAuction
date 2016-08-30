@@ -28,6 +28,14 @@
             jAlert('<b style="color:red;font-size:1.0em;">' + str + '</b>');
         }
     </script>
+    <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js" integrity="sha256-55Jz3pBCF8z9jBO1qQ7cIf0L+neuPTD1u7Ytzrp2dqo="
+        crossorigin="anonymous"></script>
+    <script src="js/signup.js" type="text/javascript"></script>
+    <style type="text/css">
+    .ui-datepicker-calendar {
+    display: none;
+    }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- this is the breadcumbs area -->
@@ -85,6 +93,73 @@
                                 </asp:RadioButtonList>
                         </div>
                       </div>--%>
+                      <div class="form-group">
+                        <label for="kk" class="col-sm-3"></label>
+                        <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                      </div>
+                      </div>
+                      
+                      <!-- personal details sections -->
+                      <div class="form-group">
+                        <div class="col-sm-9">
+                          <p class="text-success">Title</p>
+                          <select  class="form-control">
+                          <option>Mr</option>
+                          <option>Mrs</option>
+                          <option>Ms</option>
+                          </select>
+                        </div>
+                       </div>
+                       <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">First Name</p>
+                          <asp:TextBox ID="firstName" runat="server" class="form-control"  placeholder="First Name"></asp:TextBox>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Last Name</p>
+                          <asp:TextBox ID="lastName" runat="server" class="form-control"  placeholder="Last Name"></asp:TextBox>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Address1</p>
+                          <asp:TextBox ID="address1" runat="server" class="form-control" placeholder="Address 1"></asp:TextBox>
+                        </div>
+                      </div>
+                      <%--<div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Address2</p>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>--%>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Town/City</p>
+                          <asp:TextBox ID="town" runat="server" class="form-control" placeholder="Town/City"></asp:TextBox>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Postcode</p>
+                          <asp:TextBox ID="postcode" runat="server" class="form-control" placeholder="Postcode"></asp:TextBox>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="col-sm-3"></label>
+                        <div class="col-sm-9">
+                          <p class="text-success">Telephone</p>
+                          <asp:TextBox ID="telephone" runat="server" class="form-control" placeholder="Telephone"></asp:TextBox>
+                        </div>
+                      </div>
                       <!-- this is for payment getway -->
                       <div class="form-group">
                         <label for="kk" class="col-sm-3"></label>
@@ -110,14 +185,14 @@
                         <label for="" class="col-sm-3"></label>
                         <div class="col-sm-9">
                           <p class="text-success">Name (as its appear on the card)</p>
-                          <input type="text" class="form-control">
+                          <asp:TextBox ID="cardHolderName" runat="server" class="form-control" placeholder="Name"></asp:TextBox>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="" class="col-sm-3"></label>
                         <div class="col-sm-9">
                           <p class="text-success">Card No (no dashes or spaces)</p>
-                          <input type="text" class="form-control">
+                          <asp:TextBox ID="cardNo" runat="server" class="form-control" placeholder="Card no"></asp:TextBox>
                         </div>
                       </div>
                       <div class="form-group">
@@ -126,10 +201,10 @@
                           <p class="text-success">Expiration Date</p>
                           <div class="row">
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" placeholder="start date">
+                              <asp:TextBox ID="ExpMonth" runat="server" class="form-control" placeholder="MM"></asp:TextBox>
                             </div>
                             <div class="col-sm-6">
-                              <input type="text" class="form-control" placeholder="end date">
+                              <asp:TextBox ID="ExpYear" runat="server" class="form-control" placeholder="YYYY"></asp:TextBox>
                             </div>
                           </div>
                         </div>
@@ -138,7 +213,7 @@
                         <label for="" class="col-sm-3"></label>
                         <div class="col-sm-3">
                           <p class="text-success">Security Code(cvv)</p>
-                          <input type="text" class="form-control">
+                          <asp:TextBox ID="cvv" runat="server" class="form-control" placeholder="CVV Code"></asp:TextBox>
                         </div>
                       </div>
                       <div class="form-group">

@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BidderCardDetailEL.cs" />
     <Compile Include="BidderEL.cs" />
     <Compile Include="TimedProductLotEL.cs" />
     <Compile Include="DealEL.cs" />
