@@ -31,6 +31,8 @@ namespace LiveAuction
             objBidderEL.Telephone = telephone.Text;
             objBidderEL.CardExpiryMonth = Convert.ToInt32(ExpMonth.Text);
             objBidderEL.CardExpiryYear = Convert.ToInt32(ExpYear.Text);
+            objBidderEL.CardStartMonth = Convert.ToInt32(startingMonth.Text);
+            objBidderEL.CardStartYear = Convert.ToInt32(startingYear.Text);
             objBidderEL.CardHolderName = cardHolderName.Text;
             objBidderEL.CardNo = cardNo.Text;
             objBidderEL.SecurityCode = cvv.Text;

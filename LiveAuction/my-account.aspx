@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Bidder.Master" AutoEventWireup="true" CodeBehind="my-account.aspx.cs" Inherits="LiveAuction.my_account1" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Bidder.Master" AutoEventWireup="true" CodeBehind="my-account.aspx.cs"
+    Inherits="LiveAuction.my_account1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <!-- this is the breadcumbs area -->
-     <section class="breadcumbs-area-sec">
+    <!-- this is the breadcumbs area -->
+    <section class="breadcumbs-area-sec">
          <div class="container">
              <div class="row">
                  <div class="col-md-12">
@@ -15,22 +15,7 @@
              </div>
          </div>
      </section>
-
-     <!-- end of the breadcumbs area -->
-     <!-- this is the breadcumbs area -->
-     <section class="breadcumbs-area-sec">
-         <div class="container">
-             <div class="row">
-                 <div class="col-md-12">
-                     <div class="breadcumb">
-                     <a href="#" class="incative">Home &raquo; </a><span class="current-page">My Account</span></div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- end of the breadcumbs area -->
-    
+    <!-- end of the breadcumbs area -->
     <section class="my-account-sec">
         <div class="container">
             <div class="row">

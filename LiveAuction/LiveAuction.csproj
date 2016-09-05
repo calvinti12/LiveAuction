@@ -234,6 +234,9 @@
     <Content Include="Admin\stats.aspx" />
     <Content Include="CatDisplay.aspx" />
     <Content Include="images\accept-card-pay.png" />
+    <Content Include="js\jquery.cookie-1.3.1.js" />
+    <Content Include="js\jquery.steps.js" />
+    <Content Include="js\modernizr-2.6.2.min.js" />
     <Content Include="js\PaymentService.js" />
     <Content Include="js\signup.js" />
     <Content Include="js\TimedAuction.js" />

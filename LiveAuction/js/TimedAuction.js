@@ -9,6 +9,7 @@ $("document").ready(function () {
     fetchAllLots();
     startRefresh();
     getUrlVars();
+
     //-------------------------------------- bid button clicked ---------------------------------
     $("#bidBtn").click(function (e) {
         e.preventDefault();
@@ -332,7 +333,7 @@ function getAuthorizedUser() {
         console.log(username.length);
         if (username.length == 0) {
             buyNowFlag = 1;
-            $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid buyNowPriceId' data-toggle='modal' data-target='#loginmodal'>Login to Buy</a>");
+            $("#Div1").html("<a href='#' id='bidBtn' class='btn btn-primary btn-lg btn-bid buyNowPriceId' data-toggle='modal' data-target='#loginmodal' >Login to buy</a>");
         }
         else {
             $("#Div1").html("<a href='payment-service.aspx' id='A1' class='btn btn-primary btn-lg btn-bid buyNowPriceId' data-toggle='tooltip' title='Suspendisse hendrerit iaculis quam, ut tempor magna aliquet at. In mollis a ex ac bibendum. Curabitur venenatis egestas ante faucibus tempor.' data-placement='bottom'></a>");

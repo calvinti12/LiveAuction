@@ -12,8 +12,20 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#lblLoginEmail").hide();
+        $("#lblLoginPassword").hide();
         $('.forgot-modal').click(function () {
             $('#loginmodal').modal('hide');
+        });
+        $(".loginBtn").click(function () {
+            //alert();
+            var email = $("#txtLoginEmail").html();
+            var password = pars$("#txtLoginPassword").html();
+//            var email = email.trim();
+//            var password = password.trim();
+            //alert(email);
+            if (email == "") { $("#lblLoginEmail").show(); return false; }
+            if (password == "") { $("#lblLoginPassword").show(); return false; }
         });
     });
 </script>
@@ -32,8 +44,9 @@
                         Email address</label>
                     <%--<input type="email" class="form-control" id="citius-email" placeholder="Email">--%>
                     <asp:TextBox ID="txtLoginEmail" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Email Required"
-                        ControlToValidate="txtLoginEmail" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Email Required"
+                        ControlToValidate="txtLoginEmail" ForeColor="Red"></asp:RequiredFieldValidator>--%> 
+                        <label id="lblLoginEmail" style="color:Red">Email is required</label>
                 </div>
                 <div class="form-group citis-form-password">
                     <label for="citius-password">
@@ -41,9 +54,10 @@
                     <%-- <input type="password" class="form-control" id="citius-password" placeholder="Password">--%>
                     <asp:TextBox ID="txtLoginPassword" runat="server" class="form-control" TextMode="Password"
                         placeholder="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password Required"
-                        ControlToValidate="txtLoginPassword" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Password Required"
+                        ControlToValidate="txtLoginPassword" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                     <i class="fa fa-eye"></i>
+                    <label id="lblLoginPassword" style="color:Red">Password is required</label>
                 </div>
 <%--                <div class="form-group">
                     <table cellpadding="5" cellspacing="5">
@@ -71,7 +85,7 @@
                 </div>
                 <div class="citius-submit-button text-center">
                     <%--<button type="submit" class="btn btn-default btn-custom-login">Login</button>--%>
-                    <asp:Button runat="server" ID="btnLogin" class="btn btn-default btn-custom-login" CausesValidation="false"
+                    <asp:Button runat="server" ID="btnLogin" class="btn btn-default btn-custom-login loginBtn" CausesValidation="false"
                         Text="Login" _OnClientClick="return LoginValidate();" OnClick="btnLogin_Click" />
                 </div>
                 <div class="form-group">

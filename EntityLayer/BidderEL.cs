@@ -36,6 +36,8 @@ namespace EntityLayer
 
         public string CardType { get; set; }
         public string CardNo { get; set; }
+        public int CardStartMonth { get; set; }
+        public int CardStartYear { get; set; }
         public int CardExpiryMonth { get; set; }
         public int CardExpiryYear { get; set; }
         public string SecurityCode { get; set; }

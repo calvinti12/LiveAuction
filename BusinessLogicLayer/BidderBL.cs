@@ -23,6 +23,8 @@ namespace BusinessLogicLayer
                     proc.AddNVarcharPara("@ReturnValue", 500, objBidderEL.ReturnValue, QueryParameterDirection.Output);
                     proc.AddVarcharPara("@CardType", 200, objBidderEL.CardType);
                     proc.AddVarcharPara("@CardNo", 200, objBidderEL.CardNo);
+                    proc.AddIntegerPara("@CardStartMonth", objBidderEL.CardExpiryMonth);
+                    proc.AddIntegerPara("@CardStartYear", objBidderEL.CardExpiryYear);
                     proc.AddIntegerPara("@CardExpiryMonth", objBidderEL.CardExpiryMonth);
                     proc.AddIntegerPara("@CardExpiryYear", objBidderEL.CardExpiryYear);
                     proc.AddVarcharPara("@SecurityCode",200, objBidderEL.SecurityCode);
