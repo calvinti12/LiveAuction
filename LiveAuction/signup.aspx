@@ -147,6 +147,7 @@
 
 				<!-- personal details sections -->
 				<div class="form-group">
+                <label for="kk" class="col-sm-3"></label>
 					<div class="col-sm-9">
 						<p class="text-success">Title</p>
 						<select class="form-control">

@@ -19,12 +19,20 @@ namespace BusinessLogicLayer
                     proc.AddVarcharPara("@Action", 100, "BidderSellerSignUp");
                     proc.AddVarcharPara("@Email", 200, objBidderEL.Email);
                     proc.AddVarcharPara("@Password", 200, objBidderEL.Password);
+                    proc.AddVarcharPara("@FirstName", 200, objBidderEL.FirstName);
+                    proc.AddVarcharPara("@LastName", 200, objBidderEL.LastName);
+                    proc.AddVarcharPara("@Telephone", 200, objBidderEL.Telephone);
+                    proc.AddVarcharPara("@Address", 200, objBidderEL.Address);
+                    proc.AddVarcharPara("@City", 200, objBidderEL.City);
+                    proc.AddVarcharPara("@Country", 200, objBidderEL.Country);
+                    proc.AddVarcharPara("@PinCode", 200, objBidderEL.PinCode);
                     proc.AddVarcharPara("@UserType", 200, objBidderEL.UserType);
                     proc.AddNVarcharPara("@ReturnValue", 500, objBidderEL.ReturnValue, QueryParameterDirection.Output);
+                    
                     proc.AddVarcharPara("@CardType", 200, objBidderEL.CardType);
                     proc.AddVarcharPara("@CardNo", 200, objBidderEL.CardNo);
-                    proc.AddIntegerPara("@CardStartMonth", objBidderEL.CardExpiryMonth);
-                    proc.AddIntegerPara("@CardStartYear", objBidderEL.CardExpiryYear);
+                    proc.AddIntegerPara("@CardStartMonth", objBidderEL.CardStartMonth);
+                    proc.AddIntegerPara("@CardStartYear", objBidderEL.CardStartYear);
                     proc.AddIntegerPara("@CardExpiryMonth", objBidderEL.CardExpiryMonth);
                     proc.AddIntegerPara("@CardExpiryYear", objBidderEL.CardExpiryYear);
                     proc.AddVarcharPara("@SecurityCode",200, objBidderEL.SecurityCode);
